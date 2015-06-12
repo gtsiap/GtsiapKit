@@ -59,15 +59,20 @@
 			children = (
 				4536C3B81B29E7C2003E8CB7 /* Json.swift */,
 			);
-			name = Json;
-			path = GtsiapKit/Json;
+			path = Json;
+			sourceTree = "<group>";
+		};
+		457AB56A1B2B6230003034F1 /* GtsiapKit Example */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "GtsiapKit Example";
 			sourceTree = "<group>";
 		};
 		45B4044C1B29E68A00DF2CDB = {
 			isa = PBXGroup;
 			children = (
-				4536C3B71B29E7C2003E8CB7 /* Json */,
-				45B404721B29E79F00DF2CDB /* Logger */,
+				457AB56A1B2B6230003034F1 /* GtsiapKit Example */,
 				45B404581B29E68A00DF2CDB /* GtsiapKit */,
 				45B404651B29E68A00DF2CDB /* GtsiapKitTests */,
 				45B404571B29E68A00DF2CDB /* Products */,
@@ -87,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				45B4045B1B29E68A00DF2CDB /* GtsiapKit.h */,
+				4536C3B71B29E7C2003E8CB7 /* Json */,
+				45B404721B29E79F00DF2CDB /* Logger */,
 				45B404591B29E68A00DF2CDB /* Supporting Files */,
 			);
 			path = GtsiapKit;
@@ -122,8 +129,7 @@
 			children = (
 				45B404731B29E79F00DF2CDB /* Logger.swift */,
 			);
-			name = Logger;
-			path = GtsiapKit/Logger;
+			path = Logger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
