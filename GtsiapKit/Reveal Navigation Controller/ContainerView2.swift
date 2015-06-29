@@ -22,12 +22,27 @@ class ContainerView2 : UIView {
     var menuView: UIView! {
         didSet {
             addSubview(self.menuView)
-            self.menuView.frame = CGRect(
+            
+            let leftSideRect = CGRect(
                 x: self.menuView.frame.origin.x,
                 y: self.menuView.frame.origin.y,
-                width: self.menuOffset, //- 5,
+                width: self.menuOffset,
                 height: self.menuView.frame.height
             )
+
+            let rightSideRect = CGRect(
+                x: self.frame.width - self.menuOffset,
+                y: self.menuView.frame.origin.y,
+                width: self.menuOffset,
+                height: self.menuView.frame.height
+            )
+
+            if doLeftAnimation() {
+                self.menuView.frame = leftSideRect
+                return
+            }
+            
+            self.menuView.frame = rightSideRect
         }
     }
     
@@ -51,9 +66,8 @@ class ContainerView2 : UIView {
                 self.mainView.layer.shadowOpacity = 0.0
                 self.mainView.layer.shadowRadius = 0
                 self.mainView.layer.shadowOffset = CGSize(width: 0, height: 0);
-                self.mainView.frame.origin.x = -self.frame.height
-                self.mainView.frame.origin.x = 0
-                self.menuView.frame.origin.x = -self.menuOffset
+                // go back to (0, 0) position
+                self.mainView.frame.origin.x = self.frame.origin.x
             }, completion: { _ in
                 self.menuDidHide?()
         })
@@ -69,16 +83,17 @@ class ContainerView2 : UIView {
                 self.mainView.layer.shadowOpacity = 0.5
                 self.mainView.layer.shadowRadius = 5
                 self.mainView.layer.shadowColor = UIColor.blackColor().CGColor
-                self.mainView.layer.shadowOffset = CGSize(width: -10, height: 10);
+                
                 self.mainView.layer.masksToBounds = false;
                 self.bringSubviewToFront(self.mainView)
 
                 if self.doLeftAnimation() {
-                    self.mainView.frame.origin.x = self.frame.origin.x + self.menuOffset
+                    self.mainView.layer.shadowOffset = CGSize(width: -10, height: 10);
+                    self.mainView.frame.origin.x += self.menuOffset
                 } else {
-                    fatalError("Not implemented yet")
+                    self.mainView.layer.shadowOffset = CGSize(width: 10, height: 10);
+                    self.mainView.frame.origin.x -= self.menuOffset
                 }
-
             }, completion: nil)
     }
     
