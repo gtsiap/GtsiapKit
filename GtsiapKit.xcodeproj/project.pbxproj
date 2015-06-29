@@ -163,15 +163,13 @@
 				457AB5991B2B658D003034F1 /* Media.xcassets */,
 				459B0CFC1B3F1BCA00E1A4D3 /* ContainerView2.swift */,
 			);
-			name = "Reveal Navigation Controller";
-			path = "GtsiapKit/Reveal Navigation Controller";
+			path = "Reveal Navigation Controller";
 			sourceTree = "<group>";
 		};
 		45B4044C1B29E68A00DF2CDB = {
 			isa = PBXGroup;
 			children = (
 				451EFA881B2F168B00AD3DBB /* Alamofire.framework */,
-				457AB5931B2B634A003034F1 /* Reveal Navigation Controller */,
 				45B404581B29E68A00DF2CDB /* GtsiapKit */,
 				45B404651B29E68A00DF2CDB /* GtsiapKitTests */,
 				457AB5721B2B62EC003034F1 /* Example */,
@@ -195,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				45B4045B1B29E68A00DF2CDB /* GtsiapKit.h */,
+				457AB5931B2B634A003034F1 /* Reveal Navigation Controller */,
 				4536C3B71B29E7C2003E8CB7 /* Json */,
 				45B404721B29E79F00DF2CDB /* Logger */,
 				45B404591B29E68A00DF2CDB /* Supporting Files */,
