@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GtsiapKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        
+        if let revealVc = self.window?.rootViewController as? RevealNavigationController {
+            println(revealVc)
+            revealVc.menuViewController =
+                revealVc.storyboard?.instantiateViewControllerWithIdentifier("menuViewController") as? UIViewController
+        }
+        
         // Override point for customization after application launch.
         return true
     }
