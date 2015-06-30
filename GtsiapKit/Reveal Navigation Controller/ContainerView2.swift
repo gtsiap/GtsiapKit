@@ -22,17 +22,17 @@ class ContainerView2 : UIView {
     var menuView: UIView! {
         didSet {
             addSubview(self.menuView)
-            
+            println(self.menuY)
             let leftSideRect = CGRect(
                 x: self.menuView.frame.origin.x,
-                y: self.menuView.frame.origin.y,
+                y: self.menuY, //self.menuView.frame.origin.y,
                 width: self.menuOffset,
                 height: self.menuView.frame.height
             )
 
             let rightSideRect = CGRect(
                 x: self.frame.width - self.menuOffset,
-                y: self.menuView.frame.origin.y,
+                y: self.menuY,//self.menuView.frame.origin.y,
                 width: self.menuOffset,
                 height: self.menuView.frame.height
             )
@@ -49,6 +49,15 @@ class ContainerView2 : UIView {
     // MARK: private vars
     private var menuOffset: CGFloat {
         return self.mainView.bounds.width / 2.2
+    }
+    
+    private var menuY: CGFloat {
+        if let revealVC = revealNavigationController() {
+            return revealVC.navigationBar.frame.height +
+                UIApplication.sharedApplication().statusBarFrame.height
+        }
+        
+        return 0.0
     }
     
     deinit {

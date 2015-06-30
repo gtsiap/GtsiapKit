@@ -17,6 +17,7 @@ public class RevealNavigationController: UINavigationController {
     // TODO revealBarItem should be lazy like var revealBarItem: UIBarButtonItem = {.....} ()
     public var revealBarItem: UIBarButtonItem!
     public var menuViewController: UIViewController!
+    
     public var revealMenuSide: RevealMenuSide = RevealMenuSide.Left
     
     public override func viewDidLoad() {
@@ -43,6 +44,12 @@ public class RevealNavigationController: UINavigationController {
         
         let containerView = ContainerView2(frame: mainView.frame)
         currentViewController.view = containerView
+        
+//        self.menuViewController.didMoveToParentViewController(currentViewController)
+
+        currentViewController.addChildViewController(self.menuViewController)
+        self.menuViewController.didMoveToParentViewController(currentViewController)
+        
         containerView.mainView = mainView
         containerView.menuView = self.menuViewController.view
         containerView.menuDidHide = {
@@ -74,6 +81,8 @@ public class RevealNavigationController: UINavigationController {
         let mainView = containerView?.mainView
         mainView?.removeFromSuperview()
         self.topViewController.view = mainView
+        
+        self.menuViewController.removeFromParentViewController()
     }
     
     private func checkForContainerView() -> (Bool, ContainerView2?) {
