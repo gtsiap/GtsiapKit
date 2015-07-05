@@ -53,7 +53,7 @@ class ContainerView2 : UIView {
     
     private var menuY: CGFloat {
         if let revealVC = revealNavigationController() {
-            return revealVC.navigationBar.frame.height +
+            return revealVC.navigationBar.frame.height + 
                 UIApplication.sharedApplication().statusBarFrame.height
         }
         

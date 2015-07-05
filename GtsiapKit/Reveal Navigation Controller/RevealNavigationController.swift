@@ -45,10 +45,9 @@ public class RevealNavigationController: UINavigationController {
         let containerView = ContainerView2(frame: mainView.frame)
         currentViewController.view = containerView
         
-//        self.menuViewController.didMoveToParentViewController(currentViewController)
-
-        currentViewController.addChildViewController(self.menuViewController)
-        self.menuViewController.didMoveToParentViewController(currentViewController)
+        //self.menuViewController.willMoveToParentViewController(currentViewController)
+        //currentViewController.addChildViewController(self.menuViewController)
+        //self.menuViewController.didMoveToParentViewController(currentViewController)
         
         containerView.mainView = mainView
         containerView.menuView = self.menuViewController.view

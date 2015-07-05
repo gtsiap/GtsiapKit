@@ -21,6 +21,8 @@
 		457AB5961B2B63AA003034F1 /* GtsiapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B404561B29E68A00DF2CDB /* GtsiapKit.framework */; };
 		457AB59A1B2B658D003034F1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 457AB5991B2B658D003034F1 /* Media.xcassets */; };
 		459B0CFD1B3F1BCA00E1A4D3 /* ContainerView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459B0CFC1B3F1BCA00E1A4D3 /* ContainerView2.swift */; };
+		45B2AE4E1B4257B000DE467B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B2AE4D1B4257B000DE467B /* Theme.swift */; };
+		45B2AE531B42597900DE467B /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B2AE521B42597900DE467B /* UIView+Shadow.swift */; };
 		45B4045C1B29E68A00DF2CDB /* GtsiapKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 45B4045B1B29E68A00DF2CDB /* GtsiapKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45B404621B29E68A00DF2CDB /* GtsiapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B404561B29E68A00DF2CDB /* GtsiapKit.framework */; };
 		45B404691B29E68A00DF2CDB /* GtsiapKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B404681B29E68A00DF2CDB /* GtsiapKitTests.swift */; };
@@ -63,7 +65,10 @@
 		457AB58B1B2B62EC003034F1 /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		457AB5941B2B6365003034F1 /* RevealNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealNavigationController.swift; sourceTree = "<group>"; };
 		457AB5991B2B658D003034F1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		458722621B46930700637E38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		459B0CFC1B3F1BCA00E1A4D3 /* ContainerView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView2.swift; sourceTree = "<group>"; };
+		45B2AE4D1B4257B000DE467B /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		45B2AE521B42597900DE467B /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		45B404561B29E68A00DF2CDB /* GtsiapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GtsiapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B4045A1B29E68A00DF2CDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45B4045B1B29E68A00DF2CDB /* GtsiapKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GtsiapKit.h; sourceTree = "<group>"; };
@@ -166,6 +171,22 @@
 			path = "Reveal Navigation Controller";
 			sourceTree = "<group>";
 		};
+		45B2AE4C1B4257B000DE467B /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				45B2AE4D1B4257B000DE467B /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		45B2AE511B42597900DE467B /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				45B2AE521B42597900DE467B /* UIView+Shadow.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		45B4044C1B29E68A00DF2CDB = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +213,8 @@
 		45B404581B29E68A00DF2CDB /* GtsiapKit */ = {
 			isa = PBXGroup;
 			children = (
+				45B2AE511B42597900DE467B /* extensions */,
+				45B2AE4C1B4257B000DE467B /* Theme */,
 				45B4045B1B29E68A00DF2CDB /* GtsiapKit.h */,
 				457AB5931B2B634A003034F1 /* Reveal Navigation Controller */,
 				4536C3B71B29E7C2003E8CB7 /* Json */,
@@ -440,9 +463,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45B2AE531B42597900DE467B /* UIView+Shadow.swift in Sources */,
 				45B404741B29E79F00DF2CDB /* Logger.swift in Sources */,
 				457AB5951B2B6365003034F1 /* RevealNavigationController.swift in Sources */,
 				4536C3B91B29E7C2003E8CB7 /* Json.swift in Sources */,
+				45B2AE4E1B4257B000DE467B /* Theme.swift in Sources */,
 				451EFA851B2F0DF500AD3DBB /* Operation.swift in Sources */,
 				459B0CFD1B3F1BCA00E1A4D3 /* ContainerView2.swift in Sources */,
 			);
@@ -477,6 +502,7 @@
 			children = (
 				457AB57A1B2B62EC003034F1 /* Base */,
 				453E61341B40825000AC9968 /* el */,
+				458722621B46930700637E38 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

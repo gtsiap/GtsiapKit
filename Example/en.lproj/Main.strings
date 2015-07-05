@@ -1,9 +1,9 @@
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "MZE-6q-UCc"; */
-"MZE-6q-UCc.normalTitle" = "Κουμπί";
+"MZE-6q-UCc.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Localization"; ObjectID = "RzV-O0-iqd"; */
-"RzV-O0-iqd.text" = "Μετάφραση";
+"RzV-O0-iqd.text" = "Localization";
 
 /* Class = "UILabel"; text = "Operations"; ObjectID = "rGM-qs-Jpz"; */
-"rGM-qs-Jpz.text" = "Διεργασίες";
+"rGM-qs-Jpz.text" = "Operations";
