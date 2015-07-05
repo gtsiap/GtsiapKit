@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContainerView2 : UIView {
+class ContainerView : UIView {
     var menuDidHide: (() -> ())?
     
     // MARK: views
@@ -132,7 +132,7 @@ class ContainerView2 : UIView {
     }
 }
 
-extension ContainerView2 {
+extension ContainerView {
     func revealNavigationController() -> RevealNavigationController? {
         var revealNavigationController: RevealNavigationController? = nil
         
