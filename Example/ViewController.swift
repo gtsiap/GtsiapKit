@@ -29,8 +29,6 @@ class ViewController: UIViewController {
         
         queue.addOperation(operation)
         queue.addOperation(op2)
-
-        
         
         // Do any additional setup after loading the view, typically from a nib.
     }
