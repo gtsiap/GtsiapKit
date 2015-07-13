@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		451EFA851B2F0DF500AD3DBB /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451EFA841B2F0DF500AD3DBB /* Operation.swift */; };
 		451EFA871B2F0E4800AD3DBB /* TestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451EFA861B2F0E4800AD3DBB /* TestOperation.swift */; };
 		451EFA891B2F168B00AD3DBB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451EFA881B2F168B00AD3DBB /* Alamofire.framework */; };
 		4536C3B91B29E7C2003E8CB7 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4536C3B81B29E7C2003E8CB7 /* Json.swift */; };
@@ -20,6 +19,7 @@
 		457AB5951B2B6365003034F1 /* RevealNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457AB5941B2B6365003034F1 /* RevealNavigationController.swift */; };
 		457AB5961B2B63AA003034F1 /* GtsiapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B404561B29E68A00DF2CDB /* GtsiapKit.framework */; };
 		457AB59A1B2B658D003034F1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 457AB5991B2B658D003034F1 /* Media.xcassets */; };
+		458040871B52A7ED000D5249 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458040861B52A7ED000D5249 /* Operation.swift */; };
 		459B0CFD1B3F1BCA00E1A4D3 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */; };
 		45B2AE4E1B4257B000DE467B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B2AE4D1B4257B000DE467B /* Theme.swift */; };
 		45B2AE531B42597900DE467B /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B2AE521B42597900DE467B /* UIView+Shadow.swift */; };
@@ -27,6 +27,7 @@
 		45B404621B29E68A00DF2CDB /* GtsiapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B404561B29E68A00DF2CDB /* GtsiapKit.framework */; };
 		45B404691B29E68A00DF2CDB /* GtsiapKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B404681B29E68A00DF2CDB /* GtsiapKitTests.swift */; };
 		45B404741B29E79F00DF2CDB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B404731B29E79F00DF2CDB /* Logger.swift */; };
+		45FCCB151B52E4B90057AAFD /* UIView+AutolayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FCCB141B52E4B90057AAFD /* UIView+AutolayoutUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +48,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		451EFA841B2F0DF500AD3DBB /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operation.swift; path = "../Reveal Navigation Controller/Operation.swift"; sourceTree = "<group>"; };
 		451EFA861B2F0E4800AD3DBB /* TestOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestOperation.swift; sourceTree = "<group>"; };
 		451EFA881B2F168B00AD3DBB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Example/Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		4536C3B81B29E7C2003E8CB7 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
@@ -65,6 +65,7 @@
 		457AB58B1B2B62EC003034F1 /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		457AB5941B2B6365003034F1 /* RevealNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealNavigationController.swift; sourceTree = "<group>"; };
 		457AB5991B2B658D003034F1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		458040861B52A7ED000D5249 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		458722621B46930700637E38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		45B2AE4D1B4257B000DE467B /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -76,6 +77,7 @@
 		45B404671B29E68A00DF2CDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45B404681B29E68A00DF2CDB /* GtsiapKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GtsiapKitTests.swift; sourceTree = "<group>"; };
 		45B404731B29E79F00DF2CDB /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		45FCCB141B52E4B90057AAFD /* UIView+AutolayoutUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutolayoutUtils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				45B2AE521B42597900DE467B /* UIView+Shadow.swift */,
+				45FCCB141B52E4B90057AAFD /* UIView+AutolayoutUtils.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -260,7 +263,7 @@
 		45DBFB571B49116C007C0AF3 /* Operation */ = {
 			isa = PBXGroup;
 			children = (
-				451EFA841B2F0DF500AD3DBB /* Operation.swift */,
+				458040861B52A7ED000D5249 /* Operation.swift */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				45B404521B29E68A00DF2CDB /* Frameworks */,
 				45B404531B29E68A00DF2CDB /* Headers */,
 				45B404541B29E68A00DF2CDB /* Resources */,
+				4543C6941B4D405B00F40EDA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -446,6 +450,19 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		4543C6941B4D405B00F40EDA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/bin/sh $SRCROOT/scripts/remove_spaces.sh $SRCROOT";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -472,11 +489,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				45B2AE531B42597900DE467B /* UIView+Shadow.swift in Sources */,
+				458040871B52A7ED000D5249 /* Operation.swift in Sources */,
 				45B404741B29E79F00DF2CDB /* Logger.swift in Sources */,
+				45FCCB151B52E4B90057AAFD /* UIView+AutolayoutUtils.swift in Sources */,
 				457AB5951B2B6365003034F1 /* RevealNavigationController.swift in Sources */,
 				4536C3B91B29E7C2003E8CB7 /* Json.swift in Sources */,
 				45B2AE4E1B4257B000DE467B /* Theme.swift in Sources */,
-				451EFA851B2F0DF500AD3DBB /* Operation.swift in Sources */,
 				459B0CFD1B3F1BCA00E1A4D3 /* ContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
