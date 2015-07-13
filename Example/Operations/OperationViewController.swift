@@ -9,7 +9,7 @@
 import UIKit
 import GtsiapKit
 
-class ViewController: UIViewController {
+class OpearationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
