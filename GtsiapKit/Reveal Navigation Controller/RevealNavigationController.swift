@@ -14,8 +14,19 @@ public enum RevealMenuSide {
 }
 
 public class RevealNavigationController: UINavigationController {
-    // TODO revealBarItem should be lazy like var revealBarItem: UIBarButtonItem = {.....} ()
-    public var revealBarItem: UIBarButtonItem!
+
+    public lazy var revealBarItem: UIBarButtonItem = {
+        let frameworkBundle = NSBundle(forClass: RevealNavigationController.self)
+        let revealIcon = UIImage(named: "reveal-icon", inBundle: frameworkBundle, compatibleWithTraitCollection: nil)
+        
+        return UIBarButtonItem(
+            image: revealIcon,
+            style: UIBarButtonItemStyle.Plain,
+            target: self,
+            action: Selector("showMenu")
+        )
+    }()
+    
     public var menuViewController: UIViewController!
     
     public var revealMenuSide: RevealMenuSide = RevealMenuSide.Right
@@ -98,12 +109,7 @@ public class RevealNavigationController: UINavigationController {
 
 extension RevealNavigationController: UINavigationControllerDelegate {
     public func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
-        let frameworkBundle = NSBundle(forClass: RevealNavigationController.self)
-        let revealIcon = UIImage(named: "reveal-icon", inBundle: frameworkBundle, compatibleWithTraitCollection: nil)
-        
-        self.revealBarItem = UIBarButtonItem(image: revealIcon, style: UIBarButtonItemStyle.Plain, target: self, action: Selector("showMenu"))
-        
-        viewController.navigationItem.rightBarButtonItem = revealBarItem
+        viewController.navigationItem.rightBarButtonItem = self.revealBarItem
     }
 }
 
