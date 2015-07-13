@@ -68,6 +68,7 @@ class ContainerView : UIView {
         // go back to (0, 0) position
         self.sideConstraint?.constant = 0
 
+        self.mainView.setNeedsLayout()
         UIView.animateWithDuration(1.5,
             delay: 0,
             usingSpringWithDamping: 0.8,
@@ -91,6 +92,7 @@ class ContainerView : UIView {
             self.sideConstraint?.constant = -(self.frame.width * 0.45)
         }
 
+        self.mainView.setNeedsLayout()
         UIView.animateWithDuration(1.5) {
             self.mainView.layer.shadowOpacity = 0.5
             self.mainView.layer.shadowRadius = 5
