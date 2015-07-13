@@ -1,5 +1,5 @@
 //
-//  ContainerView2.swift
+//  ContainerView.swift
 //  GtsiapKit
 //
 //  Created by Giorgos Tsiapaliokas on 6/27/15.
@@ -10,46 +10,45 @@ import UIKit
 
 class ContainerView : UIView {
     var menuDidHide: (() -> ())?
-    
+    var sideConstraint: NSLayoutConstraint?
+
     // MARK: views
     var mainView: UIView! {
         didSet {
+            self.mainView.setTranslatesAutoresizingMaskIntoConstraints(false)
             addSubview(self.mainView)
+                
+            addConstraint(constraint(self.mainView, attribute1: .Height))
+            addConstraint(constraint(self.mainView, attribute1: .Width))
+            
+            if doLeftSideAnimation() {
+                self.sideConstraint = constraint(self.mainView, attribute1: .Left)
+            } else {
+                self.sideConstraint = constraint(self.mainView, attribute1: .Right)
+            }
+            
+            addConstraint(self.sideConstraint!)
+            
             mainViewAddGestureRecognizer()
         }
     }
     
     var menuView: UIView! {
         didSet {
+            self.menuView.setTranslatesAutoresizingMaskIntoConstraints(false)
             addSubview(self.menuView)
-            println(self.menuY)
-            let leftSideRect = CGRect(
-                x: self.menuView.frame.origin.x,
-                y: self.menuY, //self.menuView.frame.origin.y,
-                width: self.menuOffset,
-                height: self.menuView.frame.height
-            )
-
-            let rightSideRect = CGRect(
-                x: self.frame.width - self.menuOffset,
-                y: self.menuY,//self.menuView.frame.origin.y,
-                width: self.menuOffset,
-                height: self.menuView.frame.height
-            )
-
-            if doLeftAnimation() {
-                self.menuView.frame = leftSideRect
-                return
-            }
             
-            self.menuView.frame = rightSideRect
+            addConstraint(constraint(self.menuView, attribute1: .Top, constant: self.menuY))
+            addConstraint(constraint(self.menuView, attribute1: .Width, multiplier: 0.45))
+            addConstraint(constraint(self.menuView, attribute1: .Height, constant: -self.menuY))
+            
+            if !doLeftSideAnimation() {
+              addConstraint(constraint(self.menuView, attribute1: .Right, view2: self, attribute2: .Right))
+            }
         }
     }
     
     // MARK: private vars
-    private var menuOffset: CGFloat {
-        return self.mainView.bounds.width / 2.2
-    }
     
     private var menuY: CGFloat {
         if let revealVC = revealNavigationController() {
@@ -66,6 +65,8 @@ class ContainerView : UIView {
     
     // MARK: hide/show menu
     func hideMenuView() {
+        // go back to (0, 0) position
+        self.sideConstraint?.constant = 0
         
         UIView.animateWithDuration(1.5,
             delay: 0,
@@ -75,38 +76,37 @@ class ContainerView : UIView {
                 self.mainView.layer.shadowOpacity = 0.0
                 self.mainView.layer.shadowRadius = 0
                 self.mainView.layer.shadowOffset = CGSize(width: 0, height: 0);
-                // go back to (0, 0) position
-                self.mainView.frame.origin.x = self.frame.origin.x
+              
+                self.mainView.layoutIfNeeded()
             }, completion: { _ in
                 self.menuDidHide?()
         })
     }
     
     func showMenuView() {
-        UIView.animateWithDuration(1.5,
-            delay: 0,
-            usingSpringWithDamping: 0.8,
-            initialSpringVelocity: 0,
-            options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                // TODO turn the shadow into an extension
-                self.mainView.layer.shadowOpacity = 0.5
-                self.mainView.layer.shadowRadius = 5
-                self.mainView.layer.shadowColor = UIColor.blackColor().CGColor
-                
-                self.mainView.layer.masksToBounds = false;
-                self.bringSubviewToFront(self.mainView)
-
-                if self.doLeftAnimation() {
-                    self.mainView.layer.shadowOffset = CGSize(width: -10, height: 10);
-                    self.mainView.frame.origin.x += self.menuOffset
-                } else {
-                    self.mainView.layer.shadowOffset = CGSize(width: 10, height: 10);
-                    self.mainView.frame.origin.x -= self.menuOffset
-                }
-            }, completion: nil)
+        
+        if doLeftSideAnimation() {
+            self.sideConstraint?.constant = self.frame.width * 0.45
+        } else {
+            self.sideConstraint?.constant = -(self.frame.width * 0.45)
+        }
+        
+        UIView.animateWithDuration(1.5) {
+            self.mainView.layer.shadowOpacity = 0.5
+            self.mainView.layer.shadowRadius = 5
+            self.mainView.layer.shadowColor = UIColor.blackColor().CGColor
+        
+            if self.doLeftSideAnimation() {
+                self.mainView.layer.shadowOffset = CGSize(width: -10, height: 10)
+            } else {
+                self.mainView.layer.shadowOffset = CGSize(width: 10, height: 10)
+            }
+            
+            self.mainView.layoutIfNeeded()
+        }
     }
     
-    private func doLeftAnimation() -> Bool {
+    private func doLeftSideAnimation() -> Bool {
         if let revealVc = revealNavigationController() {
             if revealVc.revealMenuSide == RevealMenuSide.Right {
                 return false

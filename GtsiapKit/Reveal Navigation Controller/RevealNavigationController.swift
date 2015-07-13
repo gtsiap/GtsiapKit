@@ -18,7 +18,7 @@ public class RevealNavigationController: UINavigationController {
     public var revealBarItem: UIBarButtonItem!
     public var menuViewController: UIViewController!
     
-    public var revealMenuSide: RevealMenuSide = RevealMenuSide.Left
+    public var revealMenuSide: RevealMenuSide = RevealMenuSide.Right
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,15 +42,14 @@ public class RevealNavigationController: UINavigationController {
             return
         }
         
-        let containerView = ContainerView(frame: mainView.frame)
+        mainView.setTranslatesAutoresizingMaskIntoConstraints(false)
+
+        let containerView = ContainerView()
         currentViewController.view = containerView
-        
-        //self.menuViewController.willMoveToParentViewController(currentViewController)
-        //currentViewController.addChildViewController(self.menuViewController)
-        //self.menuViewController.didMoveToParentViewController(currentViewController)
-        
-        containerView.mainView = mainView
+             
         containerView.menuView = self.menuViewController.view
+        containerView.mainView = mainView
+       
         containerView.menuDidHide = {
             self.restoreViewHierarchy()
         }
@@ -78,6 +77,7 @@ public class RevealNavigationController: UINavigationController {
         }
         
         let mainView = containerView?.mainView
+        mainView?.setTranslatesAutoresizingMaskIntoConstraints(true)
         mainView?.removeFromSuperview()
         self.topViewController.view = mainView
         
