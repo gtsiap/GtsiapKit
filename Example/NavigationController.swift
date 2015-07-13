@@ -7,7 +7,16 @@
 //
 
 import UIKit
+import GtsiapKit
 
-class NavigationController: NSObject {
-   
+class NavigationController: RevealNavigationController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.menuViewController =
+            storyboard?.instantiateViewControllerWithIdentifier("menuViewController") as? UIViewController
+
+        self.revealMenuSide = RevealMenuSide.Right
+    }
 }
