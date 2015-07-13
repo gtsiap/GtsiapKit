@@ -10,7 +10,6 @@ import UIKit
 
 class ContainerView : UIView {
     var menuDidHide: (() -> ())?
-    var sideConstraint: NSLayoutConstraint?
 
     // MARK: views
     var mainView: UIView! {
@@ -49,6 +48,7 @@ class ContainerView : UIView {
     }
 
     // MARK: private vars
+    private var sideConstraint: NSLayoutConstraint?
 
     private var menuY: CGFloat {
         if let revealVC = revealNavigationController() {
