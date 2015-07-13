@@ -13,7 +13,7 @@ extension UIView {
         self.layer.shadowColor = viewShadow.shadowColor
         self.layer.shadowOffset = viewShadow.shadowOffset
     }
-    
+
     public func removeShadow() {
         let viewShadow = ThemeManager.defaultTheme.invisibleViewShadow()
         self.layer.shadowOpacity = viewShadow.shadowOpacity

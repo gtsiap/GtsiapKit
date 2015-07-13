@@ -16,13 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
+
         if let revealVc = self.window?.rootViewController as? RevealNavigationController {
             revealVc.menuViewController =
                 revealVc.storyboard?.instantiateViewControllerWithIdentifier("menuViewController") as? UIViewController
             //revealVc.revealMenuSide = .Right
         }
-        
+
         // Override point for customization after application launch.
         return true
     }

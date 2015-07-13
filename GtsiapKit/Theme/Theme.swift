@@ -28,14 +28,14 @@ public protocol ThemeDelegate {
 }
 
 public class Theme: ThemeDelegate {
-    
+
     public func button(text: String, target: AnyObject, action: Selector) -> UIButton {
         let button = UIButton.buttonWithType(.System) as! UIButton
         button.setTitle(text, forState: .Normal)
         button.addTarget(target, action: action, forControlEvents: .TouchUpInside)
         return button
     }
-    
+
     public func textField() -> UITextField {
         let textField = UITextField()
         textField.borderStyle = .RoundedRect
@@ -46,14 +46,14 @@ public class Theme: ThemeDelegate {
         textField.clearButtonMode = .WhileEditing
         return textField
     }
-    
+
     public func activityIndicatorView() -> UIActivityIndicatorView {
        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
         indicator.hidesWhenStopped = true
         indicator.backgroundColor = UIColor.lightGrayColor()
         return indicator
     }
-    
+
     public func label() -> UILabel {
         let label = UILabel()
         label.font = font()
@@ -61,23 +61,23 @@ public class Theme: ThemeDelegate {
         label.numberOfLines = 0
         return label
     }
-    
+
     public func font() -> UIFont {
         return UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
-    
+
     public func headlineFont() -> UIFont {
         return UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
     }
-    
+
     public func subheadlineFont() -> UIFont {
         return UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
     }
-    
+
     public func defaultViewShadow() -> ViewShadow {
         return ViewShadow()
     }
-    
+
     public func invisibleViewShadow() -> ViewShadow {
         return ViewShadow(
             shadowOpacity: 0.0,
