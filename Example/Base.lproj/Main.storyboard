@@ -112,6 +112,29 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="QVS-lm-P4r">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QVS-lm-P4r" id="hGa-6I-e3u">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Indicator" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEZ-1U-7qY">
+                                                    <rect key="frame" x="38" y="11" width="129" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iEZ-1U-7qY" firstAttribute="leading" secondItem="hGa-6I-e3u" secondAttribute="leadingMargin" constant="30" id="IaV-m7-rR4"/>
+                                                <constraint firstAttribute="centerY" secondItem="iEZ-1U-7qY" secondAttribute="centerY" constant="0.25" id="LpG-GM-VAJ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="iEZ-1U-7qY" secondAttribute="bottom" constant="3.5" id="gHV-QL-EUs"/>
+                                                <constraint firstItem="iEZ-1U-7qY" firstAttribute="top" secondItem="hGa-6I-e3u" secondAttribute="topMargin" constant="3" id="v58-gx-lu5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="8Rd-Dh-8ws" kind="show" id="VZd-s0-lJM"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -125,6 +148,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gv9-I3-M9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-280" y="-357"/>
+        </scene>
+        <!--Activity Indicator View Controller-->
+        <scene sceneID="DxI-hG-Cnv">
+            <objects>
+                <viewController id="cbe-DR-Wzh" customClass="ActivityIndicatorViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HlE-JK-Vpf"/>
+                        <viewControllerLayoutGuide type="bottom" id="glT-bW-ON4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hzy-MH-Ctv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aws-SR-qXA">
+                                <rect key="frame" x="251" y="168" width="98" height="30"/>
+                                <state key="normal" title="Stop Indicator">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAnimating:" destination="cbe-DR-Wzh" eventType="touchUpInside" id="j35-VG-0hH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ev-5A-VI9">
+                                <rect key="frame" x="251" y="100" width="98" height="30"/>
+                                <state key="normal" title="Start Indicator">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startAnimating:" destination="cbe-DR-Wzh" eventType="touchUpInside" id="e6Q-Ar-ayh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8ev-5A-VI9" firstAttribute="centerX" secondItem="Aws-SR-qXA" secondAttribute="centerX" id="Fpc-Zr-BLL"/>
+                            <constraint firstItem="8ev-5A-VI9" firstAttribute="top" secondItem="HlE-JK-Vpf" secondAttribute="bottom" constant="36" id="He1-y6-hyJ"/>
+                            <constraint firstItem="Aws-SR-qXA" firstAttribute="top" secondItem="8ev-5A-VI9" secondAttribute="bottom" constant="38" id="IST-yB-fEd"/>
+                            <constraint firstAttribute="centerX" secondItem="8ev-5A-VI9" secondAttribute="centerX" id="bRT-If-gbO"/>
+                            <constraint firstAttribute="centerX" secondItem="Aws-SR-qXA" secondAttribute="centerX" id="tU1-ih-zrF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="UaW-Rd-bXH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yKz-zf-iMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1350" y="-1088"/>
         </scene>
         <!--Opearation View Controller-->
         <scene sceneID="AW8-67-avg">
@@ -180,6 +249,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NVp-ui-Js7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="592" y="-357"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1Ag-SE-ItK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Rd-Dh-8ws" customClass="NavigationController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hVL-dE-GyK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cbe-DR-Wzh" kind="relationship" relationship="rootViewController" id="ago-kn-D6J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C7h-QU-fKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-66" y="-1014"/>
         </scene>
     </scenes>
 </document>
