@@ -20,6 +20,7 @@
 		458040871B52A7ED000D5249 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458040861B52A7ED000D5249 /* Operation.swift */; };
 		4583892A1B5AA3F8008132DF /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458389291B5AA3F8008132DF /* ActivityIndicatorView.swift */; };
 		4583892D1B5AA499008132DF /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4583892C1B5AA499008132DF /* ActivityIndicatorView.swift */; };
+		4583892F1B5AC35F008132DF /* ActivityIndicatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4583892E1B5AC35F008132DF /* ActivityIndicatorTableViewController.swift */; };
 		459B0CFD1B3F1BCA00E1A4D3 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */; };
 		45B2AE4E1B4257B000DE467B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B2AE4D1B4257B000DE467B /* Theme.swift */; };
 		45B2AE531B42597900DE467B /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B2AE521B42597900DE467B /* UIView+Shadow.swift */; };
@@ -69,6 +70,7 @@
 		458040861B52A7ED000D5249 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		458389291B5AA3F8008132DF /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		4583892C1B5AA499008132DF /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		4583892E1B5AC35F008132DF /* ActivityIndicatorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorTableViewController.swift; sourceTree = "<group>"; };
 		458722621B46930700637E38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		45B2AE4D1B4257B000DE467B /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				458389291B5AA3F8008132DF /* ActivityIndicatorView.swift */,
+				4583892E1B5AC35F008132DF /* ActivityIndicatorTableViewController.swift */,
 			);
 			path = "Activity Indicator";
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4583892F1B5AC35F008132DF /* ActivityIndicatorTableViewController.swift in Sources */,
 				45FCCB1A1B53E2600057AAFD /* TestOperation.swift in Sources */,
 				4583892A1B5AA3F8008132DF /* ActivityIndicatorView.swift in Sources */,
 				45FCCB1E1B53E6F30057AAFD /* NavigationController.swift in Sources */,

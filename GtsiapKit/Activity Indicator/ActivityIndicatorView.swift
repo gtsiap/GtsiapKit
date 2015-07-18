@@ -35,6 +35,7 @@ public class ActivityIndicatorView: UIView {
             setTranslatesAutoresizingMaskIntoConstraints(false)
 
             self.superView?.addSubview(self)
+            self.superView?.bringSubviewToFront(self)
             self.hidden = true
 
             let centerX = self.superView!.constraint(self, attribute1: .CenterX)
@@ -66,6 +67,7 @@ public class ActivityIndicatorView: UIView {
         changeTheme()
         self.hidden = false
         self.textLabel.text = self.text
+        self.layer.zPosition = 1.0
         self.activityIndicator.startAnimating()
     }
 
