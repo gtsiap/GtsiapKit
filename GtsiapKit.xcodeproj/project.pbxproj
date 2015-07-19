@@ -22,6 +22,8 @@
 		4583892D1B5AA499008132DF /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4583892C1B5AA499008132DF /* ActivityIndicatorView.swift */; };
 		4583892F1B5AC35F008132DF /* ActivityIndicatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4583892E1B5AC35F008132DF /* ActivityIndicatorTableViewController.swift */; };
 		459B0CFD1B3F1BCA00E1A4D3 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */; };
+		45AC7CD81B5BFAA600647A27 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AC7CD71B5BFAA600647A27 /* ToastView.swift */; };
+		45AC7CDB1B5BFAE800647A27 /* ToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AC7CDA1B5BFAE800647A27 /* ToastViewController.swift */; };
 		45B2AE4E1B4257B000DE467B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B2AE4D1B4257B000DE467B /* Theme.swift */; };
 		45B2AE531B42597900DE467B /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B2AE521B42597900DE467B /* UIView+Shadow.swift */; };
 		45B4045C1B29E68A00DF2CDB /* GtsiapKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 45B4045B1B29E68A00DF2CDB /* GtsiapKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -73,6 +75,8 @@
 		4583892E1B5AC35F008132DF /* ActivityIndicatorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorTableViewController.swift; sourceTree = "<group>"; };
 		458722621B46930700637E38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		45AC7CD71B5BFAA600647A27 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		45AC7CDA1B5BFAE800647A27 /* ToastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
 		45B2AE4D1B4257B000DE467B /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		45B2AE521B42597900DE467B /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		45B404561B29E68A00DF2CDB /* GtsiapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GtsiapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +138,7 @@
 		457AB5721B2B62EC003034F1 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				45AC7CD91B5BFAD200647A27 /* Toast */,
 				458389281B5AA3D9008132DF /* Activity Indicator */,
 				45FCCB161B53E1EF0057AAFD /* Operations */,
 				457AB5751B2B62EC003034F1 /* AppDelegate.swift */,
@@ -198,6 +203,22 @@
 			path = "Activity Indicator";
 			sourceTree = "<group>";
 		};
+		45AC7CD61B5BFA8F00647A27 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				45AC7CD71B5BFAA600647A27 /* ToastView.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		45AC7CD91B5BFAD200647A27 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				45AC7CDA1B5BFAE800647A27 /* ToastViewController.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
 		45B2AE4C1B4257B000DE467B /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +262,7 @@
 		45B404581B29E68A00DF2CDB /* GtsiapKit */ = {
 			isa = PBXGroup;
 			children = (
+				45AC7CD61B5BFA8F00647A27 /* Toast */,
 				4583892B1B5AA499008132DF /* Activity Indicator */,
 				45DBFB571B49116C007C0AF3 /* Operation */,
 				45B2AE511B42597900DE467B /* extensions */,
@@ -492,6 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45AC7CDB1B5BFAE800647A27 /* ToastViewController.swift in Sources */,
 				4583892F1B5AC35F008132DF /* ActivityIndicatorTableViewController.swift in Sources */,
 				45FCCB1A1B53E2600057AAFD /* TestOperation.swift in Sources */,
 				4583892A1B5AA3F8008132DF /* ActivityIndicatorView.swift in Sources */,
@@ -517,6 +540,7 @@
 				458040871B52A7ED000D5249 /* Operation.swift in Sources */,
 				45B404741B29E79F00DF2CDB /* Logger.swift in Sources */,
 				45FCCB151B52E4B90057AAFD /* UIView+AutolayoutUtils.swift in Sources */,
+				45AC7CD81B5BFAA600647A27 /* ToastView.swift in Sources */,
 				457AB5951B2B6365003034F1 /* RevealNavigationController.swift in Sources */,
 				4536C3B91B29E7C2003E8CB7 /* Json.swift in Sources */,
 				4583892D1B5AA499008132DF /* ActivityIndicatorView.swift in Sources */,

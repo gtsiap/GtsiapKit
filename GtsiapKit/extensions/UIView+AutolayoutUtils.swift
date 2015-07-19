@@ -41,4 +41,15 @@ public extension UIView {
         return constraint(view1, attribute1: attribute1, view2: self, multiplier: multiplier)
     }
 
+    func fixedConstraint(attribute: NSLayoutAttribute, constant: CGFloat) -> NSLayoutConstraint {
+        return NSLayoutConstraint(
+            item: self,
+            attribute: attribute,
+            relatedBy: .Equal,
+            toItem: nil,
+            attribute: .NotAnAttribute,
+            multiplier: 1,
+            constant: constant
+        )
+    }
 }
