@@ -45,42 +45,17 @@ public class ToastView: UIView {
         return label
     }()
 
+    public var automaticallyPositionInSuperview: Bool = true
     public var toastViewTheme: ToastViewTheme = ToastViewTheme()
 
-    public var text: String = "" {
-        didSet {
-            self.textLabel.text = self.text
-        }
-    }
-
-    public weak var superView: UIView? {
-        didSet {
-            if superView == nil {
-                return
-            }
-
-            self.hidden = true
-
-            self.superView?.addSubview(self)
-            self.setTranslatesAutoresizingMaskIntoConstraints(false)
-
-            self.textLabel.preferredMaxLayoutWidth = self.superView!.frame.width
-
-            let size = self.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
-
-            let height = self.fixedConstraint(.Height, constant: size.height)
-            let width = self.fixedConstraint(.Width, constant: size.width)
-            let centerX = superView!.constraint(self, attribute1: .CenterX)
-            let bottom = superView!.constraint(self, attribute1: .Bottom, multiplier: 0.90)
-
-            superView?.addConstraints([height, width, centerX, bottom])
-        }
-    }
+    public var text: String = ""
 
     public var timeout: Double = 1.2
     public var toastDidHide: (() -> Void)?
 
     public func showToast() {
+        self.textLabel.text = self.text
+
         changeToastTheme()
 
        let timer = NSTimer(
@@ -93,8 +68,9 @@ public class ToastView: UIView {
 
         NSRunLoop.mainRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
 
-        self.hidden = false
-
+        if self.automaticallyPositionInSuperview {
+            positionInSuperview()
+        }
     }
 
     // MARK: Selector
@@ -110,5 +86,26 @@ public class ToastView: UIView {
         self.backgroundColor = self.toastViewTheme.backgroundColor
         self.layer.cornerRadius = self.toastViewTheme.cornerRadius
         self.textLabel.textColor = self.toastViewTheme.textColor
+    }
+
+    private func positionInSuperview() {
+        if self.superview == nil {
+            return
+        }
+
+        self.superview?.addSubview(self)
+        self.superview?.bringSubviewToFront(self)
+        setTranslatesAutoresizingMaskIntoConstraints(false)
+
+        self.textLabel.preferredMaxLayoutWidth = self.superview!.frame.width
+
+        let size = self.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+
+        let height = self.fixedConstraint(.Height, constant: size.height)
+        let width = self.fixedConstraint(.Width, constant: size.width)
+        let centerX = superview!.constraint(self, attribute1: .CenterX)
+        let centerY = superview!.constraint(self, attribute1: .CenterY, multiplier: 1.4)
+
+        superview?.addConstraints([height, width, centerX, centerY])
     }
 }

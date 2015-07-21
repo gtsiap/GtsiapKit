@@ -38,7 +38,7 @@ class ToastViewController: UIViewController {
     private func createToastView(text: String) {
         let toastView = ToastView()
         toastView.text = text
-        toastView.superView = self.view
+        self.view.addSubview(toastView)
         toastView.toastDidHide = {
             println("Toast did hide")
         }

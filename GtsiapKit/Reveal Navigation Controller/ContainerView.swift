@@ -86,13 +86,14 @@ class ContainerView : UIView {
 
     func showMenuView() {
 
+        self.layoutIfNeeded()
         if doLeftSideAnimation() {
             self.sideConstraint?.constant = self.frame.width * 0.45
         } else {
             self.sideConstraint?.constant = -(self.frame.width * 0.45)
         }
 
-        self.mainView.setNeedsLayout()
+        //self.mainView.setNeedsLayout()
         UIView.animateWithDuration(1.5) {
             self.mainView.layer.shadowOpacity = 0.5
             self.mainView.layer.shadowRadius = 5
@@ -104,7 +105,7 @@ class ContainerView : UIView {
                 self.mainView.layer.shadowOffset = CGSize(width: 10, height: 10)
             }
 
-            self.mainView.layoutIfNeeded()
+            self.layoutIfNeeded()
         }
     }
 

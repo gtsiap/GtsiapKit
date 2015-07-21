@@ -25,33 +25,6 @@ public class ActivityIndicatorView: UIView {
     // MARK: public vars
 
     public var automaticallyPositionInSuperview: Bool = true
-    public weak var superView: UIView? {
-        didSet {
-
-            if !self.automaticallyPositionInSuperview || self.superView == nil {
-                return
-            }
-
-            setTranslatesAutoresizingMaskIntoConstraints(false)
-
-            self.superView?.addSubview(self)
-            self.superView?.bringSubviewToFront(self)
-            self.hidden = true
-
-            let centerX = self.superView!.constraint(self, attribute1: .CenterX)
-            let centerY = self.superView!.constraint(self, attribute1: .CenterY)
-
-            let width = self.superView!.constraint(self, attribute1: .Width,
-                multiplier: 0.4)
-
-            let height = self.superView!.constraint(self, attribute1: .Height,
-                multiplier: 0.2)
-
-
-            self.superView?.addConstraints([centerX, centerY, width, height])
-
-        }
-    }
 
     public var activityIndicatorViewStyle: ActivityIndicatorViewStyle =
         ActivityIndicatorViewStyle()
@@ -65,9 +38,21 @@ public class ActivityIndicatorView: UIView {
     // MARK: funcs
     public func startAnimating() {
         changeTheme()
-        self.hidden = false
         self.textLabel.text = self.text
-        self.layer.zPosition = 1.0
+
+        if self.automaticallyPositionInSuperview {
+            positionInSuperview()
+
+            layoutIfNeeded()
+
+            self.layer.zPosition = 1.0
+            self.hidden = false
+
+            UIView.animateWithDuration(0.5) {
+                self.layoutIfNeeded()
+            }
+        }
+
         self.activityIndicator.startAnimating()
     }
 
@@ -114,5 +99,28 @@ public class ActivityIndicatorView: UIView {
         self.textLabel.textColor = self.activityIndicatorViewStyle.textColor
         self.layer.cornerRadius = self.activityIndicatorViewStyle.cornerRadius
         self.alpha = self.activityIndicatorViewStyle.alpha
+    }
+
+    private func positionInSuperview() {
+        if self.superview == nil {
+            return
+        }
+
+        setTranslatesAutoresizingMaskIntoConstraints(false)
+
+        self.superview?.bringSubviewToFront(self)
+        self.hidden = true
+
+        let centerX = self.superview!.constraint(self, attribute1: .CenterX)
+        let centerY = self.superview!.constraint(self, attribute1: .CenterY)
+
+        let width = self.superview!.constraint(self, attribute1: .Width,
+            multiplier: 0.4)
+
+        let height = self.superview!.constraint(self, attribute1: .Height,
+            multiplier: 0.2)
+
+
+        self.superview?.addConstraints([centerX, centerY, width, height])
     }
 }

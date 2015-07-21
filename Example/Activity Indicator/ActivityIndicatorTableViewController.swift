@@ -16,7 +16,7 @@ class ActivityIndicatorTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.activityIndicator.superView = self.view
+        self.view.addSubview(self.activityIndicator)
         self.activityIndicator.startAnimating()
 
         // Uncomment the following line to preserve selection between presentations

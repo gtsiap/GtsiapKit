@@ -16,7 +16,7 @@ class ActivityIndicatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.activityIndicator = ActivityIndicatorView()
-        self.activityIndicator.superView = self.view
+        self.view.addSubview(self.activityIndicator)
     }
 
     @IBAction func startAnimating(sender: AnyObject) {
