@@ -17,14 +17,16 @@ class ContainerView : UIView {
             self.mainView.setTranslatesAutoresizingMaskIntoConstraints(false)
             addSubview(self.mainView)
 
-            addConstraint(constraint(self.mainView, attribute1: .Height))
-            addConstraint(constraint(self.mainView, attribute1: .Width))
+            addConstraint(constraint(self.mainView, attribute1: .Top))
+            addConstraint(constraint(self.mainView, attribute1: .Bottom))
 
             if doLeftSideAnimation() {
-                self.sideConstraint = constraint(self.mainView, attribute1: .Left)
+                addConstraint(constraint(self.mainView, attribute1: .Right))
             } else {
-                self.sideConstraint = constraint(self.mainView, attribute1: .Right)
+                addConstraint(constraint(self.mainView, attribute1: .Left))
             }
+
+            self.sideConstraint = constraint(self.mainView, attribute1: .CenterX)
 
             addConstraint(self.sideConstraint!)
 
@@ -41,8 +43,10 @@ class ContainerView : UIView {
             addConstraint(constraint(self.menuView, attribute1: .Width, multiplier: 0.45))
             addConstraint(constraint(self.menuView, attribute1: .Height, constant: -self.menuY))
 
-            if !doLeftSideAnimation() {
-              addConstraint(constraint(self.menuView, attribute1: .Right, view2: self, attribute2: .Right))
+            if doLeftSideAnimation() {
+                addConstraint(constraint(self.menuView,attribute1: .Left))
+            } else {
+                addConstraint(constraint(self.menuView, attribute1: .Right))
             }
         }
     }
@@ -88,12 +92,11 @@ class ContainerView : UIView {
 
         self.layoutIfNeeded()
         if doLeftSideAnimation() {
-            self.sideConstraint?.constant = self.frame.width * 0.45
+            self.sideConstraint?.constant = ((self.frame.width * 0.45) / 2)
         } else {
-            self.sideConstraint?.constant = -(self.frame.width * 0.45)
+            self.sideConstraint?.constant = -((self.frame.width * 0.45) / 2)
         }
 
-        //self.mainView.setNeedsLayout()
         UIView.animateWithDuration(1.5) {
             self.mainView.layer.shadowOpacity = 0.5
             self.mainView.layer.shadowRadius = 5
