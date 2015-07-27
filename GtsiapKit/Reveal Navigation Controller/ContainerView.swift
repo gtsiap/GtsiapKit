@@ -53,6 +53,7 @@ class ContainerView : UIView {
 
     // MARK: private vars
     private var sideConstraint: NSLayoutConstraint?
+    private var originMaskToBounds: Bool = true
 
     private var menuY: CGFloat {
         if let revealVC = revealNavigationController() {
@@ -84,11 +85,13 @@ class ContainerView : UIView {
 
                 self.mainView.layoutIfNeeded()
             }, completion: { _ in
+                self.mainView.layer.masksToBounds = self.originMaskToBounds
                 self.menuDidHide?()
         })
     }
 
     func showMenuView() {
+        self.originMaskToBounds = self.mainView.layer.masksToBounds
 
         self.layoutIfNeeded()
         if doLeftSideAnimation() {
@@ -101,6 +104,8 @@ class ContainerView : UIView {
             self.mainView.layer.shadowOpacity = 0.5
             self.mainView.layer.shadowRadius = 5
             self.mainView.layer.shadowColor = UIColor.blackColor().CGColor
+
+            self.mainView.layer.masksToBounds = false
 
             if self.doLeftSideAnimation() {
                 self.mainView.layer.shadowOffset = CGSize(width: -10, height: 10)
