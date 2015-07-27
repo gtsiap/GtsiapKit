@@ -109,6 +109,11 @@ public class RevealNavigationController: UINavigationController {
 
 extension RevealNavigationController: UINavigationControllerDelegate {
     public func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+        if viewController.navigationItem.rightBarButtonItems != nil {
+            viewController.navigationItem.rightBarButtonItems?.append(self.revealBarItem)
+            return
+        }
+        
         viewController.navigationItem.rightBarButtonItem = self.revealBarItem
     }
 }
