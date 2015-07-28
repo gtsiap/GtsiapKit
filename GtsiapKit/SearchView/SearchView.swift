@@ -101,8 +101,8 @@ public class SearchView: UIView {
     }
 
     private func showControls() {
-        self.viewController?.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.searchBar.setShowsCancelButton(true, animated: false)
+        self.viewController?.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.searchBar.setShowsCancelButton(true, animated: true)
     }
 
     private func hideControls() {
