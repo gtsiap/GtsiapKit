@@ -31,6 +31,8 @@
 		45B404621B29E68A00DF2CDB /* GtsiapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B404561B29E68A00DF2CDB /* GtsiapKit.framework */; };
 		45B404691B29E68A00DF2CDB /* GtsiapKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B404681B29E68A00DF2CDB /* GtsiapKitTests.swift */; };
 		45B404741B29E79F00DF2CDB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B404731B29E79F00DF2CDB /* Logger.swift */; };
+		45E8706B1B67620C001315DE /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8706A1B67620C001315DE /* SearchView.swift */; };
+		45E8706E1B6765CC001315DE /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8706D1B6765CC001315DE /* SearchTableViewController.swift */; };
 		45FCCB151B52E4B90057AAFD /* UIView+AutolayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FCCB141B52E4B90057AAFD /* UIView+AutolayoutUtils.swift */; };
 		45FCCB191B53E2600057AAFD /* OperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FCCB171B53E2600057AAFD /* OperationViewController.swift */; };
 		45FCCB1A1B53E2600057AAFD /* TestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FCCB181B53E2600057AAFD /* TestOperation.swift */; };
@@ -88,6 +90,8 @@
 		45B404671B29E68A00DF2CDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45B404681B29E68A00DF2CDB /* GtsiapKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GtsiapKitTests.swift; sourceTree = "<group>"; };
 		45B404731B29E79F00DF2CDB /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		45E8706A1B67620C001315DE /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		45E8706D1B6765CC001315DE /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		45FCCB141B52E4B90057AAFD /* UIView+AutolayoutUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutolayoutUtils.swift"; sourceTree = "<group>"; };
 		45FCCB171B53E2600057AAFD /* OperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationViewController.swift; sourceTree = "<group>"; };
 		45FCCB181B53E2600057AAFD /* TestOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestOperation.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 		457AB5721B2B62EC003034F1 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				45E8706C1B6765B6001315DE /* SearchView */,
 				45AC7CD91B5BFAD200647A27 /* Toast */,
 				458389281B5AA3D9008132DF /* Activity Indicator */,
 				45FCCB161B53E1EF0057AAFD /* Operations */,
@@ -265,6 +270,7 @@
 		45B404581B29E68A00DF2CDB /* GtsiapKit */ = {
 			isa = PBXGroup;
 			children = (
+				45E870691B6761F5001315DE /* SearchView */,
 				45AC7CD61B5BFA8F00647A27 /* Toast */,
 				4583892B1B5AA499008132DF /* Activity Indicator */,
 				45DBFB571B49116C007C0AF3 /* Operation */,
@@ -318,6 +324,22 @@
 				458040861B52A7ED000D5249 /* Operation.swift */,
 			);
 			path = Operation;
+			sourceTree = "<group>";
+		};
+		45E870691B6761F5001315DE /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				45E8706A1B67620C001315DE /* SearchView.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		45E8706C1B6765B6001315DE /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				45E8706D1B6765CC001315DE /* SearchTableViewController.swift */,
+			);
+			path = SearchView;
 			sourceTree = "<group>";
 		};
 		45FCCB161B53E1EF0057AAFD /* Operations */ = {
@@ -518,6 +540,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45AC7CDB1B5BFAE800647A27 /* ToastViewController.swift in Sources */,
+				45E8706E1B6765CC001315DE /* SearchTableViewController.swift in Sources */,
 				4583892F1B5AC35F008132DF /* ActivityIndicatorTableViewController.swift in Sources */,
 				45FCCB1A1B53E2600057AAFD /* TestOperation.swift in Sources */,
 				45861B6F1B5E6FC5004EAAD7 /* ToastTableViewController.swift in Sources */,
@@ -550,6 +573,7 @@
 				4583892D1B5AA499008132DF /* ActivityIndicatorView.swift in Sources */,
 				45B2AE4E1B4257B000DE467B /* Theme.swift in Sources */,
 				459B0CFD1B3F1BCA00E1A4D3 /* ContainerView.swift in Sources */,
+				45E8706B1B67620C001315DE /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
