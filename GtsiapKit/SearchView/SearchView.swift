@@ -121,15 +121,13 @@ extension SearchView: UISearchBarDelegate {
         self.showControls()
     }
 
-    public func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        hideControls()
-        hideContentView()
-
-        self.didStopSearching?()
-    }
-
     public func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         self.searchBar.text = ""
         self.searchBar.endEditing(true)
+        
+        hideControls()
+        hideContentView()
+        
+        self.didStopSearching?()
     }
 }
