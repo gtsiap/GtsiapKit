@@ -20,6 +20,11 @@ public class SearchView: UIView {
             oldValue?.removeFromSuperview()
 
             self.contentView!.setTranslatesAutoresizingMaskIntoConstraints(false)
+            self.contentView!.backgroundColor =
+                UIColor.UIColorFromRGB(
+                    0xC9C9CE,
+                    alpha: 1
+                )
         }
     }
 
@@ -83,7 +88,7 @@ public class SearchView: UIView {
         let widthConstraint = constraint(self.contentView!, attribute1: .Width)
         let centerXConstraint = constraint(self.contentView!, attribute1: .CenterX)
 
-        let topConstraint = constraint(self.contentView!, attribute1: .Top, view2: self.searchBar, attribute2: .Bottom, multiplier: 1.1)
+        let topConstraint = constraint(self.contentView!, attribute1: .Top, view2: self.searchBar, attribute2: .Bottom)
         self.contentViewBarBottomConstraint = constraint(self.contentView!, attribute1: .Bottom)
 
         addConstraints([widthConstraint, centerXConstraint, topConstraint])
@@ -124,10 +129,10 @@ extension SearchView: UISearchBarDelegate {
     public func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         self.searchBar.text = ""
         self.searchBar.endEditing(true)
-        
+
         hideControls()
         hideContentView()
-        
+
         self.didStopSearching?()
     }
 }
