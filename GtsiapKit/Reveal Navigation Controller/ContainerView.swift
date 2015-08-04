@@ -74,7 +74,7 @@ class ContainerView : UIView {
         self.sideConstraint?.constant = 0
 
         self.mainView.setNeedsLayout()
-        UIView.animateWithDuration(1.5,
+        UIView.animateWithDuration(RevealNavigationController.animationDuration,
             delay: 0,
             usingSpringWithDamping: 0.8,
             initialSpringVelocity: 0,
@@ -100,7 +100,7 @@ class ContainerView : UIView {
             self.sideConstraint?.constant = -((self.frame.width * 0.45) / 2)
         }
 
-        UIView.animateWithDuration(1.5) {
+        UIView.animateWithDuration(RevealNavigationController.animationDuration) {
             self.mainView.layer.shadowOpacity = 0.5
             self.mainView.layer.shadowRadius = 5
             self.mainView.layer.shadowColor = UIColor.blackColor().CGColor

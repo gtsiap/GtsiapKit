@@ -629,7 +629,7 @@
         <!--Navigation Controller-->
         <scene sceneID="pbN-Hj-UHH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DlG-yC-71H" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DlG-yC-71H" customClass="NavigationController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j9r-1w-hjP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

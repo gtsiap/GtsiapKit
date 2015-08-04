@@ -15,6 +15,8 @@ public enum RevealMenuSide {
 
 public class RevealNavigationController: UINavigationController {
 
+    public static var animationDuration: Double = 0.1
+
     public lazy var revealBarItem: UIBarButtonItem = {
         let frameworkBundle = NSBundle(forClass: RevealNavigationController.self)
         let revealIcon = UIImage(named: "reveal-icon", inBundle: frameworkBundle, compatibleWithTraitCollection: nil)
@@ -91,8 +93,6 @@ public class RevealNavigationController: UINavigationController {
         mainView?.setTranslatesAutoresizingMaskIntoConstraints(true)
         mainView?.removeFromSuperview()
         self.topViewController.view = mainView
-
-        self.menuViewController.removeFromParentViewController()
     }
 
     private func checkForContainerView() -> (Bool, ContainerView?) {
