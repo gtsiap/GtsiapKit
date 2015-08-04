@@ -66,7 +66,6 @@ class SearchTableViewController: UITableViewController {
 
         self.tableView.tableHeaderView = self.searchView
         sizeHeaderToFit()
-
     }
 
     // MARK: - Table view data source

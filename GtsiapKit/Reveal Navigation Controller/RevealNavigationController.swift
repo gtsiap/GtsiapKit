@@ -15,7 +15,7 @@ public enum RevealMenuSide {
 
 public class RevealNavigationController: UINavigationController {
 
-    public static var animationDuration: Double = 0.1
+    public static var animationDuration: Double = 0.7
 
     public lazy var revealBarItem: UIBarButtonItem = {
         let frameworkBundle = NSBundle(forClass: RevealNavigationController.self)
@@ -38,6 +38,8 @@ public class RevealNavigationController: UINavigationController {
 
         self.delegate = self
     }
+
+    public var hideRevealBarItem: Bool = false
 
     func showMenu() {
         let currentViewController = self.topViewController
@@ -104,6 +106,10 @@ public class RevealNavigationController: UINavigationController {
 
 extension RevealNavigationController: UINavigationControllerDelegate {
     public func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+
+        if self.hideRevealBarItem {
+            return
+        }
 
         if let barButtonsItems = viewController.navigationItem.rightBarButtonItems as? [UIBarButtonItem] {
             if !contains(barButtonsItems, self.revealBarItem) {
