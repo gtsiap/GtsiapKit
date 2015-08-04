@@ -25,6 +25,7 @@
 		45861B6F1B5E6FC5004EAAD7 /* ToastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45861B6E1B5E6FC5004EAAD7 /* ToastTableViewController.swift */; };
 		459595071B70D43E000BC798 /* GtsiapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B404561B29E68A00DF2CDB /* GtsiapKit.framework */; };
 		459595081B70D43E000BC798 /* GtsiapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45B404561B29E68A00DF2CDB /* GtsiapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4595950D1B70E2BB000BC798 /* RevealToggleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4595950C1B70E2BB000BC798 /* RevealToggleViewController.swift */; };
 		459B0CFD1B3F1BCA00E1A4D3 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */; };
 		45AC7CD81B5BFAA600647A27 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AC7CD71B5BFAA600647A27 /* ToastView.swift */; };
 		45AC7CDB1B5BFAE800647A27 /* ToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AC7CDA1B5BFAE800647A27 /* ToastViewController.swift */; };
@@ -103,6 +104,7 @@
 		4583892E1B5AC35F008132DF /* ActivityIndicatorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorTableViewController.swift; sourceTree = "<group>"; };
 		45861B6E1B5E6FC5004EAAD7 /* ToastTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastTableViewController.swift; sourceTree = "<group>"; };
 		458722621B46930700637E38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		4595950C1B70E2BB000BC798 /* RevealToggleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealToggleViewController.swift; sourceTree = "<group>"; };
 		459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		45AC7CD71B5BFAA600647A27 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		45AC7CDA1B5BFAE800647A27 /* ToastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				45FCCB161B53E1EF0057AAFD /* Operations */,
 				457AB5751B2B62EC003034F1 /* AppDelegate.swift */,
 				45FCCB1D1B53E6F30057AAFD /* NavigationController.swift */,
+				4595950C1B70E2BB000BC798 /* RevealToggleViewController.swift */,
 				457AB5791B2B62EC003034F1 /* Main.storyboard */,
 				457AB57C1B2B62EC003034F1 /* Images.xcassets */,
 				457AB57E1B2B62EC003034F1 /* LaunchScreen.xib */,
@@ -570,6 +573,7 @@
 			files = (
 				45AC7CDB1B5BFAE800647A27 /* ToastViewController.swift in Sources */,
 				45E8706E1B6765CC001315DE /* SearchTableViewController.swift in Sources */,
+				4595950D1B70E2BB000BC798 /* RevealToggleViewController.swift in Sources */,
 				4583892F1B5AC35F008132DF /* ActivityIndicatorTableViewController.swift in Sources */,
 				45FCCB1A1B53E2600057AAFD /* TestOperation.swift in Sources */,
 				45861B6F1B5E6FC5004EAAD7 /* ToastTableViewController.swift in Sources */,

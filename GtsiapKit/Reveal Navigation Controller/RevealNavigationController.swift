@@ -39,7 +39,17 @@ public class RevealNavigationController: UINavigationController {
         self.delegate = self
     }
 
-    public var hideRevealBarItem: Bool = false
+    public var hideRevealBarItem: Bool = false {
+        didSet {
+            println(self.hideRevealBarItem)
+            if self.hideRevealBarItem {
+                removeRevealBarItem()
+            } else {
+                addRevealBarItem(self.topViewController)
+            }
+
+        }
+    }
 
     func showMenu() {
         let currentViewController = self.topViewController
@@ -102,14 +112,24 @@ public class RevealNavigationController: UINavigationController {
 
         return (isContainerView, currentViewController.view as? ContainerView)
     }
-}
 
-extension RevealNavigationController: UINavigationControllerDelegate {
-    public func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+    private func removeRevealBarItem() {
+        var buttons = self.topViewController.navigationItem.rightBarButtonItems as? [UIBarButtonItem]
 
-        if self.hideRevealBarItem {
+        if buttons == nil {
+            self.topViewController.navigationItem.rightBarButtonItem = nil
             return
         }
+
+        for (index, button) in enumerate(buttons!) {
+            if button == self.revealBarItem {
+                self.topViewController.navigationItem.rightBarButtonItems?.removeAtIndex(index)
+                return
+            }
+        }
+    }
+
+    private func addRevealBarItem(viewController: UIViewController) {
 
         if let barButtonsItems = viewController.navigationItem.rightBarButtonItems as? [UIBarButtonItem] {
             if !contains(barButtonsItems, self.revealBarItem) {
@@ -120,6 +140,14 @@ extension RevealNavigationController: UINavigationControllerDelegate {
 
         viewController.navigationItem.rightBarButtonItem = self.revealBarItem
     }
+}
+
+extension RevealNavigationController: UINavigationControllerDelegate {
+
+    public func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+        addRevealBarItem(viewController)
+    }
+
 }
 
 extension UIViewController {
