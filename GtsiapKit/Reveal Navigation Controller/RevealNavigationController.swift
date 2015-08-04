@@ -39,11 +39,6 @@ public class RevealNavigationController: UINavigationController {
         self.delegate = self
     }
 
-    public override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func showMenu() {
         let currentViewController = self.topViewController
         let mainView = currentViewController.view
