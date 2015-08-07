@@ -13,11 +13,14 @@ class RevealToggleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .Search,
+            target: nil,
+            action: nil
+        )
     }
 
     @IBAction func toggleButton(sender: UIButton) {
-        println("edw")
         revealNavigationController().hideRevealBarItem = !revealNavigationController().hideRevealBarItem
     }
 }

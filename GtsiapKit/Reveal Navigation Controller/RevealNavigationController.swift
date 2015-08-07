@@ -41,7 +41,6 @@ public class RevealNavigationController: UINavigationController {
 
     public var hideRevealBarItem: Bool = false {
         didSet {
-            println(self.hideRevealBarItem)
             if self.hideRevealBarItem {
                 removeRevealBarItem()
             } else {
@@ -117,8 +116,13 @@ public class RevealNavigationController: UINavigationController {
         var buttons = self.topViewController.navigationItem.rightBarButtonItems as? [UIBarButtonItem]
 
         if buttons == nil {
-            self.topViewController.navigationItem.rightBarButtonItem = nil
-            return
+            buttons = self.navigationBar.items as? [UIBarButtonItem]
+            
+            if buttons == nil {
+                self.topViewController.navigationItem.rightBarButtonItem = nil
+                return
+            }
+            
         }
 
         for (index, button) in enumerate(buttons!) {
