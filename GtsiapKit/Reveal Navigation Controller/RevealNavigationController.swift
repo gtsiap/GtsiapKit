@@ -113,24 +113,33 @@ public class RevealNavigationController: UINavigationController {
     }
 
     private func removeRevealBarItem() {
+        func removeItem(inout buttons: [UIBarButtonItem], target: UIBarButtonItem) {
+            for (index, button) in enumerate(buttons) {
+                if button == self.revealBarItem {
+                    buttons.removeAtIndex(index)
+                    return
+                }
+            }
+        }
+
         var buttons = self.topViewController.navigationItem.rightBarButtonItems as? [UIBarButtonItem]
 
         if buttons == nil {
             buttons = self.navigationBar.items as? [UIBarButtonItem]
-            
+
             if buttons == nil {
                 self.topViewController.navigationItem.rightBarButtonItem = nil
                 return
+            } else {
+                removeItem(&buttons!, self.revealBarItem)
+                self.navigationBar.items = buttons
             }
-            
+
+        } else {
+            removeItem(&buttons!, self.revealBarItem)
+            self.topViewController.navigationItem.rightBarButtonItems = buttons
         }
 
-        for (index, button) in enumerate(buttons!) {
-            if button == self.revealBarItem {
-                self.topViewController.navigationItem.rightBarButtonItems?.removeAtIndex(index)
-                return
-            }
-        }
     }
 
     private func addRevealBarItem(viewController: UIViewController) {
