@@ -26,8 +26,8 @@
 		459595071B70D43E000BC798 /* GtsiapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B404561B29E68A00DF2CDB /* GtsiapKit.framework */; };
 		459595081B70D43E000BC798 /* GtsiapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45B404561B29E68A00DF2CDB /* GtsiapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4595950D1B70E2BB000BC798 /* RevealToggleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4595950C1B70E2BB000BC798 /* RevealToggleViewController.swift */; };
-		459809F61B75FA0200FE0C4C /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459809F51B75FA0200FE0C4C /* FeedbackManager.swift */; };
-		459809F81B76138500FE0C4C /* DeviceGuru.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459809F71B76138500FE0C4C /* DeviceGuru.swift */; };
+		459809FC1B7639E300FE0C4C /* DeviceGuru.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459809FA1B7639E300FE0C4C /* DeviceGuru.swift */; };
+		459809FD1B7639E300FE0C4C /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459809FB1B7639E300FE0C4C /* FeedbackManager.swift */; };
 		459B0CFD1B3F1BCA00E1A4D3 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */; };
 		45AC7CD81B5BFAA600647A27 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AC7CD71B5BFAA600647A27 /* ToastView.swift */; };
 		45AC7CDB1B5BFAE800647A27 /* ToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AC7CDA1B5BFAE800647A27 /* ToastViewController.swift */; };
@@ -107,8 +107,8 @@
 		45861B6E1B5E6FC5004EAAD7 /* ToastTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastTableViewController.swift; sourceTree = "<group>"; };
 		458722621B46930700637E38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		4595950C1B70E2BB000BC798 /* RevealToggleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealToggleViewController.swift; sourceTree = "<group>"; };
-		459809F51B75FA0200FE0C4C /* FeedbackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
-		459809F71B76138500FE0C4C /* DeviceGuru.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceGuru.swift; sourceTree = "<group>"; };
+		459809FA1B7639E300FE0C4C /* DeviceGuru.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceGuru.swift; sourceTree = "<group>"; };
+		459809FB1B7639E300FE0C4C /* FeedbackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
 		459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		45AC7CD71B5BFAA600647A27 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		45AC7CDA1B5BFAE800647A27 /* ToastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
@@ -243,13 +243,13 @@
 			path = "Activity Indicator";
 			sourceTree = "<group>";
 		};
-		459809F41B75F9E600FE0C4C /* Feedback */ = {
+		459809F91B7639E300FE0C4C /* FeedbackManager */ = {
 			isa = PBXGroup;
 			children = (
-				459809F51B75FA0200FE0C4C /* FeedbackManager.swift */,
-				459809F71B76138500FE0C4C /* DeviceGuru.swift */,
+				459809FA1B7639E300FE0C4C /* DeviceGuru.swift */,
+				459809FB1B7639E300FE0C4C /* FeedbackManager.swift */,
 			);
-			path = Feedback;
+			path = FeedbackManager;
 			sourceTree = "<group>";
 		};
 		45AC7CD61B5BFA8F00647A27 /* Toast */ = {
@@ -313,7 +313,7 @@
 		45B404581B29E68A00DF2CDB /* GtsiapKit */ = {
 			isa = PBXGroup;
 			children = (
-				459809F41B75F9E600FE0C4C /* Feedback */,
+				459809F91B7639E300FE0C4C /* FeedbackManager */,
 				45E870691B6761F5001315DE /* SearchView */,
 				45AC7CD61B5BFA8F00647A27 /* Toast */,
 				4583892B1B5AA499008132DF /* Activity Indicator */,
@@ -612,16 +612,16 @@
 			files = (
 				45B2AE531B42597900DE467B /* UIView+Shadow.swift in Sources */,
 				458040871B52A7ED000D5249 /* Operation.swift in Sources */,
+				459809FD1B7639E300FE0C4C /* FeedbackManager.swift in Sources */,
 				45B404741B29E79F00DF2CDB /* Logger.swift in Sources */,
 				4570D2B41B6CB97B00F6AA37 /* UIColor+Rgb.swift in Sources */,
 				45FCCB151B52E4B90057AAFD /* UIView+AutolayoutUtils.swift in Sources */,
-				459809F81B76138500FE0C4C /* DeviceGuru.swift in Sources */,
 				45AC7CD81B5BFAA600647A27 /* ToastView.swift in Sources */,
+				459809FC1B7639E300FE0C4C /* DeviceGuru.swift in Sources */,
 				457AB5951B2B6365003034F1 /* RevealNavigationController.swift in Sources */,
 				4536C3B91B29E7C2003E8CB7 /* Json.swift in Sources */,
 				4583892D1B5AA499008132DF /* ActivityIndicatorView.swift in Sources */,
 				45B2AE4E1B4257B000DE467B /* Theme.swift in Sources */,
-				459809F61B75FA0200FE0C4C /* FeedbackManager.swift in Sources */,
 				459B0CFD1B3F1BCA00E1A4D3 /* ContainerView.swift in Sources */,
 				45E8706B1B67620C001315DE /* SearchView.swift in Sources */,
 			);
