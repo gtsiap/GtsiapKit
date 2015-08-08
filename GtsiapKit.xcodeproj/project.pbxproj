@@ -29,6 +29,7 @@
 		459809FC1B7639E300FE0C4C /* DeviceGuru.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459809FA1B7639E300FE0C4C /* DeviceGuru.swift */; };
 		459809FD1B7639E300FE0C4C /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459809FB1B7639E300FE0C4C /* FeedbackManager.swift */; };
 		459809FF1B763D8200FE0C4C /* RevealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459809FE1B763D8200FE0C4C /* RevealTableViewController.swift */; };
+		45980A521B7653BF00FE0C4C /* NSDate+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45980A511B7653BF00FE0C4C /* NSDate+toString.swift */; };
 		459B0CFD1B3F1BCA00E1A4D3 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */; };
 		45AC7CD81B5BFAA600647A27 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AC7CD71B5BFAA600647A27 /* ToastView.swift */; };
 		45AC7CDB1B5BFAE800647A27 /* ToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AC7CDA1B5BFAE800647A27 /* ToastViewController.swift */; };
@@ -111,6 +112,7 @@
 		459809FA1B7639E300FE0C4C /* DeviceGuru.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceGuru.swift; sourceTree = "<group>"; };
 		459809FB1B7639E300FE0C4C /* FeedbackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
 		459809FE1B763D8200FE0C4C /* RevealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealTableViewController.swift; sourceTree = "<group>"; };
+		45980A511B7653BF00FE0C4C /* NSDate+toString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+toString.swift"; sourceTree = "<group>"; };
 		459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		45AC7CD71B5BFAA600647A27 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		45AC7CDA1B5BFAE800647A27 /* ToastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				45B2AE521B42597900DE467B /* UIView+Shadow.swift */,
 				45FCCB141B52E4B90057AAFD /* UIView+AutolayoutUtils.swift */,
 				4570D2B31B6CB97B00F6AA37 /* UIColor+Rgb.swift */,
+				45980A511B7653BF00FE0C4C /* NSDate+toString.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				458040871B52A7ED000D5249 /* Operation.swift in Sources */,
 				459809FF1B763D8200FE0C4C /* RevealTableViewController.swift in Sources */,
 				459809FD1B7639E300FE0C4C /* FeedbackManager.swift in Sources */,
+				45980A521B7653BF00FE0C4C /* NSDate+toString.swift in Sources */,
 				45B404741B29E79F00DF2CDB /* Logger.swift in Sources */,
 				4570D2B41B6CB97B00F6AA37 /* UIColor+Rgb.swift in Sources */,
 				45FCCB151B52E4B90057AAFD /* UIView+AutolayoutUtils.swift in Sources */,
