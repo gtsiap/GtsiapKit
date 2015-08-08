@@ -29,7 +29,7 @@ public class RevealNavigationController: UINavigationController {
         )
     }()
 
-    public var menuViewController: UIViewController!
+    public var menuViewController: RevealTableViewController!
 
     public var revealMenuSide: RevealMenuSide = RevealMenuSide.Right
 
@@ -52,6 +52,7 @@ public class RevealNavigationController: UINavigationController {
 
     func showMenu() {
         let currentViewController = self.topViewController
+        self.menuViewController.currentViewController = currentViewController
         let mainView = currentViewController.view
 
         if mainView is ContainerView {

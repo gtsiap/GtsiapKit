@@ -15,7 +15,7 @@ class NavigationController: RevealNavigationController {
         super.viewDidLoad()
 
         self.menuViewController =
-            storyboard?.instantiateViewControllerWithIdentifier("menuViewController") as? UIViewController
+            storyboard?.instantiateViewControllerWithIdentifier("menuViewController") as? RevealTableViewController
 
         self.revealMenuSide = RevealMenuSide.Right
     }

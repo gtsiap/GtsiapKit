@@ -28,6 +28,7 @@
 		4595950D1B70E2BB000BC798 /* RevealToggleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4595950C1B70E2BB000BC798 /* RevealToggleViewController.swift */; };
 		459809FC1B7639E300FE0C4C /* DeviceGuru.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459809FA1B7639E300FE0C4C /* DeviceGuru.swift */; };
 		459809FD1B7639E300FE0C4C /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459809FB1B7639E300FE0C4C /* FeedbackManager.swift */; };
+		459809FF1B763D8200FE0C4C /* RevealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459809FE1B763D8200FE0C4C /* RevealTableViewController.swift */; };
 		459B0CFD1B3F1BCA00E1A4D3 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */; };
 		45AC7CD81B5BFAA600647A27 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AC7CD71B5BFAA600647A27 /* ToastView.swift */; };
 		45AC7CDB1B5BFAE800647A27 /* ToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AC7CDA1B5BFAE800647A27 /* ToastViewController.swift */; };
@@ -109,6 +110,7 @@
 		4595950C1B70E2BB000BC798 /* RevealToggleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealToggleViewController.swift; sourceTree = "<group>"; };
 		459809FA1B7639E300FE0C4C /* DeviceGuru.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceGuru.swift; sourceTree = "<group>"; };
 		459809FB1B7639E300FE0C4C /* FeedbackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
+		459809FE1B763D8200FE0C4C /* RevealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealTableViewController.swift; sourceTree = "<group>"; };
 		459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		45AC7CD71B5BFAA600647A27 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		45AC7CDA1B5BFAE800647A27 /* ToastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				457AB5941B2B6365003034F1 /* RevealNavigationController.swift */,
 				457AB5991B2B658D003034F1 /* Media.xcassets */,
 				459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */,
+				459809FE1B763D8200FE0C4C /* RevealTableViewController.swift */,
 			);
 			path = "Reveal Navigation Controller";
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 			files = (
 				45B2AE531B42597900DE467B /* UIView+Shadow.swift in Sources */,
 				458040871B52A7ED000D5249 /* Operation.swift in Sources */,
+				459809FF1B763D8200FE0C4C /* RevealTableViewController.swift in Sources */,
 				459809FD1B7639E300FE0C4C /* FeedbackManager.swift in Sources */,
 				45B404741B29E79F00DF2CDB /* Logger.swift in Sources */,
 				4570D2B41B6CB97B00F6AA37 /* UIColor+Rgb.swift in Sources */,
