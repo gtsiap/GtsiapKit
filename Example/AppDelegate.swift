@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+        FeedbackManager.recipients = ["giorgos.tsiapaliokas@mykolab.com"]
+        FeedbackManager.ccRecipients = ["giorgos.tsiapaliokas@mykolab.com"]
+
         return true
     }
 

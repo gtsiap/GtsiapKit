@@ -26,12 +26,33 @@
                                     <action selector="toggleButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gOT-ks-8I8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sms-V3-cjI">
+                                <rect key="frame" x="228" y="367" width="145" height="30"/>
+                                <state key="normal" title="Show mail composer">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showMailComposer:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jtU-0g-FPy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Sms-V3-cjI" secondAttribute="centerY" id="ATd-J6-Anu"/>
                             <constraint firstItem="MZE-6q-UCc" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Fo0-X4-lU0"/>
+                            <constraint firstItem="Sms-V3-cjI" firstAttribute="centerX" secondItem="MZE-6q-UCc" secondAttribute="centerX" id="ORm-un-8Jp"/>
+                            <constraint firstItem="Sms-V3-cjI" firstAttribute="top" secondItem="MZE-6q-UCc" secondAttribute="bottom" constant="52" id="bfn-vE-7Ld"/>
+                            <constraint firstItem="Sms-V3-cjI" firstAttribute="top" secondItem="MZE-6q-UCc" secondAttribute="bottom" constant="52" id="bxv-p4-JGB"/>
+                            <constraint firstItem="MZE-6q-UCc" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="vEA-G2-uW5"/>
                             <constraint firstItem="MZE-6q-UCc" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="yR0-4e-Rdn"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Fo0-X4-lU0"/>
+                                <exclude reference="ATd-J6-Anu"/>
+                                <exclude reference="bfn-vE-7Ld"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Rw6-rj-q18"/>
                     <keyCommands/>

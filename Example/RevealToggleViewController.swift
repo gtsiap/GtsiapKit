@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import GtsiapKit
 
 class RevealToggleViewController: UIViewController {
+
+    private lazy var feedbackManager: FeedbackManager = {
+        let manager = FeedbackManager(viewController: self)
+        return manager
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,4 +29,9 @@ class RevealToggleViewController: UIViewController {
     @IBAction func toggleButton(sender: UIButton) {
         revealNavigationController().hideRevealBarItem = !revealNavigationController().hideRevealBarItem
     }
+
+    @IBAction func showMailComposer(sender: UIButton) {
+        self.feedbackManager.showMailComposer()
+    }
+
 }
