@@ -9,5 +9,6 @@
 import UIKit
 
 public class RevealTableViewController: UITableViewController {
-    public var currentViewController: UIViewController?
+    public weak var currentViewController: UIViewController?
+    public weak var revealViewController: RevealNavigationController?
 }

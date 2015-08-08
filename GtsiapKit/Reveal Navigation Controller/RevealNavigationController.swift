@@ -53,6 +53,8 @@ public class RevealNavigationController: UINavigationController {
     func showMenu() {
         let currentViewController = self.topViewController
         self.menuViewController.currentViewController = currentViewController
+        self.menuViewController.revealViewController = self
+
         let mainView = currentViewController.view
 
         if mainView is ContainerView {
@@ -70,19 +72,21 @@ public class RevealNavigationController: UINavigationController {
         containerView.menuView = self.menuViewController.view
         containerView.mainView = mainView
 
-        containerView.menuDidHide = {
-            self.restoreViewHierarchy()
-        }
-
         containerView.showMenuView()
     }
 
-    func hideMenu() {
+    public func hideMenu(competionHandler: (() -> ())? = nil) {
         let (isContainerView: Bool, containerView: ContainerView?) = checkForContainerView()
 
         if !isContainerView {
             return
         }
+
+        containerView!.menuDidHide = {
+            self.restoreViewHierarchy()
+            competionHandler?()
+        }
+
 
         containerView?.hideMenuView()
     }
