@@ -94,6 +94,8 @@
 		45D4BCFF1B78D41A006BE819 /* ToastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
 		45D4BD091B78D433006BE819 /* GtsiapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = GtsiapKit.xcodeproj; sourceTree = "<group>"; };
 		45D4BD1E1B78D5B6006BE819 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		45D4BD221B78D932006BE819 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Main.strings; sourceTree = "<group>"; };
+		45D4BD231B78D932006BE819 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,6 +411,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4546A1521B78D21000DCE648 /* Base */,
+				45D4BD221B78D932006BE819 /* el */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4546A1571B78D21000DCE648 /* Base */,
+				45D4BD231B78D932006BE819 /* el */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
