@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4536C3B91B29E7C2003E8CB7 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4536C3B81B29E7C2003E8CB7 /* Json.swift */; };
+		453F68351B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */; };
 		4570D2B41B6CB97B00F6AA37 /* UIColor+Rgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4570D2B31B6CB97B00F6AA37 /* UIColor+Rgb.swift */; };
 		457AB5951B2B6365003034F1 /* RevealNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457AB5941B2B6365003034F1 /* RevealNavigationController.swift */; };
 		457AB59A1B2B658D003034F1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 457AB5991B2B658D003034F1 /* Media.xcassets */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		4536C3B81B29E7C2003E8CB7 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
+		453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+isConnectedToNetwork.swift"; sourceTree = "<group>"; };
 		4570D2B31B6CB97B00F6AA37 /* UIColor+Rgb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Rgb.swift"; sourceTree = "<group>"; };
 		457AB5941B2B6365003034F1 /* RevealNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealNavigationController.swift; sourceTree = "<group>"; };
 		457AB5991B2B658D003034F1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				45FCCB141B52E4B90057AAFD /* UIView+AutolayoutUtils.swift */,
 				4570D2B31B6CB97B00F6AA37 /* UIColor+Rgb.swift */,
 				45980A511B7653BF00FE0C4C /* NSDate+toString.swift */,
+				453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				45980A521B7653BF00FE0C4C /* NSDate+toString.swift in Sources */,
 				45B404741B29E79F00DF2CDB /* Logger.swift in Sources */,
 				4570D2B41B6CB97B00F6AA37 /* UIColor+Rgb.swift in Sources */,
+				453F68351B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift in Sources */,
 				45FCCB151B52E4B90057AAFD /* UIView+AutolayoutUtils.swift in Sources */,
 				45AC7CD81B5BFAA600647A27 /* ToastView.swift in Sources */,
 				459809FC1B7639E300FE0C4C /* DeviceGuru.swift in Sources */,
