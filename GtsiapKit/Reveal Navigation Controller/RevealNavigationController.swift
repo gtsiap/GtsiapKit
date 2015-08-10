@@ -85,7 +85,7 @@ public class RevealNavigationController: UINavigationController {
         }
     }
 
-    public func hideMenu() {
+    public func hideMenu(completionHandler: (()->())? = nil) {
         let (isContainerView: Bool, containerView: ContainerView?) = checkForContainerView()
 
         if !isContainerView {

@@ -70,10 +70,11 @@ class ContainerView : UIView {
 
     // MARK: hide/show menu
     func hideMenuView() {
+        self.mainView.layoutIfNeeded()
+
         // go back to (0, 0) position
         self.sideConstraint?.constant = 0
 
-        self.mainView.setNeedsLayout()
         UIView.animateWithDuration(RevealNavigationController.animationDuration,
             delay: 0,
             usingSpringWithDamping: 0.8,
