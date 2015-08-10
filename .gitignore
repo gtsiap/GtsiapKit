@@ -4,3 +4,5 @@
 .DS_Store
 */Carthage/Build/*
 */Carthage/Checkouts/*
+Carthage/Build/*
+Carthage/Checkouts/*
