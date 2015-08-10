@@ -104,6 +104,8 @@ public class RevealNavigationController: UINavigationController {
         mainView?.setTranslatesAutoresizingMaskIntoConstraints(true)
         mainView?.removeFromSuperview()
         self.topViewController.view = mainView
+        mainView?.setNeedsLayout()
+        mainView?.layoutIfNeeded()
     }
 
     private func checkForContainerView() -> (Bool, ContainerView?) {
