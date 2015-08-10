@@ -90,7 +90,7 @@ class ContainerView : UIView {
         })
     }
 
-    func showMenuView() {
+    func showMenuView(completionHandler: (()->())?) {
         self.originMaskToBounds = self.mainView.layer.masksToBounds
 
         self.layoutIfNeeded()
@@ -100,7 +100,7 @@ class ContainerView : UIView {
             self.sideConstraint?.constant = -((self.frame.width * 0.45) / 2)
         }
 
-        UIView.animateWithDuration(RevealNavigationController.animationDuration) {
+        UIView.animateWithDuration(RevealNavigationController.animationDuration, animations: {
             self.mainView.layer.shadowOpacity = 0.5
             self.mainView.layer.shadowRadius = 5
             self.mainView.layer.shadowColor = UIColor.blackColor().CGColor
@@ -114,6 +114,8 @@ class ContainerView : UIView {
             }
 
             self.layoutIfNeeded()
+        }) { _ in
+            completionHandler?()
         }
     }
 

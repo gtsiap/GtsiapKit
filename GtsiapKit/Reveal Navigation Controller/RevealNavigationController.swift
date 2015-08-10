@@ -29,6 +29,12 @@ public class RevealNavigationController: UINavigationController {
         )
     }()
 
+    public var menuDidHide: (() -> ())?
+    public var menuWillHide: (() -> ())?
+
+    public var menuDidAppear: (() -> ())?
+    public var menuWillAppear: (() -> ())?
+
     public var menuViewController: RevealTableViewController!
 
     public var revealMenuSide: RevealMenuSide = RevealMenuSide.Right
@@ -64,6 +70,8 @@ public class RevealNavigationController: UINavigationController {
             return
         }
 
+        self.menuWillAppear?()
+
         mainView.setTranslatesAutoresizingMaskIntoConstraints(false)
 
         let containerView = ContainerView()
@@ -72,7 +80,9 @@ public class RevealNavigationController: UINavigationController {
         containerView.menuView = self.menuViewController.view
         containerView.mainView = mainView
 
-        containerView.showMenuView()
+        containerView.showMenuView() {
+            self.menuDidAppear?()
+        }
     }
 
     public func hideMenu(competionHandler: (() -> ())? = nil) {
@@ -82,9 +92,12 @@ public class RevealNavigationController: UINavigationController {
             return
         }
 
+        self.menuWillHide?()
+
         containerView!.menuDidHide = {
             self.restoreViewHierarchy()
             competionHandler?()
+            self.menuDidHide?()
         }
 
 
@@ -104,8 +117,6 @@ public class RevealNavigationController: UINavigationController {
         mainView?.setTranslatesAutoresizingMaskIntoConstraints(true)
         mainView?.removeFromSuperview()
         self.topViewController.view = mainView
-        mainView?.setNeedsLayout()
-        mainView?.layoutIfNeeded()
     }
 
     private func checkForContainerView() -> (Bool, ContainerView?) {
