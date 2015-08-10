@@ -23,7 +23,6 @@
 		4583892D1B5AA499008132DF /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4583892C1B5AA499008132DF /* ActivityIndicatorView.swift */; };
 		4583892F1B5AC35F008132DF /* ActivityIndicatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4583892E1B5AC35F008132DF /* ActivityIndicatorTableViewController.swift */; };
 		45861B6F1B5E6FC5004EAAD7 /* ToastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45861B6E1B5E6FC5004EAAD7 /* ToastTableViewController.swift */; };
-		459595071B70D43E000BC798 /* GtsiapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B404561B29E68A00DF2CDB /* GtsiapKit.framework */; };
 		459595081B70D43E000BC798 /* GtsiapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45B404561B29E68A00DF2CDB /* GtsiapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4595950D1B70E2BB000BC798 /* RevealToggleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4595950C1B70E2BB000BC798 /* RevealToggleViewController.swift */; };
 		459809FC1B7639E300FE0C4C /* DeviceGuru.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459809FA1B7639E300FE0C4C /* DeviceGuru.swift */; };
@@ -139,7 +138,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				457AB5961B2B63AA003034F1 /* GtsiapKit.framework in Frameworks */,
-				459595071B70D43E000BC798 /* GtsiapKit.framework in Frameworks */,
 				451EFA891B2F168B00AD3DBB /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,7 +493,7 @@
 		45B4044D1B29E68A00DF2CDB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Giorgos Tsiapaliokas";
 				TargetAttributes = {
 					457AB5701B2B62EC003034F1 = {
