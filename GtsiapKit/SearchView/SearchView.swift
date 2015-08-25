@@ -19,7 +19,7 @@ public class SearchView: UIView {
 
             oldValue?.removeFromSuperview()
 
-            self.contentView!.setTranslatesAutoresizingMaskIntoConstraints(false)
+            self.contentView!.translatesAutoresizingMaskIntoConstraints = false
             self.contentView!.backgroundColor =
                 UIColor.UIColorFromRGB(
                     0xC9C9CE,
@@ -48,7 +48,7 @@ public class SearchView: UIView {
         initSearchBar()
 
         addSubview(self.searchBar)
-        self.searchBar.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.searchBar.translatesAutoresizingMaskIntoConstraints = false
 
         let widthConstraint = constraint(self.searchBar, attribute1: .Width)
         let centerXConstraint = constraint(self.searchBar, attribute1: .CenterX)
@@ -59,7 +59,7 @@ public class SearchView: UIView {
         addConstraints([widthConstraint, centerXConstraint, topConstraint, searchBarBottomConstraint])
     }
 
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 

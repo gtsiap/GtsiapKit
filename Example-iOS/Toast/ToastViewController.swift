@@ -40,7 +40,7 @@ class ToastViewController: UIViewController {
         toastView.text = text
         self.view.addSubview(toastView)
         toastView.toastDidHide = {
-            println("Toast did hide")
+            print("Toast did hide")
         }
         toastView.showToast()
     }

@@ -50,14 +50,16 @@ public class RevealNavigationController: UINavigationController {
             if self.hideRevealBarItem {
                 removeRevealBarItem()
             } else {
-                addRevealBarItem(self.topViewController)
+                addRevealBarItem(self.topViewController!)
             }
 
         }
     }
 
     func showMenu() {
-        let currentViewController = self.topViewController
+        print(self.topViewController?.navigationItem.rightBarButtonItems)
+
+        let currentViewController = self.topViewController!
         self.menuViewController.currentViewController = currentViewController
         self.menuViewController.revealViewController = self
 
@@ -72,7 +74,7 @@ public class RevealNavigationController: UINavigationController {
 
         self.menuWillAppear?()
 
-        mainView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        mainView.translatesAutoresizingMaskIntoConstraints = false
 
         let containerView = ContainerView()
         currentViewController.view = containerView
@@ -86,7 +88,7 @@ public class RevealNavigationController: UINavigationController {
     }
 
     public func hideMenu(completionHandler: (()->())? = nil) {
-        let (isContainerView: Bool, containerView: ContainerView?) = checkForContainerView()
+        let (isContainerView, containerView): (Bool, ContainerView?) = checkForContainerView()
 
         if !isContainerView {
             return
@@ -102,7 +104,7 @@ public class RevealNavigationController: UINavigationController {
     }
 
     private func restoreViewHierarchy() {
-        let (isContainerView: Bool, containerView: ContainerView?) = checkForContainerView()
+        let (isContainerView, containerView): (Bool, ContainerView?) = checkForContainerView()
 
 
         // this check is a bit too much but better safe than sorry.
@@ -111,14 +113,14 @@ public class RevealNavigationController: UINavigationController {
         }
 
         let mainView = containerView?.mainView
-        mainView?.setTranslatesAutoresizingMaskIntoConstraints(true)
+        mainView?.translatesAutoresizingMaskIntoConstraints = true
         mainView?.removeFromSuperview()
-        self.topViewController.view = mainView
+        self.topViewController?.view = mainView
         self.menuDidHide?()
     }
 
     private func checkForContainerView() -> (Bool, ContainerView?) {
-        let currentViewController = self.topViewController
+        let currentViewController = self.topViewController!
         var isContainerView: Bool = false
 
         if currentViewController.view is ContainerView {
@@ -130,38 +132,29 @@ public class RevealNavigationController: UINavigationController {
 
     private func removeRevealBarItem() {
         func removeItem(inout buttons: [UIBarButtonItem], target: UIBarButtonItem) {
-            for (index, button) in enumerate(buttons) {
+            for (index, button) in buttons.enumerate() {
                 if button == self.revealBarItem {
                     buttons.removeAtIndex(index)
                     return
                 }
             }
         }
-
-        var buttons = self.topViewController.navigationItem.rightBarButtonItems as? [UIBarButtonItem]
-
-        if buttons == nil {
-            buttons = self.navigationBar.items as? [UIBarButtonItem]
-
-            if buttons == nil {
-                self.topViewController.navigationItem.rightBarButtonItem = nil
-                return
-            } else {
-                removeItem(&buttons!, self.revealBarItem)
-                self.navigationBar.items = buttons
-            }
-
-        } else {
-            removeItem(&buttons!, self.revealBarItem)
-            self.topViewController.navigationItem.rightBarButtonItems = buttons
+        
+        guard var buttonItems =
+            self.topViewController?.navigationItem.rightBarButtonItems else
+        {
+            return
         }
-
+        
+        removeItem(&buttonItems, target: self.revealBarItem)
+        
+        self.topViewController?.navigationItem.rightBarButtonItems = buttonItems
     }
 
     private func addRevealBarItem(viewController: UIViewController) {
 
-        if let barButtonsItems = viewController.navigationItem.rightBarButtonItems as? [UIBarButtonItem] {
-            if !contains(barButtonsItems, self.revealBarItem) {
+        if let barButtonsItems = viewController.navigationItem.rightBarButtonItems {
+            if !barButtonsItems.contains(self.revealBarItem) {
                 viewController.navigationItem.rightBarButtonItems?.append(self.revealBarItem)
                 return
             }

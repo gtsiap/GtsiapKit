@@ -17,12 +17,12 @@ class OpearationViewController: UIViewController {
 
         let operation = TestOperation()
         operation.completionBlock = {
-            println("operation finished")
+            print("operation finished")
         }
 
         let op2 = TestOperation()
         op2.completionBlock = {
-            println("op2 finished")
+            print("op2 finished")
         }
 
         op2.addDependency(operation)

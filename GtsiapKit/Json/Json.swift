@@ -70,14 +70,19 @@ public class Json {
 
     public init?(nsData: NSData) {
         var jsonError: NSError? = nil
-        let jsonData: AnyObject? = NSJSONSerialization.JSONObjectWithData(nsData,
-            options: NSJSONReadingOptions.AllowFragments,
-            error: &jsonError)
+        let jsonData: AnyObject?
+        do {
+            jsonData = try NSJSONSerialization.JSONObjectWithData(nsData,
+                        options: NSJSONReadingOptions.AllowFragments)
+        } catch let error as NSError {
+            jsonError = error
+            jsonData = nil
+        }
 
         if jsonError == nil {
             self.data = jsonData
         } else {
-            println(jsonError)
+            print(jsonError)
             return nil
         }
     }
@@ -141,8 +146,8 @@ public class Json {
     }
 }
 
-extension Json : Printable {
+extension Json : CustomStringConvertible {
     public var description: String {
-        return toString(data)
+        return String(data)
     }
 }

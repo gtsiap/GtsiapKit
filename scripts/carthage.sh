@@ -1,6 +1,5 @@
 #!/bin/sh
 
-pushd Example/
-carthage update
-popd
+carthage checkout
+carthage build
 

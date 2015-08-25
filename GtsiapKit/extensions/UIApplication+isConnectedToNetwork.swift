@@ -22,16 +22,20 @@ extension UIApplication {
         request.timeoutInterval = 4
 
         var response: NSURLResponse?
+        
+        do {
+            try NSURLConnection.sendSynchronousRequest(
+                request, returningResponse: &response) as NSData?
 
-        var data = NSURLConnection.sendSynchronousRequest(
-            request, returningResponse: &response, error: nil) as NSData?
-
-        if let httpResponse = response as? NSHTTPURLResponse {
-            if httpResponse.statusCode == 200 {
-                status = true
+            if let httpResponse = response as? NSHTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+                    status = true
+                }
             }
+        } catch {
+            status = false
         }
-
+        
         return status
     }
 
