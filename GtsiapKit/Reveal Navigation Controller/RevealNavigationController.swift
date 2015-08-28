@@ -96,6 +96,7 @@ public class RevealNavigationController: UINavigationController {
 
         containerView!.menuDidHide = {
             self.restoreViewHierarchy()
+            completionHandler?()
         }
 
         containerView?.hideMenuView()
