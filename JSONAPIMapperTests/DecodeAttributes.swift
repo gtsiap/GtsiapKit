@@ -38,7 +38,7 @@ class DecodeAttributes: XCTestCase {
 
     func test2Author() {
         let author = DecodeAttributes.post.author
-        
+
         XCTAssertNotNil(author?.firstName)
         XCTAssertEqual(author?.firstName, "Dan")
         

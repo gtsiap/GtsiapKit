@@ -21,10 +21,10 @@ extension Post: Mappable {
         return "posts"
     }
     
-    static var relationships: [Relationship] {
+    static var relationships: [String : Mappable.Type] {
         return [
-            Relationship(resourceClass: Comment.self, jsonField: "comments", oneToOne: false),
-            Relationship(resourceClass: Person.self, jsonField: "author", oneToOne: true)
+            "comments": Comment.self,
+            "author": Person.self
         ]
     }
     

@@ -18,8 +18,8 @@ extension Comment: Mappable {
         return "comments"
     }
     
-    static var relationships: [Relationship] {
-        return []
+    static var relationships: [String : Mappable.Type] {
+        return [String : Mappable.Type]()
     }
     
     func map(map: Map) {

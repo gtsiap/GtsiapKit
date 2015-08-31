@@ -38,8 +38,8 @@
 		45B43CBB1B91E847008AC2DC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CBA1B91E847008AC2DC /* Post.swift */; settings = {ASSET_TAGS = (); }; };
 		45B43CBD1B91E8B7008AC2DC /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CBC1B91E8B7008AC2DC /* Person.swift */; settings = {ASSET_TAGS = (); }; };
 		45B43CBF1B91E8F4008AC2DC /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CBE1B91E8F4008AC2DC /* Comment.swift */; settings = {ASSET_TAGS = (); }; };
-		45B43CC11B91E9C0008AC2DC /* Relationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CC01B91E9C0008AC2DC /* Relationship.swift */; settings = {ASSET_TAGS = (); }; };
 		45B43CC51B9207DD008AC2DC /* RelationshipJSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CC41B9207DD008AC2DC /* RelationshipJSONObject.swift */; settings = {ASSET_TAGS = (); }; };
+		45B43D061B94831D008AC2DC /* MapFromJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43D051B94831D008AC2DC /* MapFromJson.swift */; settings = {ASSET_TAGS = (); }; };
 		45E8706B1B67620C001315DE /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8706A1B67620C001315DE /* SearchView.swift */; };
 		45FCCB151B52E4B90057AAFD /* UIView+AutolayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FCCB141B52E4B90057AAFD /* UIView+AutolayoutUtils.swift */; };
 /* End PBXBuildFile section */
@@ -99,8 +99,8 @@
 		45B43CBA1B91E847008AC2DC /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		45B43CBC1B91E8B7008AC2DC /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		45B43CBE1B91E8F4008AC2DC /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		45B43CC01B91E9C0008AC2DC /* Relationship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Relationship.swift; sourceTree = "<group>"; };
 		45B43CC41B9207DD008AC2DC /* RelationshipJSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipJSONObject.swift; sourceTree = "<group>"; };
+		45B43D051B94831D008AC2DC /* MapFromJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapFromJson.swift; sourceTree = "<group>"; };
 		45E8706A1B67620C001315DE /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		45FCCB141B52E4B90057AAFD /* UIView+AutolayoutUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutolayoutUtils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -286,8 +286,8 @@
 				45B43CA11B91C5D7008AC2DC /* Mapper.swift */,
 				45B43CA31B91C64D008AC2DC /* Mappable.swift */,
 				45B43CA51B91C6C5008AC2DC /* Map.swift */,
+				45B43D051B94831D008AC2DC /* MapFromJson.swift */,
 				45B43CB11B91D4F7008AC2DC /* Operators.swift */,
-				45B43CC01B91E9C0008AC2DC /* Relationship.swift */,
 				45B43CC41B9207DD008AC2DC /* RelationshipJSONObject.swift */,
 			);
 			path = JSONAPIMapper;
@@ -541,7 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45B43CA21B91C5D7008AC2DC /* Mapper.swift in Sources */,
-				45B43CC11B91E9C0008AC2DC /* Relationship.swift in Sources */,
+				45B43D061B94831D008AC2DC /* MapFromJson.swift in Sources */,
 				45B43CC51B9207DD008AC2DC /* RelationshipJSONObject.swift in Sources */,
 				45B43CB21B91D4F7008AC2DC /* Operators.swift in Sources */,
 				45B43CA41B91C64D008AC2DC /* Mappable.swift in Sources */,
@@ -676,6 +676,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = GtsiapKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.mathlogic.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -692,6 +693,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = GtsiapKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.mathlogic.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -746,7 +748,7 @@
 				);
 				INFOPLIST_FILE = JSONAPIMapper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.mathlogic.JSONAPIMapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -769,7 +771,7 @@
 				);
 				INFOPLIST_FILE = JSONAPIMapper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.mathlogic.JSONAPIMapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -845,6 +847,7 @@
 				45B43C9B1B91C3E4008AC2DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		45B43C9C1B91C3E4008AC2DC /* Build configuration list for PBXNativeTarget "JSONAPIMapperTests" */ = {
 			isa = XCConfigurationList;
@@ -853,6 +856,7 @@
 				45B43C9E1B91C3E4008AC2DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

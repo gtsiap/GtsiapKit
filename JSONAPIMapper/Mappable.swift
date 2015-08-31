@@ -6,10 +6,10 @@
 //  Copyright © 2015 Giorgos Tsiapaliokas. All rights reserved.
 //
 
-public protocol Mappable {
+public protocol Mappable: class {
     init()
     func map(map: Map)
     
     static var resource: String { get }
-    static var relationships: [Relationship] { get }
+    static var relationships: [String : Mappable.Type] { get }
 }
