@@ -17,14 +17,18 @@ class RelationshipJSONObject {
         self.id = id
         self.jsonField = jsonField
     }
-
+    
     class func fromJSON(JSON: [String : AnyObject]) -> [RelationshipJSONObject]? {
-        var objects = [RelationshipJSONObject]()
         
+        var objects = [RelationshipJSONObject]()
+
         for it in JSON.keys {
-                        
+            
+            guard let jsonObject = JSON[it] as? [String : AnyObject] else {
+                return nil
+            }
+            
             if
-                let jsonObject = JSON[it] as? [String : AnyObject],
                 let jsonData = jsonObject["data"] as? [String : AnyObject],
                 let type = jsonData["type"] as? String,
                 let jsonId = jsonData["id"] as? String,
@@ -36,22 +40,20 @@ class RelationshipJSONObject {
                     id: id
                 )
                 objects.append(object)
-            } else if let jsonData = JSON[it] as? [[String : AnyObject]] {
+            } else if let jsonData = jsonObject["data"] as? [[String : AnyObject]] {
+                
                 for dataItem in jsonData {
-                    
                     let object = RelationshipJSONObject(
                         resourceType: dataItem["type"] as! String,
                         jsonField: it,
-                        id: dataItem["id"] as! Int
+                        id: Int(dataItem["id"] as! String)!
                     )
-                
+                    
                     objects.append(object)
-                }
-            }
-            return objects
-        }
+                } // end for
+            } // end if
+        } // end for keys
         
-        return nil
+        return objects
     }
-    
 }

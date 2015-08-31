@@ -42,13 +42,12 @@ public class Map {
         return self
     }
     
-    func resourceValue<T> () -> T? {
+    func resourceValue<T>() -> T? {
         return self.fieldsData[self.currentKey] as? T
     }
     
-    func relationshipValue<T: Mappable> () -> T? {
-        let relationshipObject = T()
-
+    func relationshipValue<T: Mappable>() -> T? {
+        
         guard let relationships = self.relationships else {
             return nil
         }
@@ -57,10 +56,33 @@ public class Map {
             $0.jsonField == self.currentKey
         }[0]
         
-        // we have found the resource type
-        // now we have to find the included data
+        return relationshipValueCommon(relationship)
+    }
+    
+    func relationshipValue<T: Mappable> () -> [T]? {
+        guard let relationships = self.relationships else {
+            return nil
+        }
         
         
+        let relationshipList = relationships.filter() {
+            $0.jsonField == self.currentKey
+        }
+        
+        var relationshipObjects = [T]()
+        for relationship in relationshipList {
+            let objectOptional: T? = relationshipValueCommon(relationship)
+            
+            guard let object = objectOptional else { continue }
+            
+            relationshipObjects.append(object)
+        }
+        
+        guard relationshipObjects.count != 0 else { return nil }
+        return relationshipObjects
+    }
+    
+    private func relationshipValueCommon<T: Mappable>(relationship: RelationshipJSONObject) -> T? {
         guard let includedData = self.includedData else {
             return nil
         }
@@ -70,20 +92,16 @@ public class Map {
                 let dataId = includeDataIt["id"] as? String,
                 let id = Int(dataId),
                 let resourceType = includeDataIt["type"] as? String
+                where id == relationship.id && resourceType == relationship.resourceType
             {
-                if id == relationship.id && resourceType == relationship.resourceType {
-                    let map = Map(resourceData: includeDataIt)
-                    relationshipObject.map(map)
-                    
-                    return relationshipObject
-                }
-            }
-        }
+                let map = Map(resourceData: includeDataIt)
+                let relationshipObject = T()
+                relationshipObject.map(map)
+                
+                return relationshipObject
+            } // end if
+        } // end for
         
-        return nil
-    }
-
-    func relationshipValue<T: Mappable> () -> [T]? {
         return nil
     }
 
