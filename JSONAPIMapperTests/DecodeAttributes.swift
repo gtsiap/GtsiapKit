@@ -24,9 +24,7 @@ class DecodeAttributes: XCTestCase {
         DecodeAttributes.JSON = jsonObject as! [String : AnyObject]
     }
     
-    func test1Post() {
-        // TODO use the right XCTAssert
-        
+    func test1Post() {        
         let posts = Mapper<Post>().fromJSON(DecodeAttributes.JSON)
         let post = posts[0]
         
@@ -40,19 +38,26 @@ class DecodeAttributes: XCTestCase {
 
     func test2Author() {
         let author = DecodeAttributes.post.author
-        XCTAssert((author?.firstName != nil))
-        XCTAssert((author?.lastName != nil))
-        XCTAssert((author?.twitter != nil))
         
         XCTAssertNotNil(author?.firstName)
+        XCTAssertEqual(author?.firstName, "Dan")
+        
         XCTAssertNotNil(author?.lastName)
+        XCTAssertEqual(author?.lastName, "Gebhardt")
+        
         XCTAssertNotNil(author?.twitter)
+        XCTAssertEqual(author?.twitter, "dgeb")
     }
     
     func test3Comments() {
         let comments = DecodeAttributes.post.comments
         XCTAssertEqual(comments?.count, 2)
+        
         XCTAssertNotNil(comments?[0].body)
+        XCTAssertEqual(comments?[0].body, "First!")
+        
         XCTAssertNotNil(comments?[1].body)
+        XCTAssertEqual(comments?[1].body, "I like XML better")
+
     }
 }

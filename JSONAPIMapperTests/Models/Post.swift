@@ -29,7 +29,8 @@ extension Post: Mappable {
     }
     
     func map(map: Map) {
-        self.title  <~ map["title"]
-        self.author <~ map["author"]
+        self.title    <~ map["title"]
+        self.author   <~ map["author"]
+        self.comments <~ map["comments"]
     }
 }
