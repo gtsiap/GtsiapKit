@@ -10,6 +10,7 @@ public protocol Mappable: class {
     init()
     func map(map: Map)
     
+    var id: Int? { get set }
     static var resource: String { get }
     static var relationships: [String : Mappable.Type] { get }
 }

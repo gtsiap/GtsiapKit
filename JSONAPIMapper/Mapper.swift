@@ -22,7 +22,7 @@ public class Mapper<T: Mappable>  {
             for resourceData in dataArray {
                 
                 let object = T()
-                let map = Map(resourceData: resourceData)
+                let map = Map(resourceData: resourceData, mappableObject: object)
                 map.includedData = includedData
                 object.map(map)
 

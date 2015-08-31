@@ -9,7 +9,10 @@
 import JSONAPIMapper
 
 final class Comment {
+    
+    var id: Int?
     var body: String?
+    
 }
 
 extension Comment: Mappable {

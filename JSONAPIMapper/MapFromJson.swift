@@ -62,10 +62,9 @@ extension Map {
                 let resourceType = includeDataIt["type"] as? String
                 where id == relationship.id && resourceType == relationship.resourceType
             {
-                let map = Map(resourceData: includeDataIt)
                 let relationshipObject = T()
+                let map = Map(resourceData: includeDataIt, mappableObject: relationshipObject)
                 relationshipObject.map(map)
-                
                 return relationshipObject
             } // end if
         } // end for

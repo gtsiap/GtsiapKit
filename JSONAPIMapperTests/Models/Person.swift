@@ -9,9 +9,12 @@
 import JSONAPIMapper
 
 final class Person {
+
+    var id: Int?
     var firstName: String?
     var lastName: String?
     var twitter: String?
+    
 }
 
 extension Person: Mappable {

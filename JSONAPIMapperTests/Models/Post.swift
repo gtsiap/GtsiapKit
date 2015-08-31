@@ -9,10 +9,12 @@
 import JSONAPIMapper
 
 final class Post {
-    
+
+    var id: Int?
     var title: String?
     var author: Person?
     var comments: [Comment]?
+    
 }
 
 extension Post: Mappable {
@@ -27,7 +29,7 @@ extension Post: Mappable {
             "author": Person.self
         ]
     }
-    
+
     func map(map: Map) {
         self.title    <~ map["title"]
         self.author   <~ map["author"]

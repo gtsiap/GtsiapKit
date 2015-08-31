@@ -32,9 +32,12 @@ public class Map {
     
     private let resourceData: [String : AnyObject]
     
-    init(resourceData: [String : AnyObject]) {
+    init(resourceData: [String : AnyObject], mappableObject: Mappable) {
         self.resourceData = resourceData
         self.currentKey = ""
+        
+        guard let jsonId = self.resourceData["id"] as? String, id = Int(jsonId) else { fatalError("WTF") }
+        mappableObject.id = id
     }
     
     
