@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		451E59271B95D0B10012167B /* Encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451E59261B95D0B10012167B /* Encode.swift */; settings = {ASSET_TAGS = (); }; };
+		451E59291B95D3EE0012167B /* MapToJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451E59281B95D3EE0012167B /* MapToJson.swift */; settings = {ASSET_TAGS = (); }; };
 		4536C3B91B29E7C2003E8CB7 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4536C3B81B29E7C2003E8CB7 /* Json.swift */; };
 		453F68351B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */; };
 		4570D2B41B6CB97B00F6AA37 /* UIColor+Rgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4570D2B31B6CB97B00F6AA37 /* UIColor+Rgb.swift */; };
@@ -28,7 +30,7 @@
 		45B404741B29E79F00DF2CDB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B404731B29E79F00DF2CDB /* Logger.swift */; };
 		45B43C8B1B91C3E3008AC2DC /* JSONAPIMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 45B43C8A1B91C3E3008AC2DC /* JSONAPIMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45B43C921B91C3E3008AC2DC /* JSONAPIMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B43C881B91C3E3008AC2DC /* JSONAPIMapper.framework */; settings = {ASSET_TAGS = (); }; };
-		45B43C971B91C3E3008AC2DC /* DecodeAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43C961B91C3E3008AC2DC /* DecodeAttributes.swift */; };
+		45B43C971B91C3E3008AC2DC /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43C961B91C3E3008AC2DC /* Decode.swift */; };
 		45B43CA01B91C57C008AC2DC /* MappingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43C9F1B91C57C008AC2DC /* MappingType.swift */; settings = {ASSET_TAGS = (); }; };
 		45B43CA21B91C5D7008AC2DC /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CA11B91C5D7008AC2DC /* Mapper.swift */; settings = {ASSET_TAGS = (); }; };
 		45B43CA41B91C64D008AC2DC /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CA31B91C64D008AC2DC /* Mappable.swift */; settings = {ASSET_TAGS = (); }; };
@@ -62,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		451E59261B95D0B10012167B /* Encode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encode.swift; sourceTree = "<group>"; };
+		451E59281B95D3EE0012167B /* MapToJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapToJson.swift; sourceTree = "<group>"; };
 		4536C3B81B29E7C2003E8CB7 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 		453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+isConnectedToNetwork.swift"; sourceTree = "<group>"; };
 		4570D2B31B6CB97B00F6AA37 /* UIColor+Rgb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Rgb.swift"; sourceTree = "<group>"; };
@@ -88,7 +92,7 @@
 		45B43C8A1B91C3E3008AC2DC /* JSONAPIMapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONAPIMapper.h; sourceTree = "<group>"; };
 		45B43C8C1B91C3E3008AC2DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45B43C911B91C3E3008AC2DC /* JSONAPIMapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONAPIMapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		45B43C961B91C3E3008AC2DC /* DecodeAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeAttributes.swift; sourceTree = "<group>"; };
+		45B43C961B91C3E3008AC2DC /* Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decode.swift; sourceTree = "<group>"; };
 		45B43C981B91C3E3008AC2DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45B43C9F1B91C57C008AC2DC /* MappingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappingType.swift; sourceTree = "<group>"; };
 		45B43CA11B91C5D7008AC2DC /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
@@ -286,6 +290,7 @@
 				45B43CA11B91C5D7008AC2DC /* Mapper.swift */,
 				45B43CA31B91C64D008AC2DC /* Mappable.swift */,
 				45B43CA51B91C6C5008AC2DC /* Map.swift */,
+				451E59281B95D3EE0012167B /* MapToJson.swift */,
 				45B43D051B94831D008AC2DC /* MapFromJson.swift */,
 				45B43CB11B91D4F7008AC2DC /* Operators.swift */,
 				45B43CC41B9207DD008AC2DC /* RelationshipJSONObject.swift */,
@@ -298,8 +303,9 @@
 			children = (
 				45B43CB91B91E838008AC2DC /* Models */,
 				45B43CB51B91E207008AC2DC /* json.txt */,
-				45B43C961B91C3E3008AC2DC /* DecodeAttributes.swift */,
+				45B43C961B91C3E3008AC2DC /* Decode.swift */,
 				45B43C981B91C3E3008AC2DC /* Info.plist */,
+				451E59261B95D0B10012167B /* Encode.swift */,
 			);
 			path = JSONAPIMapperTests;
 			sourceTree = "<group>";
@@ -545,6 +551,7 @@
 				45B43CC51B9207DD008AC2DC /* RelationshipJSONObject.swift in Sources */,
 				45B43CB21B91D4F7008AC2DC /* Operators.swift in Sources */,
 				45B43CA41B91C64D008AC2DC /* Mappable.swift in Sources */,
+				451E59291B95D3EE0012167B /* MapToJson.swift in Sources */,
 				45B43CA61B91C6C5008AC2DC /* Map.swift in Sources */,
 				45B43CA01B91C57C008AC2DC /* MappingType.swift in Sources */,
 			);
@@ -555,7 +562,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				45B43CBD1B91E8B7008AC2DC /* Person.swift in Sources */,
-				45B43C971B91C3E3008AC2DC /* DecodeAttributes.swift in Sources */,
+				451E59271B95D0B10012167B /* Encode.swift in Sources */,
+				45B43C971B91C3E3008AC2DC /* Decode.swift in Sources */,
 				45B43CBB1B91E847008AC2DC /* Post.swift in Sources */,
 				45B43CBF1B91E8F4008AC2DC /* Comment.swift in Sources */,
 			);

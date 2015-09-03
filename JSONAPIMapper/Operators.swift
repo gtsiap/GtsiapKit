@@ -11,13 +11,25 @@ import UIKit
 infix operator <~ {}
 
 public func <~ <T>(inout left: T?, right: Map) {
-    left = right.resourceValue()
+    if let mapFromJSON = right as? MapFromJSON {
+        left = mapFromJSON.resourceValue()
+    } else if let mapToJSON = right as? MapToJSON {
+        mapToJSON.retrieveValue(left as? AnyObject)
+    }
 }
 
 public func <~ <T: Mappable>(inout left: T?, right: Map) {
-    left = right.relationshipValue()
+    if let mapFromJSON = right as? MapFromJSON {
+        left = mapFromJSON.relationshipValue()
+    } else {
+        
+    }
 }
 
 public func <~ <T: Mappable>(inout left: [T]?, right: Map) {
-    left = right.relationshipValue()
+    if let mapFromJSON = right as? MapFromJSON {
+        left = mapFromJSON.relationshipValue()
+    } else {
+        
+    }
 }

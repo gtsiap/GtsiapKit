@@ -22,10 +22,13 @@ public class Mapper<T: Mappable>  {
             for resourceData in dataArray {
                 
                 let object = T()
-                let map = Map(resourceData: resourceData, mappableObject: object)
-                map.includedData = includedData
-                object.map(map)
+                let map = MapFromJSON(
+                    resourceData: resourceData,
+                    includedData: includedData,
+                    mappableObject: object
+                )
 
+                object.map(map)
                 objects.append(object)
                 
             }
@@ -34,4 +37,9 @@ public class Mapper<T: Mappable>  {
         return objects
     }
     
+    public func toJSON(object: Mappable) -> String {
+       // let map = Map(object: object)
+     //   object.map(map)
+        return ""
+    }
 }

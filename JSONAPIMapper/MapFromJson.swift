@@ -8,7 +8,48 @@
 
 import UIKit
 
-extension Map {
+class MapFromJSON: Map {
+    
+    private let includedData: [[String : AnyObject]]
+    private let resourceData: [String : AnyObject]
+    
+    private lazy var fieldsData: [String : AnyObject] = {
+        var fieldsData = [String : AnyObject]()
+        
+        if let fieldsData = self.resourceData["attributes"] as? [String : AnyObject ] {
+            return fieldsData
+        }
+        
+        return [String : AnyObject]()
+    }()
+    
+    private lazy var relationships: [RelationshipJSONObject]? = {
+        if let relationships = self.resourceData["relationships"] as? [String : AnyObject ] {
+            return RelationshipJSONObject.fromJSON(relationships)
+        }
+        
+        return nil
+    }()
+    
+    init(
+        resourceData: [String : AnyObject],
+        includedData: [[String : AnyObject ]],
+        mappableObject: Mappable
+    ) {
+        self.resourceData = resourceData
+        self.includedData = includedData
+        
+        guard let jsonId = self.resourceData["id"] as? String, id = Int(jsonId) else { fatalError("WTF") }
+        mappableObject.id = id
+    }
+    
+    convenience init(resourceData: [String : AnyObject], mappableObject: Mappable) {
+        self.init(
+            resourceData: resourceData,
+            includedData: [[String : AnyObject ]](),
+            mappableObject: mappableObject
+        )
+    }
     
     func resourceValue<T>() -> T? {
         return self.fieldsData[self.currentKey] as? T
@@ -51,11 +92,8 @@ extension Map {
     }
     
     private func relationshipValueCommon<T: Mappable>(relationship: RelationshipJSONObject) -> T? {
-        guard let includedData = self.includedData else {
-            return nil
-        }
-        
-        for includeDataIt in includedData {
+
+        for includeDataIt in self.includedData {
             if
                 let dataId = includeDataIt["id"] as? String,
                 let id = Int(dataId),
@@ -63,7 +101,11 @@ extension Map {
                 where id == relationship.id && resourceType == relationship.resourceType
             {
                 let relationshipObject = T()
-                let map = Map(resourceData: includeDataIt, mappableObject: relationshipObject)
+                let map = MapFromJSON(
+                    resourceData: includeDataIt,
+                    mappableObject: relationshipObject
+                )
+                
                 relationshipObject.map(map)
                 return relationshipObject
             } // end if
