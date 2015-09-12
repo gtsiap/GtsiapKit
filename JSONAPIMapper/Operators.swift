@@ -21,8 +21,11 @@ public func <~ <T>(inout left: T?, right: Map) {
 public func <~ <T: Mappable>(inout left: T?, right: Map) {
     if let mapFromJSON = right as? MapFromJSON {
         left = mapFromJSON.relationshipValue()
-    } else {
-        
+    } else if
+        let mapToJSON = right as? MapToJSON,
+        left = left
+    {
+        mapToJSON.retrieveRelationship(left)
     }
 }
 

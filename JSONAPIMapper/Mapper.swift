@@ -37,9 +37,50 @@ public class Mapper<T: Mappable>  {
         return objects
     }
     
-    public func toJSON(object: Mappable) -> String {
-       // let map = Map(object: object)
-     //   object.map(map)
+    public func toDictionary(
+        object: Mappable,
+        includeRelationships: Bool,
+        includeObjectId: Bool = true
+    ) throws -> [String : AnyObject] {
+        
+        let map = MapToJSON(
+            object: object,
+            includeRelationships: includeRelationships,
+            includeObjectId: includeObjectId
+        )
+        
+        object.map(map)
+        
+        return map.objectJSON
+    }
+    
+    public func toJSON(
+        object: Mappable,
+        includeRelationships: Bool,
+        includeObjectId: Bool = true
+    ) throws -> String {
+        let objectJSON = try toDictionary(
+            object,
+            includeRelationships: includeRelationships,
+            includeObjectId: includeObjectId
+        )
+        
+        let data = try NSJSONSerialization.dataWithJSONObject(
+            objectJSON,
+            options: NSJSONWritingOptions()
+        )
+        
+        guard let stringData = NSString(data: data, encoding: NSUTF8StringEncoding) else {
+            fatalError("WTF")
+        }
+        
+        return stringData as String
+    }
+    
+    public func toRelationshipJSON(
+        resourceObject: Mappable,
+        relationshipObject: Mappable
+    ) throws -> String {
         return ""
     }
 }

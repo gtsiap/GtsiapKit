@@ -43,6 +43,9 @@
 		45B43CC51B9207DD008AC2DC /* RelationshipJSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CC41B9207DD008AC2DC /* RelationshipJSONObject.swift */; settings = {ASSET_TAGS = (); }; };
 		45B43D061B94831D008AC2DC /* MapFromJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43D051B94831D008AC2DC /* MapFromJson.swift */; settings = {ASSET_TAGS = (); }; };
 		45E8706B1B67620C001315DE /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8706A1B67620C001315DE /* SearchView.swift */; };
+		45EDE7921BA46696008D96DB /* update_relationship.json in Resources */ = {isa = PBXBuildFile; fileRef = 45EDE78F1BA46696008D96DB /* update_relationship.json */; settings = {ASSET_TAGS = (); }; };
+		45EDE7931BA46696008D96DB /* update_resource.json in Resources */ = {isa = PBXBuildFile; fileRef = 45EDE7901BA46696008D96DB /* update_resource.json */; settings = {ASSET_TAGS = (); }; };
+		45EDE7941BA46696008D96DB /* create_resource.json in Resources */ = {isa = PBXBuildFile; fileRef = 45EDE7911BA46696008D96DB /* create_resource.json */; settings = {ASSET_TAGS = (); }; };
 		45FCCB151B52E4B90057AAFD /* UIView+AutolayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FCCB141B52E4B90057AAFD /* UIView+AutolayoutUtils.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +109,9 @@
 		45B43CC41B9207DD008AC2DC /* RelationshipJSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipJSONObject.swift; sourceTree = "<group>"; };
 		45B43D051B94831D008AC2DC /* MapFromJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapFromJson.swift; sourceTree = "<group>"; };
 		45E8706A1B67620C001315DE /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		45EDE78F1BA46696008D96DB /* update_relationship.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = update_relationship.json; sourceTree = "<group>"; };
+		45EDE7901BA46696008D96DB /* update_resource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = update_resource.json; sourceTree = "<group>"; };
+		45EDE7911BA46696008D96DB /* create_resource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = create_resource.json; sourceTree = "<group>"; };
 		45FCCB141B52E4B90057AAFD /* UIView+AutolayoutUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutolayoutUtils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -301,8 +307,11 @@
 		45B43C951B91C3E3008AC2DC /* JSONAPIMapperTests */ = {
 			isa = PBXGroup;
 			children = (
-				45B43CB91B91E838008AC2DC /* Models */,
+				45EDE78F1BA46696008D96DB /* update_relationship.json */,
+				45EDE7901BA46696008D96DB /* update_resource.json */,
+				45EDE7911BA46696008D96DB /* create_resource.json */,
 				45B43CB51B91E207008AC2DC /* json.txt */,
+				45B43CB91B91E838008AC2DC /* Models */,
 				45B43C961B91C3E3008AC2DC /* Decode.swift */,
 				45B43C981B91C3E3008AC2DC /* Info.plist */,
 				451E59261B95D0B10012167B /* Encode.swift */,
@@ -503,7 +512,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45EDE7921BA46696008D96DB /* update_relationship.json in Resources */,
+				45EDE7931BA46696008D96DB /* update_resource.json in Resources */,
 				45B43CB61B91E207008AC2DC /* json.txt in Resources */,
+				45EDE7941BA46696008D96DB /* create_resource.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  DecodeAttributes.swift
+//  Decode.swift
 //  JSONAPIMapperTests
 //
 //  Created by Giorgos Tsiapaliokas on 8/29/15.
@@ -10,22 +10,21 @@ import XCTest
 
 @testable import JSONAPIMapper
 
-class DecodeAttributes: XCTestCase {
+class Decode: XCTestCase {
     
     private static var JSON: [String : AnyObject] =  [String : AnyObject]()
     private static var post: Post!
     
     override class func setUp() {
-    
-        let jsonDataPath = NSBundle(forClass: DecodeAttributes.self).URLForResource("json", withExtension: ".txt")
+        let jsonDataPath = NSBundle(forClass: Decode.self).URLForResource("json", withExtension: ".txt")
         let jsonData = NSData(contentsOfURL: jsonDataPath!)
         let jsonObject = try! NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.AllowFragments)
         
-        DecodeAttributes.JSON = jsonObject as! [String : AnyObject]
+        Decode.JSON = jsonObject as! [String : AnyObject]
     }
     
     func test1Post() {        
-        let posts = Mapper<Post>().fromJSON(DecodeAttributes.JSON)
+        let posts = Mapper<Post>().fromJSON(Decode.JSON)
         let post = posts[0]
         
         XCTAssertEqual(posts.count, 1)
@@ -33,11 +32,11 @@ class DecodeAttributes: XCTestCase {
         XCTAssertNotNil(post.author)
         XCTAssertEqual(post.id, 1)
         
-        DecodeAttributes.post = post
+        Decode.post = post
     }
 
     func test2Author() {
-        let author = DecodeAttributes.post.author
+        let author = Decode.post.author
 
         XCTAssertNotNil(author?.firstName)
         XCTAssertEqual(author?.firstName, "Dan")
@@ -52,7 +51,7 @@ class DecodeAttributes: XCTestCase {
     }
     
     func test3Comments() {
-        let comments = DecodeAttributes.post.comments
+        let comments = Decode.post.comments
         XCTAssertEqual(comments?.count, 2)
         
         XCTAssertNotNil(comments?[0].body)

@@ -1,0 +1,13 @@
+{
+  "data": {
+    "type": "posts",
+    "attributes": {
+      "title": "Some title"
+    },
+    "relationships": {
+      "author": {
+        "data": { "type": "people", "id": "9" }
+      }
+    }
+  }
+}
