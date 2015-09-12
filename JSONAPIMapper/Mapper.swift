@@ -38,29 +38,29 @@ public class Mapper<T: Mappable>  {
     }
     
     public func toDictionary(
-        object: Mappable,
+        resourceObject: Mappable,
         includeRelationships: Bool,
         includeObjectId: Bool = true
     ) throws -> [String : AnyObject] {
         
         let map = MapToJSON(
-            object: object,
+            object: resourceObject,
             includeRelationships: includeRelationships,
             includeObjectId: includeObjectId
         )
         
-        object.map(map)
+        resourceObject.map(map)
         
         return map.objectJSON
     }
     
     public func toJSON(
-        object: Mappable,
+        resourceObject: Mappable,
         includeRelationships: Bool,
         includeObjectId: Bool = true
     ) throws -> String {
         let objectJSON = try toDictionary(
-            object,
+            resourceObject,
             includeRelationships: includeRelationships,
             includeObjectId: includeObjectId
         )
@@ -75,6 +75,20 @@ public class Mapper<T: Mappable>  {
         }
         
         return stringData as String
+    }
+    
+    public func toRelationshipDictionary(
+        resourceObject: Mappable,
+        relationshipObject: Mappable
+    ) throws -> [String : AnyObject] {
+        let map = MapToJSON(
+            object: resourceObject,
+            includeRelationships: true,
+            includeObjectId: false
+        )
+        
+        resourceObject.map(map)
+        return [String : AnyObject]()
     }
     
     public func toRelationshipJSON(

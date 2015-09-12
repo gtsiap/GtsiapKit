@@ -7,6 +7,9 @@
     "relationships": {
       "author": {
         "data": { "type": "people", "id": "9" }
+      },
+      "comments": {
+          "data": [{ "type": "comments", "id": "1" }, { "type": "comments", "id": "2" }]
       }
     }
   }

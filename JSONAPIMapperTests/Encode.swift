@@ -30,8 +30,15 @@ class Encode: XCTestCase {
         let author = Person()
         author.id = 9
         
+        let comment1 = Comment()
+        comment1.id = 1
+        
+        let comment2 = Comment()
+        comment2.id = 2
+        
         post.author = author
-       
+        post.comments = [comment1, comment2]
+        
         let createResourceJSONObject = try! Mapper<Post>().toDictionary(
             post,
             includeRelationships: true,
