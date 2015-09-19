@@ -22,7 +22,7 @@ extension UIApplication {
         request.timeoutInterval = 4
 
         var response: NSURLResponse?
-        
+
         do {
             try NSURLConnection.sendSynchronousRequest(
                 request, returningResponse: &response) as NSData?
@@ -35,7 +35,7 @@ extension UIApplication {
         } catch {
             status = false
         }
-        
+
         return status
     }
 

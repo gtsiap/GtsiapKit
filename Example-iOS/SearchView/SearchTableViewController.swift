@@ -79,7 +79,7 @@ class SearchTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) 
+        let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
 
         cell.textLabel?.text = self.data[indexPath.row]
 

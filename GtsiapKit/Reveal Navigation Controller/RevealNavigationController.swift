@@ -139,15 +139,15 @@ public class RevealNavigationController: UINavigationController {
                 }
             }
         }
-        
+
         guard var buttonItems =
             self.topViewController?.navigationItem.rightBarButtonItems else
         {
             return
         }
-        
+
         removeItem(&buttonItems, target: self.revealBarItem)
-        
+
         self.topViewController?.navigationItem.rightBarButtonItems = buttonItems
     }
 

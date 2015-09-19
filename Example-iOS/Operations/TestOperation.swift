@@ -17,6 +17,6 @@ class TestOperation: Operation {
                 print("done")
                 self.finish()
         }
-        
+
     }
 }
