@@ -39,7 +39,7 @@ class Encode: XCTestCase {
         post.author = author
         post.comments = [comment1, comment2]
         
-        let createResourceJSONObject = try! Mapper<Post>().toDictionary(
+        var createResourceJSONObject = try! Mapper<Post>().toDictionary(
             post,
             includeRelationships: true,
             includeObjectId: false
@@ -47,12 +47,17 @@ class Encode: XCTestCase {
         
         XCTAssertEqual(retrieveJSONObject("create_resource"), createResourceJSONObject as NSDictionary)
 
+        createResourceJSONObject = try! Mapper<Post>().createResourceDictionary(post)
+        XCTAssertEqual(retrieveJSONObject("create_resource"), createResourceJSONObject as NSDictionary)
+        
         post.title = "To TDD or Not"
         post.id = 1
-        let updateResourceJSONObject = try! Mapper<Post>().toDictionary(post, includeRelationships: false)
+        
+        var updateResourceJSONObject = try! Mapper<Post>().toDictionary(post, includeRelationships: false)
         XCTAssertEqual(retrieveJSONObject("update_resource"), updateResourceJSONObject)
         
-        
+        updateResourceJSONObject = try! Mapper<Post>().updateResourceDictionary(post)
+        XCTAssertEqual(retrieveJSONObject("update_resource"), updateResourceJSONObject)
     }
     
 }

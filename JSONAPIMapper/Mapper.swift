@@ -65,16 +65,8 @@ public class Mapper<T: Mappable>  {
             includeObjectId: includeObjectId
         )
         
-        let data = try NSJSONSerialization.dataWithJSONObject(
-            objectJSON,
-            options: NSJSONWritingOptions()
-        )
         
-        guard let stringData = NSString(data: data, encoding: NSUTF8StringEncoding) else {
-            fatalError("WTF")
-        }
-        
-        return stringData as String
+        return try toJSONString(objectJSON)
     }
     
     public func toRelationshipDictionary(
@@ -95,6 +87,43 @@ public class Mapper<T: Mappable>  {
         resourceObject: Mappable,
         relationshipObject: Mappable
     ) throws -> String {
-        return ""
+        let object = try toRelationshipDictionary(
+            resourceObject,
+            relationshipObject: relationshipObject
+        )
+        
+        return try toJSONString(object)
     }
+    
+    // MARK: convenience funcs
+    public func createResourceDictionary(resourceObject: Mappable) throws  -> [String : AnyObject] {
+        return try toDictionary(
+            resourceObject,
+            includeRelationships: true,
+            includeObjectId: false
+        )
+    }
+    
+    public func updateResourceDictionary(resourceObject: Mappable) throws  -> [String : AnyObject] {
+        return try toDictionary(
+            resourceObject,
+            includeRelationships: false,
+            includeObjectId: true
+        )
+    }
+    
+    // MARK: private funcs
+    private func toJSONString(dictionary: [String : AnyObject]) throws -> String {
+        let data = try NSJSONSerialization.dataWithJSONObject(
+            dictionary,
+            options: NSJSONWritingOptions()
+        )
+        
+        guard let stringData = NSString(data: data, encoding: NSUTF8StringEncoding) else {
+            fatalError()
+        }
+        
+        return stringData as String
+    }
+    
 }
