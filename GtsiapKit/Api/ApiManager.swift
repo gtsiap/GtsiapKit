@@ -32,6 +32,16 @@ public class ApiManager {
         Manager.sharedInstance.startRequestsImmediately = false
     }
 
+    // MARK: tasks
+    public func task(
+        urlRequest: URLRequestConvertible,
+        completionHandler: (data: AnyObject?) -> ()
+    ) -> ApiTask {
+        let task = ApiTask()
+        task.doRequest(urlRequest, completionHandler: completionHandler)
+        return task
+    }
+    
     func goOffline() {
         self.isOffline = true
     }
