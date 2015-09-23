@@ -16,6 +16,10 @@
 		456E5A0D1BB2F99800A04651 /* JSONAPIMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B43C881B91C3E3008AC2DC /* JSONAPIMapper.framework */; };
 		456E5A4D1BB2FA1B00A04651 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A4B1BB2FA1B00A04651 /* ApiManager.swift */; settings = {ASSET_TAGS = (); }; };
 		456E5A4E1BB2FA1B00A04651 /* ApiTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A4C1BB2FA1B00A04651 /* ApiTask.swift */; settings = {ASSET_TAGS = (); }; };
+		456E5A501BB2FAD300A04651 /* ApiPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A4F1BB2FAD300A04651 /* ApiPresentable.swift */; settings = {ASSET_TAGS = (); }; };
+		456E5A521BB300F900A04651 /* Taskable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A511BB300F900A04651 /* Taskable.swift */; settings = {ASSET_TAGS = (); }; };
+		456E5A541BB301D700A04651 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A531BB301D700A04651 /* Requestable.swift */; settings = {ASSET_TAGS = (); }; };
+		456E5A591BB3039C00A04651 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456E5A581BB3039C00A04651 /* Alamofire.framework */; };
 		4570D2B41B6CB97B00F6AA37 /* UIColor+Rgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4570D2B31B6CB97B00F6AA37 /* UIColor+Rgb.swift */; };
 		457AB5951B2B6365003034F1 /* RevealNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457AB5941B2B6365003034F1 /* RevealNavigationController.swift */; };
 		457AB59A1B2B658D003034F1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 457AB5991B2B658D003034F1 /* Media.xcassets */; };
@@ -94,6 +98,10 @@
 		456E5A061BB2F98B00A04651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		456E5A4B1BB2FA1B00A04651 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		456E5A4C1BB2FA1B00A04651 /* ApiTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTask.swift; sourceTree = "<group>"; };
+		456E5A4F1BB2FAD300A04651 /* ApiPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiPresentable.swift; sourceTree = "<group>"; };
+		456E5A511BB300F900A04651 /* Taskable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Taskable.swift; sourceTree = "<group>"; };
+		456E5A531BB301D700A04651 /* Requestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		456E5A581BB3039C00A04651 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		4570D2B31B6CB97B00F6AA37 /* UIColor+Rgb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Rgb.swift"; sourceTree = "<group>"; };
 		457AB5941B2B6365003034F1 /* RevealNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealNavigationController.swift; sourceTree = "<group>"; };
 		457AB5991B2B658D003034F1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -163,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				456E5A591BB3039C00A04651 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +232,9 @@
 			children = (
 				456E5A4B1BB2FA1B00A04651 /* ApiManager.swift */,
 				456E5A4C1BB2FA1B00A04651 /* ApiTask.swift */,
+				456E5A4F1BB2FAD300A04651 /* ApiPresentable.swift */,
+				456E5A511BB300F900A04651 /* Taskable.swift */,
+				456E5A531BB301D700A04651 /* Requestable.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -286,6 +298,7 @@
 		45B4044C1B29E68A00DF2CDB = {
 			isa = PBXGroup;
 			children = (
+				456E5A581BB3039C00A04651 /* Alamofire.framework */,
 				45B404581B29E68A00DF2CDB /* GtsiapKit */,
 				45B404651B29E68A00DF2CDB /* GtsiapKitTests */,
 				45B43C891B91C3E3008AC2DC /* JSONAPIMapper */,
@@ -695,11 +708,14 @@
 				4570D2B41B6CB97B00F6AA37 /* UIColor+Rgb.swift in Sources */,
 				453F68351B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift in Sources */,
 				45FCCB151B52E4B90057AAFD /* UIView+AutolayoutUtils.swift in Sources */,
+				456E5A541BB301D700A04651 /* Requestable.swift in Sources */,
 				45AC7CD81B5BFAA600647A27 /* ToastView.swift in Sources */,
 				456E5A4D1BB2FA1B00A04651 /* ApiManager.swift in Sources */,
+				456E5A521BB300F900A04651 /* Taskable.swift in Sources */,
 				459809FC1B7639E300FE0C4C /* DeviceGuru.swift in Sources */,
 				457AB5951B2B6365003034F1 /* RevealNavigationController.swift in Sources */,
 				4536C3B91B29E7C2003E8CB7 /* Json.swift in Sources */,
+				456E5A501BB2FAD300A04651 /* ApiPresentable.swift in Sources */,
 				4583892D1B5AA499008132DF /* ActivityIndicatorView.swift in Sources */,
 				45B2AE4E1B4257B000DE467B /* Theme.swift in Sources */,
 				456E5A4E1BB2FA1B00A04651 /* ApiTask.swift in Sources */,
@@ -774,6 +790,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = JSONAPI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -791,6 +811,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = JSONAPI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -921,6 +945,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GtsiapKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -938,6 +966,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GtsiapKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -1067,6 +1099,7 @@
 				456E5A081BB2F98B00A04651 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		456E5A0C1BB2F98B00A04651 /* Build configuration list for PBXNativeTarget "JSONAPITests" */ = {
 			isa = XCConfigurationList;
@@ -1075,6 +1108,7 @@
 				456E5A0A1BB2F98B00A04651 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		45B404501B29E68A00DF2CDB /* Build configuration list for PBXProject "GtsiapKit" */ = {
 			isa = XCConfigurationList;
