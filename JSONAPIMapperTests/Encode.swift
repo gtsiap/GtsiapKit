@@ -38,26 +38,32 @@ class Encode: XCTestCase {
         
         post.author = author
         post.comments = [comment1, comment2]
-        
-        var createResourceJSONObject = try! Mapper<Post>().toDictionary(
-            post,
-            includeRelationships: true,
-            includeObjectId: false
-        )
-        
-        XCTAssertEqual(retrieveJSONObject("create_resource"), createResourceJSONObject as NSDictionary)
 
-        createResourceJSONObject = try! Mapper<Post>().createResourceDictionary(post)
+        let createResourceJSONObject = try! Mapper<Post>().createResourceDictionary(post)
         XCTAssertEqual(retrieveJSONObject("create_resource"), createResourceJSONObject as NSDictionary)
         
         post.title = "To TDD or Not"
         post.id = 1
         
-        var updateResourceJSONObject = try! Mapper<Post>().toDictionary(post, includeRelationships: false)
+        
+        let updateResourceJSONObject = try! Mapper<Post>().updateResourceDictionary(post)
         XCTAssertEqual(retrieveJSONObject("update_resource"), updateResourceJSONObject)
         
-        updateResourceJSONObject = try! Mapper<Post>().updateResourceDictionary(post)
-        XCTAssertEqual(retrieveJSONObject("update_resource"), updateResourceJSONObject)
+        var updateRelationshipJSONObject = try! Mapper<Post>().updateRelationshipDictionary(
+            post,
+            relationship: "author",
+            relationshipType: author.dynamicType
+        )
+        
+        XCTAssertEqual(retrieveJSONObject("update_relationship"), updateRelationshipJSONObject as NSDictionary)
+        
+        updateRelationshipJSONObject = try! Mapper<Post>().updateRelationshipDictionary(
+            post,
+            relationship: "comments",
+            relationshipType: comment1.dynamicType
+        )
+        
+        XCTAssertEqual(retrieveJSONObject("update_relationship2"), updateRelationshipJSONObject as NSDictionary)
     }
     
 }

@@ -37,16 +37,40 @@ public class Mapper<T: Mappable>  {
         return objects
     }
     
-    public func toDictionary(
-        resourceObject: Mappable,
-        includeRelationships: Bool,
-        includeObjectId: Bool = true
-    ) throws -> [String : AnyObject] {
+    public func createResourceDictionary(resourceObject: T) throws  -> [String : AnyObject] {
         
-        let map = MapToJSON(
-            object: resourceObject,
-            includeRelationships: includeRelationships,
-            includeObjectId: includeObjectId
+        let map = CreateResourceMap(object: resourceObject)
+        resourceObject.map(map)
+        
+        return map.objectJSON
+    }
+    
+    public func createResourceJSON(resourceObject: T) throws  -> String {
+        return try toJSONString(createResourceDictionary(resourceObject))
+    }
+    
+    public func updateResourceDictionary(resourceObject: T) throws  -> [String : AnyObject] {
+        
+        let map = UpdateResourceMap(object: resourceObject)
+        resourceObject.map(map)
+        
+        return map.objectJSON
+    }
+    
+    public func updateResourceJSON(resourceObject: T) throws  -> String {
+        return try toJSONString(updateResourceDictionary(resourceObject))
+    }
+    
+    public func updateRelationshipDictionary(
+        resourceObject: T,
+        relationship: String,
+        relationshipType: Mappable.Type
+    ) throws  -> [String : AnyObject] {
+        
+        let map = UpdateRelationshipMap(
+            resourceObject: resourceObject,
+            relationship: relationship,
+            relationshipType: relationshipType
         )
         
         resourceObject.map(map)
@@ -54,62 +78,16 @@ public class Mapper<T: Mappable>  {
         return map.objectJSON
     }
     
-    public func toJSON(
-        resourceObject: Mappable,
-        includeRelationships: Bool,
-        includeObjectId: Bool = true
-    ) throws -> String {
-        let objectJSON = try toDictionary(
+    public func updateRelationshipJSON(
+        resourceObject: T,
+        relationship: String,
+        relationshipType: Mappable.Type
+    ) throws  -> String {
+        return try toJSONString(updateRelationshipDictionary(
             resourceObject,
-            includeRelationships: includeRelationships,
-            includeObjectId: includeObjectId
-        )
-        
-        
-        return try toJSONString(objectJSON)
-    }
-    
-    public func toRelationshipDictionary(
-        resourceObject: Mappable,
-        relationshipObject: Mappable
-    ) throws -> [String : AnyObject] {
-        let map = MapToJSON(
-            object: resourceObject,
-            includeRelationships: true,
-            includeObjectId: false
-        )
-        
-        resourceObject.map(map)
-        return [String : AnyObject]()
-    }
-    
-    public func toRelationshipJSON(
-        resourceObject: Mappable,
-        relationshipObject: Mappable
-    ) throws -> String {
-        let object = try toRelationshipDictionary(
-            resourceObject,
-            relationshipObject: relationshipObject
-        )
-        
-        return try toJSONString(object)
-    }
-    
-    // MARK: convenience funcs
-    public func createResourceDictionary(resourceObject: Mappable) throws  -> [String : AnyObject] {
-        return try toDictionary(
-            resourceObject,
-            includeRelationships: true,
-            includeObjectId: false
-        )
-    }
-    
-    public func updateResourceDictionary(resourceObject: Mappable) throws  -> [String : AnyObject] {
-        return try toDictionary(
-            resourceObject,
-            includeRelationships: false,
-            includeObjectId: true
-        )
+            relationship: relationship,
+            relationshipType: relationshipType
+        ))
     }
     
     // MARK: private funcs

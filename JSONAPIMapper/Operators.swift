@@ -13,7 +13,7 @@ infix operator <~ {}
 public func <~ <T>(inout left: T?, right: Map) {
     if let mapFromJSON = right as? MapFromJSON {
         left = mapFromJSON.resourceValue()
-    } else if let mapToJSON = right as? MapToJSON {
+    } else if let mapToJSON = right as? BasicMap {
         mapToJSON.retrieveValue(left as? AnyObject)
     }
 }
@@ -21,8 +21,8 @@ public func <~ <T>(inout left: T?, right: Map) {
 public func <~ <T: Mappable>(inout left: T?, right: Map) {
     if let mapFromJSON = right as? MapFromJSON {
         left = mapFromJSON.relationshipValue()
-    } else if
-        let mapToJSON = right as? MapToJSON,
+    } else if let
+        mapToJSON = right as? RelationshipMap,
         left = left
     {
         mapToJSON.retrieveRelationship(left)
@@ -32,8 +32,8 @@ public func <~ <T: Mappable>(inout left: T?, right: Map) {
 public func <~ <T: Mappable>(inout left: [T]?, right: Map) {
     if let mapFromJSON = right as? MapFromJSON {
         left = mapFromJSON.relationshipValue()
-    } else if
-        let mapToJSON = right as? MapToJSON,
+    } else if let
+        mapToJSON = right as? RelationshipMap,
         left = left
     {
         mapToJSON.retrieveRelationships(left)

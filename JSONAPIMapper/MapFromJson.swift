@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MapFromJSON: Map {
+class MapFromJSON: BasicMap {
     
     private let includedData: [[String : AnyObject]]
     private let resourceData: [String : AnyObject]
