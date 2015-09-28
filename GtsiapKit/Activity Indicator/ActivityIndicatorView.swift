@@ -69,9 +69,9 @@ public class ActivityIndicatorView: UIView {
         self.addSubview(activityIndicator)
 
         let centerX = self.constraint(activityIndicator, attribute1: .CenterX)
-        let top = self.constraint(activityIndicator, attribute1: .Top, constant: 10)
+        let centerY = self.constraint(activityIndicator, attribute1: .CenterY, multiplier: 0.7)
 
-        self.addConstraints([centerX, top])
+        self.addConstraints([centerX, centerY])
 
         return activityIndicator
     }()
@@ -82,11 +82,9 @@ public class ActivityIndicatorView: UIView {
         self.addSubview(label)
 
         let centerX = self.constraint(label, attribute1: .CenterX)
-        let bottom = self.constraint(label, attribute1: .Bottom, constant: -10)
+        let bottom = self.constraint(label, attribute1: .Bottom, multiplier: 0.8)
 
-        self.addConstraint(centerX)
-        self.addConstraint(bottom)
-
+        self.addConstraints([centerX, bottom])
         return label
     }()
 
@@ -116,11 +114,17 @@ public class ActivityIndicatorView: UIView {
 
         let width = self.superview!.constraint(self, attribute1: .Width,
             multiplier: 0.4)
-
+        
+        width.priority = UILayoutPriorityDefaultLow
+        
         let height = self.superview!.constraint(self, attribute1: .Height,
             multiplier: 0.2)
 
+        height.priority = UILayoutPriorityDefaultLow
 
-        self.superview?.addConstraints([centerX, centerY, width, height])
+        let aspectRatio = self.superview!.constraint(self, attribute1: .Height, view2: self, attribute2: .Width)
+        aspectRatio.priority = UILayoutPriorityDefaultHigh
+        
+        self.superview?.addConstraints([centerX, centerY, width, aspectRatio])
     }
 }
