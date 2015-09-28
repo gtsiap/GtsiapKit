@@ -14,7 +14,7 @@ class ContainerView : UIView {
     // MARK: views
     var mainView: UIView! {
         didSet {
-            self.mainView.setTranslatesAutoresizingMaskIntoConstraints(false)
+            self.mainView.translatesAutoresizingMaskIntoConstraints = false
             addSubview(self.mainView)
 
             addConstraint(constraint(self.mainView, attribute1: .Top))
@@ -36,7 +36,7 @@ class ContainerView : UIView {
 
     var menuView: UIView! {
         didSet {
-            self.menuView.setTranslatesAutoresizingMaskIntoConstraints(false)
+            self.menuView.translatesAutoresizingMaskIntoConstraints = false
             addSubview(self.menuView)
 
             addConstraint(constraint(self.menuView, attribute1: .Top, constant: self.menuY))
@@ -65,7 +65,7 @@ class ContainerView : UIView {
     }
 
     deinit {
-        println("Cleaning up")
+        print("Cleaning up")
     }
 
     // MARK: hide/show menu

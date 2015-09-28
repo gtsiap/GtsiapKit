@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45B404551B29E68A00DF2CDB"
-               BuildableName = "GtsiapKit.framework"
-               BlueprintName = "GtsiapKit"
-               ReferencedContainer = "container:GtsiapKit.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45B404601B29E68A00DF2CDB"
-               BuildableName = "GtsiapKitTests.xctest"
-               BlueprintName = "GtsiapKitTests"
+               BlueprintIdentifier = "45B43C871B91C3E3008AC2DC"
+               BuildableName = "JSONAPIMapper.framework"
+               BlueprintName = "JSONAPIMapper"
                ReferencedContainer = "container:GtsiapKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45B404601B29E68A00DF2CDB"
-               BuildableName = "GtsiapKitTests.xctest"
-               BlueprintName = "GtsiapKitTests"
+               BlueprintIdentifier = "45B43C901B91C3E3008AC2DC"
+               BuildableName = "JSONAPIMapperTests.xctest"
+               BlueprintName = "JSONAPIMapperTests"
                ReferencedContainer = "container:GtsiapKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45B404551B29E68A00DF2CDB"
-            BuildableName = "GtsiapKit.framework"
-            BlueprintName = "GtsiapKit"
+            BlueprintIdentifier = "45B43C871B91C3E3008AC2DC"
+            BuildableName = "JSONAPIMapper.framework"
+            BlueprintName = "JSONAPIMapper"
             ReferencedContainer = "container:GtsiapKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -78,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45B404551B29E68A00DF2CDB"
-            BuildableName = "GtsiapKit.framework"
-            BlueprintName = "GtsiapKit"
+            BlueprintIdentifier = "45B43C871B91C3E3008AC2DC"
+            BuildableName = "JSONAPIMapper.framework"
+            BlueprintName = "JSONAPIMapper"
             ReferencedContainer = "container:GtsiapKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -96,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45B404551B29E68A00DF2CDB"
-            BuildableName = "GtsiapKit.framework"
-            BlueprintName = "GtsiapKit"
+            BlueprintIdentifier = "45B43C871B91C3E3008AC2DC"
+            BuildableName = "JSONAPIMapper.framework"
+            BlueprintName = "JSONAPIMapper"
             ReferencedContainer = "container:GtsiapKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

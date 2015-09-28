@@ -31,12 +31,12 @@ class SearchTableViewController: UITableViewController {
         let contentView = UIView()
 
         let label1 = ThemeManager.defaultTheme.label()
-        label1.setTranslatesAutoresizingMaskIntoConstraints(false)
+        label1.translatesAutoresizingMaskIntoConstraints = false
         label1.text = "Label1"
         label1.preferredMaxLayoutWidth = self.tableView.frame.width
 
         let label2 = ThemeManager.defaultTheme.label()
-        label2.setTranslatesAutoresizingMaskIntoConstraints(false)
+        label2.translatesAutoresizingMaskIntoConstraints = false
         label2.text = "Label2"
         label2.preferredMaxLayoutWidth = self.tableView.frame.width
 
@@ -79,7 +79,7 @@ class SearchTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
 
         cell.textLabel?.text = self.data[indexPath.row]
 
@@ -93,7 +93,7 @@ class SearchTableViewController: UITableViewController {
         headerView.layoutIfNeeded()
 
         let height = headerView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
-        println("height: \(height)")
+        print("height: \(height)")
         var frame = headerView.frame
         frame.size.height = height
         headerView.frame = frame

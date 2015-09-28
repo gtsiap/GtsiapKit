@@ -19,7 +19,7 @@ public class ToastView: UIView {
 
     private lazy var textLabel: UILabel = {
         let label = ThemeManager.defaultTheme.label()
-        label.setTranslatesAutoresizingMaskIntoConstraints(false)
+        label.translatesAutoresizingMaskIntoConstraints = false
 
         self.addSubview(label)
 
@@ -95,7 +95,7 @@ public class ToastView: UIView {
 
         self.superview?.addSubview(self)
         self.superview?.bringSubviewToFront(self)
-        setTranslatesAutoresizingMaskIntoConstraints(false)
+        translatesAutoresizingMaskIntoConstraints = false
 
         self.textLabel.preferredMaxLayoutWidth = self.superview!.frame.width
 

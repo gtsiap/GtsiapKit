@@ -30,7 +30,7 @@ public protocol ThemeDelegate {
 public class Theme: ThemeDelegate {
 
     public func button(text: String, target: AnyObject, action: Selector) -> UIButton {
-        let button = UIButton.buttonWithType(.System) as! UIButton
+        let button = UIButton(type: .System)
         button.setTitle(text, forState: .Normal)
         button.addTarget(target, action: action, forControlEvents: .TouchUpInside)
         return button

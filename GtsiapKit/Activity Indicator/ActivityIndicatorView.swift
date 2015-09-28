@@ -64,7 +64,7 @@ public class ActivityIndicatorView: UIView {
     // MARK: private vars
     private lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView()
-        activityIndicator.setTranslatesAutoresizingMaskIntoConstraints(false)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
 
         self.addSubview(activityIndicator)
 
@@ -78,7 +78,7 @@ public class ActivityIndicatorView: UIView {
 
     private lazy var textLabel: UILabel = {
         let label = ThemeManager.defaultTheme.label()
-        label.setTranslatesAutoresizingMaskIntoConstraints(false)
+        label.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(label)
 
         let centerX = self.constraint(label, attribute1: .CenterX)
@@ -106,7 +106,7 @@ public class ActivityIndicatorView: UIView {
             return
         }
 
-        setTranslatesAutoresizingMaskIntoConstraints(false)
+        translatesAutoresizingMaskIntoConstraints = false
 
         self.superview?.bringSubviewToFront(self)
         self.hidden = true

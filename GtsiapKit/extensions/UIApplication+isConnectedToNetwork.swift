@@ -23,13 +23,17 @@ extension UIApplication {
 
         var response: NSURLResponse?
 
-        var data = NSURLConnection.sendSynchronousRequest(
-            request, returningResponse: &response, error: nil) as NSData?
+        do {
+            try NSURLConnection.sendSynchronousRequest(
+                request, returningResponse: &response) as NSData?
 
-        if let httpResponse = response as? NSHTTPURLResponse {
-            if httpResponse.statusCode == 200 {
-                status = true
+            if let httpResponse = response as? NSHTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+                    status = true
+                }
             }
+        } catch {
+            status = false
         }
 
         return status

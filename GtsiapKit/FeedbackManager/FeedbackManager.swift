@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-public class FeedbackManager: NSObject, MFMailComposeViewControllerDelegate {
+public class FeedbackManager: NSObject {
 
     public static var recipients: [String] = [String]()
     public static var ccRecipients: [String] = [String]()
@@ -96,14 +96,14 @@ public class FeedbackManager: NSObject, MFMailComposeViewControllerDelegate {
 extension FeedbackManager: MFMailComposeViewControllerDelegate {
 
 
-    public func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+    public func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
 
 
-        if let mailError = error {
+        if let _ = error {
 
             let alert = UIAlertController(
                 title: "Mail Error",
-                message: error.localizedDescription,
+                message: error!.localizedDescription,
                 preferredStyle: .Alert
             )
 

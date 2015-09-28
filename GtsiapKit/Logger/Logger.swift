@@ -36,10 +36,10 @@ public class Logger {
         }
 
         for it in categories {
-            if contains(Logger.globalCategories!, it) {
+            if (Logger.globalCategories!).contains(it) {
                 let format = formatDebug(it, file: file, funcString: funcString, line: line)
-                println("\(format)\(msg)")
-                println()
+                print("\(format)\(msg)")
+                print("")
                 return
             }
         }
@@ -47,7 +47,7 @@ public class Logger {
 
     // MARK: private func
     private func formatDebug(category: String, file: String, funcString: String, line: Int) -> String {
-        return "(\(category))[\(file.pathComponents.last!):\(line)] \(funcString): "
+        return "(\(category))[\(NSString(string: file).pathComponents.last!):\(line)] \(funcString): "
     }
 
 }
