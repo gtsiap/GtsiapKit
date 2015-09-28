@@ -9,22 +9,22 @@
 import UIKit
 
 class CreateResourceMap: RelationshipMap {
-    
+
     private var dataJSON: [String : AnyObject] {
         var dataJSON: [String : AnyObject] = [
             "type": self.object.dynamicType.resource,
             "attributes": self.fieldsDictionary
         ]
-        
+
         if !self.relationshipsDictionary.isEmpty {
             dataJSON["relationships"] = self.relationshipsDictionary
         }
-        
+
         return dataJSON
     }
-    
+
     var objectJSON: [String : AnyObject] {
         return ["data": self.dataJSON]
     }
-    
+
 }

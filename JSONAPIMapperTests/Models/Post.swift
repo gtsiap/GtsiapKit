@@ -14,15 +14,15 @@ final class Post {
     var title: String?
     var author: Person?
     var comments: [Comment]?
-    
+
 }
 
 extension Post: Mappable {
-    
+
     static var resource: String {
         return "posts"
     }
-    
+
     static var relationships: [String : Mappable.Type] {
         return [
             "comments": Comment.self,

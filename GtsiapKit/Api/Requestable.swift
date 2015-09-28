@@ -10,20 +10,20 @@ import UIKit
 import Alamofire
 
 public protocol RequestableOfflineDelegate: class {
-    
+
     func storeRequest(urlRequest: NSURLRequest, data: AnyObject)
     func retrieveRequest(urlRequest: NSURLRequest) -> AnyObject?
-    
+
 }
 
 public protocol Requestable: ApiPresentable {
-        
+
     weak var offlineDelegate: RequestableOfflineDelegate? { get set }
-    
+
     func requestDidFinishWithError(error: NSError)
     func requestDidFinishWithNoNetworkConnection()
     func requestDidFinish()
-    
+
 }
 
 extension Requestable {
@@ -31,15 +31,15 @@ extension Requestable {
         urlRequest: URLRequestConvertible,
         completionHandler: (data: AnyObject?) -> Void
     ) -> Request {
-            
+
         return request(urlRequest).response {
                 (request, response, data, error) in
-                
+
                 // in future versions check for errors
                 networkLogger.debug("request: \(request)")
                 networkLogger.debug("response: \(response)")
                 networkLogger.debug("error: \(error)")
-                
+
                 var jsonError: NSError?
                 let jsonData: AnyObject?
                 do {
@@ -51,35 +51,35 @@ extension Requestable {
                 } catch {
                     fatalError()
                 }
-                
+
                 networkLogger.debug("data: \(jsonData)")
-                
+
                 var networkError: NSError?
-                
+
                 // TODO
                 if let error = error as? NSError {
-                    
+
                     if error.code == -1009 {
                         // no internet connection is available
                         ApiManager.sharedManager.goOffline()
-                        
+
                         if let storedData: AnyObject = self.offlineDelegate?.retrieveRequest(request!) {
                             completionHandler(data: storedData)
                             self.requestDidFinish()
-                            
+
                             return
                         }
-                        
+
                         self.requestDidFinishWithNoNetworkConnection()
                         return
                     }
-                    
+
                     networkError = error
-                    
+
                 } else if jsonError != nil {
                     networkError = jsonError
                 }
-                
+
                 if error == nil {
                     ApiManager.sharedManager.goOnline()
                     self.offlineDelegate?.storeRequest(request!, data: jsonData!)
@@ -90,5 +90,5 @@ extension Requestable {
                 }
             }
     }
-    
+
 }

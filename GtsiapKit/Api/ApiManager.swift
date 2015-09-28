@@ -41,11 +41,11 @@ public class ApiManager {
         task.request = task.doRequest(urlRequest, completionHandler: completionHandler)
         return task
     }
-    
+
     func goOffline() {
         self.isOffline = true
     }
-    
+
     func goOnline() {
         self.isOffline = false
     }

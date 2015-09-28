@@ -15,7 +15,7 @@ public class OperationQueue: NSOperationQueue {
 
         addObserver(self, forKeyPath: "operationCount", options: NSKeyValueObservingOptions.New, context: nil)
     }
-    
+
     public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
 
         if keyPath != "operationCount" {
