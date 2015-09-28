@@ -114,9 +114,9 @@ public class ActivityIndicatorView: UIView {
 
         let width = self.superview!.constraint(self, attribute1: .Width,
             multiplier: 0.4)
-        
+
         width.priority = UILayoutPriorityDefaultLow
-        
+
         let height = self.superview!.constraint(self, attribute1: .Height,
             multiplier: 0.2)
 
@@ -124,7 +124,7 @@ public class ActivityIndicatorView: UIView {
 
         let aspectRatio = self.superview!.constraint(self, attribute1: .Height, view2: self, attribute2: .Width)
         aspectRatio.priority = UILayoutPriorityDefaultHigh
-        
+
         self.superview?.addConstraints([centerX, centerY, width, aspectRatio])
     }
 }
