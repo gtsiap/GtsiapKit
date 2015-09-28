@@ -38,7 +38,7 @@ public class ApiManager {
         completionHandler: (data: AnyObject?) -> ()
     ) -> ApiTask {
         let task = ApiTask()
-        task.doRequest(urlRequest, completionHandler: completionHandler)
+        task.request = task.doRequest(urlRequest, completionHandler: completionHandler)
         return task
     }
     

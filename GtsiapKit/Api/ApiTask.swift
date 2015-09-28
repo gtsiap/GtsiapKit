@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 public class ApiTask {
     
@@ -14,6 +15,7 @@ public class ApiTask {
     public var showNetworkActivity: Bool
     public var networkIndicator: ActivityIndicatorView
     public var offlineDelegate: RequestableOfflineDelegate?
+    var request: Request?
     
     init() {
         self.networkIndicator = ActivityIndicatorView()
@@ -28,6 +30,7 @@ extension ApiTask: Taskable {
     
     public func start() {
         startNetworkActivity()
+        self.request?.resume()
     }
 }
 
