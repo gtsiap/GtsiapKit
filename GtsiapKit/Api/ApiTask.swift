@@ -15,14 +15,19 @@ public class ApiTask {
     public var showNetworkActivity: Bool
     public var networkIndicator: ActivityIndicatorView
     public var offlineDelegate: RequestableOfflineDelegate?
+    public var taskFinished: (() -> ())?
+
     var request: Request?
 
-    init() {
+    init(
+        urlRequest: URLRequestConvertible,
+        completionHandler: (data: AnyObject?) -> ())
+    {
         self.networkIndicator = ActivityIndicatorView()
         self.showNetworkActivity = true
         self.toastView = ApiTask.createToast()
+        self.request = doRequest(urlRequest, completionHandler: completionHandler)
     }
-
 }
 
 // MARK: Taskable
@@ -45,15 +50,18 @@ extension ApiTask: Requestable {
     public func requestDidFinishWithError(error: NSError) {
         requestDidFinishCommon()
         showError(error)
+        self.taskFinished?()
     }
 
     public func requestDidFinishWithNoNetworkConnection() {
         requestDidFinishCommon()
         showNoNetworkConnection()
+        self.taskFinished?()
     }
 
     public func requestDidFinish() {
         requestDidFinishCommon()
+        self.taskFinished?()
     }
 
     // MARK: private funcs

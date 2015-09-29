@@ -105,7 +105,6 @@ extension ApiPresentable {
     public func startNetworkActivity() {
         if self.showNetworkActivity && self.view != nil {
             self.view?.addSubview(self.networkIndicator)
-
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 
             self.networkIndicator.startAnimating()

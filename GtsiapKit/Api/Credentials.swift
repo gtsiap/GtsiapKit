@@ -35,10 +35,10 @@ extension ApiManager {
 
         guard let
             data = Locksmith.loadDataForUserAccount(userAccount())
-        else { return false }
+        else { return loadFailed() }
 
-        guard let email = data["email"] as? String else { return false }
-        guard let password = data["password"] as? String else { return false }
+        guard let email = data["email"] as? String else { return loadFailed() }
+        guard let password = data["password"] as? String else { return loadFailed() }
 
         self.userCredentials.email = email
         self.userCredentials.password = password
