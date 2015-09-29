@@ -9,24 +9,16 @@ let networkLogger = Logger.defaultLogger(["network"])
 
 import Alamofire
 
-public struct UserCredentials {
-    public let email: String
-    public let password: String
-
-    public init(email: String, password: String) {
-        self.email = email
-        self.password = password
-    }
-}
-
 public class ApiManager {
     public static let sharedManager: ApiManager = ApiManager()
 
-    public static var userCredentials: UserCredentials = {
+    public var userCredentials: UserCredentials = {
         return UserCredentials(email: "", password: "")
     }()
 
     public private(set) var isOffline: Bool = false
+
+    public var baseUrl: String!
 
     private init() {
         Manager.sharedInstance.startRequestsImmediately = false
