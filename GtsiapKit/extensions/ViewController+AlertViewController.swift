@@ -16,14 +16,14 @@ extension UIViewController {
             message: message,
             preferredStyle: .Alert
         )
-        
+
         let okAction = UIAlertAction(title: "Ok", style: .Default)
         { alertAction in
             alertVC.dismissViewControllerAnimated(true, completion: nil)
         }
-    
+
         alertVC.addAction(okAction)
         presentViewController(alertVC, animated: true, completion: nil)
     }
-    
+
 }
