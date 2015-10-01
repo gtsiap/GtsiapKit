@@ -54,6 +54,7 @@
 		45B43CBF1B91E8F4008AC2DC /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CBE1B91E8F4008AC2DC /* Comment.swift */; settings = {ASSET_TAGS = (); }; };
 		45B43CC51B9207DD008AC2DC /* RelationshipJSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CC41B9207DD008AC2DC /* RelationshipJSONObject.swift */; settings = {ASSET_TAGS = (); }; };
 		45B43D061B94831D008AC2DC /* MapFromJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43D051B94831D008AC2DC /* MapFromJson.swift */; settings = {ASSET_TAGS = (); }; };
+		45CE5E3C1BB8767200AE682E /* ViewController+AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE5E3B1BB8767200AE682E /* ViewController+AlertViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		45DEE62D1BB2D08000383FC9 /* CreateResourceMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEE62C1BB2D08000383FC9 /* CreateResourceMap.swift */; settings = {ASSET_TAGS = (); }; };
 		45DEE62F1BB2D22200383FC9 /* UpdateResourceMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEE62E1BB2D22200383FC9 /* UpdateResourceMap.swift */; settings = {ASSET_TAGS = (); }; };
 		45DEE6311BB2D5D300383FC9 /* UpdateRelationshipMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEE6301BB2D5D300383FC9 /* UpdateRelationshipMap.swift */; settings = {ASSET_TAGS = (); }; };
@@ -147,6 +148,7 @@
 		45B43CBE1B91E8F4008AC2DC /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		45B43CC41B9207DD008AC2DC /* RelationshipJSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipJSONObject.swift; sourceTree = "<group>"; };
 		45B43D051B94831D008AC2DC /* MapFromJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapFromJson.swift; sourceTree = "<group>"; };
+		45CE5E3B1BB8767200AE682E /* ViewController+AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+AlertViewController.swift"; sourceTree = "<group>"; };
 		45DEE62C1BB2D08000383FC9 /* CreateResourceMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateResourceMap.swift; sourceTree = "<group>"; };
 		45DEE62E1BB2D22200383FC9 /* UpdateResourceMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateResourceMap.swift; sourceTree = "<group>"; };
 		45DEE6301BB2D5D300383FC9 /* UpdateRelationshipMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateRelationshipMap.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				4570D2B31B6CB97B00F6AA37 /* UIColor+Rgb.swift */,
 				45980A511B7653BF00FE0C4C /* NSDate+toString.swift */,
 				453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */,
+				45CE5E3B1BB8767200AE682E /* ViewController+AlertViewController.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				456E5A521BB300F900A04651 /* Taskable.swift in Sources */,
 				459809FC1B7639E300FE0C4C /* DeviceGuru.swift in Sources */,
 				457AB5951B2B6365003034F1 /* RevealNavigationController.swift in Sources */,
+				45CE5E3C1BB8767200AE682E /* ViewController+AlertViewController.swift in Sources */,
 				4536C3B91B29E7C2003E8CB7 /* Json.swift in Sources */,
 				456E5A501BB2FAD300A04651 /* ApiPresentable.swift in Sources */,
 				4583892D1B5AA499008132DF /* ActivityIndicatorView.swift in Sources */,
