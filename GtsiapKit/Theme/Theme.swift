@@ -21,6 +21,7 @@ public protocol ThemeDelegate {
     func activityIndicatorView() -> UIActivityIndicatorView
     func label() -> UILabel
     func font() -> UIFont
+    func switcher() -> UISwitch
     func headlineFont() -> UIFont
     func subheadlineFont() -> UIFont
     func defaultViewShadow() -> ViewShadow
@@ -85,6 +86,10 @@ public class Theme: ThemeDelegate {
             shadowColor: UIColor.blackColor().CGColor, // it doesn't matter
             shadowOffset: CGSize(width: 0, height: 0)
         )
+    }
+
+    public func switcher() -> UISwitch {
+        return UISwitch()
     }
 }
 
