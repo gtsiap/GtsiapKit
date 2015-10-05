@@ -24,6 +24,7 @@ public protocol ThemeDelegate {
     func switcher() -> UISwitch
     func headlineFont() -> UIFont
     func subheadlineFont() -> UIFont
+    func footnoteFont() -> UIFont
     func defaultViewShadow() -> ViewShadow
     func invisibleViewShadow() -> ViewShadow
 }
@@ -73,6 +74,10 @@ public class Theme: ThemeDelegate {
 
     public func subheadlineFont() -> UIFont {
         return UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+    }
+
+    public func footnoteFont() -> UIFont {
+        return UIFont.preferredFontForTextStyle(UIFontTextStyleFootnote)
     }
 
     public func defaultViewShadow() -> ViewShadow {
