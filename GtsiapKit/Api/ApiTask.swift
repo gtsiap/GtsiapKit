@@ -15,7 +15,7 @@ public class ApiTask {
     public var showNetworkActivity: Bool
     public var networkIndicator: ActivityIndicatorView
     public var offlineDelegate: RequestableOfflineDelegate?
-    public var taskFinished: (() -> ())?
+    var taskFinished: (() -> ())?
 
     var request: Request?
 

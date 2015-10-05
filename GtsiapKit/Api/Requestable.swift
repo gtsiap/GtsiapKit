@@ -23,7 +23,6 @@ public protocol Requestable: ApiPresentable {
     func requestDidFinishWithError(error: NSError)
     func requestDidFinishWithNoNetworkConnection()
     func requestDidFinish()
-    var taskFinished: (() -> ())? { get set }
 }
 
 extension Requestable {
