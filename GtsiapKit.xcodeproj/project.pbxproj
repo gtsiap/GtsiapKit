@@ -11,6 +11,7 @@
 		451E59271B95D0B10012167B /* Encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451E59261B95D0B10012167B /* Encode.swift */; settings = {ASSET_TAGS = (); }; };
 		4536C3B91B29E7C2003E8CB7 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4536C3B81B29E7C2003E8CB7 /* Json.swift */; };
 		453F68351B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */; };
+		455DA14C1BC3F96F005A61D7 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DA14B1BC3F96F005A61D7 /* UIColor+hex.swift */; settings = {ASSET_TAGS = (); }; };
 		456E59F91BB2F98B00A04651 /* JSONAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 456E59F81BB2F98B00A04651 /* JSONAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		456E5A001BB2F98B00A04651 /* JSONAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456E59F61BB2F98B00A04651 /* JSONAPI.framework */; settings = {ASSET_TAGS = (); }; };
 		456E5A051BB2F98B00A04651 /* JSONAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A041BB2F98B00A04651 /* JSONAPITests.swift */; };
@@ -98,6 +99,7 @@
 		451E59261B95D0B10012167B /* Encode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encode.swift; sourceTree = "<group>"; };
 		4536C3B81B29E7C2003E8CB7 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 		453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+isConnectedToNetwork.swift"; sourceTree = "<group>"; };
+		455DA14B1BC3F96F005A61D7 /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		456E59F61BB2F98B00A04651 /* JSONAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		456E59F81BB2F98B00A04651 /* JSONAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONAPI.h; sourceTree = "<group>"; };
 		456E59FA1BB2F98B00A04651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				45980A511B7653BF00FE0C4C /* NSDate+toString.swift */,
 				453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */,
 				45CE5E3B1BB8767200AE682E /* ViewController+AlertViewController.swift */,
+				455DA14B1BC3F96F005A61D7 /* UIColor+hex.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -735,6 +738,7 @@
 				458040871B52A7ED000D5249 /* Operation.swift in Sources */,
 				459809FF1B763D8200FE0C4C /* RevealTableViewController.swift in Sources */,
 				45125D1A1BBAB1BE003E4397 /* ApiGroupTask.swift in Sources */,
+				455DA14C1BC3F96F005A61D7 /* UIColor+hex.swift in Sources */,
 				459809FD1B7639E300FE0C4C /* FeedbackManager.swift in Sources */,
 				45980A521B7653BF00FE0C4C /* NSDate+toString.swift in Sources */,
 				457F71991BC29E1F005A478B /* PageViewController.swift in Sources */,

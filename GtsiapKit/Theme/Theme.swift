@@ -27,9 +27,24 @@ public protocol ThemeDelegate {
     func footnoteFont() -> UIFont
     func defaultViewShadow() -> ViewShadow
     func invisibleViewShadow() -> ViewShadow
+
+    var primaryColor: UIColor? { get set }
+    var tintColor: UIColor? { get set }
+
+}
+
+extension ThemeDelegate {
+    public func setup() {
+        UINavigationBar.appearance().backgroundColor = self.primaryColor
+        UINavigationBar.appearance().tintColor = self.tintColor
+    }
+
 }
 
 public class Theme: ThemeDelegate {
+
+    public var primaryColor: UIColor?
+    public var tintColor: UIColor?
 
     public func button(text: String, target: AnyObject, action: Selector) -> UIButton {
         let button = UIButton(type: .System)
