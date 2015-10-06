@@ -60,6 +60,7 @@
 		45DEE62F1BB2D22200383FC9 /* UpdateResourceMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEE62E1BB2D22200383FC9 /* UpdateResourceMap.swift */; settings = {ASSET_TAGS = (); }; };
 		45DEE6311BB2D5D300383FC9 /* UpdateRelationshipMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEE6301BB2D5D300383FC9 /* UpdateRelationshipMap.swift */; settings = {ASSET_TAGS = (); }; };
 		45DEE6331BB2E93B00383FC9 /* update_relationship2.json in Resources */ = {isa = PBXBuildFile; fileRef = 45DEE6321BB2E93B00383FC9 /* update_relationship2.json */; settings = {ASSET_TAGS = (); }; };
+		45E5A84E1BC3BD790008361E /* Workarounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E5A84D1BC3BD790008361E /* Workarounds.swift */; settings = {ASSET_TAGS = (); }; };
 		45E8706B1B67620C001315DE /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8706A1B67620C001315DE /* SearchView.swift */; };
 		45EDE7921BA46696008D96DB /* update_relationship.json in Resources */ = {isa = PBXBuildFile; fileRef = 45EDE78F1BA46696008D96DB /* update_relationship.json */; settings = {ASSET_TAGS = (); }; };
 		45EDE7931BA46696008D96DB /* update_resource.json in Resources */ = {isa = PBXBuildFile; fileRef = 45EDE7901BA46696008D96DB /* update_resource.json */; settings = {ASSET_TAGS = (); }; };
@@ -155,6 +156,7 @@
 		45DEE62E1BB2D22200383FC9 /* UpdateResourceMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateResourceMap.swift; sourceTree = "<group>"; };
 		45DEE6301BB2D5D300383FC9 /* UpdateRelationshipMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateRelationshipMap.swift; sourceTree = "<group>"; };
 		45DEE6321BB2E93B00383FC9 /* update_relationship2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = update_relationship2.json; sourceTree = "<group>"; };
+		45E5A84D1BC3BD790008361E /* Workarounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workarounds.swift; sourceTree = "<group>"; };
 		45E8706A1B67620C001315DE /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		45EDE78F1BA46696008D96DB /* update_relationship.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = update_relationship.json; sourceTree = "<group>"; };
 		45EDE7901BA46696008D96DB /* update_resource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = update_resource.json; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				4536C3B71B29E7C2003E8CB7 /* Json */,
 				45B404721B29E79F00DF2CDB /* Logger */,
 				45B404591B29E68A00DF2CDB /* Supporting Files */,
+				45E5A84D1BC3BD790008361E /* Workarounds.swift */,
 			);
 			path = GtsiapKit;
 			sourceTree = "<group>";
@@ -735,6 +738,7 @@
 				459809FD1B7639E300FE0C4C /* FeedbackManager.swift in Sources */,
 				45980A521B7653BF00FE0C4C /* NSDate+toString.swift in Sources */,
 				457F71991BC29E1F005A478B /* PageViewController.swift in Sources */,
+				45E5A84E1BC3BD790008361E /* Workarounds.swift in Sources */,
 				45B404741B29E79F00DF2CDB /* Logger.swift in Sources */,
 				4570D2B41B6CB97B00F6AA37 /* UIColor+Rgb.swift in Sources */,
 				4598C8F51BB97CA500C4216F /* Credentials.swift in Sources */,
