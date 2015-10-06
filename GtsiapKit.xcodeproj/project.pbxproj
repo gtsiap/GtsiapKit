@@ -56,6 +56,7 @@
 		45B43CBF1B91E8F4008AC2DC /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CBE1B91E8F4008AC2DC /* Comment.swift */; settings = {ASSET_TAGS = (); }; };
 		45B43CC51B9207DD008AC2DC /* RelationshipJSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CC41B9207DD008AC2DC /* RelationshipJSONObject.swift */; settings = {ASSET_TAGS = (); }; };
 		45B43D061B94831D008AC2DC /* MapFromJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43D051B94831D008AC2DC /* MapFromJson.swift */; settings = {ASSET_TAGS = (); }; };
+		45C825EB1BC41A1300317159 /* StaticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C825EA1BC41A1300317159 /* StaticTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		45CE5E3C1BB8767200AE682E /* ViewController+AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE5E3B1BB8767200AE682E /* ViewController+AlertViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		45DEE62D1BB2D08000383FC9 /* CreateResourceMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEE62C1BB2D08000383FC9 /* CreateResourceMap.swift */; settings = {ASSET_TAGS = (); }; };
 		45DEE62F1BB2D22200383FC9 /* UpdateResourceMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEE62E1BB2D22200383FC9 /* UpdateResourceMap.swift */; settings = {ASSET_TAGS = (); }; };
@@ -153,6 +154,7 @@
 		45B43CBE1B91E8F4008AC2DC /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		45B43CC41B9207DD008AC2DC /* RelationshipJSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipJSONObject.swift; sourceTree = "<group>"; };
 		45B43D051B94831D008AC2DC /* MapFromJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapFromJson.swift; sourceTree = "<group>"; };
+		45C825EA1BC41A1300317159 /* StaticTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticTableViewController.swift; sourceTree = "<group>"; };
 		45CE5E3B1BB8767200AE682E /* ViewController+AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+AlertViewController.swift"; sourceTree = "<group>"; };
 		45DEE62C1BB2D08000383FC9 /* CreateResourceMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateResourceMap.swift; sourceTree = "<group>"; };
 		45DEE62E1BB2D22200383FC9 /* UpdateResourceMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateResourceMap.swift; sourceTree = "<group>"; };
@@ -219,6 +221,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		453416421BC419B50074FD50 /* StaticTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				45C825EA1BC41A1300317159 /* StaticTableViewController.swift */,
+			);
+			path = StaticTableViewController;
+			sourceTree = "<group>";
+		};
 		4536C3B71B29E7C2003E8CB7 /* Json */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +367,7 @@
 		45B404581B29E68A00DF2CDB /* GtsiapKit */ = {
 			isa = PBXGroup;
 			children = (
+				453416421BC419B50074FD50 /* StaticTableViewController */,
 				457F71971BC29E1F005A478B /* PageViewController */,
 				456E5A4A1BB2FA1B00A04651 /* Api */,
 				459809F91B7639E300FE0C4C /* FeedbackManager */,
@@ -747,6 +758,7 @@
 				4570D2B41B6CB97B00F6AA37 /* UIColor+Rgb.swift in Sources */,
 				4598C8F51BB97CA500C4216F /* Credentials.swift in Sources */,
 				45FAFA641B8DDE8700C4000E /* OperationQueue.swift in Sources */,
+				45C825EB1BC41A1300317159 /* StaticTableViewController.swift in Sources */,
 				453F68351B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift in Sources */,
 				45FCCB151B52E4B90057AAFD /* UIView+AutolayoutUtils.swift in Sources */,
 				456E5A541BB301D700A04651 /* Requestable.swift in Sources */,

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4534163E1BC419420074FD50 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4534162E1BC419190074FD50 /* Locksmith.framework */; };
+		453416411BC419920074FD50 /* TestStaticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453416401BC419920074FD50 /* TestStaticTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		4546A14E1B78D21000DCE648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546A14D1B78D21000DCE648 /* AppDelegate.swift */; };
 		4546A1501B78D21000DCE648 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546A14F1B78D21000DCE648 /* ViewController.swift */; };
 		4546A1531B78D21000DCE648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4546A1511B78D21000DCE648 /* Main.storyboard */; };
@@ -28,6 +30,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		453416361BC419190074FD50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45D4BD091B78D433006BE819 /* GtsiapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45B43C881B91C3E3008AC2DC;
+			remoteInfo = JSONAPIMapper;
+		};
+		453416381BC419190074FD50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45D4BD091B78D433006BE819 /* GtsiapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45B43C911B91C3E3008AC2DC;
+			remoteInfo = JSONAPIMapperTests;
+		};
+		4534163A1BC419190074FD50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45D4BD091B78D433006BE819 /* GtsiapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 456E59F61BB2F98B00A04651;
+			remoteInfo = JSONAPI;
+		};
+		4534163C1BC419190074FD50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45D4BD091B78D433006BE819 /* GtsiapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 456E59FF1BB2F98B00A04651;
+			remoteInfo = JSONAPITests;
+		};
 		4546A15E1B78D21000DCE648 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4546A1401B78D21000DCE648 /* Project object */;
@@ -73,6 +103,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4534162E1BC419190074FD50 /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
+		453416401BC419920074FD50 /* TestStaticTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStaticTableViewController.swift; sourceTree = "<group>"; };
 		4546A1481B78D21000DCE648 /* Example-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4546A14C1B78D21000DCE648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4546A14D1B78D21000DCE648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +137,7 @@
 			files = (
 				45D4BD181B78D441006BE819 /* GtsiapKit.framework in Frameworks */,
 				45D4BD1F1B78D5B6006BE819 /* Alamofire.framework in Frameworks */,
+				4534163E1BC419420074FD50 /* Locksmith.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,9 +151,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4534163F1BC419700074FD50 /* StaticTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				453416401BC419920074FD50 /* TestStaticTableViewController.swift */,
+			);
+			path = StaticTableViewController;
+			sourceTree = "<group>";
+		};
 		4546A13F1B78D21000DCE648 = {
 			isa = PBXGroup;
 			children = (
+				4534162E1BC419190074FD50 /* Locksmith.framework */,
 				45D4BD1E1B78D5B6006BE819 /* Alamofire.framework */,
 				45D4BD091B78D433006BE819 /* GtsiapKit.xcodeproj */,
 				4546A14A1B78D21000DCE648 /* Example-iOS */,
@@ -141,6 +183,7 @@
 		4546A14A1B78D21000DCE648 /* Example-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4534163F1BC419700074FD50 /* StaticTableViewController */,
 				45D4BCF31B78D41A006BE819 /* Activity Indicator */,
 				45D4BCF61B78D41A006BE819 /* NavigationController.swift */,
 				45D4BCF71B78D41A006BE819 /* Operations */,
@@ -222,6 +265,10 @@
 			children = (
 				45D4BD111B78D433006BE819 /* GtsiapKit.framework */,
 				45D4BD131B78D433006BE819 /* GtsiapKitTests.xctest */,
+				453416371BC419190074FD50 /* JSONAPIMapper.framework */,
+				453416391BC419190074FD50 /* JSONAPIMapperTests.xctest */,
+				4534163B1BC419190074FD50 /* JSONAPI.framework */,
+				4534163D1BC419190074FD50 /* JSONAPITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -313,6 +360,34 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		453416371BC419190074FD50 /* JSONAPIMapper.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JSONAPIMapper.framework;
+			remoteRef = 453416361BC419190074FD50 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		453416391BC419190074FD50 /* JSONAPIMapperTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = JSONAPIMapperTests.xctest;
+			remoteRef = 453416381BC419190074FD50 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4534163B1BC419190074FD50 /* JSONAPI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JSONAPI.framework;
+			remoteRef = 4534163A1BC419190074FD50 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4534163D1BC419190074FD50 /* JSONAPITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = JSONAPITests.xctest;
+			remoteRef = 4534163C1BC419190074FD50 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		45D4BD111B78D433006BE819 /* GtsiapKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -357,6 +432,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Locksmith.framework",
 			);
 			outputPaths = (
 			);
@@ -380,6 +456,7 @@
 				4546A14E1B78D21000DCE648 /* AppDelegate.swift in Sources */,
 				45D4BD081B78D41A006BE819 /* ToastViewController.swift in Sources */,
 				45D4BD051B78D41A006BE819 /* RevealToggleViewController.swift in Sources */,
+				453416411BC419920074FD50 /* TestStaticTableViewController.swift in Sources */,
 				45D4BD011B78D41A006BE819 /* ActivityIndicatorView.swift in Sources */,
 				45D4BD071B78D41A006BE819 /* ToastTableViewController.swift in Sources */,
 			);
