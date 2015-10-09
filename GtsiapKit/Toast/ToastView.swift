@@ -18,7 +18,7 @@ public struct ToastViewTheme {
 public class ToastView: UIView {
 
     private lazy var textLabel: UILabel = {
-        let label = ThemeManager.defaultTheme.label()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
 
         self.addSubview(label)

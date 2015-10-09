@@ -8,16 +8,16 @@
 
 import UIKit
 
-public struct ActivityIndicatorViewStyle {
-    var activityIndicatorStyle: UIActivityIndicatorViewStyle =
+public class ActivityIndicatorViewStyle {
+    public var activityIndicatorStyle: UIActivityIndicatorViewStyle =
         UIActivityIndicatorViewStyle.WhiteLarge
 
-    var backgroundColor: UIColor = UIColor.blackColor()
-    var activityIndicatorColor: UIColor = UIColor.whiteColor()
-    var textColor: UIColor = UIColor.whiteColor()
+    public var backgroundColor: UIColor = UIColor.blackColor()
+    public var activityIndicatorColor: UIColor = UIColor.whiteColor()
+    public var textColor: UIColor = UIColor.whiteColor()
 
-    var cornerRadius: CGFloat = 10.0
-    var alpha: CGFloat = 0.9
+    public var cornerRadius: CGFloat = 10.0
+    public var alpha: CGFloat = 0.9
 }
 
 public class ActivityIndicatorView: UIView {
@@ -26,7 +26,7 @@ public class ActivityIndicatorView: UIView {
 
     public var automaticallyPositionInSuperview: Bool = true
 
-    public var activityIndicatorViewStyle: ActivityIndicatorViewStyle =
+    public static let activityIndicatorViewStyle: ActivityIndicatorViewStyle =
         ActivityIndicatorViewStyle()
 
     public var text: String = "Loading.." {
@@ -77,7 +77,7 @@ public class ActivityIndicatorView: UIView {
     }()
 
     private lazy var textLabel: UILabel = {
-        let label = ThemeManager.defaultTheme.label()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(label)
 
@@ -89,14 +89,19 @@ public class ActivityIndicatorView: UIView {
     }()
 
     private func changeTheme() {
-        self.backgroundColor = self.activityIndicatorViewStyle.backgroundColor
+        self.backgroundColor = ActivityIndicatorView
+            .activityIndicatorViewStyle.backgroundColor
         self.activityIndicator.activityIndicatorViewStyle =
-            self.activityIndicatorViewStyle.activityIndicatorStyle
-        self.activityIndicator.color = self.activityIndicatorViewStyle.activityIndicatorColor
+            ActivityIndicatorView.activityIndicatorViewStyle.activityIndicatorStyle
+        self.activityIndicator.color = ActivityIndicatorView
+            .activityIndicatorViewStyle.activityIndicatorColor
 
-        self.textLabel.textColor = self.activityIndicatorViewStyle.textColor
-        self.layer.cornerRadius = self.activityIndicatorViewStyle.cornerRadius
-        self.alpha = self.activityIndicatorViewStyle.alpha
+        self.textLabel.textColor = ActivityIndicatorView
+            .activityIndicatorViewStyle.textColor
+        self.layer.cornerRadius = ActivityIndicatorView
+            .activityIndicatorViewStyle.cornerRadius
+        self.alpha = ActivityIndicatorView
+            .activityIndicatorViewStyle.alpha
     }
 
     private func positionInSuperview() {

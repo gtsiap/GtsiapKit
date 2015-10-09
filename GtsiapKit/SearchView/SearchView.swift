@@ -20,9 +20,9 @@ public class SearchView: UIView {
             oldValue?.removeFromSuperview()
 
             self.contentView!.translatesAutoresizingMaskIntoConstraints = false
-            
+
             let contentViewColor: UIColor
-            
+
             if let primaryColor = ThemeManager.defaultTheme.primaryColor {
                 contentViewColor = primaryColor
             } else {
@@ -31,7 +31,7 @@ public class SearchView: UIView {
                     alpha: 1
                 )
             }
-            
+
             self.contentView?.backgroundColor = contentViewColor
         }
     }

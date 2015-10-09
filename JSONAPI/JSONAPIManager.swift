@@ -42,7 +42,7 @@ public class JSONAPIManager: ApiManager {
         return task(requestURL) { data in
             let objects: [T]
             defer { completionHandler(data: objects) }
-            
+
             do {
                 objects = try Mapper<T>().fromJSON(data)
             } catch {

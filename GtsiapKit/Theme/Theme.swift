@@ -14,77 +14,58 @@ public struct ViewShadow {
     public var shadowOffset: CGSize = CGSize(width: -10, height: 10)
 }
 
-public protocol ThemeDelegate {
-
-    func button(text: String, target: AnyObject, action: Selector) -> UIButton
-    func textField() -> UITextField
-    func activityIndicatorView() -> UIActivityIndicatorView
-    func label() -> UILabel
-    func font() -> UIFont
-    func switcher() -> UISwitch
-    func headlineFont() -> UIFont
-    func subheadlineFont() -> UIFont
-    func footnoteFont() -> UIFont
-    func defaultViewShadow() -> ViewShadow
-    func invisibleViewShadow() -> ViewShadow
+public protocol Themeable {
 
     var primaryColor: UIColor? { get set }
     var tintColor: UIColor? { get set }
 
 }
 
-extension ThemeDelegate {
-    public func setup() {
+extension Themeable {
 
-        UINavigationBar.appearance().barTintColor = self.primaryColor
-        UINavigationBar.appearance().tintColor = self.tintColor
-        
-        UITabBar.appearance().tintColor = self.primaryColor
-        
+    public func setup() {
+        labelAppearance()
+        buttonAppearance()
+        searchBarAppearance()
+        tabBarAppearance()
+        navigationBarAppearance()
+        activityIndicatorViewAppearance()
+    }
+
+    // MARK: appearance
+    public func labelAppearance() {
+        UILabel.appearance().font = font()
+        UILabel.appearance().lineBreakMode = NSLineBreakMode.ByWordWrapping
+        UILabel.appearance().numberOfLines = 0
+    }
+
+    public func buttonAppearance() {
+        UIButton.appearance().tintColor = self.primaryColor
+    }
+
+    public func searchBarAppearance() {
         UISearchBar.appearance().barTintColor = self.primaryColor
         UISearchBar.appearance().tintColor = self.tintColor
-
     }
 
-}
-
-public class Theme: ThemeDelegate {
-
-    public var primaryColor: UIColor?
-    public var tintColor: UIColor?
-
-    public func button(text: String, target: AnyObject, action: Selector) -> UIButton {
-        let button = UIButton(type: .System)
-        button.setTitle(text, forState: .Normal)
-        button.addTarget(target, action: action, forControlEvents: .TouchUpInside)
-        return button
+    public func tabBarAppearance() {
+        UITabBar.appearance().tintColor = self.primaryColor
     }
 
-    public func textField() -> UITextField {
-        let textField = UITextField()
-        textField.borderStyle = .RoundedRect
-        textField.font = UIFont.systemFontOfSize(14)
-        textField.autocorrectionType = .No
-        textField.keyboardType = .Default
-        textField.returnKeyType = .Done
-        textField.clearButtonMode = .WhileEditing
-        return textField
+    public func navigationBarAppearance() {
+        UINavigationBar.appearance().barTintColor = self.primaryColor
+        UINavigationBar.appearance().tintColor = self.tintColor
     }
 
-    public func activityIndicatorView() -> UIActivityIndicatorView {
-       let indicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
-        indicator.hidesWhenStopped = true
-        indicator.backgroundColor = UIColor.lightGrayColor()
-        return indicator
+    public func activityIndicatorViewAppearance() {
+        if let color = self.primaryColor {
+            ActivityIndicatorView
+                .activityIndicatorViewStyle
+                .backgroundColor = color
+        }
     }
 
-    public func label() -> UILabel {
-        let label = UILabel()
-        label.font = font()
-        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        label.numberOfLines = 0
-        return label
-    }
+    // MARK: funcs
 
     public func font() -> UIFont {
         return UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
@@ -114,14 +95,17 @@ public class Theme: ThemeDelegate {
             shadowOffset: CGSize(width: 0, height: 0)
         )
     }
+}
 
-    public func switcher() -> UISwitch {
-        return UISwitch()
-    }
+public class Theme: Themeable {
+
+    public var primaryColor: UIColor?
+    public var tintColor: UIColor?
+
 }
 
 public class ThemeManager {
-    public  static var defaultTheme: ThemeDelegate = {
+    public  static var defaultTheme: Themeable = {
         return Theme()
     }()
 }

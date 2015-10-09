@@ -7,11 +7,11 @@
 //
 
 public class Mapper<T: Mappable>  {
-    
+
     public init(){
-        
+
     }
-    
+
     public func fromJSON(jsonData: [String : AnyObject]) throws -> [T] {
 
         var objects = [T]()
