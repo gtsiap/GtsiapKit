@@ -11,7 +11,7 @@ import UIKit
 extension UIButton {
 
     public convenience init(_ text: String, target: AnyObject, action: Selector) {
-        self.init()
+        self.init(type: .System)
         setTitle(text, forState: .Normal)
         addTarget(target, action: action, forControlEvents: .TouchUpInside)
 
