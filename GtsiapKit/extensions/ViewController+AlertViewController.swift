@@ -10,7 +10,11 @@ import UIKit
 
 extension UIViewController {
 
-    public func showAlert(title: String, message: String) {
+    public func showAlert(
+        title: String,
+        message: String,
+        completed: (() -> ())? = nil
+    ){
         let alertVC = UIAlertController(
             title: title,
             message: message,
@@ -20,6 +24,7 @@ extension UIViewController {
         let okAction = UIAlertAction(title: "Ok", style: .Default)
         { alertAction in
             alertVC.dismissViewControllerAnimated(true, completion: nil)
+            completed?()
         }
 
         alertVC.addAction(okAction)
