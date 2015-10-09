@@ -21,7 +21,7 @@ public class ApiTask {
 
     init(
         urlRequest: URLRequestConvertible,
-        completionHandler: (data: AnyObject?) -> ())
+        completionHandler: (data: [String : AnyObject]) -> ())
     {
         self.networkIndicator = ActivityIndicatorView()
         self.showNetworkActivity = true

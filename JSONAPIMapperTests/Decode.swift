@@ -24,7 +24,7 @@ class Decode: XCTestCase {
     }
 
     func test1Post() {
-        let posts = Mapper<Post>().fromJSON(Decode.JSON)
+        let posts = try! Mapper<Post>().fromJSON(Decode.JSON)
         let post = posts[0]
 
         XCTAssertEqual(posts.count, 1)

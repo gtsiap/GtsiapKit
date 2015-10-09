@@ -28,7 +28,7 @@ public class ApiManager {
     // MARK: tasks
     public func task(
         urlRequest: URLRequestConvertible,
-        completionHandler: (data: AnyObject?) -> ()
+        completionHandler: (data: [String : AnyObject]) -> ()
     ) -> ApiTask {
         let task = ApiTask(
             urlRequest: urlRequest,
