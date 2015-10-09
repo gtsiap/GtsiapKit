@@ -35,8 +35,12 @@ public protocol ThemeDelegate {
 
 extension ThemeDelegate {
     public func setup() {
-        UINavigationBar.appearance().backgroundColor = self.primaryColor
+
+        UINavigationBar.appearance().barTintColor = self.primaryColor
         UINavigationBar.appearance().tintColor = self.tintColor
+        
+        UITabBar.appearance().tintColor = self.primaryColor
+        
     }
 
 }
