@@ -41,6 +41,9 @@ extension ThemeDelegate {
         
         UITabBar.appearance().tintColor = self.primaryColor
         
+        UISearchBar.appearance().barTintColor = self.primaryColor
+        UISearchBar.appearance().tintColor = self.tintColor
+
     }
 
 }
