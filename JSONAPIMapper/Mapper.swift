@@ -7,8 +7,12 @@
 //
 
 public class Mapper<T: Mappable>  {
-
-    public func fromJSON(jsonData: [String : AnyObject]) -> [T] {
+    
+    public init(){
+        
+    }
+    
+    public func fromJSON(jsonData: [String : AnyObject]) throws -> [T] {
 
         var objects = [T]()
 
