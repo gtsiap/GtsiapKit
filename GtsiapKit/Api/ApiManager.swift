@@ -16,11 +16,12 @@ public class ApiManager {
         return UserCredentials(email: "", password: "")
     }()
 
+    public var didCreateNewTask: ((newTask: ApiTask) -> ())? = nil
     public private(set) var isOffline: Bool = false
 
     public var baseUrl: String!
 
-    private init() {
+    public init() {
         Manager.sharedInstance.startRequestsImmediately = false
     }
 
@@ -33,6 +34,9 @@ public class ApiManager {
             urlRequest: urlRequest,
             completionHandler: completionHandler
         )
+
+        self.didCreateNewTask?(newTask: task)
+
         return task
     }
 
