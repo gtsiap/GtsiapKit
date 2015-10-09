@@ -19,13 +19,12 @@ public class JSONAPIManager: ApiManager {
     }
 
     // MARK: tasks
-    public func fetchResource(
-        resourceObject: Mappable.Type,
-        completionHandler: (data: AnyObject?) -> ()
+    public func fetchResource<T: Mappable>(
+        completionHandler: (data: [T]) -> ()
     ) -> ApiTask {
 
         var includeObjects = ""
-        for (index, it) in resourceObject.relationships.keys.enumerate() {
+        for (index, it) in T.relationships.keys.enumerate() {
             if index != 0 {
                 includeObjects += ","
             }
@@ -34,13 +33,23 @@ public class JSONAPIManager: ApiManager {
         }
 
         let requestURL = createRequest(
-            resourceObject.resource,
+            T.resource,
             parameters: [
                 "include": includeObjects
             ]
         )
 
-        return task(requestURL, completionHandler: completionHandler)
+        return task(requestURL) { data in
+            let objects: [T]
+            defer { completionHandler(data: objects) }
+            
+            do {
+                objects = try Mapper<T>().fromJSON(data)
+            } catch {
+                objects = [T]()
+            }
+        }
+
     }
 
 
