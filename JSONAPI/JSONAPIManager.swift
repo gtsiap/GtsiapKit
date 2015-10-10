@@ -36,7 +36,8 @@ public class JSONAPIManager: ApiManager {
             T.resource,
             parameters: [
                 "include": includeObjects
-            ]
+            ],
+            method: .GET
         )
 
         return task(requestURL) { data in
@@ -55,12 +56,16 @@ public class JSONAPIManager: ApiManager {
 
     private func createRequest(
         path: String,
-        parameters: [String : String] = [String : String]()
+        parameters: [String : String] = [String : String](),
+        method: Alamofire.Method
     ) -> NSMutableURLRequest {
 
         let URL = NSURL(string: self.baseUrl)!
         let URLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
-        URLRequest.HTTPMethod = Alamofire.Method.GET.rawValue
+        URLRequest.HTTPMethod = method.rawValue
+        
+        URLRequest.setValue("application/vnd.api+json", forHTTPHeaderField: "Accept")
+        URLRequest.setValue("application/vnd.api+json", forHTTPHeaderField: "Content-Type")
 
         let email = self.userCredentials.email
         let password = self.userCredentials.password
