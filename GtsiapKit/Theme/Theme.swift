@@ -18,6 +18,9 @@ public protocol Themeable {
 
     var primaryColor: UIColor? { get set }
     var tintColor: UIColor? { get set }
+    var appearanceForTabBar: (() -> ())? { get set }
+    var tintColorForControls: UIColor? { get set }
+    var selectedTitleTextColor: UIColor? { get set }
 
 }
 
@@ -27,9 +30,12 @@ extension Themeable {
         labelAppearance()
         buttonAppearance()
         searchBarAppearance()
-        tabBarAppearance()
+        segmentedAppearance()
+        switchAppearance()
         navigationBarAppearance()
         activityIndicatorViewAppearance()
+
+        self.appearanceForTabBar?()
     }
 
     // MARK: appearance
@@ -40,7 +46,9 @@ extension Themeable {
     }
 
     public func buttonAppearance() {
-        UIButton.appearance().tintColor = self.primaryColor
+        if let color = self.tintColorForControls {
+            UIButton.appearance().tintColor = color
+        }
     }
 
     public func searchBarAppearance() {
@@ -48,13 +56,30 @@ extension Themeable {
         UISearchBar.appearance().tintColor = self.tintColor
     }
 
-    public func tabBarAppearance() {
-        UITabBar.appearance().tintColor = self.primaryColor
-    }
-
     public func navigationBarAppearance() {
         UINavigationBar.appearance().barTintColor = self.primaryColor
         UINavigationBar.appearance().tintColor = self.tintColor
+    }
+
+    public func switchAppearance() {
+        UISwitch.appearance().tintColor = self.primaryColor
+        UISwitch.appearance().onTintColor = self.tintColorForControls
+    }
+
+    public func segmentedAppearance() {
+        guard let
+            textColor = self.selectedTitleTextColor
+        else { return }
+
+        UISegmentedControl.appearance().setTitleTextAttributes([
+            NSFontAttributeName: smallBoldFont()
+        ], forState: .Normal)
+
+        UISegmentedControl.appearance().setTitleTextAttributes([
+            NSForegroundColorAttributeName: textColor,
+            NSFontAttributeName: smallBoldFont()
+        ], forState: .Selected)
+
     }
 
     public func activityIndicatorViewAppearance() {
@@ -69,6 +94,14 @@ extension Themeable {
 
     public func font() -> UIFont {
         return UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+    }
+
+    public func normalBoldFont() -> UIFont {
+        return  UIFont.boldSystemFontOfSize(UIFont.systemFontSize())
+    }
+
+    public func smallBoldFont() -> UIFont {
+        return  UIFont.boldSystemFontOfSize(UIFont.smallSystemFontSize())
     }
 
     public func headlineFont() -> UIFont {
@@ -101,6 +134,9 @@ public class Theme: Themeable {
 
     public var primaryColor: UIColor?
     public var tintColor: UIColor?
+    public var appearanceForTabBar: (() -> ())?
+    public var tintColorForControls: UIColor?
+    public var selectedTitleTextColor: UIColor?
 
 }
 
