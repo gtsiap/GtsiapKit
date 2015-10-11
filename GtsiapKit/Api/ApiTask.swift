@@ -15,6 +15,9 @@ public class ApiTask {
     public var showNetworkActivity: Bool
     public var networkIndicator: ActivityIndicatorView
     public var offlineDelegate: RequestableOfflineDelegate?
+    public var taskDidFinish: ((task: ApiTask) -> ())?
+
+    // Internal used for ApiGroup
     var taskFinished: (() -> ())?
 
     var request: Request?
@@ -33,9 +36,10 @@ public class ApiTask {
 // MARK: Taskable
 extension ApiTask: Taskable {
 
-    public func start() {
+    public func start() -> ApiTask {
         startNetworkActivity()
         self.request?.resume()
+        return self
     }
 }
 
@@ -51,17 +55,20 @@ extension ApiTask: Requestable {
         requestDidFinishCommon()
         showError(error)
         self.taskFinished?()
+        self.taskDidFinish?(task: self)
     }
 
     public func requestDidFinishWithNoNetworkConnection() {
         requestDidFinishCommon()
         showNoNetworkConnection()
         self.taskFinished?()
+        self.taskDidFinish?(task: self)
     }
 
     public func requestDidFinish() {
         requestDidFinishCommon()
         self.taskFinished?()
+        self.taskDidFinish?(task: self)
     }
 
     // MARK: private funcs

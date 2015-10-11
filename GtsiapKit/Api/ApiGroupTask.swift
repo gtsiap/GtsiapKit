@@ -27,7 +27,7 @@ public class ApiGroupTask {
 // MARK: Taskable
 extension ApiGroupTask: Taskable {
 
-    public func start() {
+    public func start() -> ApiGroupTask {
         startNetworkActivity()
 
         // We just need a queue.
@@ -64,6 +64,7 @@ extension ApiGroupTask: Taskable {
         }
 
         stopNetworkActivity()
+        return self
     }
 }
 

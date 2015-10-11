@@ -66,6 +66,10 @@ extension ApiPresentable {
         self.viewController?.showAlert("Server Error", message: error.localizedDescription)
     }
 
+    public func showError(error: String, message: String) {
+        self.viewController?.showAlert("Server Error", message: error)
+    }
+
     public func showNoNetworkConnection() {
         let alertController = UIAlertController(
             title: "Network Connection issue",

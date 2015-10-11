@@ -9,5 +9,6 @@
 import UIKit
 
 public protocol Taskable {
-    func start()
+    typealias ClassSelf = Self
+    func start() -> ClassSelf
 }
