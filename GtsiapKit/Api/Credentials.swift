@@ -32,7 +32,6 @@ extension ApiManager {
             print("Load Failed")
             return false
         }
-
         guard let
             data = Locksmith.loadDataForUserAccount(userAccount())
         else { return loadFailed() }
@@ -52,7 +51,7 @@ extension ApiManager {
         } catch {}
     }
 
-    private func userAccount() -> String{
+    private func userAccount() -> String {
         let execName: String = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleExecutable") as! String
         return execName + "_" + ApiManager.sharedManager.baseUrl
     }
