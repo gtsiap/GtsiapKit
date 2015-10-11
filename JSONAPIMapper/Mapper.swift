@@ -16,9 +16,10 @@ public class Mapper<T: Mappable>  {
 
         var objects = [T]()
 
-        guard let includedData = jsonData["included"] as? [[String : AnyObject]] else {
-            // TODO ERROR
-            return objects
+        var includedData = [[String : AnyObject]]()
+
+        if let data = jsonData["included"] as? [[String : AnyObject]] {
+           includedData = data
         }
 
         if let dataArray = jsonData["data"] as? [[String : AnyObject]] {
@@ -36,6 +37,18 @@ public class Mapper<T: Mappable>  {
                 objects.append(object)
 
             }
+        } else if let data = jsonData["data"] as? [String : AnyObject] {
+            let object = T()
+            let map = MapFromJSON(
+                resourceData: data,
+                includedData: includedData,
+                mappableObject: object
+            )
+
+            object.map(map)
+            objects.append(object)
+        } else {
+            throw MappingError(data: jsonData)
         }
 
         return objects
