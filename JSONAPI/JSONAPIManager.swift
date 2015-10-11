@@ -16,11 +16,13 @@ public class JSONAPIManager: ApiManager {
 
     private override init() {
         super.init()
+        ApiManager.sharedManager = self
     }
 
     // MARK: tasks
     public func fetchResource<T: Mappable>(
-        completionHandler: (data: [T]) -> ()
+        includeRelationships: Bool = true,
+        completionHandler: (data: [T]?) -> ()
     ) -> ApiTask {
 
         var includeObjects = ""
@@ -41,18 +43,17 @@ public class JSONAPIManager: ApiManager {
         )
 
         return task(requestURL) { data in
-            let objects: [T]
+            var objects: [T]?
             defer { completionHandler(data: objects) }
-
             do {
                 objects = try Mapper<T>().fromJSON(data)
-            } catch {
-                objects = [T]()
+            } catch let error {
+                print("Parsing Error: ")
+                print(error)
             }
         }
 
     }
-
 
     private func createRequest(
         path: String,
@@ -63,7 +64,7 @@ public class JSONAPIManager: ApiManager {
         let URL = NSURL(string: self.baseUrl)!
         let URLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
         URLRequest.HTTPMethod = method.rawValue
-        
+
         URLRequest.setValue("application/vnd.api+json", forHTTPHeaderField: "Accept")
         URLRequest.setValue("application/vnd.api+json", forHTTPHeaderField: "Content-Type")
 
