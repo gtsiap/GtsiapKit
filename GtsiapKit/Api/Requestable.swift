@@ -19,14 +19,15 @@ public protocol RequestableOfflineDelegate: class {
 public protocol Requestable: ApiPresentable {
 
     weak var offlineDelegate: RequestableOfflineDelegate? { get set }
-
+    
     func requestDidFinishWithError(error: NSError)
     func requestDidFinishWithNoNetworkConnection()
     func requestDidFinish()
 }
 
 extension Requestable {
-    public func doRequest(
+   
+    func doRequest(
         urlRequest: URLRequestConvertible,
         completionHandler: (data: [String : AnyObject]) -> Void
     ) -> Request {
