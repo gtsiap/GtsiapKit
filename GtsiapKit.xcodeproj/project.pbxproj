@@ -47,7 +47,6 @@
 		45B43C8B1B91C3E3008AC2DC /* JSONAPIMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 45B43C8A1B91C3E3008AC2DC /* JSONAPIMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45B43C921B91C3E3008AC2DC /* JSONAPIMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B43C881B91C3E3008AC2DC /* JSONAPIMapper.framework */; settings = {ASSET_TAGS = (); }; };
 		45B43C971B91C3E3008AC2DC /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43C961B91C3E3008AC2DC /* Decode.swift */; };
-		45B43CA01B91C57C008AC2DC /* MappingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43C9F1B91C57C008AC2DC /* MappingType.swift */; settings = {ASSET_TAGS = (); }; };
 		45B43CA21B91C5D7008AC2DC /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CA11B91C5D7008AC2DC /* Mapper.swift */; settings = {ASSET_TAGS = (); }; };
 		45B43CA41B91C64D008AC2DC /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CA31B91C64D008AC2DC /* Mappable.swift */; settings = {ASSET_TAGS = (); }; };
 		45B43CA61B91C6C5008AC2DC /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CA51B91C6C5008AC2DC /* Map.swift */; settings = {ASSET_TAGS = (); }; };
@@ -148,7 +147,6 @@
 		45B43C911B91C3E3008AC2DC /* JSONAPIMapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONAPIMapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B43C961B91C3E3008AC2DC /* Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decode.swift; sourceTree = "<group>"; };
 		45B43C981B91C3E3008AC2DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		45B43C9F1B91C57C008AC2DC /* MappingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappingType.swift; sourceTree = "<group>"; };
 		45B43CA11B91C5D7008AC2DC /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		45B43CA31B91C64D008AC2DC /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
 		45B43CA51B91C6C5008AC2DC /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
@@ -436,7 +434,6 @@
 			children = (
 				45B43C8A1B91C3E3008AC2DC /* JSONAPIMapper.h */,
 				45B43C8C1B91C3E3008AC2DC /* Info.plist */,
-				45B43C9F1B91C57C008AC2DC /* MappingType.swift */,
 				45B43CA11B91C5D7008AC2DC /* Mapper.swift */,
 				45B43CA31B91C64D008AC2DC /* Mappable.swift */,
 				45B43CA51B91C6C5008AC2DC /* Map.swift */,
@@ -813,7 +810,6 @@
 				45DEE6311BB2D5D300383FC9 /* UpdateRelationshipMap.swift in Sources */,
 				45DEE62F1BB2D22200383FC9 /* UpdateResourceMap.swift in Sources */,
 				45B43CA61B91C6C5008AC2DC /* Map.swift in Sources */,
-				45B43CA01B91C57C008AC2DC /* MappingType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
