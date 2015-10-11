@@ -14,6 +14,7 @@ public protocol ApiPresentable: class {
     var toastView: ToastView { get set }
     var showNetworkActivity: Bool { get set }
     var networkIndicator: ActivityIndicatorView { get set }
+
 }
 
 
@@ -62,23 +63,7 @@ extension ApiPresentable {
     }
 
     public func showError(error: NSError) {
-        let alertController = UIAlertController(
-            title: "Server Error",
-            message: "A server error occured",
-            preferredStyle: .Alert
-        )
-
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { action in
-            self.viewController?.dismissViewControllerAnimated(true, completion: nil)
-        }
-
-        alertController.addAction(okAction)
-
-        self.viewController?.presentViewController(
-            alertController,
-            animated: true,
-            completion: nil
-        )
+        self.viewController?.showAlert("Server Error", message: error.localizedDescription)
     }
 
     public func showNoNetworkConnection() {
