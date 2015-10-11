@@ -10,7 +10,7 @@ let networkLogger = Logger.defaultLogger(["network"])
 import Alamofire
 
 public class ApiManager {
-    public static let sharedManager: ApiManager = ApiManager()
+    public static var sharedManager: ApiManager = ApiManager()
 
     public var userCredentials: UserCredentials = {
         return UserCredentials(email: "", password: "")

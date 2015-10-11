@@ -30,6 +30,7 @@
 		457F71991BC29E1F005A478B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F71981BC29E1F005A478B /* PageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		458040871B52A7ED000D5249 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458040861B52A7ED000D5249 /* Operation.swift */; };
 		4583892D1B5AA499008132DF /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4583892C1B5AA499008132DF /* ActivityIndicatorView.swift */; };
+		458BDBB91BCAB20C00A4B3A3 /* MappingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458BDBB81BCAB20C00A4B3A3 /* MappingError.swift */; settings = {ASSET_TAGS = (); }; };
 		459809FC1B7639E300FE0C4C /* DeviceGuru.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459809FA1B7639E300FE0C4C /* DeviceGuru.swift */; };
 		459809FD1B7639E300FE0C4C /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459809FB1B7639E300FE0C4C /* FeedbackManager.swift */; };
 		459809FF1B763D8200FE0C4C /* RevealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459809FE1B763D8200FE0C4C /* RevealTableViewController.swift */; };
@@ -123,6 +124,7 @@
 		457F71981BC29E1F005A478B /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		458040861B52A7ED000D5249 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		4583892C1B5AA499008132DF /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		458BDBB81BCAB20C00A4B3A3 /* MappingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappingError.swift; sourceTree = "<group>"; };
 		459809FA1B7639E300FE0C4C /* DeviceGuru.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceGuru.swift; sourceTree = "<group>"; };
 		459809FB1B7639E300FE0C4C /* FeedbackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
 		459809FE1B763D8200FE0C4C /* RevealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealTableViewController.swift; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 		45B43C891B91C3E3008AC2DC /* JSONAPIMapper */ = {
 			isa = PBXGroup;
 			children = (
+				458BDBB81BCAB20C00A4B3A3 /* MappingError.swift */,
 				45B43C8A1B91C3E3008AC2DC /* JSONAPIMapper.h */,
 				45B43C8C1B91C3E3008AC2DC /* Info.plist */,
 				45B43CA11B91C5D7008AC2DC /* Mapper.swift */,
@@ -810,6 +813,7 @@
 				45DEE6311BB2D5D300383FC9 /* UpdateRelationshipMap.swift in Sources */,
 				45DEE62F1BB2D22200383FC9 /* UpdateResourceMap.swift in Sources */,
 				45B43CA61B91C6C5008AC2DC /* Map.swift in Sources */,
+				458BDBB91BCAB20C00A4B3A3 /* MappingError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
