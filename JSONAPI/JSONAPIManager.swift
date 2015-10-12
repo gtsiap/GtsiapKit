@@ -13,21 +13,21 @@ import JSONAPIMapper
 public extension ApiManager {
 
     // MARK: tasks
-    
+
     public func fetchResource<T: Mappable> (
         objectTask: ApiObjectTask<T>,
         includeRelationships: Bool = true
     ) -> ApiObjectTask<T> {
-            
+
         var includeObjects = ""
         for (index, it) in T.relationships.keys.enumerate() {
             if index != 0 {
                 includeObjects += ","
             }
-            
+
             includeObjects += it
         }
-            
+
         objectTask.urlRequest = createRequest(
             T.resource,
             parameters: [
@@ -35,7 +35,7 @@ public extension ApiManager {
             ],
             method: .GET
         )
-        
+
         objectTask.taskResultProvider.objectTransformer =
         { (data: [String : AnyObject]) -> ([T]?) in
             do {
@@ -46,11 +46,11 @@ public extension ApiManager {
                 return nil
             }
         }
-            
+
         return objectTask
-            
+
     }
-    
+
     private func createRequest(
         path: String,
         parameters: [String : String] = [String : String](),

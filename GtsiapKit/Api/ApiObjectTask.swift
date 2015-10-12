@@ -11,12 +11,12 @@ import Alamofire
 
 public class ApiObjectTask<T>: ApiTask {
     public private(set) var taskResultProvider: ApiTaskResultProvider<T>!
-    
+
     override init() {
         super.init()
         self.taskResultProvider = ApiTaskResultProvider<T>(task: self)
     }
-    
+
     public func retrieveObject(
         completionHandler: (result: ApiTaskResultProvider<T>) -> ())
         -> ApiObjectTask<T>
@@ -25,12 +25,12 @@ public class ApiObjectTask<T>: ApiTask {
             completionHandler(result: self.taskResultProvider)
             return self
         }
-        
+
         self.request = doRequest(self.urlRequest!) { data in
             self.taskResultProvider.data = data
             completionHandler(result: self.taskResultProvider)
         }
-        
+
         return self
     }
 }
