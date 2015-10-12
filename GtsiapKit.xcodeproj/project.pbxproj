@@ -38,6 +38,8 @@
 		4598C8F51BB97CA500C4216F /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4598C8F41BB97CA500C4216F /* Credentials.swift */; settings = {ASSET_TAGS = (); }; };
 		4598C8F91BB981E900C4216F /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4598C8F81BB981E900C4216F /* Locksmith.framework */; };
 		459B0CFD1B3F1BCA00E1A4D3 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */; };
+		459E1C351BCB8D0D00869EDD /* ApiTaskResultProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E1C341BCB8D0D00869EDD /* ApiTaskResultProvider.swift */; settings = {ASSET_TAGS = (); }; };
+		45A1F5541BCC119500F505AD /* ApiObjectTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A1F5531BCC119500F505AD /* ApiObjectTask.swift */; settings = {ASSET_TAGS = (); }; };
 		45AC7CD81B5BFAA600647A27 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AC7CD71B5BFAA600647A27 /* ToastView.swift */; };
 		45B2AE4E1B4257B000DE467B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B2AE4D1B4257B000DE467B /* Theme.swift */; };
 		45B2AE531B42597900DE467B /* UIView+shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B2AE521B42597900DE467B /* UIView+shadow.swift */; };
@@ -133,6 +135,8 @@
 		4598C8F61BB97F8F00C4216F /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = ../Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
 		4598C8F81BB981E900C4216F /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
 		459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		459E1C341BCB8D0D00869EDD /* ApiTaskResultProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTaskResultProvider.swift; sourceTree = "<group>"; };
+		45A1F5531BCC119500F505AD /* ApiObjectTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiObjectTask.swift; sourceTree = "<group>"; };
 		45AC7CD71B5BFAA600647A27 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		45B2AE4D1B4257B000DE467B /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		45B2AE521B42597900DE467B /* UIView+shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+shadow.swift"; sourceTree = "<group>"; };
@@ -274,6 +278,8 @@
 				456E5A531BB301D700A04651 /* Requestable.swift */,
 				4598C8F41BB97CA500C4216F /* Credentials.swift */,
 				45125D191BBAB1BE003E4397 /* ApiGroupTask.swift */,
+				459E1C341BCB8D0D00869EDD /* ApiTaskResultProvider.swift */,
+				45A1F5531BCC119500F505AD /* ApiObjectTask.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -773,10 +779,12 @@
 				45FAFA641B8DDE8700C4000E /* OperationQueue.swift in Sources */,
 				45C825EB1BC41A1300317159 /* StaticTableViewController.swift in Sources */,
 				453F68351B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift in Sources */,
+				45A1F5541BCC119500F505AD /* ApiObjectTask.swift in Sources */,
 				45FCCB151B52E4B90057AAFD /* UIView+AutolayoutUtils.swift in Sources */,
 				456E5A541BB301D700A04651 /* Requestable.swift in Sources */,
 				45AC7CD81B5BFAA600647A27 /* ToastView.swift in Sources */,
 				45EB2B691BC7F98C00056B5D /* UITextField.swift in Sources */,
+				459E1C351BCB8D0D00869EDD /* ApiTaskResultProvider.swift in Sources */,
 				456E5A4D1BB2FA1B00A04651 /* ApiManager.swift in Sources */,
 				456E5A521BB300F900A04651 /* Taskable.swift in Sources */,
 				459809FC1B7639E300FE0C4C /* DeviceGuru.swift in Sources */,
