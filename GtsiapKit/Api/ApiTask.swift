@@ -10,27 +10,44 @@ import Alamofire
 
 public class ApiTask {
 
+    public typealias ApiTaskHandler = (data: [String : AnyObject]) -> ()
+    
     public var viewController: UIViewController?
     public var toastView: ToastView
     public var showNetworkActivity: Bool
     public var networkIndicator: ActivityIndicatorView
     public var offlineDelegate: RequestableOfflineDelegate?
     public var taskDidFinish: ((task: ApiTask) -> ())?
-
+    public var urlRequest: URLRequestConvertible?
+    
     // Internal used for ApiGroup
     var taskFinished: (() -> ())?
 
     var request: Request?
 
-    init(
+    convenience init(
         urlRequest: URLRequestConvertible,
-        completionHandler: (data: [String : AnyObject]) -> ())
-    {
+        completionHandler: ApiTaskHandler
+    ) {
+        self.init()
+        self.urlRequest = urlRequest
+        retrieveData(completionHandler)
+    }
+    
+    init() {
         self.networkIndicator = ActivityIndicatorView()
         self.showNetworkActivity = true
         self.toastView = ApiTask.createToast()
-        self.request = doRequest(urlRequest, completionHandler: completionHandler)
     }
+    
+    public func retrieveData(completionHandler: ApiTaskHandler) {
+        
+        self.request = doRequest(self.urlRequest!, completionHandler: { (data) -> Void in
+            completionHandler(data: data)
+        })
+        
+    }
+    
 }
 
 // MARK: Taskable
@@ -41,6 +58,7 @@ extension ApiTask: Taskable {
         self.request?.resume()
         return self
     }
+    
 }
 
 // MARK: ApiPresentable
