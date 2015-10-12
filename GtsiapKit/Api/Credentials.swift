@@ -46,6 +46,8 @@ extension ApiManager {
     }
 
     public func logout() {
+        self.userCredentials.email = ""
+        self.userCredentials.password = ""
         do {
             try Locksmith.deleteDataForUserAccount(userAccount())
         } catch {}
