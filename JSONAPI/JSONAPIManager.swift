@@ -20,41 +20,44 @@ public class JSONAPIManager: ApiManager {
     }
 
     // MARK: tasks
-    public func fetchResource<T: Mappable>(
-        includeRelationships: Bool = true,
-        completionHandler: (data: [T]?) -> ()
-    ) -> ApiTask {
-
+    
+    public func fetchResource<T: Mappable> (
+        objectTask: ApiObjectTask<T>,
+        includeRelationships: Bool = true
+    ) -> ApiObjectTask<T> {
+            
         var includeObjects = ""
         for (index, it) in T.relationships.keys.enumerate() {
             if index != 0 {
                 includeObjects += ","
             }
-
+            
             includeObjects += it
         }
-
-        let requestURL = createRequest(
+            
+        objectTask.urlRequest = createRequest(
             T.resource,
             parameters: [
                 "include": includeObjects
             ],
             method: .GET
         )
-
-        return task(requestURL) { data in
-            var objects: [T]?
-            defer { completionHandler(data: objects) }
+        
+        objectTask.taskResultProvider.objectTransformer =
+        { (data: [String : AnyObject]) -> ([T]?) in
             do {
-                objects = try Mapper<T>().fromJSON(data)
+                return try Mapper<T>().fromJSON(data)
             } catch let error {
                 print("Parsing Error: ")
                 print(error)
+                return nil
             }
         }
-
+            
+        return objectTask
+            
     }
-
+    
     private func createRequest(
         path: String,
         parameters: [String : String] = [String : String](),
