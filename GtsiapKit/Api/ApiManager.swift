@@ -30,7 +30,7 @@ public class ApiManager {
         urlRequest: URLRequestConvertible,
         completionHandler: (data: [String : AnyObject]) -> ()
     ) -> ApiTask {
-        let task = ApiTask(
+        let task = ApiTask (
             urlRequest: urlRequest,
             completionHandler: completionHandler
         )
@@ -39,7 +39,16 @@ public class ApiManager {
 
         return task
     }
-
+    
+    public func task<T>() -> ApiObjectTask<T> {
+        let task = ApiObjectTask<T> ()
+        
+        self.didCreateNewTask?(newTask: task)
+        
+        return task
+    
+    }
+    
     public func groupTask(tasks: [ApiTask]) -> ApiGroupTask {
         let task = ApiGroupTask()
         task.tasks = tasks
