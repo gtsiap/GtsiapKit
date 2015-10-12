@@ -10,14 +10,7 @@ import GtsiapKit
 import Alamofire
 import JSONAPIMapper
 
-public class JSONAPIManager: ApiManager {
-
-    public static let apiManager: JSONAPIManager = JSONAPIManager()
-
-    private override init() {
-        super.init()
-        ApiManager.sharedManager = self
-    }
+public extension ApiManager {
 
     // MARK: tasks
     
