@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-public class ApiTask {
+public class ApiTask: Taskable {
 
     public typealias ApiTaskHandler = (data: [String : AnyObject]) -> ()
 
@@ -47,12 +47,7 @@ public class ApiTask {
         })
 
     }
-
-}
-
-// MARK: Taskable
-extension ApiTask: Taskable {
-
+    
     public func start() -> ApiTask {
         startNetworkActivity()
         self.request?.resume()
