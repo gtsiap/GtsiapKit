@@ -5,7 +5,7 @@ if [ ! -d .git/hooks ]; then
 fi
 
 if [ ! -L .git/hooks/pre-commit ]; then
-    ln -s $PWD/scripts/remove_spaces.sh $PWD/.git/hooks/pre-commit
+    ln -s $PWD/GtsiapKit/scripts/remove_spaces.sh $PWD/.git/hooks/pre-commit
 
     chmod +x .git/hooks/pre-commit
 fi
