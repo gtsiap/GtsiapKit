@@ -47,7 +47,7 @@ public class ApiTask: Taskable {
         })
 
     }
-    
+
     public func start() -> ApiTask {
         startNetworkActivity()
         self.request?.resume()

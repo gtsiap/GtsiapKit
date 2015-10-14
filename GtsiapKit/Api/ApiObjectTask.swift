@@ -14,7 +14,7 @@ public class ApiObjectTask<T>: ApiTask {
     public private(set) var taskResultProvider: ApiTaskResultProvider<T>!
 
     private var startHandler: ObjectTaskHandler?
-    
+
     override init() {
         super.init()
         self.taskResultProvider = ApiTaskResultProvider<T>(task: self)
@@ -30,7 +30,7 @@ public class ApiObjectTask<T>: ApiTask {
         }
 
         self.startHandler = nil
-        
+
         self.request = doRequest(self.urlRequest!) { data in
             self.taskResultProvider.data = data
             completionHandler(result: self.taskResultProvider)
@@ -38,15 +38,15 @@ public class ApiObjectTask<T>: ApiTask {
 
         return self
     }
-    
+
     public override func start() -> ApiObjectTask<T> {
         if let startHandler = self.startHandler {
             startHandler(result: self.taskResultProvider)
             return self
         }
-        
+
         super.start()
-        
+
         return self
     }
 }

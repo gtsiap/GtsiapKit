@@ -14,7 +14,7 @@ extension UITextField {
         self.init()
 
         borderStyle = .RoundedRect
-        font = UIFont.systemFontOfSize(14)
+        font = ThemeManager.defaultTheme.normalBoldFont()
         autocorrectionType = .No
         keyboardType = .Default
         returnKeyType = .Done
