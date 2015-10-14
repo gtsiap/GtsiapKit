@@ -22,7 +22,7 @@ public class FormRow {
                 return .None
             }
 
-            return .DetailButton
+            return UITableViewCellAccessoryType.DisclosureIndicator//.DetailButton
         }
     }
 
