@@ -11,9 +11,16 @@ import SnapKit
 
 class FormTextFieldCell: UITableViewCell {
 
+    var formRow: FormRow! {
+        didSet {
+            if case .Double(let description) = self.formRow.type {
+                self.textField.placeholder = description
+            }
+        }
+    }
+
     var formDescription: String? {
         didSet {
-            self.textField.placeholder = self.formDescription
         }
     }
 
@@ -25,6 +32,7 @@ class FormTextFieldCell: UITableViewCell {
 
         textField.borderStyle = .None
         textField.keyboardType = .NumberPad
+        textField.delegate = self
 
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
@@ -60,6 +68,22 @@ class FormTextFieldCell: UITableViewCell {
     }
 
     @objc private func textDidChange() {
+        self.formRow.result = self.textField.text
     }
 
+}
+
+extension FormTextFieldCell: UITextFieldDelegate {
+    func textField(
+        textField: UITextField,
+        shouldChangeCharactersInRange range: NSRange,
+        replacementString string: String
+    ) -> Bool {
+        if string.isEmpty {
+            return true
+        }
+
+        guard let _ = Int(string) else { return false }
+        return true
+    }
 }
