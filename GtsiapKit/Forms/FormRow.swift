@@ -17,9 +17,9 @@ public class FormRow {
             self.didUpdateResult?(result: self.result)
         }
     }
-    
+
     public var didUpdateResult: ((result: AnyObject?) -> ())?
-    
+
     var accessoryType: UITableViewCellAccessoryType {
         switch self.type {
         case .Double:

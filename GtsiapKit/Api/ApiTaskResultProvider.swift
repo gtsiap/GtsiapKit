@@ -25,6 +25,10 @@ public class ApiTaskResultProvider<T> {
         return true
     }
 
+    public var objectData: [String : AnyObject] {
+        return self.data
+    }
+
     public let apiPresentable: ApiPresentable
 
     public var objectTransformer: TransformerHandler
