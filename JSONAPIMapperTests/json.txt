@@ -8,7 +8,11 @@
     "type": "posts",
     "id": "1",
     "attributes": {
-      "title": "JSON API paints my bikeshed!"
+      "title": "JSON API paints my bikeshed!",
+      "info": {
+        "something1": "something1",
+        "something2": 10
+      }
     },
     "relationships": {
       "author": {

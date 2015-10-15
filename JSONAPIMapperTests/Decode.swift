@@ -32,6 +32,11 @@ class Decode: XCTestCase {
         XCTAssertNotNil(post.author)
         XCTAssertEqual(post.id, 1)
 
+        XCTAssertNotNil(post.info)
+
+        XCTAssertEqual(post.info!.something1, "something1")
+        XCTAssertEqual(post.info!.something2, 10)
+
         Decode.post = post
     }
 

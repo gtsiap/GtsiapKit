@@ -14,3 +14,7 @@ public protocol Mappable: class {
     static var resource: String { get }
     static var relationships: [String : Mappable.Type] { get }
 }
+
+public protocol ObjectMappable: class {
+    init()
+}
