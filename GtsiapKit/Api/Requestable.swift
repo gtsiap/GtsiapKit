@@ -58,7 +58,7 @@ extension Requestable {
                 var networkError: NSError?
 
                 // TODO
-                if let error = error as? NSError {
+                if let error = error {
 
                     if error.code == -1009 {
                         // no internet connection is available
