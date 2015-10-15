@@ -39,6 +39,11 @@
 		45848E8A1BCF9B4700121000 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45848E891BCF9B4700121000 /* Transformer.swift */; settings = {ASSET_TAGS = (); }; };
 		45848E8C1BCF9B6800121000 /* ObjectTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45848E8B1BCF9B6800121000 /* ObjectTransformer.swift */; settings = {ASSET_TAGS = (); }; };
 		45848E8F1BCF9BDF00121000 /* ObjectMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45848E8E1BCF9BDF00121000 /* ObjectMap.swift */; settings = {ASSET_TAGS = (); }; };
+		45848E941BCF9D5100121000 /* CreateResourceMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45848E911BCF9D5100121000 /* CreateResourceMap.swift */; settings = {ASSET_TAGS = (); }; };
+		45848E951BCF9D5100121000 /* UpdateRelationshipMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45848E921BCF9D5100121000 /* UpdateRelationshipMap.swift */; settings = {ASSET_TAGS = (); }; };
+		45848E961BCF9D5100121000 /* UpdateResourceMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45848E931BCF9D5100121000 /* UpdateResourceMap.swift */; settings = {ASSET_TAGS = (); }; };
+		45848E991BCF9D6E00121000 /* RelationshipJSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45848E971BCF9D6E00121000 /* RelationshipJSONObject.swift */; settings = {ASSET_TAGS = (); }; };
+		45848E9A1BCF9D6E00121000 /* MapFromJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45848E981BCF9D6E00121000 /* MapFromJson.swift */; settings = {ASSET_TAGS = (); }; };
 		458BDBB91BCAB20C00A4B3A3 /* MappingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458BDBB81BCAB20C00A4B3A3 /* MappingError.swift */; settings = {ASSET_TAGS = (); }; };
 		459809FC1B7639E300FE0C4C /* DeviceGuru.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459809FA1B7639E300FE0C4C /* DeviceGuru.swift */; };
 		459809FD1B7639E300FE0C4C /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459809FB1B7639E300FE0C4C /* FeedbackManager.swift */; };
@@ -67,12 +72,7 @@
 		45B43CBB1B91E847008AC2DC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CBA1B91E847008AC2DC /* Post.swift */; settings = {ASSET_TAGS = (); }; };
 		45B43CBD1B91E8B7008AC2DC /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CBC1B91E8B7008AC2DC /* Person.swift */; settings = {ASSET_TAGS = (); }; };
 		45B43CBF1B91E8F4008AC2DC /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CBE1B91E8F4008AC2DC /* Comment.swift */; settings = {ASSET_TAGS = (); }; };
-		45B43CC51B9207DD008AC2DC /* RelationshipJSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CC41B9207DD008AC2DC /* RelationshipJSONObject.swift */; settings = {ASSET_TAGS = (); }; };
-		45B43D061B94831D008AC2DC /* MapFromJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43D051B94831D008AC2DC /* MapFromJson.swift */; settings = {ASSET_TAGS = (); }; };
 		45CE5E3C1BB8767200AE682E /* ViewController+AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE5E3B1BB8767200AE682E /* ViewController+AlertViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		45DEE62D1BB2D08000383FC9 /* CreateResourceMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEE62C1BB2D08000383FC9 /* CreateResourceMap.swift */; settings = {ASSET_TAGS = (); }; };
-		45DEE62F1BB2D22200383FC9 /* UpdateResourceMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEE62E1BB2D22200383FC9 /* UpdateResourceMap.swift */; settings = {ASSET_TAGS = (); }; };
-		45DEE6311BB2D5D300383FC9 /* UpdateRelationshipMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEE6301BB2D5D300383FC9 /* UpdateRelationshipMap.swift */; settings = {ASSET_TAGS = (); }; };
 		45DEE6331BB2E93B00383FC9 /* update_relationship2.json in Resources */ = {isa = PBXBuildFile; fileRef = 45DEE6321BB2E93B00383FC9 /* update_relationship2.json */; settings = {ASSET_TAGS = (); }; };
 		45E5A84E1BC3BD790008361E /* Workarounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E5A84D1BC3BD790008361E /* Workarounds.swift */; settings = {ASSET_TAGS = (); }; };
 		45E8706B1B67620C001315DE /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8706A1B67620C001315DE /* SearchView.swift */; };
@@ -143,6 +143,11 @@
 		45848E891BCF9B4700121000 /* Transformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
 		45848E8B1BCF9B6800121000 /* ObjectTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectTransformer.swift; sourceTree = "<group>"; };
 		45848E8E1BCF9BDF00121000 /* ObjectMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectMap.swift; sourceTree = "<group>"; };
+		45848E911BCF9D5100121000 /* CreateResourceMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateResourceMap.swift; sourceTree = "<group>"; };
+		45848E921BCF9D5100121000 /* UpdateRelationshipMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateRelationshipMap.swift; sourceTree = "<group>"; };
+		45848E931BCF9D5100121000 /* UpdateResourceMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateResourceMap.swift; sourceTree = "<group>"; };
+		45848E971BCF9D6E00121000 /* RelationshipJSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipJSONObject.swift; sourceTree = "<group>"; };
+		45848E981BCF9D6E00121000 /* MapFromJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapFromJson.swift; sourceTree = "<group>"; };
 		458BDBB81BCAB20C00A4B3A3 /* MappingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappingError.swift; sourceTree = "<group>"; };
 		459809FA1B7639E300FE0C4C /* DeviceGuru.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceGuru.swift; sourceTree = "<group>"; };
 		459809FB1B7639E300FE0C4C /* FeedbackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
@@ -178,12 +183,7 @@
 		45B43CBA1B91E847008AC2DC /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		45B43CBC1B91E8B7008AC2DC /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		45B43CBE1B91E8F4008AC2DC /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		45B43CC41B9207DD008AC2DC /* RelationshipJSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipJSONObject.swift; sourceTree = "<group>"; };
-		45B43D051B94831D008AC2DC /* MapFromJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapFromJson.swift; sourceTree = "<group>"; };
 		45CE5E3B1BB8767200AE682E /* ViewController+AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+AlertViewController.swift"; sourceTree = "<group>"; };
-		45DEE62C1BB2D08000383FC9 /* CreateResourceMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateResourceMap.swift; sourceTree = "<group>"; };
-		45DEE62E1BB2D22200383FC9 /* UpdateResourceMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateResourceMap.swift; sourceTree = "<group>"; };
-		45DEE6301BB2D5D300383FC9 /* UpdateRelationshipMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateRelationshipMap.swift; sourceTree = "<group>"; };
 		45DEE6321BB2E93B00383FC9 /* update_relationship2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = update_relationship2.json; sourceTree = "<group>"; };
 		45E5A84D1BC3BD790008361E /* Workarounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workarounds.swift; sourceTree = "<group>"; };
 		45E8706A1B67620C001315DE /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -352,9 +352,21 @@
 		45848E8D1BCF9BCE00121000 /* MapFromJSON */ = {
 			isa = PBXGroup;
 			children = (
+				45848E971BCF9D6E00121000 /* RelationshipJSONObject.swift */,
+				45848E981BCF9D6E00121000 /* MapFromJson.swift */,
 				45848E8E1BCF9BDF00121000 /* ObjectMap.swift */,
 			);
 			path = MapFromJSON;
+			sourceTree = "<group>";
+		};
+		45848E901BCF9D5100121000 /* MapToJSON */ = {
+			isa = PBXGroup;
+			children = (
+				45848E911BCF9D5100121000 /* CreateResourceMap.swift */,
+				45848E921BCF9D5100121000 /* UpdateRelationshipMap.swift */,
+				45848E931BCF9D5100121000 /* UpdateResourceMap.swift */,
+			);
+			path = MapToJSON;
 			sourceTree = "<group>";
 		};
 		459809F91B7639E300FE0C4C /* FeedbackManager */ = {
@@ -487,6 +499,7 @@
 		45B43C891B91C3E3008AC2DC /* JSONAPIMapper */ = {
 			isa = PBXGroup;
 			children = (
+				45848E901BCF9D5100121000 /* MapToJSON */,
 				45848E8D1BCF9BCE00121000 /* MapFromJSON */,
 				45848E881BCF9B3900121000 /* Transformers */,
 				458BDBB81BCAB20C00A4B3A3 /* MappingError.swift */,
@@ -495,12 +508,7 @@
 				45B43CA11B91C5D7008AC2DC /* Mapper.swift */,
 				45B43CA31B91C64D008AC2DC /* Mappable.swift */,
 				45B43CA51B91C6C5008AC2DC /* Map.swift */,
-				45B43D051B94831D008AC2DC /* MapFromJson.swift */,
 				45B43CB11B91D4F7008AC2DC /* Operators.swift */,
-				45B43CC41B9207DD008AC2DC /* RelationshipJSONObject.swift */,
-				45DEE62C1BB2D08000383FC9 /* CreateResourceMap.swift */,
-				45DEE62E1BB2D22200383FC9 /* UpdateResourceMap.swift */,
-				45DEE6301BB2D5D300383FC9 /* UpdateRelationshipMap.swift */,
 			);
 			path = JSONAPIMapper;
 			sourceTree = "<group>";
@@ -865,17 +873,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45848E9A1BCF9D6E00121000 /* MapFromJson.swift in Sources */,
+				45848E941BCF9D5100121000 /* CreateResourceMap.swift in Sources */,
 				45848E8A1BCF9B4700121000 /* Transformer.swift in Sources */,
 				45B43CA21B91C5D7008AC2DC /* Mapper.swift in Sources */,
-				45B43D061B94831D008AC2DC /* MapFromJson.swift in Sources */,
-				45DEE62D1BB2D08000383FC9 /* CreateResourceMap.swift in Sources */,
-				45B43CC51B9207DD008AC2DC /* RelationshipJSONObject.swift in Sources */,
 				45B43CB21B91D4F7008AC2DC /* Operators.swift in Sources */,
 				45B43CA41B91C64D008AC2DC /* Mappable.swift in Sources */,
-				45DEE6311BB2D5D300383FC9 /* UpdateRelationshipMap.swift in Sources */,
+				45848E951BCF9D5100121000 /* UpdateRelationshipMap.swift in Sources */,
+				45848E991BCF9D6E00121000 /* RelationshipJSONObject.swift in Sources */,
+				45848E961BCF9D5100121000 /* UpdateResourceMap.swift in Sources */,
 				45848E8C1BCF9B6800121000 /* ObjectTransformer.swift in Sources */,
 				45848E8F1BCF9BDF00121000 /* ObjectMap.swift in Sources */,
-				45DEE62F1BB2D22200383FC9 /* UpdateResourceMap.swift in Sources */,
 				45B43CA61B91C6C5008AC2DC /* Map.swift in Sources */,
 				458BDBB91BCAB20C00A4B3A3 /* MappingError.swift in Sources */,
 			);
