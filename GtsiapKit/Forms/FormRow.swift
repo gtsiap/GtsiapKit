@@ -12,7 +12,14 @@ public class FormRow {
     let type: FormType
 
     public var didSelectRow: (() -> ())?
-
+    public var result: AnyObject? {
+        didSet {
+            self.didUpdateResult?(result: self.result)
+        }
+    }
+    
+    public var didUpdateResult: ((result: AnyObject?) -> ())?
+    
     var accessoryType: UITableViewCellAccessoryType {
         switch self.type {
         case .Double:
@@ -22,7 +29,7 @@ public class FormRow {
                 return .None
             }
 
-            return UITableViewCellAccessoryType.DisclosureIndicator//.DetailButton
+            return UITableViewCellAccessoryType.DisclosureIndicator
         }
     }
 

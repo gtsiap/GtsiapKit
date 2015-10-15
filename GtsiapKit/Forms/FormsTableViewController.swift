@@ -38,12 +38,12 @@ public class FormsTableViewController: UITableViewController {
 
         let cellRow = self.formSections[indexPath.section].rows[indexPath.row]
         switch cellRow.type {
-        case .Double(let description):
+        case .Double:
             let doubleCell = tableView
                 .dequeueReusableCellWithIdentifier("formCell", forIndexPath: indexPath)
             as! FormTextFieldCell
 
-            doubleCell.formDescription = description
+            doubleCell.formRow = cellRow
             cell = doubleCell
 
         case .ReadOnly(let text, let detailText):
