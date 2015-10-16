@@ -55,6 +55,7 @@
 		459E1C351BCB8D0D00869EDD /* ApiTaskResultProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E1C341BCB8D0D00869EDD /* ApiTaskResultProvider.swift */; settings = {ASSET_TAGS = (); }; };
 		45A1F5541BCC119500F505AD /* ApiObjectTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A1F5531BCC119500F505AD /* ApiObjectTask.swift */; settings = {ASSET_TAGS = (); }; };
 		45AC7CD81B5BFAA600647A27 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AC7CD71B5BFAA600647A27 /* ToastView.swift */; };
+		45ADA2891BD0FE1F0002F1DF /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ADA2881BD0FE1F0002F1DF /* UIFont.swift */; settings = {ASSET_TAGS = (); }; };
 		45B2AE4E1B4257B000DE467B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B2AE4D1B4257B000DE467B /* Theme.swift */; };
 		45B2AE531B42597900DE467B /* UIView+shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B2AE521B42597900DE467B /* UIView+shadow.swift */; };
 		45B4045C1B29E68A00DF2CDB /* GtsiapKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 45B4045B1B29E68A00DF2CDB /* GtsiapKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -160,6 +161,7 @@
 		459E1C341BCB8D0D00869EDD /* ApiTaskResultProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTaskResultProvider.swift; sourceTree = "<group>"; };
 		45A1F5531BCC119500F505AD /* ApiObjectTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiObjectTask.swift; sourceTree = "<group>"; };
 		45AC7CD71B5BFAA600647A27 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		45ADA2881BD0FE1F0002F1DF /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		45B2AE4D1B4257B000DE467B /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		45B2AE521B42597900DE467B /* UIView+shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+shadow.swift"; sourceTree = "<group>"; };
 		45B404561B29E68A00DF2CDB /* GtsiapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GtsiapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -406,6 +408,7 @@
 				455DA14B1BC3F96F005A61D7 /* UIColor+hex.swift */,
 				45EB2B661BC7F90A00056B5D /* UIButton.swift */,
 				45EB2B681BC7F98C00056B5D /* UITextField.swift */,
+				45ADA2881BD0FE1F0002F1DF /* UIFont.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -855,6 +858,7 @@
 				456E5A501BB2FAD300A04651 /* ApiPresentable.swift in Sources */,
 				4583892D1B5AA499008132DF /* ActivityIndicatorView.swift in Sources */,
 				45B2AE4E1B4257B000DE467B /* Theme.swift in Sources */,
+				45ADA2891BD0FE1F0002F1DF /* UIFont.swift in Sources */,
 				456E5A4E1BB2FA1B00A04651 /* ApiTask.swift in Sources */,
 				459B0CFD1B3F1BCA00E1A4D3 /* ContainerView.swift in Sources */,
 				45E8706B1B67620C001315DE /* SearchView.swift in Sources */,
