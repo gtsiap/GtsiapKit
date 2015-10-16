@@ -31,7 +31,7 @@ class FormTextFieldCell: UITableViewCell {
         )
 
         textField.borderStyle = .None
-        textField.keyboardType = .NumberPad
+        textField.keyboardType = .DecimalPad
         textField.delegate = self
 
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -79,7 +79,14 @@ extension FormTextFieldCell: UITextFieldDelegate {
         shouldChangeCharactersInRange range: NSRange,
         replacementString string: String
     ) -> Bool {
+        // Backspace
         if string.isEmpty {
+            return true
+        }
+
+        if let text = textField.text
+            where string == "." && !text.containsString(".")
+        {
             return true
         }
 
