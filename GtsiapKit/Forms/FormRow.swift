@@ -33,6 +33,8 @@ public class FormRow {
         }
     }
 
+    public var required: Bool = true
+
     public init(type: FormType) {
         self.type = type
     }
