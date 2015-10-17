@@ -59,6 +59,11 @@ extension Themeable {
     public func navigationBarAppearance() {
         UINavigationBar.appearance().barTintColor = self.primaryColor
         UINavigationBar.appearance().tintColor = self.tintColor
+
+        guard let tintColor = self.tintColor else { return }
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSForegroundColorAttributeName: tintColor
+        ]
     }
 
     public func switchAppearance() {
