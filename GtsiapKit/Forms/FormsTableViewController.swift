@@ -19,6 +19,9 @@ public class FormsTableViewController: UITableViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.estimatedRowHeight = 50
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+
         self.tableView.registerClass(FormTextFieldCell.self, forCellReuseIdentifier: "formCell")
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "ReadOnlyCell")
     }
