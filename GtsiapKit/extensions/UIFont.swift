@@ -22,4 +22,8 @@ extension UIFont {
         return ThemeManager.defaultTheme.headlineFont()
     }
 
+    public class func footnoteFont() -> UIFont {
+        return ThemeManager.defaultTheme.footnoteFont()
+    }
+
 }
