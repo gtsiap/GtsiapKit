@@ -60,6 +60,8 @@ public class FormsTableViewController: UITableViewController {
         return cell
     }
 
+    // MARK: tableview
+
     public override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.formSections[indexPath.section].rows[indexPath.row].didSelectRow?()
     }
@@ -78,6 +80,10 @@ public class FormsTableViewController: UITableViewController {
             return true
         }
 
+    }
+
+    public override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.formSections[section].title
     }
 
 }
