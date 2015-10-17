@@ -62,12 +62,24 @@ extension ApiPresentable {
         return toastView
     }
 
-    public func showError(error: NSError) {
-        self.viewController?.showAlert("Server Error", message: error.localizedDescription)
+    public func showError(error: NSError, completed: (() -> ())? = nil) {
+        self.viewController?.showAlert(
+            "Server Error",
+            message: error.localizedDescription,
+            completed: completed
+        )
     }
 
-    public func showError(error: String, message: String) {
-        self.viewController?.showAlert("Server Error", message: error)
+    public func showError(
+        error: String,
+        message: String,
+        completed: (() -> ())? = nil
+    ) {
+        self.viewController?.showAlert(
+            error,
+            message: message,
+            completed: completed
+        )
     }
 
     public func showNoNetworkConnection() {
