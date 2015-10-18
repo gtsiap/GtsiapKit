@@ -49,8 +49,12 @@ public class ApiTask: Taskable {
     }
 
     public func start() -> ApiTask {
+        guard let
+            request = self.request
+        else { return self }
+
         startNetworkActivity()
-        self.request?.resume()
+        request.resume()
         return self
     }
 

@@ -34,6 +34,7 @@ public class ApiObjectTask<T>: ApiTask {
         self.request = doRequest(self.urlRequest!) { data in
             self.taskResultProvider.data = data
             completionHandler(result: self.taskResultProvider)
+            self.request = nil
         }
 
         return self
