@@ -41,8 +41,16 @@ public class ApiObjectTask<T>: ApiTask {
     }
 
     public override func start() -> ApiObjectTask<T> {
+
         if let startHandler = self.startHandler {
-            startHandler(result: self.taskResultProvider)
+            // When ApiObjectTasks is used with ApiGroupTask
+            // these funcs will be called from another thread
+            // which isn't the main thread
+            dispatch_async(dispatch_get_main_queue()) {
+                self.requestDidFinish()
+                startHandler(result: self.taskResultProvider)
+            }
+
             return self
         }
 
