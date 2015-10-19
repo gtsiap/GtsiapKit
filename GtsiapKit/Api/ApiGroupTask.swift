@@ -61,9 +61,12 @@ extension ApiGroupTask: Taskable {
                 // Wait until task is completed
                 dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
             }
+
+            dispatch_sync(dispatch_get_main_queue()) {
+                self.stopNetworkActivity()
+            }
         }
 
-        stopNetworkActivity()
         return self
     }
 }
