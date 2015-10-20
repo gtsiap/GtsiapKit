@@ -17,6 +17,7 @@
 		45540D4D1BC7B84400DBE875 /* JSONAPIMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B43C881B91C3E3008AC2DC /* JSONAPIMapper.framework */; };
 		45540D4E1BC7B85A00DBE875 /* GtsiapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B404561B29E68A00DF2CDB /* GtsiapKit.framework */; };
 		455DA14C1BC3F96F005A61D7 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DA14B1BC3F96F005A61D7 /* UIColor+hex.swift */; settings = {ASSET_TAGS = (); }; };
+		455EB2A01BD562F600987F40 /* Hobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455EB29F1BD562F600987F40 /* Hobby.swift */; settings = {ASSET_TAGS = (); }; };
 		456E59F91BB2F98B00A04651 /* JSONAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 456E59F81BB2F98B00A04651 /* JSONAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		456E5A001BB2F98B00A04651 /* JSONAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456E59F61BB2F98B00A04651 /* JSONAPI.framework */; settings = {ASSET_TAGS = (); }; };
 		456E5A051BB2F98B00A04651 /* JSONAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A041BB2F98B00A04651 /* JSONAPITests.swift */; };
@@ -120,6 +121,7 @@
 		453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+isConnectedToNetwork.swift"; sourceTree = "<group>"; };
 		45540D2A1BC7A3BA00DBE875 /* JSONAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAPIManager.swift; sourceTree = "<group>"; };
 		455DA14B1BC3F96F005A61D7 /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		455EB29F1BD562F600987F40 /* Hobby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hobby.swift; sourceTree = "<group>"; };
 		456E59F61BB2F98B00A04651 /* JSONAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		456E59F81BB2F98B00A04651 /* JSONAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONAPI.h; sourceTree = "<group>"; };
 		456E59FA1BB2F98B00A04651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -538,6 +540,7 @@
 				45B43CBA1B91E847008AC2DC /* Post.swift */,
 				45B43CBC1B91E8B7008AC2DC /* Person.swift */,
 				45B43CBE1B91E8F4008AC2DC /* Comment.swift */,
+				455EB29F1BD562F600987F40 /* Hobby.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -897,6 +900,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				455EB2A01BD562F600987F40 /* Hobby.swift in Sources */,
 				45B43CBD1B91E8B7008AC2DC /* Person.swift in Sources */,
 				451E59271B95D0B10012167B /* Encode.swift in Sources */,
 				45B43C971B91C3E3008AC2DC /* Decode.swift in Sources */,

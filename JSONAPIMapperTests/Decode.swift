@@ -53,6 +53,10 @@ class Decode: XCTestCase {
         XCTAssertEqual(author?.twitter, "dgeb")
 
         XCTAssertEqual(author?.id, 9)
+
+        XCTAssertNotNil(author?.hobby)
+        XCTAssertNotNil(author?.hobby?.id)
+        XCTAssertEqual(author?.hobby?.id, 1)
     }
 
     func test3Comments() {

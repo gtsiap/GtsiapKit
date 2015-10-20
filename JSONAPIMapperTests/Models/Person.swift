@@ -14,7 +14,7 @@ final class Person {
     var firstName: String?
     var lastName: String?
     var twitter: String?
-
+    var hobby: Hobby?
 }
 
 extension Person: Mappable {
@@ -24,12 +24,15 @@ extension Person: Mappable {
     }
 
     static var relationships: [String : Mappable.Type] {
-        return [String : Mappable.Type]()
+        return [
+            "hobby2": Hobby.self
+        ]
     }
 
     func map(map: Map) {
         self.firstName <~ map["first-name"]
         self.lastName  <~ map["last-name"]
         self.twitter   <~ map["twitter"]
+        self.hobby     <~ map["hobby2"]
     }
 }

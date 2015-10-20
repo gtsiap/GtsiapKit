@@ -73,7 +73,6 @@ class MapFromJSON: BasicMap {
             return nil
         }
 
-
         let relationshipList = relationships.filter() {
             $0.jsonField == self.currentKey
         }
@@ -93,25 +92,43 @@ class MapFromJSON: BasicMap {
 
     private func relationshipValueCommon<T: Mappable>(relationship: RelationshipJSONObject) -> T? {
 
+        let relationshipObject = T()
+
         for includeDataIt in self.includedData {
-            if
-                let dataId = includeDataIt["id"] as? String,
-                let id = Int(dataId),
-                let resourceType = includeDataIt["type"] as? String
+            guard let
+                dataId = includeDataIt["id"] as? String,
+                id = Int(dataId),
+                resourceType = includeDataIt["type"] as? String
                 where id == relationship.id && resourceType == relationship.resourceType
-            {
-                let relationshipObject = T()
-                let map = MapFromJSON(
-                    resourceData: includeDataIt,
-                    mappableObject: relationshipObject
-                )
+            else { continue }
 
-                relationshipObject.map(map)
-                return relationshipObject
-            } // end if
-        } // end for
+            let map = MapFromJSON(
+                resourceData: includeDataIt,
+                mappableObject: relationshipObject
+            )
 
-        return nil
+            relationshipObject.map(map)
+            return relationshipObject
+
+        }
+
+        // retrieve the object in the included section of the json
+        // it won't be a complete json. We can't retrieve the entire object,
+        // because the attributes are missing but at least we will retrieve the id
+
+        guard let
+            includedDataRelationship = self.resourceData["relationships"]
+                as? [String : AnyObject],
+            includedObjectJSON = includedDataRelationship[self.currentKey] as? [String : AnyObject],
+            includedObjectData = includedObjectJSON["data"] as? [String : AnyObject],
+            includedStringId = includedObjectData["id"] as? String,
+            includedResourceType = includedObjectData["type"] as? String,
+            includedId = Int(includedStringId)
+            where includedResourceType == relationshipObject.dynamicType.resource
+        else { return nil }
+
+        relationshipObject.id = includedId
+        return relationshipObject
     }
 
 }

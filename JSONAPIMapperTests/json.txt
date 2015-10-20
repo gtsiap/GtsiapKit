@@ -47,8 +47,17 @@
     },
     "links": {
       "self": "http://example.com/people/9"
+    },
+    "relationships": {
+      "hobby2": {
+        "data": {
+         "id": "1",
+         "type": "hobby"
+        }
+      }
     }
-  }, {
+  },
+  {
     "type": "comments",
     "id": "5",
     "attributes": {
