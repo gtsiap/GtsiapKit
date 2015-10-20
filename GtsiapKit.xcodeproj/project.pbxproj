@@ -19,6 +19,7 @@
 		455DA14C1BC3F96F005A61D7 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DA14B1BC3F96F005A61D7 /* UIColor+hex.swift */; settings = {ASSET_TAGS = (); }; };
 		455EB2A01BD562F600987F40 /* Hobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455EB29F1BD562F600987F40 /* Hobby.swift */; settings = {ASSET_TAGS = (); }; };
 		4565C2101BD6518C00B324A9 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4565C20F1BD6518C00B324A9 /* UITableView.swift */; settings = {ASSET_TAGS = (); }; };
+		4565C2121BD65A1700B324A9 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4565C2111BD65A1700B324A9 /* Int.swift */; settings = {ASSET_TAGS = (); }; };
 		456E59F91BB2F98B00A04651 /* JSONAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 456E59F81BB2F98B00A04651 /* JSONAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		456E5A001BB2F98B00A04651 /* JSONAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456E59F61BB2F98B00A04651 /* JSONAPI.framework */; settings = {ASSET_TAGS = (); }; };
 		456E5A051BB2F98B00A04651 /* JSONAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A041BB2F98B00A04651 /* JSONAPITests.swift */; };
@@ -124,6 +125,7 @@
 		455DA14B1BC3F96F005A61D7 /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		455EB29F1BD562F600987F40 /* Hobby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hobby.swift; sourceTree = "<group>"; };
 		4565C20F1BD6518C00B324A9 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		4565C2111BD65A1700B324A9 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		456E59F61BB2F98B00A04651 /* JSONAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		456E59F81BB2F98B00A04651 /* JSONAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONAPI.h; sourceTree = "<group>"; };
 		456E59FA1BB2F98B00A04651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 				45EB2B681BC7F98C00056B5D /* UITextField.swift */,
 				45ADA2881BD0FE1F0002F1DF /* UIFont.swift */,
 				4565C20F1BD6518C00B324A9 /* UITableView.swift */,
+				4565C2111BD65A1700B324A9 /* Int.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -859,6 +862,7 @@
 				456E5A521BB300F900A04651 /* Taskable.swift in Sources */,
 				459809FC1B7639E300FE0C4C /* DeviceGuru.swift in Sources */,
 				457AB5951B2B6365003034F1 /* RevealNavigationController.swift in Sources */,
+				4565C2121BD65A1700B324A9 /* Int.swift in Sources */,
 				45CE5E3C1BB8767200AE682E /* ViewController+AlertViewController.swift in Sources */,
 				4536C3B91B29E7C2003E8CB7 /* Json.swift in Sources */,
 				456E5A501BB2FAD300A04651 /* ApiPresentable.swift in Sources */,
