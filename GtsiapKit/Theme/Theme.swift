@@ -27,6 +27,8 @@ public protocol Themeable {
 extension Themeable {
 
     public func setup() {
+        // TODO use UIAppearance.appearanceWhenContainedInInstancesOfClasses
+        // when we won't need iOS 8.4
         labelAppearance()
         buttonAppearance()
         searchBarAppearance()
@@ -84,7 +86,6 @@ extension Themeable {
             NSForegroundColorAttributeName: textColor,
             NSFontAttributeName: smallBoldFont()
         ], forState: .Selected)
-
     }
 
     public func activityIndicatorViewAppearance() {
