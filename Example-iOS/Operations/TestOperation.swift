@@ -8,15 +8,9 @@
 
 import UIKit
 import GtsiapKit
-import Alamofire
 
 class TestOperation: Operation {
     override func main() {
-        request(.GET, "http://reddit.com/r/swift.json")
-            .responseJSON() {(request, response, data) in
-                print("done")
-                self.finish()
-        }
-
+        sleep(5)
     }
 }

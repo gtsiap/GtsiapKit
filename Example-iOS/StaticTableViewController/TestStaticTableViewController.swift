@@ -9,20 +9,19 @@
 import UIKit
 import GtsiapKit
 
-class TestStaticTableViewController: StaticTableViewController {
+class TestStaticTableViewController: FormsTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let section = StaticSection()
-        section.addRow("test1").didSelectRow = {
-            print("test1")
+        let section = FormSection()
+        let row = FormRow(type: FormType.ReadOnly(text: "test1", detailText: nil))
+        row.didSelectRow = {
+            let vc = MultilineSegmentedControl()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
 
-        section.addRow("test2", detailText: "description ...")
-            .didSelectRow = {
-                print("test2")
-            }
+        section.rows.append(row)
 
-        self.staticSections = [section]
+        self.formSections = [section]
     }
 }

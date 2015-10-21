@@ -30,12 +30,12 @@ class SearchTableViewController: UITableViewController {
     private lazy var contentView: UIView = {
         let contentView = UIView()
 
-        let label1 = ThemeManager.defaultTheme.label()
+        let label1 = UILabel()
         label1.translatesAutoresizingMaskIntoConstraints = false
         label1.text = "Label1"
         label1.preferredMaxLayoutWidth = self.tableView.frame.width
 
-        let label2 = ThemeManager.defaultTheme.label()
+        let label2 = UILabel()
         label2.translatesAutoresizingMaskIntoConstraints = false
         label2.text = "Label2"
         label2.preferredMaxLayoutWidth = self.tableView.frame.width
