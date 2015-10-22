@@ -12,7 +12,7 @@ public class FormsTableViewController: UITableViewController {
 
     public var formSections: [FormSection] = [FormSection]() {
         didSet {
-            self.tableView.reloadData()
+            self.tableView.reloadDataWithAutoSizingCell()
         }
     }
 
