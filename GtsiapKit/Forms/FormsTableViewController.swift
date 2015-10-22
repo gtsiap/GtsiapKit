@@ -22,8 +22,8 @@ public class FormsTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 50
         self.tableView.rowHeight = UITableViewAutomaticDimension
 
-        self.tableView.registerClass(FormTextFieldCell.self, forCellReuseIdentifier: "formCell")
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "ReadOnlyCell")
+        self.tableView.registerClass(FormTableViewCell.self, forCellReuseIdentifier: "formCell")
     }
 
     // MARK: - Table view data source
@@ -40,19 +40,18 @@ public class FormsTableViewController: UITableViewController {
         let cell: UITableViewCell
 
         let cellRow = self.formSections[indexPath.section].rows[indexPath.row]
-        switch cellRow.type {
-        case .Double:
-            let doubleCell = tableView
-                .dequeueReusableCellWithIdentifier("formCell", forIndexPath: indexPath)
-            as! FormTextFieldCell
 
-            doubleCell.formRow = cellRow
-            cell = doubleCell
-
-        case .ReadOnly(let text, let detailText):
+        if let staticForm = cellRow.formView as? StaticForm {
             cell = tableView.dequeueReusableCellWithIdentifier("ReadOnlyCell", forIndexPath: indexPath)
-            cell.textLabel?.text = text
-            cell.detailTextLabel?.text = detailText
+            cell.textLabel?.text = staticForm.text
+            cell.detailTextLabel?.text = staticForm.detailText
+        } else {
+            let formCell = tableView
+                .dequeueReusableCellWithIdentifier("formCell", forIndexPath: indexPath)
+                as! FormTableViewCell
+
+            formCell.formRow = cellRow
+            cell = formCell
         }
 
         cell.accessoryType = cellRow.accessoryType
@@ -69,17 +68,14 @@ public class FormsTableViewController: UITableViewController {
     public override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         let cellRow = self.formSections[indexPath.section].rows[indexPath.row]
 
-        switch cellRow.type {
-        case .Double:
-            return false
-        default:
-            guard let _ = cellRow.didSelectRow else {
-                return false
-            }
-
+        if let
+            _ = cellRow.formView as? StaticForm,
+            _ = cellRow.didSelectRow
+        {
             return true
         }
 
+        return false
     }
 
     public override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

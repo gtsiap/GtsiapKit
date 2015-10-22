@@ -15,4 +15,10 @@ public class FormSection {
 
     public init() {}
 
+
+    public func addRow(formView: FormViewable) -> FormRow {
+        let row = FormRow(formView: formView)
+        self.rows.append(row)
+        return row
+    }
 }

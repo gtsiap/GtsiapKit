@@ -9,7 +9,7 @@
 import UIKit
 
 public class FormRow {
-    let type: FormType
+    public let formView: FormViewable
 
     public var didSelectRow: (() -> ())?
     public var result: AnyObject? {
@@ -21,23 +21,18 @@ public class FormRow {
     public var didUpdateResult: ((result: AnyObject?) -> ())?
 
     var accessoryType: UITableViewCellAccessoryType {
-        switch self.type {
-        case .Double:
+        guard let _ = self.didSelectRow else {
             return .None
-        default:
-            guard let _ = self.didSelectRow else {
-                return .None
-            }
+        }
 
-            return UITableViewCellAccessoryType.DisclosureIndicator
+        return UITableViewCellAccessoryType.DisclosureIndicator
+    }
+
+    public init(formView: FormViewable) {
+        self.formView = formView
+        self.formView.resultChanged = { result in
+            self.result = result
         }
     }
 
-    public var required: Bool = true
-
-    public init(type: FormType) {
-        self.type = type
-    }
-
 }
-

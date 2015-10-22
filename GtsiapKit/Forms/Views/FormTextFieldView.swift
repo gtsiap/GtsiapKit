@@ -1,5 +1,5 @@
 //
-//  FormTextFieldCell.swift
+//  FormTextFieldView.swift
 //  GtsiapKit
 //
 //  Created by Giorgos Tsiapaliokas on 14/10/15.
@@ -9,19 +9,21 @@
 import UIKit
 import SnapKit
 
-class FormTextFieldCell: UITableViewCell {
+public protocol FormViewable {
+    var resultChanged: ((AnyObject?) -> ())? { get set}
+    var required: Bool { get set }
+}
 
-    var formRow: FormRow! {
-        didSet {
-            if case .Double(let description) = self.formRow.type {
-                self.formDescription.text = description
-            }
+public class FormView: UIView, FormViewable {
+    public var resultChanged: ((AnyObject?) -> ())?
+    public var required: Bool = true
+}
 
-            if self.formRow.required {
-                self.textField.placeholder = "Required"
-            }
-        }
-    }
+public protocol FormTextFieldViewErrorable: class {
+    func hasError(string: String) -> (Bool, String)
+}
+
+public class FormTextFieldView: FormView {
 
     private lazy var textField: UITextField = {
         let textField = UITextField(
@@ -54,41 +56,37 @@ class FormTextFieldCell: UITableViewCell {
         return label
     }()
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        commonInit()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    public weak var errorable: FormTextFieldViewErrorable?
 
-        commonInit()
-    }
-    private func commonInit() {
+    public init(description: String, placeHolder: String) {
+        super.init(frame: CGRectZero)
 
-        self.contentView.addSubview(self.textField)
-        self.contentView.addSubview(self.formDescription)
-        self.contentView.addSubview(self.errorLabel)
+        self.formDescription.text = description
+        self.textField.placeholder = placeHolder
+
+        self.addSubview(self.textField)
+        self.addSubview(self.formDescription)
+        self.addSubview(self.errorLabel)
 
         self.formDescription.snp_makeConstraints() { make in
-            make.top.equalTo(self.contentView).offset(10)
-            make.left.equalTo(self.contentView).offset(10)
+            make.top.equalTo(self).offset(10)
+            make.left.equalTo(self).offset(10)
         }
 
         self.errorLabel.snp_makeConstraints() { make in
-            make.left.equalTo(self.contentView).offset(10)
-            make.width.equalTo(self.contentView).multipliedBy(0.7)
-            make.height.equalTo(self.contentView).multipliedBy(0.3)
+            make.left.equalTo(self).offset(10)
+            make.width.equalTo(self).multipliedBy(0.7)
+            make.height.equalTo(self).multipliedBy(0.3)
             make.top.equalTo(self.formDescription.snp_bottom)
-            make.bottom.equalTo(self.contentView)
+            make.bottom.equalTo(self)
         }
 
         self.textField.snp_makeConstraints() { make in
-            make.width.equalTo(self.contentView).multipliedBy(0.7)
+            make.width.equalTo(self).multipliedBy(0.7)
             make.left.equalTo(self.formDescription.snp_right).multipliedBy(1.5)
             make.centerY.equalTo(self.formDescription.snp_centerY)
         }
@@ -96,32 +94,13 @@ class FormTextFieldCell: UITableViewCell {
     }
 
     @objc private func textDidChange() {
-        self.formRow.result = self.textField.text
-    }
-
-    private func hasErrors(string: String) -> Bool {
-
-        self.errorLabel.text = ""
-
-        switch self.formRow.type {
-        case .Double:
-            if let _ = Double(string) {
-                return false
-            }
-
-            self.errorLabel.text = "Only Numbers are allowed"
-
-        default:
-            break
-        }
-
-        return true
+        self.resultChanged?(self.textField.text)
     }
 
 }
 
-extension FormTextFieldCell: UITextFieldDelegate {
-    func textField(
+extension FormTextFieldView: UITextFieldDelegate {
+    public func textField(
         textField: UITextField,
         shouldChangeCharactersInRange range: NSRange,
         replacementString string: String
@@ -137,6 +116,18 @@ extension FormTextFieldCell: UITextFieldDelegate {
             return true
         }
 
-        return !hasErrors(string)
+        guard let
+            errorable = self.errorable
+        else { return true }
+
+        let result = errorable.hasError(string)
+
+        if result.0 {
+            self.errorLabel.text = result.1
+        } else {
+            self.errorLabel.text = ""
+        }
+
+        return !result.0
     }
 }
