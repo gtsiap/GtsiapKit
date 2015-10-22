@@ -37,6 +37,14 @@ public class FormTextFieldView: FormView {
         return label
     }()
 
+    private lazy var formTitle: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.normalBoldFont()
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        return label
+    }()
+
     private lazy var errorLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.smallBoldFont()
@@ -52,18 +60,42 @@ public class FormTextFieldView: FormView {
 
     public weak var errorable: FormTextFieldViewErrorable?
 
-    public init(description: String, placeHolder: String) {
+    public init(title: String, placeHolder: String, description: String? = nil) {
         super.init(frame: CGRectZero)
 
-        self.formDescription.text = description
+        self.formTitle.text = title
         self.textField.placeholder = placeHolder
 
         self.addSubview(self.textField)
-        self.addSubview(self.formDescription)
+        self.addSubview(self.formTitle)
         self.addSubview(self.errorLabel)
 
-        self.formDescription.snp_makeConstraints() { make in
-            make.top.equalTo(self).offset(10)
+        var leftSideLabel: UIView = self.formTitle
+        var topSideView: UIView?
+
+        if let desc = description {
+
+            self.addSubview(self.formDescription)
+            self.formDescription.text = desc
+            leftSideLabel = formDescription
+
+            topSideView = self.formTitle
+
+            self.formTitle.font = UIFont.headlineFont()
+            self.formTitle.snp_makeConstraints() { make in
+                make.top.equalTo(self).offset(10)
+                make.centerX.equalTo(self)
+            }
+        }
+
+        leftSideLabel.snp_makeConstraints() { make in
+            if let topView = topSideView {
+                make.top.equalTo(topView.snp_bottom).multipliedBy(1.2)
+            } else {
+                make.top.equalTo(self).offset(10)
+            }
+
+            make.centerY.equalTo(self)
             make.left.equalTo(self).offset(10)
         }
 
@@ -71,15 +103,14 @@ public class FormTextFieldView: FormView {
             make.left.equalTo(self).offset(10)
             make.width.equalTo(self).multipliedBy(0.7)
             make.height.equalTo(self).multipliedBy(0.3)
-            make.top.equalTo(self.formDescription.snp_bottom)
             make.bottom.equalTo(self)
         }
 
         self.textField.snp_makeConstraints() { make in
             make.width.equalTo(self).multipliedBy(0.7)
-            make.left.equalTo(self.formDescription.snp_right).multipliedBy(1.5)
+            make.left.equalTo(leftSideLabel.snp_right).multipliedBy(1.5)
             make.right.equalTo(self)
-            make.centerY.equalTo(self.formDescription.snp_centerY)
+            make.centerY.equalTo(leftSideLabel.snp_centerY)
         }
 
     }
