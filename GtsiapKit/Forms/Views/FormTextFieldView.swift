@@ -9,16 +9,6 @@
 import UIKit
 import SnapKit
 
-public protocol FormViewable {
-    var resultChanged: ((AnyObject?) -> ())? { get set}
-    var required: Bool { get set }
-}
-
-public class FormView: UIView, FormViewable {
-    public var resultChanged: ((AnyObject?) -> ())?
-    public var required: Bool = true
-}
-
 public protocol FormTextFieldViewErrorable: class {
     func hasError(string: String) -> (Bool, String)
 }
