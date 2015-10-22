@@ -17,15 +17,31 @@ class FormTableViewCell: UITableViewCell {
         }
     }
 
+    private var cellView: UIView!
+
     private func configureCell() {
         guard let formView =
             self.formRow.formView as? UIView
         else { return }
 
-        self.contentView.addSubview(formView)
+        if let _ = self.cellView {
+            // configureCell has been called from
+            // UITableView.dequeueReusableCellWithIdentifier
+            // for the second time. We have already configured
+            // the view and we don't want to add the view again.
+            // Q: When does this happen?
+            // A: If you scroll in the tableview then
+            //    the second time the tableview will reuse
+            //    the cell, thats why we use it after all :)
+            return
+        }
+
+        self.cellView = formView
+
+        self.contentView.addSubview(self.cellView)
         formView.translatesAutoresizingMaskIntoConstraints = false
 
-        formView.snp_makeConstraints() { make in
+        self.cellView.snp_makeConstraints() { make in
             make.edges.equalTo(self.contentView)
         }
 

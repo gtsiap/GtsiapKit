@@ -78,6 +78,7 @@ public class FormTextFieldView: FormView {
         self.textField.snp_makeConstraints() { make in
             make.width.equalTo(self).multipliedBy(0.7)
             make.left.equalTo(self.formDescription.snp_right).multipliedBy(1.5)
+            make.right.equalTo(self)
             make.centerY.equalTo(self.formDescription.snp_centerY)
         }
 
