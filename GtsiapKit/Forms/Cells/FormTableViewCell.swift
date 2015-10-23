@@ -33,7 +33,7 @@ class FormTableViewCell: UITableViewCell {
             // A: If you scroll in the tableview then
             //    the second time the tableview will reuse
             //    the cell, thats why we use it after all :)
-            return
+            self.cellView.removeFromSuperview()
         }
 
         self.cellView = formView

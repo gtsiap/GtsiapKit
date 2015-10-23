@@ -7,6 +7,7 @@
 //
 
 import SnapKit
+import TZStackView
 
 public protocol FormViewable {
     var resultChanged: ((AnyObject?) -> ())? { get set}
@@ -27,27 +28,13 @@ public class FormStackView: FormView {
     }
 
     private func setupViews() {
-        self.subviews.forEach() { $0.removeFromSuperview() }
+        let stackView = TZStackView(arrangedSubviews: self.formViews)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .Vertical
+        addSubview(stackView)
 
-        var previousView: UIView?
-        for view in self.formViews {
-            addSubview(view)
-
-            view.snp_makeConstraints() { make in
-                if let pv = previousView {
-                    make.top.equalTo(pv.snp_bottom)
-                } else {
-                    make.top.equalTo(self)
-                } // end if
-            } // end snp_makeConstraints
-
-            previousView = view
-        } // end for
-
-        previousView?.snp_remakeConstraints() { make in
-            make.bottom.equalTo(self)
+        stackView.snp_makeConstraints() { make in
+            make.edges.equalTo(self)
         }
-
-    } // end func
-
+    }
 }

@@ -70,7 +70,7 @@ public class FormTextFieldView: FormView {
         self.addSubview(self.formTitle)
         self.addSubview(self.errorLabel)
 
-        var leftSideLabel: UIView = self.formTitle
+        var leftSideLabel: UILabel = self.formTitle
         var topSideView: UIView?
 
         if let desc = description {
@@ -95,7 +95,7 @@ public class FormTextFieldView: FormView {
                 make.top.equalTo(self).offset(10)
             }
 
-            make.centerY.equalTo(self)
+            make.centerY.equalTo(self).priorityLow()
             make.left.equalTo(self).offset(10)
         }
 
@@ -107,10 +107,10 @@ public class FormTextFieldView: FormView {
         }
 
         self.textField.snp_makeConstraints() { make in
-            make.width.equalTo(self).multipliedBy(0.7)
+            make.width.equalTo(self).multipliedBy(0.5)
             make.left.equalTo(leftSideLabel.snp_right).multipliedBy(1.5)
-            make.right.equalTo(self)
-            make.centerY.equalTo(leftSideLabel.snp_centerY)
+            make.right.equalTo(self).multipliedBy(0.9)
+            make.centerY.equalTo(leftSideLabel.snp_centerY).priorityLow()
         }
 
     }

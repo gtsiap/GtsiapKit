@@ -11,6 +11,7 @@
 		451E59271B95D0B10012167B /* Encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451E59261B95D0B10012167B /* Encode.swift */; settings = {ASSET_TAGS = (); }; };
 		451FCAC31BCE159300EC4E7F /* FormsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451FCAC21BCE159300EC4E7F /* FormsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		451FCAC51BCE15D700EC4E7F /* FormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451FCAC41BCE15D700EC4E7F /* FormRow.swift */; settings = {ASSET_TAGS = (); }; };
+		45226FE31BDA0AE600D0AD0F /* TZStackView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45226FE21BDA0AE600D0AD0F /* TZStackView.framework */; };
 		4536C3B91B29E7C2003E8CB7 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4536C3B81B29E7C2003E8CB7 /* Json.swift */; };
 		453F68351B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */; };
 		45540D2B1BC7A3BA00DBE875 /* JSONAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45540D2A1BC7A3BA00DBE875 /* JSONAPIManager.swift */; settings = {ASSET_TAGS = (); }; };
@@ -123,6 +124,7 @@
 		451FCAC21BCE159300EC4E7F /* FormsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormsTableViewController.swift; sourceTree = "<group>"; };
 		451FCAC41BCE15D700EC4E7F /* FormRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRow.swift; sourceTree = "<group>"; };
 		451FCAC81BCE6C9F00EC4E7F /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = ../Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		45226FE21BDA0AE600D0AD0F /* TZStackView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TZStackView.framework; path = ../Carthage/Build/iOS/TZStackView.framework; sourceTree = "<group>"; };
 		4536C3B81B29E7C2003E8CB7 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 		453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+isConnectedToNetwork.swift"; sourceTree = "<group>"; };
 		45540D2A1BC7A3BA00DBE875 /* JSONAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAPIManager.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			files = (
 				456E5A591BB3039C00A04651 /* Alamofire.framework in Frameworks */,
 				457CEFCE1BCE751600E171FA /* SnapKit.framework in Frameworks */,
+				45226FE31BDA0AE600D0AD0F /* TZStackView.framework in Frameworks */,
 				4598C8F91BB981E900C4216F /* Locksmith.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +437,7 @@
 		45B4044C1B29E68A00DF2CDB = {
 			isa = PBXGroup;
 			children = (
+				45226FE21BDA0AE600D0AD0F /* TZStackView.framework */,
 				451FCAC81BCE6C9F00EC4E7F /* SnapKit.framework */,
 				4598C8F81BB981E900C4216F /* Locksmith.framework */,
 				4598C8F61BB97F8F00C4216F /* Locksmith.framework */,
