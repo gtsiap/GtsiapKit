@@ -22,7 +22,7 @@ public class SegmentedControl: UIView {
             createSegmentedControls()
         }
     }
-    
+
     public var spacing: Double = 0 {
         didSet {
             createSegmentedControls()
@@ -79,7 +79,7 @@ public class SegmentedControl: UIView {
                     make.left.right.equalTo(self)
                     make.top.equalTo(self)
                 }
-                
+
             } else {
                 control.snp_makeConstraints() { make in
                     make.left.right.equalTo(self)
@@ -87,7 +87,7 @@ public class SegmentedControl: UIView {
                         .offset(self.spacing).priorityLow()
                 }
             }
-            
+
             previousControl = control
         }
 
@@ -100,7 +100,7 @@ public class SegmentedControl: UIView {
         for segment in self.segmentedControls {
             segment.removeFromSuperview()
         }
-        
+
         self.segmentedControls.removeAll()
     }
 }
