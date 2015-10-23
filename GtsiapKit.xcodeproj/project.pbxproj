@@ -15,6 +15,7 @@
 		45226FE51BDA331000D0AD0F /* FormIntTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45226FE41BDA331000D0AD0F /* FormIntTextFieldView.swift */; settings = {ASSET_TAGS = (); }; };
 		45226FE71BDA33D000D0AD0F /* FormStringTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45226FE61BDA33D000D0AD0F /* FormStringTextFieldView.swift */; settings = {ASSET_TAGS = (); }; };
 		45226FE91BDA38F300D0AD0F /* FormSegmentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45226FE81BDA38F300D0AD0F /* FormSegmentedView.swift */; settings = {ASSET_TAGS = (); }; };
+		45226FEB1BDA3A4200D0AD0F /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45226FEA1BDA3A4200D0AD0F /* FormView.swift */; settings = {ASSET_TAGS = (); }; };
 		4536C3B91B29E7C2003E8CB7 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4536C3B81B29E7C2003E8CB7 /* Json.swift */; };
 		453F68351B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */; };
 		45540D2B1BC7A3BA00DBE875 /* JSONAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45540D2A1BC7A3BA00DBE875 /* JSONAPIManager.swift */; settings = {ASSET_TAGS = (); }; };
@@ -131,6 +132,7 @@
 		45226FE41BDA331000D0AD0F /* FormIntTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormIntTextFieldView.swift; sourceTree = "<group>"; };
 		45226FE61BDA33D000D0AD0F /* FormStringTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormStringTextFieldView.swift; sourceTree = "<group>"; };
 		45226FE81BDA38F300D0AD0F /* FormSegmentedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSegmentedView.swift; sourceTree = "<group>"; };
+		45226FEA1BDA3A4200D0AD0F /* FormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		4536C3B81B29E7C2003E8CB7 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 		453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+isConnectedToNetwork.swift"; sourceTree = "<group>"; };
 		45540D2A1BC7A3BA00DBE875 /* JSONAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAPIManager.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				451FCAC41BCE15D700EC4E7F /* FormRow.swift */,
 				457CEFD11BCE78AC00E171FA /* FormSection.swift */,
 				45E1DBE91BD8E535004FF18C /* FormViewable.swift */,
+				45226FEA1BDA3A4200D0AD0F /* FormView.swift */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -910,6 +913,7 @@
 				457AB5951B2B6365003034F1 /* RevealNavigationController.swift in Sources */,
 				4565C2121BD65A1700B324A9 /* Int.swift in Sources */,
 				45CE5E3C1BB8767200AE682E /* ViewController+AlertViewController.swift in Sources */,
+				45226FEB1BDA3A4200D0AD0F /* FormView.swift in Sources */,
 				45E1DBE81BD8D9D7004FF18C /* FormTableViewCell.swift in Sources */,
 				4536C3B91B29E7C2003E8CB7 /* Json.swift in Sources */,
 				456E5A501BB2FAD300A04651 /* ApiPresentable.swift in Sources */,

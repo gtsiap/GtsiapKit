@@ -14,27 +14,9 @@ public protocol FormViewable {
     var required: Bool { get set }
 }
 
-public class FormView: UIView, FormViewable {
+public class FormStackView: TZStackView, FormViewable {
+
     public var resultChanged: ((AnyObject?) -> ())?
-    public var required: Bool = true
-}
+    public var required: Bool = false
 
-public class FormStackView: FormView {
-
-    public var formViews: [FormView] = [FormView]() {
-        didSet {
-            setupViews()
-        }
-    }
-
-    private func setupViews() {
-        let stackView = TZStackView(arrangedSubviews: self.formViews)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .Vertical
-        addSubview(stackView)
-
-        stackView.snp_makeConstraints() { make in
-            make.edges.equalTo(self)
-        }
-    }
 }

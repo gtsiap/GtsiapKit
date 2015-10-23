@@ -37,31 +37,6 @@ public class FormTextFieldView: FormView {
         return textField
     }()
 
-    private lazy var formDescription: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.normalBoldFont()
-        label.translatesAutoresizingMaskIntoConstraints = false
-
-        return label
-    }()
-
-    private lazy var formTitle: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.normalBoldFont()
-        label.translatesAutoresizingMaskIntoConstraints = false
-
-        return label
-    }()
-
-    private lazy var errorLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.smallBoldFont()
-        label.textColor = UIColor.redColor()
-        label.translatesAutoresizingMaskIntoConstraints = false
-
-        return label
-    }()
-
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -70,57 +45,10 @@ public class FormTextFieldView: FormView {
 
     public init(title: String, placeHolder: String, description: String? = nil) {
         super.init(frame: CGRectZero)
+        self.mainView = self.textField
 
-        self.formTitle.text = title
         self.textField.placeholder = placeHolder
-
-        self.addSubview(self.textField)
-        self.addSubview(self.formTitle)
-        self.addSubview(self.errorLabel)
-
-        var leftSideLabel: UILabel = self.formTitle
-        var topSideView: UIView?
-
-        if let desc = description {
-
-            self.addSubview(self.formDescription)
-            self.formDescription.text = desc
-            leftSideLabel = formDescription
-
-            topSideView = self.formTitle
-
-            self.formTitle.font = UIFont.headlineFont()
-            self.formTitle.snp_makeConstraints() { make in
-                make.top.equalTo(self).offset(10)
-                make.centerX.equalTo(self)
-            }
-        }
-
-        leftSideLabel.snp_makeConstraints() { make in
-            if let topView = topSideView {
-                make.top.equalTo(topView.snp_bottom).multipliedBy(1.2)
-            } else {
-                make.top.equalTo(self).offset(10)
-            }
-
-            make.centerY.equalTo(self).priorityLow()
-            make.left.equalTo(self).offset(10)
-        }
-
-        self.errorLabel.snp_makeConstraints() { make in
-            make.left.equalTo(self).offset(10)
-            make.width.equalTo(self).multipliedBy(0.7)
-            make.height.equalTo(self).multipliedBy(0.3)
-            make.bottom.equalTo(self)
-        }
-
-        self.textField.snp_makeConstraints() { make in
-            make.width.equalTo(self).multipliedBy(0.5)
-            make.left.equalTo(leftSideLabel.snp_right).multipliedBy(1.5)
-            make.right.equalTo(self).multipliedBy(0.9)
-            make.centerY.equalTo(leftSideLabel.snp_centerY).priorityLow()
-        }
-
+        configureView(title, description: description)
     }
 
     @objc private func textDidChange() {
