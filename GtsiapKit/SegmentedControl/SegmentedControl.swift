@@ -17,8 +17,17 @@ public class SegmentedControl: UIView {
         }
     }
 
-    public var itemsPerRow = 3
-    public var spacing: Double = 0
+    public var itemsPerRow = 3 {
+        didSet {
+            createSegmentedControls()
+        }
+    }
+    
+    public var spacing: Double = 0 {
+        didSet {
+            createSegmentedControls()
+        }
+    }
 
     private var segmentedControls: [UISegmentedControl] = [UISegmentedControl]()
 
@@ -67,25 +76,31 @@ public class SegmentedControl: UIView {
 
             if index == 0 {
                 control.snp_makeConstraints() { make in
-                    make.top.left.right.equalTo(self)
+                    make.left.right.equalTo(self)
+                    make.top.equalTo(self)
                 }
+                
             } else {
                 control.snp_makeConstraints() { make in
                     make.left.right.equalTo(self)
                     make.top.equalTo(previousControl.snp_bottom)
-                        .offset(self.spacing)
+                        .offset(self.spacing).priorityLow()
                 }
             }
-
+            
             previousControl = control
         }
 
-        addConstraints(constraints)
+        previousControl.snp_makeConstraints { make in
+            make.bottom.equalTo(self)
+        }
     }
 
     private func removeSegmentedControlsFromView() {
         for segment in self.segmentedControls {
             segment.removeFromSuperview()
         }
+        
+        self.segmentedControls.removeAll()
     }
 }
