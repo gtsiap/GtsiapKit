@@ -12,6 +12,9 @@
 		451FCAC31BCE159300EC4E7F /* FormsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451FCAC21BCE159300EC4E7F /* FormsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		451FCAC51BCE15D700EC4E7F /* FormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451FCAC41BCE15D700EC4E7F /* FormRow.swift */; settings = {ASSET_TAGS = (); }; };
 		45226FE31BDA0AE600D0AD0F /* TZStackView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45226FE21BDA0AE600D0AD0F /* TZStackView.framework */; };
+		45226FE51BDA331000D0AD0F /* FormIntTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45226FE41BDA331000D0AD0F /* FormIntTextFieldView.swift */; settings = {ASSET_TAGS = (); }; };
+		45226FE71BDA33D000D0AD0F /* FormStringTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45226FE61BDA33D000D0AD0F /* FormStringTextFieldView.swift */; settings = {ASSET_TAGS = (); }; };
+		45226FE91BDA38F300D0AD0F /* FormSegmentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45226FE81BDA38F300D0AD0F /* FormSegmentedView.swift */; settings = {ASSET_TAGS = (); }; };
 		4536C3B91B29E7C2003E8CB7 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4536C3B81B29E7C2003E8CB7 /* Json.swift */; };
 		453F68351B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */; };
 		45540D2B1BC7A3BA00DBE875 /* JSONAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45540D2A1BC7A3BA00DBE875 /* JSONAPIManager.swift */; settings = {ASSET_TAGS = (); }; };
@@ -125,6 +128,9 @@
 		451FCAC41BCE15D700EC4E7F /* FormRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRow.swift; sourceTree = "<group>"; };
 		451FCAC81BCE6C9F00EC4E7F /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = ../Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		45226FE21BDA0AE600D0AD0F /* TZStackView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TZStackView.framework; path = ../Carthage/Build/iOS/TZStackView.framework; sourceTree = "<group>"; };
+		45226FE41BDA331000D0AD0F /* FormIntTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormIntTextFieldView.swift; sourceTree = "<group>"; };
+		45226FE61BDA33D000D0AD0F /* FormStringTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormStringTextFieldView.swift; sourceTree = "<group>"; };
+		45226FE81BDA38F300D0AD0F /* FormSegmentedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSegmentedView.swift; sourceTree = "<group>"; };
 		4536C3B81B29E7C2003E8CB7 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 		453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+isConnectedToNetwork.swift"; sourceTree = "<group>"; };
 		45540D2A1BC7A3BA00DBE875 /* JSONAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAPIManager.swift; sourceTree = "<group>"; };
@@ -588,6 +594,9 @@
 			children = (
 				45E1DBE11BD8D275004FF18C /* FormTextFieldView.swift */,
 				45E1DBE31BD8D596004FF18C /* FormDoubleTextFieldView.swift */,
+				45226FE41BDA331000D0AD0F /* FormIntTextFieldView.swift */,
+				45226FE61BDA33D000D0AD0F /* FormStringTextFieldView.swift */,
+				45226FE81BDA38F300D0AD0F /* FormSegmentedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -874,7 +883,9 @@
 				459809FD1B7639E300FE0C4C /* FeedbackManager.swift in Sources */,
 				45980A521B7653BF00FE0C4C /* NSDate+toString.swift in Sources */,
 				457F71991BC29E1F005A478B /* PageViewController.swift in Sources */,
+				45226FE51BDA331000D0AD0F /* FormIntTextFieldView.swift in Sources */,
 				45E5A84E1BC3BD790008361E /* Workarounds.swift in Sources */,
+				45226FE71BDA33D000D0AD0F /* FormStringTextFieldView.swift in Sources */,
 				45B404741B29E79F00DF2CDB /* Logger.swift in Sources */,
 				4570D2B41B6CB97B00F6AA37 /* UIColor+Rgb.swift in Sources */,
 				4598C8F51BB97CA500C4216F /* Credentials.swift in Sources */,
@@ -891,6 +902,7 @@
 				45E1DBEA1BD8E535004FF18C /* FormViewable.swift in Sources */,
 				45AC7CD81B5BFAA600647A27 /* ToastView.swift in Sources */,
 				45EB2B691BC7F98C00056B5D /* UITextField.swift in Sources */,
+				45226FE91BDA38F300D0AD0F /* FormSegmentedView.swift in Sources */,
 				459E1C351BCB8D0D00869EDD /* ApiTaskResultProvider.swift in Sources */,
 				456E5A4D1BB2FA1B00A04651 /* ApiManager.swift in Sources */,
 				456E5A521BB300F900A04651 /* Taskable.swift in Sources */,

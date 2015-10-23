@@ -15,6 +15,14 @@ public protocol FormTextFieldViewErrorable: class {
 
 public class FormTextFieldView: FormView {
 
+    var keyboardType: UIKeyboardType = .DecimalPad {
+        didSet {
+            self.textField.keyboardType = self.keyboardType
+        }
+    }
+
+    var allowDecimalPoint: Bool = true
+
     private lazy var textField: UITextField = {
         let textField = UITextField(
             target: self,
@@ -22,7 +30,7 @@ public class FormTextFieldView: FormView {
         )
 
         textField.borderStyle = .None
-        textField.keyboardType = .DecimalPad
+        textField.keyboardType = self.keyboardType
         textField.delegate = self
 
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -133,7 +141,9 @@ extension FormTextFieldView: UITextFieldDelegate {
         }
 
         if let text = textField.text
-            where string == "." && !text.containsString(".")
+            where string == "." &&
+                  !text.containsString(".") &&
+                  self.allowDecimalPoint
         {
             return true
         }
@@ -151,5 +161,10 @@ extension FormTextFieldView: UITextFieldDelegate {
         }
 
         return !result.0
+    }
+
+    public func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
 }
