@@ -39,12 +39,13 @@ class FormTableViewCell: UITableViewCell {
         self.cellView = formView
 
         self.contentView.addSubview(self.cellView)
-        formView.translatesAutoresizingMaskIntoConstraints = false
+        self.cellView.translatesAutoresizingMaskIntoConstraints = false
 
         self.cellView.snp_makeConstraints() { make in
-            make.edges.equalTo(self.contentView)
+            make.top.left.equalTo(self.contentView).offset(10)
+            make.bottom.equalTo(self.contentView).offset(-10)
+            make.right.equalTo(self.contentView).offset(-20)
         }
-
     }
 
 }
