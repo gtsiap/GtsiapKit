@@ -29,6 +29,8 @@ public class SegmentedControl: UIView {
         }
     }
 
+    public var value: String?
+
     private var segmentedControls: [UISegmentedControl] = [UISegmentedControl]()
 
     private func createSegmentedControls() {
@@ -119,6 +121,12 @@ public class SegmentedControl: UIView {
 
     // MARK: actions
     @objc private func segmentedControlValueDidChange(sender: UISegmentedControl) {
+
+        if let
+            value = sender.titleForSegmentAtIndex(sender.selectedSegmentIndex)
+        {
+            self.value = value
+        }
 
         for control in self.segmentedControls {
             guard control != sender else { continue }
