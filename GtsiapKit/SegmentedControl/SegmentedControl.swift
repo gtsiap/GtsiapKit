@@ -39,6 +39,35 @@ public class SegmentedControl: UIView {
 
     private var segmentedControls: [UISegmentedControl] = [UISegmentedControl]()
 
+
+    public init() {
+        super.init(frame: CGRectZero)
+
+        // HACK: workaround for iOS 9
+        // If the keyboard is visible then the segmented control
+        // won't call segmentedControlValueDidChange
+        // on UIControl.valueChanged
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: Selector("keyboardWillAppear"),
+            name: UIKeyboardWillShowNotification,
+            object: nil)
+
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: Selector("keyboardWillDisappear"),
+            name: UIKeyboardWillHideNotification, object: nil
+        )
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+
     private func createSegmentedControls() {
         removeSegmentedControlsFromView()
 
@@ -57,7 +86,6 @@ public class SegmentedControl: UIView {
                 currentSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
                 addSegment(currentSegmentedControl, item: item)
             }
-
         }
 
         addSegmentedControlsToView()
@@ -120,7 +148,7 @@ public class SegmentedControl: UIView {
     private func addTargetForSegmentedControl(segmentedControl: UISegmentedControl) {
         segmentedControl.addTarget(
             "self",
-            action: "segmentedControlValueDidChange:",
+            action: Selector("segmentedControlValueDidChange:"),
             forControlEvents: .ValueChanged
         )
     }
@@ -141,5 +169,12 @@ public class SegmentedControl: UIView {
 
     }
 
+    @objc private func keyboardWillAppear() {
+        self.userInteractionEnabled = false
+    }
+
+    @objc private func keyboardWillDisappear() {
+        self.userInteractionEnabled = true
+    }
 
 }
