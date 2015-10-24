@@ -29,7 +29,13 @@ public class SegmentedControl: UIView {
         }
     }
 
-    public var value: String?
+    public var value: String? {
+        didSet {
+            self.valueDidChange?(self.value)
+        }
+    }
+
+    public var valueDidChange: ((String?) -> ())?
 
     private var segmentedControls: [UISegmentedControl] = [UISegmentedControl]()
 
