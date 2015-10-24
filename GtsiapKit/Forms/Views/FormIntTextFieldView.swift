@@ -8,17 +8,19 @@
 
 import UIKit
 
-public class FormIntTextFieldView: FormTextFieldView {
+public class FormIntTextFieldView: FormTextFieldView<Int> {
 
     public override init(title: String, placeHolder: String, description: String?) {
         super.init(title: title, placeHolder: placeHolder, description: description)
         self.keyboardType = .NumberPad
         self.allowDecimalPoint = false
         self.errorable = self
-    }
 
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+
+        self.transformResult = { text -> AnyObject? in
+            return Int(text)
+        }
+
     }
 
 }

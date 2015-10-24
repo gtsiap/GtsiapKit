@@ -9,6 +9,18 @@
 import UIKit
 import SnapKit
 
+
+public class ObjectFormView<T>: FormView {
+    public var resultObject: T? {
+        return self.result as? T
+    }
+
+    init() {
+        super.init(frame: CGRectZero)
+    }
+
+}
+
 public class FormView: UIView, FormViewable  {
 
     public var result: AnyObject? {

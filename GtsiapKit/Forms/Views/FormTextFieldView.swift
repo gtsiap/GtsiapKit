@@ -13,7 +13,7 @@ public protocol FormTextFieldViewErrorable: class {
     func hasError(string: String) -> (Bool, String)
 }
 
-public class FormTextFieldView: FormView {
+public class FormTextFieldView<T>: ObjectFormView<T>, UITextFieldDelegate {
 
     var keyboardType: UIKeyboardType = .DecimalPad {
         didSet {
@@ -22,6 +22,7 @@ public class FormTextFieldView: FormView {
     }
 
     var allowDecimalPoint: Bool = true
+    var transformResult: ((text: String) -> AnyObject?)?
 
     private lazy var textField: UITextField = {
         let textField = UITextField(
@@ -44,7 +45,8 @@ public class FormTextFieldView: FormView {
     public weak var errorable: FormTextFieldViewErrorable?
 
     public init(title: String, placeHolder: String, description: String? = nil) {
-        super.init(frame: CGRectZero)
+        super.init()
+
         self.mainView = self.textField
 
         self.textField.placeholder = placeHolder
@@ -52,12 +54,18 @@ public class FormTextFieldView: FormView {
     }
 
     @objc private func textDidChange() {
-        self.result = self.textField.text
+        guard let
+            text = self.textField.text
+        else { return }
+
+        if let transformResult = self.transformResult {
+            self.result = transformResult(text: text)
+        } else {
+            self.result = text
+        }
+
     }
 
-}
-
-extension FormTextFieldView: UITextFieldDelegate {
     public func textField(
         textField: UITextField,
         shouldChangeCharactersInRange range: NSRange,

@@ -8,25 +8,22 @@
 
 import UIKit
 
-public class FormSegmentedView: FormView {
+public class FormSegmentedView: ObjectFormView<String> {
 
     public lazy private(set) var segmentedControl:
         SegmentedControl = SegmentedControl()
 
     public init(title: String, description: String? = nil) {
-        super.init(frame: CGRectZero)
+        super.init()
         self.mainView = self.segmentedControl
         self.fillHeightForMainView = true
 
         self.segmentedControl.valueDidChange = { value in
+            print("changed")
             self.result = value
         }
 
         configureView(title, description: description)
-    }
-
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
 }

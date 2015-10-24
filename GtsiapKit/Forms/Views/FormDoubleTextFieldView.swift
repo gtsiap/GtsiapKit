@@ -8,15 +8,16 @@
 
 import UIKit
 
-public class FormDoubleTextFieldView: FormTextFieldView {
+public class FormDoubleTextFieldView: FormTextFieldView<Double> {
 
     public override init(title: String, placeHolder: String, description: String?) {
         super.init(title: title, placeHolder: placeHolder, description: description)
         self.errorable = self
-    }
 
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.transformResult = { text -> AnyObject? in
+            return Double(text)
+        }
+
     }
 
 }
