@@ -35,11 +35,16 @@ public class SegmentedControl: UIView {
         removeSegmentedControlsFromView()
 
         var currentSegmentedControl = UISegmentedControl()
+        addTargetForSegmentedControl(currentSegmentedControl)
+
         self.segmentedControls.append(currentSegmentedControl)
         for item in self.items {
 
             if !addSegment(currentSegmentedControl, item: item) {
                 currentSegmentedControl = UISegmentedControl()
+
+                addTargetForSegmentedControl(currentSegmentedControl)
+
                 self.segmentedControls.append(currentSegmentedControl)
                 currentSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
                 addSegment(currentSegmentedControl, item: item)
@@ -103,4 +108,24 @@ public class SegmentedControl: UIView {
 
         self.segmentedControls.removeAll()
     }
+
+    private func addTargetForSegmentedControl(segmentedControl: UISegmentedControl) {
+        segmentedControl.addTarget(
+            "self",
+            action: "segmentedControlValueDidChange:",
+            forControlEvents: .ValueChanged
+        )
+    }
+
+    // MARK: actions
+    @objc private func segmentedControlValueDidChange(sender: UISegmentedControl) {
+
+        for control in self.segmentedControls {
+            guard control != sender else { continue }
+            control.selectedSegmentIndex = -1
+        }
+
+    }
+
+
 }
