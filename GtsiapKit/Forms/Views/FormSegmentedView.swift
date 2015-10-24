@@ -18,6 +18,10 @@ public class FormSegmentedView: FormView {
         self.mainView = self.segmentedControl
         self.fillHeightForMainView = true
 
+        self.segmentedControl.valueDidChange = { value in
+            self.result = value
+        }
+
         configureView(title, description: description)
     }
 

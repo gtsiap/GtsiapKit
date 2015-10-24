@@ -30,9 +30,15 @@ public class FormRow {
 
     public init(formView: FormViewable) {
         self.formView = formView
-        self.formView.resultChanged = { result in
+
+        guard let
+            view = self.formView as? FormView
+        else { return }
+
+        view.resultDidChange = { result in
             self.result = result
         }
+
     }
 
 }

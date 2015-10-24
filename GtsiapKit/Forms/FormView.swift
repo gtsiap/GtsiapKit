@@ -7,13 +7,25 @@
 //
 
 import UIKit
+import SnapKit
 
 public class FormView: UIView, FormViewable  {
 
-    public var resultChanged: ((AnyObject?) -> ())?
+    public var result: AnyObject? {
+        didSet {
+            self.resultDidChange?(self.result)
+        }
+    }
+
+    public var resultDidChange: ((AnyObject?) -> ())?
+
     public var required: Bool = true
 
     public var mainView: UIView!
+    public var title: String? {
+        return self.formTitle.text
+    }
+
     var fillHeightForMainView: Bool = false
 
     private lazy var formDescription: UILabel = {
@@ -32,21 +44,11 @@ public class FormView: UIView, FormViewable  {
         return label
     }()
 
-    lazy private(set) var errorLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.smallBoldFont()
-        label.textColor = UIColor.redColor()
-        label.translatesAutoresizingMaskIntoConstraints = false
-
-        return label
-    }()
-
     public func configureView(title: String, description: String? = nil) {
         self.formTitle.text = title
 
         self.addSubview(self.mainView)
         self.addSubview(self.formTitle)
-        self.addSubview(self.errorLabel)
 
         var leftSideLabel: UILabel = self.formTitle
         var topSideView: UIView?
@@ -75,13 +77,6 @@ public class FormView: UIView, FormViewable  {
 
             make.centerY.equalTo(self).priorityLow()
             make.left.equalTo(self)
-        }
-
-        self.errorLabel.snp_makeConstraints() { make in
-            make.left.equalTo(self)
-            make.width.equalTo(self).multipliedBy(0.7)
-            make.height.equalTo(self).multipliedBy(0.3)
-            make.bottom.equalTo(self)
         }
 
         self.mainView.snp_makeConstraints() { make in

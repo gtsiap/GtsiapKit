@@ -52,7 +52,7 @@ public class FormTextFieldView: FormView {
     }
 
     @objc private func textDidChange() {
-        self.resultChanged?(self.textField.text)
+        self.result = self.textField.text
     }
 
 }
@@ -83,9 +83,7 @@ extension FormTextFieldView: UITextFieldDelegate {
         let result = errorable.hasError(string)
 
         if result.0 {
-            self.errorLabel.text = result.1
         } else {
-            self.errorLabel.text = ""
         }
 
         return !result.0

@@ -10,13 +10,11 @@ import SnapKit
 import TZStackView
 
 public protocol FormViewable {
-    var resultChanged: ((AnyObject?) -> ())? { get set}
     var required: Bool { get set }
 }
 
 public class FormStackView: TZStackView, FormViewable {
 
-    public var resultChanged: ((AnyObject?) -> ())?
     public var required: Bool = false
 
 }
