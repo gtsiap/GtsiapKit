@@ -12,6 +12,7 @@ public class FormStringTextFieldView: FormTextFieldView {
     public override init(title: String, placeHolder: String, description: String?) {
         super.init(title: title, placeHolder: placeHolder, description: description)
         self.keyboardType = .Default
+        self.errorable = self
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -21,7 +22,7 @@ public class FormStringTextFieldView: FormTextFieldView {
 
 extension FormStringTextFieldView: FormTextFieldViewErrorable {
     public func hasError(string: String) -> (Bool, String) {
-        return (true, "")
+        return (false, "")
     }
 
 }

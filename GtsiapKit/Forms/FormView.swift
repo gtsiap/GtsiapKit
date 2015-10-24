@@ -18,6 +18,7 @@ public class FormView: UIView, FormViewable  {
     }
 
     public var resultDidChange: ((AnyObject?) -> ())?
+    public weak var viewController: UIViewController?
 
     public var required: Bool = true
 

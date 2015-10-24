@@ -63,6 +63,7 @@ extension FormTextFieldView: UITextFieldDelegate {
         shouldChangeCharactersInRange range: NSRange,
         replacementString string: String
     ) -> Bool {
+
         // Backspace
         if string.isEmpty {
             return true
@@ -83,7 +84,10 @@ extension FormTextFieldView: UITextFieldDelegate {
         let result = errorable.hasError(string)
 
         if result.0 {
-        } else {
+            self.viewController?.showAlert(
+                "Error",
+                message: result.1
+            )
         }
 
         return !result.0

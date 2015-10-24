@@ -14,6 +14,7 @@ public class FormIntTextFieldView: FormTextFieldView {
         super.init(title: title, placeHolder: placeHolder, description: description)
         self.keyboardType = .NumberPad
         self.allowDecimalPoint = false
+        self.errorable = self
     }
 
     required public init?(coder aDecoder: NSCoder) {
