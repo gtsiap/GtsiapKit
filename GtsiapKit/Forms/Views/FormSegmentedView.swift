@@ -19,7 +19,6 @@ public class FormSegmentedView: ObjectFormView<String> {
         self.fillHeightForMainView = true
 
         self.segmentedControl.valueDidChange = { value in
-            print("changed")
             self.result = value
         }
 

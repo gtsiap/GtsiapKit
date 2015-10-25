@@ -39,48 +39,24 @@ public class SegmentedControl: UIView {
 
     private var segmentedControls: [UISegmentedControl] = [UISegmentedControl]()
 
-
-    public init() {
-        super.init(frame: CGRectZero)
-
-        // HACK: workaround for iOS 9
-        // If the keyboard is visible then the segmented control
-        // won't call segmentedControlValueDidChange
-        // on UIControl.valueChanged
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: Selector("keyboardWillAppear"),
-            name: UIKeyboardWillShowNotification,
-            object: nil)
-
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: Selector("keyboardWillDisappear"),
-            name: UIKeyboardWillHideNotification, object: nil
-        )
-    }
-
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private var kvoContext = UInt8()
 
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        for control in self.segmentedControls {
+            removeObserverForSegmentedControl(control)
+        }
     }
 
     private func createSegmentedControls() {
         removeSegmentedControlsFromView()
 
         var currentSegmentedControl = UISegmentedControl()
-        addTargetForSegmentedControl(currentSegmentedControl)
 
         self.segmentedControls.append(currentSegmentedControl)
         for item in self.items {
 
             if !addSegment(currentSegmentedControl, item: item) {
                 currentSegmentedControl = UISegmentedControl()
-
-                addTargetForSegmentedControl(currentSegmentedControl)
 
                 self.segmentedControls.append(currentSegmentedControl)
                 currentSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
@@ -113,6 +89,9 @@ public class SegmentedControl: UIView {
         var previousControl: UISegmentedControl!
 
         for (index, control) in self.segmentedControls.enumerate() {
+
+            addObserverForSegmentedControl(control)
+
             addSubview(control)
 
             if index == 0 {
@@ -140,41 +119,67 @@ public class SegmentedControl: UIView {
     private func removeSegmentedControlsFromView() {
         for segment in self.segmentedControls {
             segment.removeFromSuperview()
+            removeObserverForSegmentedControl(segment)
         }
 
         self.segmentedControls.removeAll()
     }
 
-    private func addTargetForSegmentedControl(segmentedControl: UISegmentedControl) {
-        segmentedControl.addTarget(
-            "self",
-            action: Selector("segmentedControlValueDidChange:"),
-            forControlEvents: .ValueChanged
-        )
-    }
+    // MARK: KVO
+    public override func observeValueForKeyPath(
+        keyPath: String?,
+        ofObject object: AnyObject?,
+        change: [String : AnyObject]?,
+        context: UnsafeMutablePointer<Void>)
+    {
 
-    // MARK: actions
-    @objc private func segmentedControlValueDidChange(sender: UISegmentedControl) {
+        if keyPath != "selectedSegmentIndex" &&
+            context != &self.kvoContext
+        {
+            return
+        }
+
+        guard let segmentedControl = object as? UISegmentedControl else { return }
 
         if let
-            value = sender.titleForSegmentAtIndex(sender.selectedSegmentIndex)
+            value = segmentedControl
+                .titleForSegmentAtIndex(segmentedControl.selectedSegmentIndex)
         {
             self.value = value
         }
 
         for control in self.segmentedControls {
-            guard control != sender else { continue }
+            guard control != segmentedControl else { continue }
+
+            // If we don't remove the observer and call the selectedSegmentIndex
+            // then the KVO will be triggered again. And then the selectedSegmentIndex
+            // will call the KVO. In simple words we will trigger an infinite loop.
+            // We can't use UIControlEvents.ValueChanged because
+            // in iOS 9 if the keyboard is active the .ValueChanged target won't
+            // be called.
+
+            removeObserverForSegmentedControl(control)
             control.selectedSegmentIndex = -1
+            addObserverForSegmentedControl(control)
         }
 
     }
 
-    @objc private func keyboardWillAppear() {
-        self.userInteractionEnabled = false
+    private func removeObserverForSegmentedControl(control: UISegmentedControl) {
+        control.removeObserver(
+            self,
+            forKeyPath: "selectedSegmentIndex",
+            context: &self.kvoContext
+        )
     }
 
-    @objc private func keyboardWillDisappear() {
-        self.userInteractionEnabled = true
+    private func addObserverForSegmentedControl(control: UISegmentedControl) {
+        control.addObserver(
+            self,
+            forKeyPath: "selectedSegmentIndex",
+            options: NSKeyValueObservingOptions.New,
+            context: &self.kvoContext
+        )
     }
 
 }
