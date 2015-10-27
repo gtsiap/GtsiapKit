@@ -80,6 +80,7 @@
 		45B43CBD1B91E8B7008AC2DC /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CBC1B91E8B7008AC2DC /* Person.swift */; };
 		45B43CBF1B91E8F4008AC2DC /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CBE1B91E8F4008AC2DC /* Comment.swift */; };
 		45B74DA31BD66BF70008CD7B /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B74DA21BD66BF70008CD7B /* SegmentedControl.swift */; };
+		45CCEC521BDF6B9400194A44 /* FormSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CCEC511BDF6B9400194A44 /* FormSwitchView.swift */; };
 		45CE5E3C1BB8767200AE682E /* ViewController+AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE5E3B1BB8767200AE682E /* ViewController+AlertViewController.swift */; };
 		45DEE6331BB2E93B00383FC9 /* update_relationship2.json in Resources */ = {isa = PBXBuildFile; fileRef = 45DEE6321BB2E93B00383FC9 /* update_relationship2.json */; };
 		45E1DBE21BD8D275004FF18C /* FormTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E1DBE11BD8D275004FF18C /* FormTextFieldView.swift */; };
@@ -204,6 +205,7 @@
 		45B43CBC1B91E8B7008AC2DC /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		45B43CBE1B91E8F4008AC2DC /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		45B74DA21BD66BF70008CD7B /* SegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
+		45CCEC511BDF6B9400194A44 /* FormSwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSwitchView.swift; sourceTree = "<group>"; };
 		45CE5E3B1BB8767200AE682E /* ViewController+AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+AlertViewController.swift"; sourceTree = "<group>"; };
 		45DEE6321BB2E93B00383FC9 /* update_relationship2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = update_relationship2.json; sourceTree = "<group>"; };
 		45E1DBE11BD8D275004FF18C /* FormTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextFieldView.swift; sourceTree = "<group>"; };
@@ -600,6 +602,7 @@
 				45226FE41BDA331000D0AD0F /* FormIntTextFieldView.swift */,
 				45226FE61BDA33D000D0AD0F /* FormStringTextFieldView.swift */,
 				45226FE81BDA38F300D0AD0F /* FormSegmentedView.swift */,
+				45CCEC511BDF6B9400194A44 /* FormSwitchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -908,6 +911,7 @@
 				45226FE91BDA38F300D0AD0F /* FormSegmentedView.swift in Sources */,
 				459E1C351BCB8D0D00869EDD /* ApiTaskResultProvider.swift in Sources */,
 				456E5A4D1BB2FA1B00A04651 /* ApiManager.swift in Sources */,
+				45CCEC521BDF6B9400194A44 /* FormSwitchView.swift in Sources */,
 				456E5A521BB300F900A04651 /* Taskable.swift in Sources */,
 				459809FC1B7639E300FE0C4C /* DeviceGuru.swift in Sources */,
 				457AB5951B2B6365003034F1 /* RevealNavigationController.swift in Sources */,

@@ -43,6 +43,7 @@ public class FormView: UIView, FormViewable  {
         return self.formTitle.text
     }
 
+    var placeMainViewInRightSide: Bool = false
     var fillHeightForMainView: Bool = false
 
     private lazy var formDescription: UILabel = {
@@ -97,8 +98,12 @@ public class FormView: UIView, FormViewable  {
         }
 
         self.mainView.snp_makeConstraints() { make in
-            make.width.equalTo(self).multipliedBy(0.6)
-            make.left.equalTo(leftSideLabel.snp_right).multipliedBy(1.5)
+
+            if !self.placeMainViewInRightSide {
+                make.width.equalTo(self).multipliedBy(0.6)
+                make.left.equalTo(leftSideLabel.snp_right).multipliedBy(1.5)
+            }
+
             make.right.equalTo(self)
 
             if self.fillHeightForMainView {
