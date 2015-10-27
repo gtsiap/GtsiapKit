@@ -21,6 +21,9 @@ public class FormTextFieldView<T>: ObjectFormView<T>, UITextFieldDelegate {
         }
     }
 
+    public var maximumTextLength: Int?
+    public var minimumTextLength: Int?
+
     var allowDecimalPoint: Bool = true
     var transformResult: ((text: String) -> AnyObject?)?
 
@@ -103,7 +106,45 @@ public class FormTextFieldView<T>: ObjectFormView<T>, UITextFieldDelegate {
     }
 
     public func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+
+        if checkTextLength().0 {
+            textField.resignFirstResponder()
+            return false
+        }
+
         return false
+    }
+
+    public override func validate() throws {
+        try super.validate()
+
+        let result = checkTextLength()
+
+        if !result.0 {
+            throw FormViewableError(message: result.1)
+        }
+
+    }
+
+    private func checkTextLength() -> (Bool, String) {
+        guard let text = self.textField.text else {
+            return (true, "")
+        }
+
+        let textCount = text.characters.count
+
+        if let
+            minimumLength = self.minimumTextLength
+            where textCount < minimumLength
+        {
+            return (false, "The text is too short for \(self.title)")
+        } else if let
+            maximumLength = self.maximumTextLength
+            where textCount > maximumLength
+        {
+            return (false, "The text is long short for \(self.title)")
+        }
+
+        return (true, "")
     }
 }
