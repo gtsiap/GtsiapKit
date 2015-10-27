@@ -39,8 +39,8 @@ public class FormView: UIView, FormViewable  {
     public var required: Bool = true
 
     public var mainView: UIView!
-    public var title: String? {
-        return self.formTitle.text
+    public var title: String {
+        return self.formTitle.text ?? ""
     }
 
     var placeMainViewInRightSide: Bool = false
@@ -61,6 +61,14 @@ public class FormView: UIView, FormViewable  {
 
         return label
     }()
+
+    public func validate() throws {
+        if let _ = self.result {
+            return
+        }
+
+        throw FormViewableError(message: "")
+    }
 
     public func configureView(title: String, description: String? = nil) {
         self.formTitle.text = title

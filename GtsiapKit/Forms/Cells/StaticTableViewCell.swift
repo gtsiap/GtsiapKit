@@ -19,4 +19,6 @@ public class StaticForm: FormViewable {
         self.text = text
         self.detailText = text
     }
+
+    public func validate() throws {}
 }
