@@ -284,8 +284,8 @@
 				457CEFD31BCE7A1000E171FA /* Cells */,
 				451FCAC21BCE159300EC4E7F /* FormsTableViewController.swift */,
 				451FCAC41BCE15D700EC4E7F /* FormRow.swift */,
-				457CEFD11BCE78AC00E171FA /* FormSection.swift */,
 				45E1DBE91BD8E535004FF18C /* FormViewable.swift */,
+				457CEFD11BCE78AC00E171FA /* FormSection.swift */,
 				45226FEA1BDA3A4200D0AD0F /* FormView.swift */,
 			);
 			path = Forms;

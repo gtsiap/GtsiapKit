@@ -21,6 +21,14 @@ public class FormIntTextFieldView: FormTextFieldView<Int> {
             return Int(text)
         }
 
+        self.valueForMainView = { value in
+            guard let
+                intValue = value as? Int
+            else { return }
+
+            self.textField.text = String(intValue)
+        }
+
     }
 
 }

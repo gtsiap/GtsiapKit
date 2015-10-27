@@ -18,6 +18,14 @@ public class FormDoubleTextFieldView: FormTextFieldView<Double> {
             return Double(text)
         }
 
+        self.valueForMainView = { value in
+            guard let
+                doubleValue = value as? Double
+            else { return }
+
+            self.textField.text = String(doubleValue)
+        }
+
     }
 
 }

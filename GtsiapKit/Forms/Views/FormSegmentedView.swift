@@ -22,6 +22,13 @@ public class FormSegmentedView: ObjectFormView<String> {
             self.result = value
         }
 
+        self.valueForMainView = { value in
+            guard let
+                stringValue = value as? String
+            else { return }
+            self.segmentedControl.value = stringValue
+        }
+
         configureView(title, description: description)
     }
 

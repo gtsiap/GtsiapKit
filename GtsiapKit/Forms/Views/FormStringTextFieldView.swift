@@ -13,6 +13,15 @@ public class FormStringTextFieldView: FormTextFieldView<String> {
         super.init(title: title, placeHolder: placeHolder, description: description)
         self.keyboardType = .Default
         self.errorable = self
+
+        self.valueForMainView = { value in
+            guard let
+                stringValue = value as? String
+            else { return }
+
+            self.textField.text = stringValue
+        }
+
     }
 
 }
