@@ -8,23 +8,12 @@
 
 extension Int {
 
-    public func utcToLocalTime() -> NSDate? {
+    public func toLocalTime() -> String {
+        let date = NSDate(
+            timeIntervalSince1970: NSTimeInterval(self)
+        )
 
-        guard let
-            gmtTimeZone = NSTimeZone(abbreviation: "GMT")
-        else { return nil }
-
-        let localTimeZone = NSTimeZone.localTimeZone()
-
-        let date = NSDate(timeIntervalSince1970: NSTimeInterval(self))
-
-        let gmtOffset = gmtTimeZone.secondsFromGMTForDate(date)
-        let localOffset = localTimeZone.secondsFromGMTForDate(date)
-
-        let diff = localOffset - gmtOffset
-
-        return NSDate(timeInterval: NSTimeInterval(diff), sinceDate: date)
-
+        return date.toString
     }
 
 }

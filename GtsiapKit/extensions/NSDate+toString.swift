@@ -10,7 +10,7 @@ extension NSDate {
 
     public var toString: String {
         let formatter = NSDateFormatter()
-        formatter.locale = NSLocale.currentLocale()
+        formatter.timeZone = NSTimeZone.localTimeZone()
         formatter.dateFormat = "HH:mm dd/MM/yy"
         return formatter.stringFromDate(self)
     }
