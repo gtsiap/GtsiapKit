@@ -29,9 +29,24 @@ public class SegmentedControl: UIView {
         }
     }
 
+    private var _value: String?
+
     public var value: String? {
-        didSet {
-            self.valueDidChange?(self.value)
+        get {
+            return self._value
+        }
+
+        set(newValue) {
+            // we will start an expensive operation
+            // so we must do it only if there is difference
+            // in the UI.
+
+            if self.value == newValue {
+                return
+            }
+
+            self._value = newValue
+            changeCurrentIndex()
         }
     }
 
@@ -125,6 +140,25 @@ public class SegmentedControl: UIView {
         self.segmentedControls.removeAll()
     }
 
+    private func changeCurrentIndex() {
+        guard let
+            value = self.value
+        else { return }
+
+        for control in self.segmentedControls {
+            for index in 0...control.numberOfSegments - 1 {
+                let title = control.titleForSegmentAtIndex(index)
+                guard value == title else { continue }
+
+                // yes KVO sucks, but we don't have another
+                // way to do this
+                removeObserverForSegmentedControl(control)
+                control.selectedSegmentIndex = index
+                addObserverForSegmentedControl(control)
+            } // end for index
+        } // end for
+    }
+
     // MARK: KVO
     public override func observeValueForKeyPath(
         keyPath: String?,
@@ -145,7 +179,8 @@ public class SegmentedControl: UIView {
             value = segmentedControl
                 .titleForSegmentAtIndex(segmentedControl.selectedSegmentIndex)
         {
-            self.value = value
+            self._value = value
+            self.valueDidChange?(value)
         }
 
         for control in self.segmentedControls {
@@ -177,7 +212,7 @@ public class SegmentedControl: UIView {
         control.addObserver(
             self,
             forKeyPath: "selectedSegmentIndex",
-            options: NSKeyValueObservingOptions.New,
+            options: [.Old, .New],
             context: &self.kvoContext
         )
     }
