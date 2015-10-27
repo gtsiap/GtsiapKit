@@ -115,5 +115,6 @@ extension ApiPresentable {
     public func stopNetworkActivity() {
         self.networkIndicator.stopAnimating()
         self.networkIndicator.removeFromSuperview()
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
 }
