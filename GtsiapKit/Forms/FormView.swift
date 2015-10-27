@@ -9,7 +9,6 @@
 import UIKit
 import SnapKit
 
-
 public class ObjectFormView<T>: FormView {
     public var resultObject: T? {
         return self.result as? T
@@ -26,8 +25,13 @@ public class FormView: UIView, FormViewable  {
     public var result: AnyObject? {
         didSet {
             self.resultDidChange?(self.result)
+            self.valueForMainView?(self.result)
         }
     }
+
+    // This closure will provide programmtically
+    // a value for the mainView.
+    public var valueForMainView: ((AnyObject?) -> ())?
 
     public var resultDidChange: ((AnyObject?) -> ())?
     public weak var viewController: UIViewController?
