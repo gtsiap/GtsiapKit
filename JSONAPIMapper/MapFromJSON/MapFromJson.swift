@@ -16,7 +16,7 @@ class MapFromJSON: BasicMap {
     private lazy var fieldsData: [String : AnyObject] = {
         var fieldsData = [String : AnyObject]()
 
-        if let fieldsData = self.resourceData["attributes"] as? [String : AnyObject ] {
+        if let fieldsData = self.resourceData["attributes"] as? [String : AnyObject] {
             return fieldsData
         }
 
@@ -24,7 +24,7 @@ class MapFromJSON: BasicMap {
     }()
 
     private lazy var relationships: [RelationshipJSONObject]? = {
-        if let relationships = self.resourceData["relationships"] as? [String : AnyObject ] {
+        if let relationships = self.resourceData["relationships"] as? [String : AnyObject] {
             return RelationshipJSONObject.fromJSON(relationships)
         }
 
@@ -61,11 +61,25 @@ class MapFromJSON: BasicMap {
             return nil
         }
 
-        let relationship = relationships.filter() {
+        let filteredRelationships = relationships.filter() {
             $0.jsonField == self.currentKey
-        }[0]
+        }
 
-        return relationshipValueCommon(relationship)
+        if filteredRelationships.count == 0 {
+            print("Wrong Relationship for key: \(self.currentKey)")
+            print("The available fields are:")
+            for it in relationships {
+                print(it.jsonField)
+            }
+
+            print("The resource data are:")
+            print(self.resourceData)
+
+            return nil
+        }
+
+
+        return relationshipValueCommon(filteredRelationships[0])
     }
 
     func relationshipValue<T: Mappable> () -> [T]? {
