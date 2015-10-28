@@ -17,7 +17,6 @@ public class ObjectFormView<T>: FormView {
     init() {
         super.init(frame: CGRectZero)
     }
-
 }
 
 public class FormView: UIView, FormViewable  {
@@ -43,8 +42,10 @@ public class FormView: UIView, FormViewable  {
         return self.formTitle.text ?? ""
     }
 
-    var placeMainViewInRightSide: Bool = false
-    var fillHeightForMainView: Bool = false
+    public var placeMainViewInRightSide: Bool = false
+    public var fillHeightForMainView: Bool = false
+    public var fillWidthForMainView: Bool = false
+    public var customHeightForForm: CGFloat?
 
     private lazy var formDescription: UILabel = {
         let label = UILabel()
@@ -78,6 +79,26 @@ public class FormView: UIView, FormViewable  {
 
         var leftSideLabel: UILabel = self.formTitle
         var topSideView: UIView?
+
+        if self.fillWidthForMainView {
+
+            self.formTitle.snp_makeConstraints() { make in
+                make.top.equalTo(self)
+                make.centerX.equalTo(self)
+            }
+
+            self.mainView.snp_makeConstraints() { make in
+                if self.fillHeightForMainView {
+                    make.top.equalTo(self.formTitle.snp_bottom).multipliedBy(1.2)
+                }
+
+                make.left.right.equalTo(self)
+
+                make.bottom.equalTo(self)
+            }
+
+            return
+        }
 
         if let desc = description {
 

@@ -27,7 +27,7 @@ public class FormTextFieldView<T>: ObjectFormView<T>, UITextFieldDelegate {
     var allowDecimalPoint: Bool = true
     var transformResult: ((text: String) -> AnyObject?)?
 
-    lazy private(set) var textField: UITextField = {
+    public lazy private(set) var textField: UITextField = {
         let textField = UITextField(
             target: self,
             action: "textDidChange"
@@ -47,11 +47,21 @@ public class FormTextFieldView<T>: ObjectFormView<T>, UITextFieldDelegate {
 
     public weak var errorable: FormTextFieldViewErrorable?
 
+    override init() {
+        super.init()
+        self.mainView = self.textField
+    }
+
     public init(title: String, placeHolder: String, description: String? = nil) {
         super.init()
 
+        self.textField.placeholder = placeHolder
         self.mainView = self.textField
 
+        configureView(title, description: description)
+    }
+
+    public func configureTextFieldView(title: String, placeHolder: String, description: String? = nil) {
         self.textField.placeholder = placeHolder
 
         configureView(title, description: description)

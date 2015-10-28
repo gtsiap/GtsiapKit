@@ -21,7 +21,7 @@ class FormTableViewCell: UITableViewCell {
 
     private func configureCell() {
         guard let formView =
-            self.formRow.formView as? UIView
+            self.formRow.formView as? FormView
         else { return }
 
         if let _ = self.cellView {
@@ -42,9 +42,19 @@ class FormTableViewCell: UITableViewCell {
         self.cellView.translatesAutoresizingMaskIntoConstraints = false
 
         self.cellView.snp_makeConstraints() { make in
-            make.top.left.equalTo(self.contentView).offset(10)
+
+            if let customHeight = formView.customHeightForForm {
+                make.height.equalTo(customHeight)
+                make.top.equalTo(self.contentView).priorityLow()
+            } else {
+                make.top.equalTo(self.contentView).offset(10)
+            }
+
             make.bottom.equalTo(self.contentView).offset(-10)
-            make.right.equalTo(self.contentView).offset(-20)
+            make.left.equalTo(self.contentView).offset(10)
+            make.right.equalTo(self.contentView).offset(-10)
+
+
         }
     }
 

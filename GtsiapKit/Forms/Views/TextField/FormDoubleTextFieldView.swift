@@ -28,6 +28,24 @@ public class FormDoubleTextFieldView: FormTextFieldView<Double> {
 
     }
 
+    public override init() {
+        super.init()
+
+        self.errorable = self
+
+        self.transformResult = { text -> AnyObject? in
+            return Double(text)
+        }
+
+        self.valueForMainView = { value in
+            guard let
+                doubleValue = value as? Double
+                else { return }
+
+            self.textField.text = String(doubleValue)
+        }
+    }
+
 }
 
 extension FormDoubleTextFieldView: FormTextFieldViewErrorable {
