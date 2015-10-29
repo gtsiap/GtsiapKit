@@ -84,6 +84,14 @@ public class FormTextFieldView<T>: ObjectFormView<T>, UITextFieldDelegate {
             text = self.textField.text
         else { return }
 
+        // this is a writeable form so remove valueForMainView
+        // If we don't do it we will rewrite the textField's value
+        // and
+        // 1. we don't want to do it
+        // 2. we don't want to waste cpu
+
+        self.valueForMainView = nil
+
         if let transformResult = self.transformResult {
             self.result = transformResult(text: text)
         } else {
