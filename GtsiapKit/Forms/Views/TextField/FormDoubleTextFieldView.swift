@@ -24,25 +24,15 @@ public class FormDoubleTextFieldView: FormTextFieldView<Double> {
 
     public override init(title: String, placeHolder: String, description: String?) {
         super.init(title: title, placeHolder: placeHolder, description: description)
-        self.errorable = self
-
-        self.transformResult = { text -> AnyObject? in
-            return Double(text)
-        }
-
-        self.valueForMainView = { value in
-            guard let
-                doubleValue = value as? Double
-            else { return }
-
-            self.textField.text = String(doubleValue)
-        }
-
+        commonInit()
     }
 
     public override init() {
         super.init()
+        commonInit()
+    }
 
+    private func commonInit() {
         self.errorable = self
 
         self.transformResult = { text -> AnyObject? in
@@ -57,7 +47,6 @@ public class FormDoubleTextFieldView: FormTextFieldView<Double> {
             self.textField.text = String(doubleValue)
         }
     }
-
 }
 
 extension FormDoubleTextFieldView: FormTextFieldViewErrorable {
