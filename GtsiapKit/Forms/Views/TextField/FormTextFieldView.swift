@@ -36,6 +36,9 @@ public class FormTextFieldView<T>: ObjectFormView<T>, UITextFieldDelegate {
     public var maximumTextLength: Int?
     public var minimumTextLength: Int?
 
+    public var maximumValue: Double?
+    public var minimumValue: Double?
+
     var allowDecimalPoint: Bool = true
     var transformResult: ((text: String) -> AnyObject?)?
 
@@ -142,18 +145,27 @@ public class FormTextFieldView<T>: ObjectFormView<T>, UITextFieldDelegate {
             return false
         }
 
+        if checkTextValues().0 {
+            textField.resignFirstResponder()
+            return false
+        }
+
         return false
     }
 
     public override func validate() throws {
         try super.validate()
 
-        let result = checkTextLength()
+        let resultLength = checkTextLength()
+        let resultValue = checkTextValues()
 
-        if !result.0 {
-            throw FormViewableError(message: result.1)
+        if !resultLength.0 {
+            throw FormViewableError(message: resultLength.1)
         }
 
+        if !resultValue.0 {
+            throw FormViewableError(message: resultValue.1)
+        }
     }
 
     private func checkTextLength() -> (Bool, String) {
@@ -173,6 +185,29 @@ public class FormTextFieldView<T>: ObjectFormView<T>, UITextFieldDelegate {
             where textCount > maximumLength
         {
             return (false, "The text is long short for \(self.title)")
+        }
+
+        return (true, "")
+    }
+
+    private func checkTextValues() -> (Bool, String) {
+        guard let
+            text = self.textField.text,
+            textValue = Double(text)
+        else {
+            return (true, "")
+        }
+
+        if let
+            minimumValue = self.minimumValue
+            where textValue < minimumValue
+        {
+            return (false, "The value is too small for \(self.title)")
+        } else if let
+            maximumValue = self.maximumValue
+            where textValue > maximumValue
+        {
+            return (false, "The value is long big for \(self.title)")
         }
 
         return (true, "")
