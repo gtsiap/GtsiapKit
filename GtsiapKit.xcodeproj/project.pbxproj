@@ -134,8 +134,6 @@
 		451E59261B95D0B10012167B /* Encode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encode.swift; sourceTree = "<group>"; };
 		451FCAC21BCE159300EC4E7F /* FormsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormsTableViewController.swift; sourceTree = "<group>"; };
 		451FCAC41BCE15D700EC4E7F /* FormRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRow.swift; sourceTree = "<group>"; };
-		451FCAC81BCE6C9F00EC4E7F /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = ../Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
-		45226FE21BDA0AE600D0AD0F /* TZStackView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TZStackView.framework; path = ../Carthage/Build/iOS/TZStackView.framework; sourceTree = "<group>"; };
 		45226FE81BDA38F300D0AD0F /* FormSegmentedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSegmentedView.swift; sourceTree = "<group>"; };
 		45226FEA1BDA3A4200D0AD0F /* FormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		4536C3B81B29E7C2003E8CB7 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 		459809FE1B763D8200FE0C4C /* RevealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealTableViewController.swift; sourceTree = "<group>"; };
 		45980A511B7653BF00FE0C4C /* NSDate+toString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+toString.swift"; sourceTree = "<group>"; };
 		4598C8F41BB97CA500C4216F /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
-		4598C8F61BB97F8F00C4216F /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = ../Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
 		4598C8F81BB981E900C4216F /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
 		459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		459E1C341BCB8D0D00869EDD /* ApiTaskResultProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTaskResultProvider.swift; sourceTree = "<group>"; };
@@ -463,10 +460,7 @@
 			children = (
 				450D40071BE14FA200A1293B /* TZStackView.framework */,
 				450D40051BE14F8700A1293B /* SnapKit.framework */,
-				45226FE21BDA0AE600D0AD0F /* TZStackView.framework */,
-				451FCAC81BCE6C9F00EC4E7F /* SnapKit.framework */,
 				4598C8F81BB981E900C4216F /* Locksmith.framework */,
-				4598C8F61BB97F8F00C4216F /* Locksmith.framework */,
 				456E5A581BB3039C00A04651 /* Alamofire.framework */,
 				45B404581B29E68A00DF2CDB /* GtsiapKit */,
 				45B404651B29E68A00DF2CDB /* GtsiapKitTests */,
