@@ -117,6 +117,21 @@ public class SegmentedControl: UIView {
 
         for (index, control) in self.segmentedControls.enumerate() {
 
+            // TODO
+            // We can't use UIAppearance.appearanceWhenContainedInInstancesOfClasses
+            // because we need iOS 8.4 so lets do the theming manually
+
+            control.tintColor = ThemeManager.defaultTheme.primaryColor
+
+            if let tintColor = ThemeManager.defaultTheme.tintColor {
+                control.setTitleTextAttributes([
+                    NSForegroundColorAttributeName: tintColor,
+                    NSFontAttributeName: UIFont.smallBoldFont()
+                ], forState: .Selected)
+            } else {
+                print("\(__FILE__):\(__LINE__): Tint Color is missing!!! No theming will be applied")
+            }
+
             addObserverForSegmentedControl(control)
 
             addSubview(control)
