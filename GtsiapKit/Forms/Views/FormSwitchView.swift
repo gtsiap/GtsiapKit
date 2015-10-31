@@ -38,8 +38,8 @@ public class FormSwitchView: ObjectFormView<Bool> {
         super.init()
         self.mainView = self.switcher
 
-        self.placeMainViewInRightSide = true
-
+        self.mainViewDistribution = .Right
+        
         self.valueForMainView = { value in
             guard let
                 boolValue = value as? Bool

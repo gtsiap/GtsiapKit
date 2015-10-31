@@ -28,7 +28,7 @@ public class FormSegmentedView: ObjectFormView<String> {
     public init(title: String, description: String? = nil) {
         super.init()
         self.mainView = self.segmentedControl
-        self.fillHeightForMainView = true
+        self.mainViewDistribution = .FillHeight
 
         self.segmentedControl.valueDidChange = { value in
             self.result = value

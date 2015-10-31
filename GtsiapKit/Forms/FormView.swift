@@ -33,7 +33,14 @@ public class ObjectFormView<T>: FormView {
 }
 
 public class FormView: UIView, FormViewable  {
-
+    
+    public enum MainViewDistribution {
+        case Default
+        case Fill
+        case Right
+        case FillHeight
+    }
+    
     public var result: AnyObject? {
         didSet {
             self.resultDidChange?(self.result)
@@ -55,9 +62,7 @@ public class FormView: UIView, FormViewable  {
         return self.formTitle.text ?? ""
     }
 
-    public var placeMainViewInRightSide: Bool = false
-    public var fillHeightForMainView: Bool = false
-    public var fillWidthForMainView: Bool = false
+    public var mainViewDistribution: MainViewDistribution = .Default
     public var customHeightForForm: CGFloat?
 
     private lazy var formDescription: UILabel = {
@@ -93,20 +98,16 @@ public class FormView: UIView, FormViewable  {
         var leftSideLabel: UILabel = self.formTitle
         var topSideView: UIView?
 
-        if self.fillWidthForMainView {
-
+        if case .Fill = self.mainViewDistribution {
+        
             self.formTitle.snp_makeConstraints() { make in
                 make.top.equalTo(self)
                 make.centerX.equalTo(self)
             }
 
             self.mainView.snp_makeConstraints() { make in
-                if self.fillHeightForMainView {
-                    make.top.equalTo(self.formTitle.snp_bottom).multipliedBy(1.2)
-                }
-
+                make.top.equalTo(self.formTitle.snp_bottom).multipliedBy(1.2)
                 make.left.right.equalTo(self)
-
                 make.bottom.equalTo(self)
             }
 
@@ -140,22 +141,15 @@ public class FormView: UIView, FormViewable  {
         }
 
         self.mainView.snp_makeConstraints() { make in
-
-            if !self.placeMainViewInRightSide {
-                make.width.equalTo(self).multipliedBy(0.6)
-                make.left.equalTo(leftSideLabel.snp_right).multipliedBy(1.5)
-            }
-
             make.right.equalTo(self)
+            make.bottom.equalTo(self)
 
-            if self.fillHeightForMainView {
+            if case .FillHeight = self.mainViewDistribution {
                 if let topView = topSideView {
                     make.top.equalTo(topView.snp_bottom).multipliedBy(1.2)
                 } else {
                     make.top.equalTo(self)
                 }
-
-                make.bottom.equalTo(self)
             } else {
                 // we set priorityLow in order to allow the FormView to
                 // work correctly in other views like StackView
@@ -164,6 +158,12 @@ public class FormView: UIView, FormViewable  {
                     .priorityLow()
             }
 
+            guard case .Right = self.mainViewDistribution else {
+                make.width.equalTo(self).multipliedBy(0.6)
+                make.left.equalTo(leftSideLabel.snp_right).multipliedBy(1.5)
+                return
+            }
+            
         }
 
     }
