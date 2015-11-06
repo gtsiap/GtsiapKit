@@ -5,4 +5,4 @@ carthage build
 
 echo "Fix XCode autocomplete"
 
-cp -R ./Carthage/ ./GtsiapKit/Carthage
+cp -R ./Carthage/ ./GtsiapKit/Carthage/
