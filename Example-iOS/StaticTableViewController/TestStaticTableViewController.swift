@@ -26,13 +26,10 @@ class TestStaticTableViewController: FormsTableViewController {
         super.viewDidLoad()
 
         let section = FormSection()
-        let row = FormRow(type: FormType.ReadOnly(text: "test1", detailText: nil))
-        row.didSelectRow = {
+        section.addRow(StaticForm(text: "test1")).didSelectRow = {
             let vc = MultilineSegmentedControl()
             self.navigationController?.pushViewController(vc, animated: true)
         }
-
-        section.rows.append(row)
 
         self.formSections = [section]
     }
