@@ -26,11 +26,54 @@ class TestStaticTableViewController: FormsTableViewController {
         super.viewDidLoad()
 
         let section = FormSection()
-        section.addRow(StaticForm(text: "test1")).didSelectRow = {
-            let vc = MultilineSegmentedControl()
-            self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+        section.addRow(StaticForm(text: "Operations")).didSelectRow = {
+            let vc = UIStoryboard(name: "Operations", bundle: nil)
+                .instantiateInitialViewController()!
+            self.pushViewController(vc)
         }
-
+        
+        section.addRow(StaticForm(text: "Activity Indicator")).didSelectRow = {
+            let vc = UIStoryboard(name: "ActivityIndicator", bundle: nil)
+                .instantiateViewControllerWithIdentifier("activityIndicator")
+            self.pushViewController(vc)
+        }
+        
+        section.addRow(StaticForm(text: "Activity Indicator Table View")).didSelectRow = {
+            let vc = UIStoryboard(name: "ActivityIndicator", bundle: nil)
+                .instantiateInitialViewController()!
+            self.pushViewController(vc)
+        }
+        
+        section.addRow(StaticForm(text: "Toast")).didSelectRow = {
+            let vc = UIStoryboard(name: "Toast", bundle: nil)
+                .instantiateViewControllerWithIdentifier("toastView")
+            self.pushViewController(vc)
+        }
+        
+        section.addRow(StaticForm(text: "Toast Table View")).didSelectRow = {
+            let vc = UIStoryboard(name: "Toast", bundle: nil)
+                .instantiateInitialViewController()!
+            self.pushViewController(vc)
+        }
+        
+        section.addRow(StaticForm(text: "SearchView")).didSelectRow = {
+            let vc = UIStoryboard(name: "SearchView", bundle: nil)
+                .instantiateInitialViewController()!
+            self.pushViewController(vc)
+        }
+        
+        section.addRow(StaticForm(text: "Multiline Segmented Control")).didSelectRow = {
+            let vc = UIStoryboard(name: "MultilineSegmentedControl", bundle: nil)
+                .instantiateInitialViewController()!
+            self.pushViewController(vc)
+        }
+        
         self.formSections = [section]
+    }
+    
+    private func pushViewController(ViewController: UIViewController) {
+        self.navigationController?.pushViewController(ViewController, animated: true)
     }
 }

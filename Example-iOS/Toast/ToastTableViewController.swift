@@ -27,7 +27,7 @@ class ToastTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let toastView = ToastView()
         toastView.text = "1,2,3,5,6,7,8"
         self.tableView.addSubview(toastView)

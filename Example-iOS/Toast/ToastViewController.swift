@@ -25,8 +25,6 @@ class ToastViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func showLongText(sender: AnyObject) {

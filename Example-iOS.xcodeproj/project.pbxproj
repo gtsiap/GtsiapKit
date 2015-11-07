@@ -17,8 +17,13 @@
 		4546A1641B78D21000DCE648 /* Example_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546A1631B78D21000DCE648 /* Example_iOSTests.swift */; };
 		45532EE31BEE2CDF002E8374 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45532EE21BEE2CDF002E8374 /* Alamofire.framework */; };
 		45532EEA1BEE2D9C002E8374 /* TZStackView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45532EE91BEE2D9C002E8374 /* TZStackView.framework */; };
+		45532EEE1BEE33D7002E8374 /* ActivityIndicator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45532EF01BEE33D7002E8374 /* ActivityIndicator.storyboard */; };
+		45532EF31BEE3440002E8374 /* Operations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45532EF51BEE3440002E8374 /* Operations.storyboard */; };
+		45532EF81BEE3462002E8374 /* SearchView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45532EFA1BEE3462002E8374 /* SearchView.storyboard */; };
+		45532EFD1BEE34A0002E8374 /* Toast.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45532EFF1BEE34A0002E8374 /* Toast.storyboard */; };
+		45532F021BEE374F002E8374 /* MultilineSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45532F011BEE374F002E8374 /* MultilineSegmentedControl.swift */; };
+		45532F051BEE376C002E8374 /* MultilineSegmentedControl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45532F071BEE376C002E8374 /* MultilineSegmentedControl.storyboard */; };
 		45B74D9E1BD66AE20008CD7B /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B74D9D1BD66AE20008CD7B /* SnapKit.framework */; };
-		45B74DA01BD66B330008CD7B /* MultilineSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B74D9F1BD66B330008CD7B /* MultilineSegmentedControl.swift */; };
 		45D4BD001B78D41A006BE819 /* ActivityIndicatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4BCF41B78D41A006BE819 /* ActivityIndicatorTableViewController.swift */; };
 		45D4BD011B78D41A006BE819 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4BCF51B78D41A006BE819 /* ActivityIndicatorView.swift */; };
 		45D4BD021B78D41A006BE819 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4BCF61B78D41A006BE819 /* NavigationController.swift */; };
@@ -120,8 +125,13 @@
 		4546A1631B78D21000DCE648 /* Example_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example_iOSTests.swift; sourceTree = "<group>"; };
 		45532EE21BEE2CDF002E8374 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		45532EE91BEE2D9C002E8374 /* TZStackView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TZStackView.framework; path = Carthage/Build/iOS/TZStackView.framework; sourceTree = "<group>"; };
+		45532EEF1BEE33D7002E8374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ActivityIndicator.storyboard; sourceTree = "<group>"; };
+		45532EF41BEE3440002E8374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Operations.storyboard; sourceTree = "<group>"; };
+		45532EF91BEE3462002E8374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SearchView.storyboard; sourceTree = "<group>"; };
+		45532EFE1BEE34A0002E8374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Toast.storyboard; sourceTree = "<group>"; };
+		45532F011BEE374F002E8374 /* MultilineSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultilineSegmentedControl.swift; sourceTree = "<group>"; };
+		45532F061BEE376C002E8374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MultilineSegmentedControl.storyboard; sourceTree = "<group>"; };
 		45B74D9D1BD66AE20008CD7B /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = ../Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
-		45B74D9F1BD66B330008CD7B /* MultilineSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultilineSegmentedControl.swift; sourceTree = "<group>"; };
 		45D4BCF41B78D41A006BE819 /* ActivityIndicatorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorTableViewController.swift; sourceTree = "<group>"; };
 		45D4BCF51B78D41A006BE819 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		45D4BCF61B78D41A006BE819 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -163,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				453416401BC419920074FD50 /* TestStaticTableViewController.swift */,
-				45B74D9F1BD66B330008CD7B /* MultilineSegmentedControl.swift */,
 			);
 			path = StaticTableViewController;
 			sourceTree = "<group>";
@@ -194,6 +203,8 @@
 		4546A14A1B78D21000DCE648 /* Example-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				45532F001BEE371B002E8374 /* MultilineSegmentedControl */,
+				45532EEB1BEE33B0002E8374 /* Storyboards */,
 				4534163F1BC419700074FD50 /* StaticTableViewController */,
 				45D4BCF31B78D41A006BE819 /* Activity Indicator */,
 				45D4BCF61B78D41A006BE819 /* NavigationController.swift */,
@@ -203,7 +214,6 @@
 				45D4BCFD1B78D41A006BE819 /* Toast */,
 				4546A14D1B78D21000DCE648 /* AppDelegate.swift */,
 				4546A14F1B78D21000DCE648 /* ViewController.swift */,
-				4546A1511B78D21000DCE648 /* Main.storyboard */,
 				4546A1541B78D21000DCE648 /* Images.xcassets */,
 				4546A1561B78D21000DCE648 /* LaunchScreen.xib */,
 				4546A14B1B78D21000DCE648 /* Supporting Files */,
@@ -234,6 +244,27 @@
 				4546A1621B78D21000DCE648 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45532EEB1BEE33B0002E8374 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				45532EF01BEE33D7002E8374 /* ActivityIndicator.storyboard */,
+				45532EF51BEE3440002E8374 /* Operations.storyboard */,
+				45532EFA1BEE3462002E8374 /* SearchView.storyboard */,
+				45532EFF1BEE34A0002E8374 /* Toast.storyboard */,
+				4546A1511B78D21000DCE648 /* Main.storyboard */,
+				45532F071BEE376C002E8374 /* MultilineSegmentedControl.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		45532F001BEE371B002E8374 /* MultilineSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				45532F011BEE374F002E8374 /* MultilineSegmentedControl.swift */,
+			);
+			path = MultilineSegmentedControl;
 			sourceTree = "<group>";
 		};
 		45D4BCF31B78D41A006BE819 /* Activity Indicator */ = {
@@ -421,7 +452,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4546A1531B78D21000DCE648 /* Main.storyboard in Resources */,
+				45532EF81BEE3462002E8374 /* SearchView.storyboard in Resources */,
+				45532EEE1BEE33D7002E8374 /* ActivityIndicator.storyboard in Resources */,
+				45532F051BEE376C002E8374 /* MultilineSegmentedControl.storyboard in Resources */,
+				45532EFD1BEE34A0002E8374 /* Toast.storyboard in Resources */,
 				4546A1581B78D21000DCE648 /* LaunchScreen.xib in Resources */,
+				45532EF31BEE3440002E8374 /* Operations.storyboard in Resources */,
 				4546A1551B78D21000DCE648 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,7 +506,7 @@
 				45D4BD081B78D41A006BE819 /* ToastViewController.swift in Sources */,
 				45D4BD051B78D41A006BE819 /* RevealToggleViewController.swift in Sources */,
 				453416411BC419920074FD50 /* TestStaticTableViewController.swift in Sources */,
-				45B74DA01BD66B330008CD7B /* MultilineSegmentedControl.swift in Sources */,
+				45532F021BEE374F002E8374 /* MultilineSegmentedControl.swift in Sources */,
 				45D4BD011B78D41A006BE819 /* ActivityIndicatorView.swift in Sources */,
 				45D4BD071B78D41A006BE819 /* ToastTableViewController.swift in Sources */,
 			);
@@ -516,6 +552,46 @@
 				45D4BD231B78D932006BE819 /* el */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		45532EF01BEE33D7002E8374 /* ActivityIndicator.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45532EEF1BEE33D7002E8374 /* Base */,
+			);
+			name = ActivityIndicator.storyboard;
+			sourceTree = "<group>";
+		};
+		45532EF51BEE3440002E8374 /* Operations.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45532EF41BEE3440002E8374 /* Base */,
+			);
+			name = Operations.storyboard;
+			sourceTree = "<group>";
+		};
+		45532EFA1BEE3462002E8374 /* SearchView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45532EF91BEE3462002E8374 /* Base */,
+			);
+			name = SearchView.storyboard;
+			sourceTree = "<group>";
+		};
+		45532EFF1BEE34A0002E8374 /* Toast.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45532EFE1BEE34A0002E8374 /* Base */,
+			);
+			name = Toast.storyboard;
+			sourceTree = "<group>";
+		};
+		45532F071BEE376C002E8374 /* MultilineSegmentedControl.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45532F061BEE376C002E8374 /* Base */,
+			);
+			name = MultilineSegmentedControl.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
