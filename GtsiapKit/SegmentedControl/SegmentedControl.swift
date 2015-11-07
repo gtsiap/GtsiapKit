@@ -21,20 +21,33 @@
 import UIKit
 import SnapKit
 
+/**
+ A multiline segmented control
+ */
+
 public class SegmentedControl: UIView {
 
+    /**
+        The items of the segmented control
+    */
     public var items: [AnyObject] = [AnyObject]() {
         didSet {
             createSegmentedControls()
         }
     }
 
+    /**
+        Items per row
+     */
     public var itemsPerRow = 3 {
         didSet {
             createSegmentedControls()
         }
     }
-
+    
+    /**
+        Spacing between the rows
+     */
     public var spacing: Double = 0 {
         didSet {
             createSegmentedControls()
@@ -43,6 +56,9 @@ public class SegmentedControl: UIView {
 
     private var _value: String?
 
+    /**
+        The value for the current selected segment
+     */
     public var value: String? {
         get {
             return self._value
@@ -62,6 +78,9 @@ public class SegmentedControl: UIView {
         }
     }
 
+    /**
+        It is called when value changes
+     */
     public var valueDidChange: ((String?) -> ())?
 
     private var segmentedControls: [UISegmentedControl] = [UISegmentedControl]()
