@@ -20,7 +20,7 @@
 
 import UIKit
 
-public protocol TableViewDataSourceType {
+protocol TableViewDataSourceType {
     func numberOfSections() -> Int
     func numberOfRowsInSection(sectionIndex: Int) -> Int
     func cellForRowAtIndexPath(tableViewController: UITableViewController, indexPath: NSIndexPath) -> UITableViewCell

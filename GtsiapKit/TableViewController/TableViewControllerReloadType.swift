@@ -25,5 +25,5 @@ public protocol TableViewControllerReloadType {
     func loadData(completed: () -> ())
     func didLoadData()
     
-    func prepareForReload3(completed: () -> ())
+    func prepareForReload(completed: () -> ())
 }

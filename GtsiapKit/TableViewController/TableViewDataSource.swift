@@ -20,35 +20,42 @@
 
 import UIKit
 
-public struct TableViewDataSource<
+struct TableViewDataSource<
     T: AnyObject, Cell: UITableViewCell
     where Cell: TableViewCellType, Cell.ModelType == T> : TableViewDataSourceType {
-    public let sections: [TableViewSection<T, Cell>]
     
-    public init(sections: [TableViewSection<T, Cell>]) {
+    private var tableViewController: GTTableViewController
+    var sections: [TableViewSection<T, Cell>]
+    
+    init(tableViewController: GTTableViewController, sections: [TableViewSection<T, Cell>]) {
+        self.tableViewController = tableViewController
         self.sections = sections
+        
+       self.sections.forEach() { $0.tableViewController = self.tableViewController }
     }
     
-    /**
-        This is a convenience initializer for create a datasource
-        with **only 1 section**.
-     */
-    public init() {
-        self.init(sections: [TableViewSection<T, Cell>]())
-    }
-    
-    public func numberOfSections() -> Int {
+    func numberOfSections() -> Int {
         return self.sections.count
     }
         
-    public func numberOfRowsInSection(sectionIndex: Int) -> Int {
+    func numberOfRowsInSection(sectionIndex: Int) -> Int {
         return self.sections[sectionIndex].items.count
     }
     
-    public func cellForRowAtIndexPath(tableViewController: UITableViewController, indexPath: NSIndexPath) -> UITableViewCell {
+    func cellForRowAtIndexPath(tableViewController: UITableViewController, indexPath: NSIndexPath) -> UITableViewCell {
         let sectionIndex = indexPath.section
         let section = self.sections[sectionIndex]
         
-        return section.cellForRow(tableViewController, indexPath: indexPath)
+        let rowIndex = indexPath.row
+        let item = section.items[rowIndex]
+        
+        let cellIdentifier = section.cellIdentifierHandler(item: item, indexPath: indexPath)
+        let cell = self.tableViewController.tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell
+        cell.configure(item)
+        cell.gt_viewController = self.tableViewController
+        
+        return cell
     }
+    
+    
 }

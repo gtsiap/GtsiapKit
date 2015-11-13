@@ -20,13 +20,13 @@
 
 import UIKit
 
-public struct TableViewSection<T: AnyObject, Cell: TableViewCellType
+public class TableViewSection<T: AnyObject, Cell: TableViewCellType
     where Cell.ModelType == T, Cell: UITableViewCell> {
     
     /**
      The items of this section
      */
-    public var items: [T] = [T]()
+    public private(set) var items: [T] = [T]()
     
     /**
         - parameter item: the current item of the section for which
@@ -50,7 +50,7 @@ public struct TableViewSection<T: AnyObject, Cell: TableViewCellType
     /**
         A convenience initializer which sets **myCell** as the cell reuse identifier
      */
-    public init(items: [T]) {
+    public convenience init(items: [T]) {
         self.init(items: items) { (_, _) -> String in
             return "myCell"
         }
@@ -61,20 +61,28 @@ public struct TableViewSection<T: AnyObject, Cell: TableViewCellType
         as the cell reuse identifier and it sets an
         empty list for items.
      */
-    public init() {
+    public convenience init() {
         self.init(items: [T]()) { (_, _) -> String in
             return "myCell"
         }
     }
     
-    func cellForRow(tableViewController: UITableViewController, indexPath: NSIndexPath) -> UITableViewCell {
-        let rowIndex = indexPath.row
-        let item = self.items[rowIndex]
-        
-        let cellIdentifier = self.cellIdentifierHandler(item: item, indexPath: indexPath)
-        let cell = tableViewController.tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell
-        cell.configure(item)
-        cell.gt_viewController = tableViewController
-        return cell
+    /**
+        Resets the items in the section
+        - parameter items: the new items of the section
+     */
+    public func resetItems(items: [T]) {
+        self.items = items
     }
+    
+    /**
+        Adds the item in the section
+        - parameter item: the new item of the section
+     */
+    public func appendItem(item: T) {
+        self.items.append(item)
+    }
+    
+    var tableViewController: GTTableViewController!
+
 }

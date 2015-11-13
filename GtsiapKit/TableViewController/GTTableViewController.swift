@@ -25,7 +25,7 @@ import UIKit
     - NOTE: the cells must comfort to the TableViewCellable protocol
  */
 public class GTTableViewController: UITableViewController {
-    public var dataSourceable: TableViewDataSourceType!
+    var dataSourceable: TableViewDataSourceType!
 
     public var useAutoHeightCells: Bool = true
     
@@ -36,10 +36,41 @@ public class GTTableViewController: UITableViewController {
             self.tableView.estimatedRowHeight = 50
             self.tableView.rowHeight = UITableViewAutomaticDimension
         }
+        
         self.refreshControl = UIRefreshControl()
-        self.refreshControl?.attributedTitle = NSAttributedString(string: "Loading..")
+        
+        self.refreshControl?.addTarget(
+            self,
+            action: "refreshControlValueDidChange",
+            forControlEvents: .ValueChanged
+        )
+        
+        self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull Me..")
 
 
+    }
+    
+    /**
+        It setups a new data source for the tableView.
+        The tableView will have **only one section**
+        - parameter section: the section of the tableView
+     */
+    public func setUpDataSourceFromSection<T, Cell>(section: TableViewSection<T, Cell>) {
+        self.dataSourceable = TableViewDataSource<T, Cell>(
+            tableViewController: self,
+            sections: [section]
+        )
+    }
+    
+    /**
+        It setups a new data source for the tableView.
+        - parameter sections: the sections of the tableView
+     */
+    public func setUpDataSourceFromSections<T, Cell>(sections: [TableViewSection<T, Cell>]) {
+        self.dataSourceable = TableViewDataSource<T, Cell>(
+            tableViewController: self,
+            sections: sections
+        )
     }
     
     override public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -53,27 +84,15 @@ public class GTTableViewController: UITableViewController {
     override public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         return self.dataSourceable.cellForRowAtIndexPath(self, indexPath: indexPath)
     }
-
-    override public func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        
-        if scrollView.contentOffset.y < 0 {
-            // the user scrolled to the top
-            return
-        }
-        
-    }
     
-    public override func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
-        guard scrollView.contentOffset.y < 0 else {
-            return
-        }
-        // the user scrolled in the top
+    @objc private func refreshControlValueDidChange() {
+        self.refreshControl?.attributedTitle = NSAttributedString(string: "Loading..")
         
         pullToRefreshWillBegin()
-        self.refreshControl?.beginRefreshing()
         pullToRefresh() {
             self.pullToRefreshDidEnd()
             self.refreshControl?.endRefreshing()
+            self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull Me..")
         }
         
     }
