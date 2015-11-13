@@ -70,6 +70,12 @@ class TestStaticTableViewController: FormsTableViewController {
             self.pushViewController(vc)
         }
         
+        section.addRow(StaticForm(text: "Animal TableViewController via Storyboard")).didSelectRow = {
+            let vc = UIStoryboard(name: "AnimalTableViewController", bundle: nil)
+                .instantiateInitialViewController()!
+            self.pushViewController(vc)
+        }
+        
         self.formSections = [section]
     }
     
