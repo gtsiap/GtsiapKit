@@ -29,10 +29,25 @@ class AnimalTableViewController: GTTableViewController {
     
     private var animalSection = TableViewSection<Animal, AnimalTableViewCell>()
 
+    private lazy var cat: Animal = {
+        let animal = Animal()
+        animal.name = "cat"
+        return animal
+    }()
+    
+    private lazy var dog: Animal = {
+        let animal = Animal()
+        animal.name = "Dog"
+        return animal
+    }()
+    
     override var performLoadDataOnLoad: Bool { return false }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.animalSection.resetItems([dog, cat])
+        performLoadData()
     }
     
     override func dataSourceForTableViewController(make: DataSourceMaker) {
@@ -47,18 +62,12 @@ class AnimalTableViewController: GTTableViewController {
         dispatch_async(dispatch_queue_create("animalTableViewCOntrollerQueue", DISPATCH_QUEUE_SERIAL)) {
             sleep(2)
             dispatch_async(dispatch_get_main_queue()) {
-                let animal = Animal()
-                animal.name = "cat"
-                
-                let animal2 = Animal()
-                animal2.name = "Dog"
-                
                 let elephant = Animal()
                 elephant.name = "elephant"
                 
                 self.animalSection.resetItems([
-                    animal,
-                    animal2,
+                    self.cat,
+                    self.dog,
                     elephant
                 ])
                 
