@@ -21,9 +21,42 @@
 import UIKit
 
 public protocol TableViewControllerReloadType {
+    var needsReload: Bool { get set }
     func willLoadData()
-    func loadData(completed: () -> ())
+    func loadData(needsReload: Bool, completed: () -> ())
     func didLoadData()
+}
+
+extension GTTableViewController: TableViewControllerReloadType {
+    /**
+        It will be called before the
+        loadData operation begins
+     */
+    public func willLoadData() {
+        
+    }
     
-    func prepareForReload(completed: () -> ())
+    /**
+        This is the actual operation.
+        Subclasses **MUST** override this method
+        and they **MUST NOT** call the super implementation.
+        - parameter completed: it **must** be called **after**
+                               the operation finishes
+        - parameter needsReload: If true then the tableView needs to
+                                 reset its data and load them again.
+                                 If your data are stored in a cache
+                                 or somewhere you must retrieve them again.
+                                 If false then this method was just called.
+                                 Its safe for you to load your *old* data 
+                                 from a cache or something.
+     */
+    public func loadData(needsReload: Bool, completed: () -> ()) {
+        fatalError("Implementation is missing")
+    }
+    
+    /**
+        It will be called after the
+        loadData operation finishes
+    */
+    public func didLoadData() {}
 }
