@@ -79,28 +79,4 @@ public class GTTableViewController: UITableViewController {
         return self.dataSourceable.cellForRowAtIndexPath(self, indexPath: indexPath)
     }
     
-    @objc private func refreshControlValueDidChange() {
-        self.refreshControl?.attributedTitle = NSAttributedString(string: "Loading..")
-        
-        pullToRefreshWillBegin()
-        pullToRefresh() {
-            self.pullToRefreshDidEnd()
-            self.refreshControl?.endRefreshing()
-            self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull Me..")
-        }
-        
-    }
-    
-    public func performLoadData(completed: (() -> ())? = nil) {
-        self.willLoadData()
-
-        self.loadData(self.needsReload) {
-            self.tableView.reloadDataWithAutoSizingCell()
-            self.needsReload = false
-            self.didLoadData()
-            completed?()
-        }
-
-    }
-    
 }
