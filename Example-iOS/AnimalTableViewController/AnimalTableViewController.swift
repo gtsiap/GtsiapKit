@@ -27,36 +27,47 @@ class Animal {
 
 class AnimalTableViewController: GTTableViewController {
     
-    private var animalSection: TableViewSection<Animal, AnimalTableViewCell>!
+    private var animalSection = TableViewSection<Animal, AnimalTableViewCell>()
+
+    override var performLoadDataOnLoad: Bool { return false }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let animal = Animal()
-        animal.name = "cat"
-        
-        let animal2 = Animal()
-        animal2.name = "Dog"
-        
-        self.animalSection = TableViewSection<Animal, AnimalTableViewCell>(items: [animal, animal2])
-        
-        setUpDataSourceFromSection(self.animalSection)
-        
-        self.tableView.reloadData()
     }
     
-    override func pullToRefresh(completed: () -> ()) {
-        dispatch_async(dispatch_queue_create("test", DISPATCH_QUEUE_SERIAL)) {
-            sleep(3)
+    override func dataSourceForTableViewController(make: DataSourceMaker) {
+        let sections: [TableViewSection<Animal, AnimalTableViewCell>] = [self.animalSection]
+        make.setUpDataSourceFromSections(sections)
+    }
+    
+    override func loadData(needsReload: Bool, completed: () -> ()) {
+        
+        guard needsReload else { return }
+
+        dispatch_async(dispatch_queue_create("animalTableViewCOntrollerQueue", DISPATCH_QUEUE_SERIAL)) {
+            sleep(2)
             dispatch_async(dispatch_get_main_queue()) {
+                let animal = Animal()
+                animal.name = "cat"
+                
+                let animal2 = Animal()
+                animal2.name = "Dog"
                 
                 let elephant = Animal()
                 elephant.name = "elephant"
-                self.animalSection.appendItem(elephant)
-                self.tableView.reloadData()
-                completed()
                 
+                self.animalSection.resetItems([
+                    animal,
+                    animal2,
+                    elephant
+                ])
+                
+                completed()
             } // end dispatch main
         } // end dispatch
+    }
+    
+    override func pullToRefresh(completed: () -> ()) {
+        super.pullToRefresh() { completed() }
     } 
 }
