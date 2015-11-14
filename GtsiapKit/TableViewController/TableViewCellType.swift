@@ -31,7 +31,7 @@ public protocol TableViewCellType: class {
 }
 
 private struct TableViewCellTypeKeys {
-    static var TableViewCellableViewControllerKey = "gt_tableviewcellable_view_controller_key"
+    static var TableViewCellTypeKey = "gt_tableviewcelltype_view_controller_key"
 }
 
 public extension TableViewCellType {
@@ -43,7 +43,7 @@ public extension TableViewCellType {
             guard let
                 vc = objc_getAssociatedObject(
                     self,
-                    &TableViewCellTypeKeys.TableViewCellableViewControllerKey
+                    &TableViewCellTypeKeys.TableViewCellTypeKey
                     ) as? UIViewController
             else { return nil }
             
@@ -53,7 +53,7 @@ public extension TableViewCellType {
         set(vc) {
             objc_setAssociatedObject(
                 self,
-                &TableViewCellTypeKeys.TableViewCellableViewControllerKey,
+                &TableViewCellTypeKeys.TableViewCellTypeKey,
                 vc,
                 .OBJC_ASSOCIATION_ASSIGN
             )
