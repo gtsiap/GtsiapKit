@@ -42,7 +42,6 @@ public struct DataSourceMaker {
             tableViewController: self.tableViewController,
             sections: [section]
         )
-        print(section)
     }
     
     /**
