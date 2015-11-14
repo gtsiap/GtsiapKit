@@ -38,6 +38,8 @@ extension GTTableViewController: TableViewControllerReloadType {
     
     /**
         This is the actual operation.
+        You **MUST NOT** call this method directly.
+        If you need to load data call *performLoadData*
         Subclasses **MUST** override this method
         and they **MUST NOT** call the super implementation.
         - parameter completed: it **must** be called **after**
@@ -59,4 +61,22 @@ extension GTTableViewController: TableViewControllerReloadType {
         loadData operation finishes
     */
     public func didLoadData() {}
+    
+    /**
+        You should use this method when you want to reload the
+        data of your table.
+        - NOTE: **DON'T** used completed. Its an implementation detail
+                Instead use *didLoadData*
+     */
+    public func performLoadData(completed: (() -> ())? = nil) {
+        self.willLoadData()
+        
+        self.loadData(self.needsReload) {
+            self.tableView.reloadDataWithAutoSizingCell()
+            self.needsReload = false
+            self.didLoadData()
+            completed?()
+        }
+        
+    }
 }
