@@ -30,7 +30,7 @@ class Animal_iOSUITests: XCTestCase {
         XCUIApplication().launch()
     }
     
-    func testExample() {
+    func testPullToRefresh() {
         let app = XCUIApplication()
         let tablesQuery = app.tables
 
