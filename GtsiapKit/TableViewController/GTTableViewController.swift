@@ -27,50 +27,44 @@ import UIKit
 public class GTTableViewController: UITableViewController {
     var dataSourceable: TableViewDataSourceType!
 
-    public var useAutoHeightCells: Bool = true
+    public var useAutoHeightCells: Bool { return true }
+    public var performLoadDataOnLoad: Bool { return true }
+    public var needsReload: Bool = true
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dataSourceForTableViewController(DataSourceMaker(tableViewController: self))
         
         if self.useAutoHeightCells {
             self.tableView.estimatedRowHeight = 50
             self.tableView.rowHeight = UITableViewAutomaticDimension
         }
         
-        self.refreshControl = UIRefreshControl()
+        if shouldPerformPullToRefresh() {
         
-        self.refreshControl?.addTarget(
-            self,
-            action: "refreshControlValueDidChange",
-            forControlEvents: .ValueChanged
-        )
+            self.refreshControl = UIRefreshControl()
         
-        self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull Me..")
-
-
+            self.refreshControl?.addTarget(
+                self,
+                action: "refreshControlValueDidChange",
+                forControlEvents: .ValueChanged
+            )
+        
+            self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull Me..")
+            
+            // we must call reloadData because the refresh control is messing up
+            // the UI internals of UITableViewController
+            self.tableView.reloadData()
+        }
+        
+        if self.performLoadDataOnLoad {
+            performLoadData()
+        }
     }
     
-    /**
-        It setups a new data source for the tableView.
-        The tableView will have **only one section**
-        - parameter section: the section of the tableView
-     */
-    public func setUpDataSourceFromSection<T, Cell>(section: TableViewSection<T, Cell>) {
-        self.dataSourceable = TableViewDataSource<T, Cell>(
-            tableViewController: self,
-            sections: [section]
-        )
-    }
-    
-    /**
-        It setups a new data source for the tableView.
-        - parameter sections: the sections of the tableView
-     */
-    public func setUpDataSourceFromSections<T, Cell>(sections: [TableViewSection<T, Cell>]) {
-        self.dataSourceable = TableViewDataSource<T, Cell>(
-            tableViewController: self,
-            sections: sections
-        )
+    public func dataSourceForTableViewController(make: DataSourceMaker) {
+        fatalError("Missing Implementation")
     }
     
     override public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -95,6 +89,18 @@ public class GTTableViewController: UITableViewController {
             self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull Me..")
         }
         
+    }
+    
+    public func performLoadData(completed: (() -> ())? = nil) {
+        self.willLoadData()
+
+        self.loadData(self.needsReload) {
+            self.tableView.reloadDataWithAutoSizingCell()
+            self.needsReload = false
+            self.didLoadData()
+            completed?()
+        }
+
     }
     
 }
