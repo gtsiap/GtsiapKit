@@ -57,5 +57,4 @@ struct TableViewDataSource<
         return cell
     }
     
-    
 }
