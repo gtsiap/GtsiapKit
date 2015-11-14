@@ -22,16 +22,44 @@ public protocol TableViewControllerPullToRefreshType {
     func pullToRefreshWillBegin()
     func pullToRefresh(completed: () -> ())
     func pullToRefreshDidEnd()
+    func shouldPerformPullToRefresh() -> Bool
 }
 
 extension GTTableViewController: TableViewControllerPullToRefreshType {
     
+    /**
+        It will be called before the 
+        pullToRefresh operation begins
+     */
     public func pullToRefreshWillBegin() {}
     
+    /**
+        This is the actual operation.
+        Subclasses may override this method.
+        **The current implementation will call performLoadData**
+        - parameter completed: it **must** be called **after**
+                               the operation finishes
+     */
     public func pullToRefresh(completed: () -> ()) {
-        completed()
+        self.needsReload = true
+        performLoadData() {
+            completed()
+        }
     }
     
+    /**
+        It will be called after the
+        pullToRefresh operation has finished
+     */
     public func pullToRefreshDidEnd() {}
+    
+    /**
+        - returns: If true then pullToRefresh will be
+                   performed otherwise it won't.
+                   The default value is **true**
+     */
+    public func shouldPerformPullToRefresh() -> Bool {
+        return true
+    }
     
 }
