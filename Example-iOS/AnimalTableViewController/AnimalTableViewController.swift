@@ -47,7 +47,7 @@ class AnimalTableViewController: GTTableViewController {
         super.viewDidLoad()
 
         self.animalSection.resetItems([dog, cat])
-        performLoadData()
+        self.tableView.reloadData()
     }
     
     override func dataSourceForTableViewController(make: DataSourceMaker) {

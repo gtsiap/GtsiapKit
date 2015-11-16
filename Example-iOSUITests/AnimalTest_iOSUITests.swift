@@ -43,7 +43,7 @@ class Animal_iOSUITests: XCTestCase {
         XCTAssert(dogCell.exists)
         
         let start = catCell.coordinateWithNormalizedOffset(CGVectorMake(0, 0))
-        let finish = dogCell.coordinateWithNormalizedOffset(CGVectorMake(0, 6))
+        let finish = dogCell.coordinateWithNormalizedOffset(CGVectorMake(0, 10))
         start.pressForDuration(0, thenDragToCoordinate: finish)
 
         XCTAssert(app.staticTexts["elephant"].exists)
