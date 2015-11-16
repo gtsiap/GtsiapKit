@@ -25,7 +25,7 @@ public protocol TableViewControllerPullToRefreshType {
     func shouldPerformPullToRefresh() -> Bool
 }
 
-extension GTTableViewController: TableViewControllerPullToRefreshType {
+extension BaseTableViewController: TableViewControllerPullToRefreshType {
     
     /**
         It will be called before the 

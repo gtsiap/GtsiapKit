@@ -25,7 +25,7 @@ class Animal {
     var name: String!
 }
 
-class AnimalTableViewController: GTTableViewController {
+class AnimalTableViewController: BaseTableViewController {
     
     private var animalSection = TableViewSection<Animal, AnimalTableViewCell>()
 

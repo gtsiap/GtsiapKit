@@ -26,9 +26,9 @@ import UIKit
     datasource for the TableViewController
 */
 public struct DataSourceMaker {
-    private weak var tableViewController: GTTableViewController!
+    private weak var tableViewController: BaseTableViewController!
     
-    init(tableViewController: GTTableViewController) {
+    init(tableViewController: BaseTableViewController) {
         self.tableViewController = tableViewController
     }
     

@@ -24,7 +24,7 @@ import UIKit
     A multi section TableView Controller with multiple rows and multiple cell identifiers
     - NOTE: the cells must comfort to the TableViewCellable protocol
  */
-public class GTTableViewController: UITableViewController {
+public class BaseTableViewController: UITableViewController {
     var dataSourceable: TableViewDataSourceType!
 
     public var useAutoHeightCells: Bool { return true }

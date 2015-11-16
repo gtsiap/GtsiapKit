@@ -83,6 +83,6 @@ public class TableViewSection<T: AnyObject, Cell: TableViewCellType
         self.items.append(item)
     }
     
-    var tableViewController: GTTableViewController!
+    var tableViewController: BaseTableViewController!
 
 }

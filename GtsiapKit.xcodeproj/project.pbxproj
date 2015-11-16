@@ -103,7 +103,7 @@
 		45F2B2A61BEFBF56005AA280 /* TableViewDataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F2B2A51BEFBF56005AA280 /* TableViewDataSourceType.swift */; };
 		45F2B2A81BEFBF89005AA280 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F2B2A71BEFBF89005AA280 /* TableViewDataSource.swift */; };
 		45FAFA641B8DDE8700C4000E /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FAFA631B8DDE8700C4000E /* OperationQueue.swift */; };
-		45FCC8DE1BEE250000F2DB02 /* GTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FCC8DD1BEE250000F2DB02 /* GTTableViewController.swift */; };
+		45FCC8DE1BEE250000F2DB02 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FCC8DD1BEE250000F2DB02 /* BaseTableViewController.swift */; };
 		45FCCB151B52E4B90057AAFD /* UIView+AutolayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FCCB141B52E4B90057AAFD /* UIView+AutolayoutUtils.swift */; };
 /* End PBXBuildFile section */
 
@@ -235,7 +235,7 @@
 		45F2B2A51BEFBF56005AA280 /* TableViewDataSourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceType.swift; sourceTree = "<group>"; };
 		45F2B2A71BEFBF89005AA280 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		45FAFA631B8DDE8700C4000E /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
-		45FCC8DD1BEE250000F2DB02 /* GTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GTTableViewController.swift; sourceTree = "<group>"; };
+		45FCC8DD1BEE250000F2DB02 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		45FCCB141B52E4B90057AAFD /* UIView+AutolayoutUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutolayoutUtils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -641,7 +641,7 @@
 		45FCC8DC1BEE24DA00F2DB02 /* TableViewController */ = {
 			isa = PBXGroup;
 			children = (
-				45FCC8DD1BEE250000F2DB02 /* GTTableViewController.swift */,
+				45FCC8DD1BEE250000F2DB02 /* BaseTableViewController.swift */,
 				45532F091BEF530F002E8374 /* TableViewCellType.swift */,
 				45532F0B1BEF5510002E8374 /* TableViewControllerReloadType.swift */,
 				45F2B2A31BEFBEEF005AA280 /* TableViewSection.swift */,
@@ -970,7 +970,7 @@
 				45B2AE4E1B4257B000DE467B /* Theme.swift in Sources */,
 				450D3FFC1BE10DC400A1293B /* FormTextFieldView.swift in Sources */,
 				45ADA2891BD0FE1F0002F1DF /* UIFont.swift in Sources */,
-				45FCC8DE1BEE250000F2DB02 /* GTTableViewController.swift in Sources */,
+				45FCC8DE1BEE250000F2DB02 /* BaseTableViewController.swift in Sources */,
 				456E5A4E1BB2FA1B00A04651 /* ApiTask.swift in Sources */,
 				4565C2101BD6518C00B324A9 /* UITableView.swift in Sources */,
 				459B0CFD1B3F1BCA00E1A4D3 /* ContainerView.swift in Sources */,

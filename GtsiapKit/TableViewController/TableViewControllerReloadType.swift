@@ -27,7 +27,7 @@ public protocol TableViewControllerReloadType {
     func didLoadData()
 }
 
-extension GTTableViewController: TableViewControllerReloadType {
+extension BaseTableViewController: TableViewControllerReloadType {
     /**
         It will be called before the
         loadData operation begins

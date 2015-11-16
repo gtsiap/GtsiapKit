@@ -24,10 +24,10 @@ struct TableViewDataSource<
     T: AnyObject, Cell: UITableViewCell
     where Cell: TableViewCellType, Cell.ModelType == T> : TableViewDataSourceType {
     
-    private var tableViewController: GTTableViewController
+    private var tableViewController: BaseTableViewController
     var sections: [TableViewSection<T, Cell>]
     
-    init(tableViewController: GTTableViewController, sections: [TableViewSection<T, Cell>]) {
+    init(tableViewController: BaseTableViewController, sections: [TableViewSection<T, Cell>]) {
         self.tableViewController = tableViewController
         self.sections = sections
         
