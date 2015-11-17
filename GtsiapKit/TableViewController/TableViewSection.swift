@@ -57,6 +57,14 @@ public class TableViewSection<T: AnyObject, Cell: TableViewCellType
     }
     
     /**
+        A convenience initializer which sets it sets an
+        empty list for items.
+     */
+    public convenience init(cellIdentifierHandler: CellIdentifierHandler) {
+        self.init(items: [T](), cellIdentifierHandler: cellIdentifierHandler)
+    }
+    
+    /**
         A convenience initializer which sets **myCell**
         as the cell reuse identifier and it sets an
         empty list for items.
