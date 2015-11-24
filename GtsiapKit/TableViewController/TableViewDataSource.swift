@@ -51,8 +51,8 @@ struct TableViewDataSource<
         
         let cellIdentifier = section.cellIdentifierHandler(item: item, indexPath: indexPath)
         let cell = self.tableViewController.tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell
-        cell.configure(item)
         cell.gt_viewController = self.tableViewController
+        cell.configure(item)
         
         return cell
     }
