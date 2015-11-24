@@ -86,6 +86,7 @@
 		45B43CBF1B91E8F4008AC2DC /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B43CBE1B91E8F4008AC2DC /* Comment.swift */; };
 		45B74DA31BD66BF70008CD7B /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B74DA21BD66BF70008CD7B /* SegmentedControl.swift */; };
 		45C27D421BF758AD00AC5517 /* DataSourceMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C27D411BF758AD00AC5517 /* DataSourceMaker.swift */; };
+		45CBA0551C04C8AE0031C3BE /* UIView+StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CBA0541C04C8AE0031C3BE /* UIView+StackView.swift */; };
 		45CCEC521BDF6B9400194A44 /* FormSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CCEC511BDF6B9400194A44 /* FormSwitchView.swift */; };
 		45CE5E3C1BB8767200AE682E /* ViewController+AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE5E3B1BB8767200AE682E /* ViewController+AlertViewController.swift */; };
 		45DEE6331BB2E93B00383FC9 /* update_relationship2.json in Resources */ = {isa = PBXBuildFile; fileRef = 45DEE6321BB2E93B00383FC9 /* update_relationship2.json */; };
@@ -218,6 +219,7 @@
 		45B43CBE1B91E8F4008AC2DC /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		45B74DA21BD66BF70008CD7B /* SegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		45C27D411BF758AD00AC5517 /* DataSourceMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceMaker.swift; sourceTree = "<group>"; };
+		45CBA0541C04C8AE0031C3BE /* UIView+StackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+StackView.swift"; sourceTree = "<group>"; };
 		45CCEC511BDF6B9400194A44 /* FormSwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSwitchView.swift; sourceTree = "<group>"; };
 		45CE5E3B1BB8767200AE682E /* ViewController+AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+AlertViewController.swift"; sourceTree = "<group>"; };
 		45DEE6321BB2E93B00383FC9 /* update_relationship2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = update_relationship2.json; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 				45ADA2881BD0FE1F0002F1DF /* UIFont.swift */,
 				4565C20F1BD6518C00B324A9 /* UITableView.swift */,
 				4565C2111BD65A1700B324A9 /* Int.swift */,
+				45CBA0541C04C8AE0031C3BE /* UIView+StackView.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -926,6 +929,7 @@
 				455DA14C1BC3F96F005A61D7 /* UIColor+hex.swift in Sources */,
 				45EB2B671BC7F90A00056B5D /* UIButton.swift in Sources */,
 				459809FD1B7639E300FE0C4C /* FeedbackManager.swift in Sources */,
+				45CBA0551C04C8AE0031C3BE /* UIView+StackView.swift in Sources */,
 				45F2B2A61BEFBF56005AA280 /* TableViewDataSourceType.swift in Sources */,
 				450D3FFA1BE10DC400A1293B /* FormIntTextFieldView.swift in Sources */,
 				45C27D421BF758AD00AC5517 /* DataSourceMaker.swift in Sources */,
