@@ -29,5 +29,15 @@ extension UIButton {
 
         translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    public convenience init(imageName: String, target: AnyObject, action: Selector) {
+        self.init(type: .System)
+        let image = UIImage(named: imageName)
+        setImage(image, forState: .Normal)
+        setImage(image, forState: .Selected)
 
+        addTarget(target, action: action, forControlEvents: .TouchUpInside)
+        
+        translatesAutoresizingMaskIntoConstraints = false
+    }
 }
