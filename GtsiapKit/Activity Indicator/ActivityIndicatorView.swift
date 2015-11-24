@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 import UIKit
+import SnapKit
 
 public class ActivityIndicatorViewStyle {
     public var activityIndicatorStyle: UIActivityIndicatorViewStyle =
@@ -117,31 +118,31 @@ public class ActivityIndicatorView: UIView {
     }
 
     private func positionInSuperview() {
-        if self.superview == nil {
+        guard let superview = self.superview else {
             return
         }
 
         translatesAutoresizingMaskIntoConstraints = false
 
-        self.superview?.bringSubviewToFront(self)
+        superview.bringSubviewToFront(self)
         self.hidden = true
 
-        let centerX = self.superview!.constraint(self, attribute1: .CenterX)
-        let centerY = self.superview!.constraint(self, attribute1: .CenterY)
+        let centerX = superview.constraint(self, attribute1: .CenterX)
+        let centerY = superview.constraint(self, attribute1: .CenterY, multiplier: 0.7)
 
-        let width = self.superview!.constraint(self, attribute1: .Width,
+        let width = superview.constraint(self, attribute1: .Width,
             multiplier: 0.4)
 
         width.priority = UILayoutPriorityDefaultLow
 
-        let height = self.superview!.constraint(self, attribute1: .Height,
+        let height = superview.constraint(self, attribute1: .Height,
             multiplier: 0.2)
 
         height.priority = UILayoutPriorityDefaultLow
 
-        let aspectRatio = self.superview!.constraint(self, attribute1: .Height, view2: self, attribute2: .Width)
+        let aspectRatio = superview.constraint(self, attribute1: .Height, view2: self, attribute2: .Width)
         aspectRatio.priority = UILayoutPriorityDefaultHigh
 
-        self.superview?.addConstraints([centerX, centerY, width, aspectRatio])
+        superview.addConstraints([centerX, centerY, width, aspectRatio])
     }
 }
