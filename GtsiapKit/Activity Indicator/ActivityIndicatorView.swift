@@ -19,7 +19,6 @@
 // THE SOFTWARE.
 
 import UIKit
-import SnapKit
 
 public class ActivityIndicatorViewStyle {
     public var activityIndicatorStyle: UIActivityIndicatorViewStyle =

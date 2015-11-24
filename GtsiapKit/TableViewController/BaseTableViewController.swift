@@ -29,6 +29,16 @@ public class BaseTableViewController: UITableViewController {
 
     public var useAutoHeightCells: Bool { return true }
     public var performLoadDataOnLoad: Bool { return true }
+    
+    /**
+        If its true then 
+        * when viewWillAppear gets called
+        the viewController will call reloadData
+        
+        * when loadData gets called needsReload will be true.
+          It's the user's responsibility to do any clean up and to fetch
+          new data.
+     */
     public var needsReload: Bool = true
     
     public override func viewDidLoad() {
@@ -56,15 +66,26 @@ public class BaseTableViewController: UITableViewController {
             // we must call reloadData because the refresh control is messing up
             // the UI internals of UITableViewController
             self.tableView.reloadData()
+            self.refreshControl?.alpha = 0
         }
         
         if self.performLoadDataOnLoad {
+            performLoadData() { self.refreshControl?.alpha = 1.0 }
+        } else {
+            self.refreshControl?.alpha = 1.0
+        }
+    }
+    
+    public override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if self.needsReload {
             performLoadData()
         }
     }
     
     public func dataSourceForTableViewController(make: DataSourceMaker) {
-        fatalError("Missing Implementation")
+        fatalError("Missing Implementation: \(self.dynamicType)")
     }
     
     override public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
