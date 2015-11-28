@@ -69,8 +69,6 @@ extension BaseTableViewController: TableViewControllerReloadType {
                 Instead use *didLoadData*
      */
     public func performLoadData(completed: (() -> ())? = nil) {
-        self.needsReload = false
-
         self.willLoadData()
         
         self.loadData(self.needsReload) {
@@ -78,6 +76,7 @@ extension BaseTableViewController: TableViewControllerReloadType {
             self.didLoadData()
             completed?()
         }
+        self.needsReload = false
         
     }
 }
