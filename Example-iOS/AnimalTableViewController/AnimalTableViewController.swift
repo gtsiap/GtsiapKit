@@ -57,7 +57,10 @@ class AnimalTableViewController: BaseTableViewController {
     
     override func loadData(needsReload: Bool, completed: () -> ()) {
         
-        guard needsReload else { return }
+        guard needsReload else {
+            completed()
+            return
+        }
 
         dispatch_async(dispatch_queue_create("animalTableViewCOntrollerQueue", DISPATCH_QUEUE_SERIAL)) {
             sleep(2)
@@ -70,7 +73,6 @@ class AnimalTableViewController: BaseTableViewController {
                     self.dog,
                     elephant
                 ])
-                
                 completed()
             } // end dispatch main
         } // end dispatch
