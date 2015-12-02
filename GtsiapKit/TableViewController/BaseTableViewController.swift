@@ -79,7 +79,7 @@ public class BaseTableViewController: UITableViewController {
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if self.needsReload {
+        if self.needsReload && self.performLoadDataOnLoad {
             performLoadData()
         }
     }
