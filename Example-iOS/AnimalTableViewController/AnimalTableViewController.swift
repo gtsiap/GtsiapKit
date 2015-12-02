@@ -28,7 +28,7 @@ class Animal {
 class AnimalTableViewController: BaseTableViewController {
     
     private var animalSection = TableViewSection<Animal, AnimalTableViewCell>()
-
+    
     private lazy var cat: Animal = {
         let animal = Animal()
         animal.name = "cat"
@@ -46,6 +46,8 @@ class AnimalTableViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ApiManager.sharedManager.baseUrl = "https://httpbin.org/"
+        
         self.animalSection.resetItems([dog, cat])
         self.tableView.reloadData()
     }
@@ -62,20 +64,20 @@ class AnimalTableViewController: BaseTableViewController {
             return
         }
 
-        dispatch_async(dispatch_queue_create("animalTableViewCOntrollerQueue", DISPATCH_QUEUE_SERIAL)) {
-            sleep(2)
-            dispatch_async(dispatch_get_main_queue()) {
-                let elephant = Animal()
-                elephant.name = "elephant"
-                
-                self.animalSection.resetItems([
-                    self.cat,
-                    self.dog,
-                    elephant
-                ])
-                completed()
-            } // end dispatch main
-        } // end dispatch
+        let url = NSURL(string: ApiManager.sharedManager.baseUrl + "get")
+        let urlRequest = NSMutableURLRequest(URL: url!)
+        urlRequest.HTTPMethod = "GET"
+        ApiManager.sharedManager.task(urlRequest) { data in
+            let elephant = Animal()
+            elephant.name = "elephant"
+            
+            self.animalSection.resetItems([
+                self.cat,
+                self.dog,
+                elephant
+            ])
+            completed()
+        }.viewControllerForTask(self).start()
     }
     
     override func pullToRefresh(completed: () -> ()) {
