@@ -16,6 +16,8 @@
 		450D40061BE14F8700A1293B /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450D40051BE14F8700A1293B /* SnapKit.framework */; };
 		450D40081BE14FA200A1293B /* TZStackView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450D40071BE14FA200A1293B /* TZStackView.framework */; };
 		45125D1A1BBAB1BE003E4397 /* ApiGroupTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45125D191BBAB1BE003E4397 /* ApiGroupTask.swift */; };
+		451A967D1C0DD5B200F11967 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456E5A581BB3039C00A04651 /* Alamofire.framework */; };
+		451A96801C0DD9A500F11967 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451A967F1C0DD9A500F11967 /* Api.swift */; };
 		451E59271B95D0B10012167B /* Encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451E59261B95D0B10012167B /* Encode.swift */; };
 		451FCAC31BCE159300EC4E7F /* FormsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451FCAC21BCE159300EC4E7F /* FormsTableViewController.swift */; };
 		451FCAC51BCE15D700EC4E7F /* FormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451FCAC41BCE15D700EC4E7F /* FormRow.swift */; };
@@ -71,7 +73,6 @@
 		45B2AE531B42597900DE467B /* UIView+shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B2AE521B42597900DE467B /* UIView+shadow.swift */; };
 		45B4045C1B29E68A00DF2CDB /* GtsiapKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 45B4045B1B29E68A00DF2CDB /* GtsiapKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45B404621B29E68A00DF2CDB /* GtsiapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B404561B29E68A00DF2CDB /* GtsiapKit.framework */; };
-		45B404691B29E68A00DF2CDB /* GtsiapKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B404681B29E68A00DF2CDB /* GtsiapKitTests.swift */; };
 		45B404741B29E79F00DF2CDB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B404731B29E79F00DF2CDB /* Logger.swift */; };
 		45B43C8B1B91C3E3008AC2DC /* JSONAPIMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 45B43C8A1B91C3E3008AC2DC /* JSONAPIMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45B43C921B91C3E3008AC2DC /* JSONAPIMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B43C881B91C3E3008AC2DC /* JSONAPIMapper.framework */; };
@@ -140,6 +141,7 @@
 		450D40051BE14F8700A1293B /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		450D40071BE14FA200A1293B /* TZStackView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TZStackView.framework; path = Carthage/Build/iOS/TZStackView.framework; sourceTree = "<group>"; };
 		45125D191BBAB1BE003E4397 /* ApiGroupTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiGroupTask.swift; sourceTree = "<group>"; };
+		451A967F1C0DD9A500F11967 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		451E59261B95D0B10012167B /* Encode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encode.swift; sourceTree = "<group>"; };
 		451FCAC21BCE159300EC4E7F /* FormsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormsTableViewController.swift; sourceTree = "<group>"; };
 		451FCAC41BCE15D700EC4E7F /* FormRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRow.swift; sourceTree = "<group>"; };
@@ -201,7 +203,6 @@
 		45B4045B1B29E68A00DF2CDB /* GtsiapKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GtsiapKit.h; sourceTree = "<group>"; };
 		45B404611B29E68A00DF2CDB /* GtsiapKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GtsiapKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B404671B29E68A00DF2CDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		45B404681B29E68A00DF2CDB /* GtsiapKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GtsiapKitTests.swift; sourceTree = "<group>"; };
 		45B404731B29E79F00DF2CDB /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		45B43C881B91C3E3008AC2DC /* JSONAPIMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONAPIMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B43C8A1B91C3E3008AC2DC /* JSONAPIMapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONAPIMapper.h; sourceTree = "<group>"; };
@@ -275,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45B404621B29E68A00DF2CDB /* GtsiapKit.framework in Frameworks */,
+				451A967D1C0DD5B200F11967 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,7 +542,7 @@
 		45B404651B29E68A00DF2CDB /* GtsiapKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				45B404681B29E68A00DF2CDB /* GtsiapKitTests.swift */,
+				451A967F1C0DD9A500F11967 /* Api.swift */,
 				45B404661B29E68A00DF2CDB /* Supporting Files */,
 			);
 			path = GtsiapKitTests;
@@ -747,6 +749,7 @@
 				45B4045D1B29E68A00DF2CDB /* Sources */,
 				45B4045E1B29E68A00DF2CDB /* Frameworks */,
 				45B4045F1B29E68A00DF2CDB /* Resources */,
+				451A967E1C0DD79F00F11967 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -899,6 +902,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		451A967E1C0DD79F00F11967 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Locksmith.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TZStackView.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/sh\n/usr/local/bin/carthage copy-frameworks\n/usr/local/bin/carthage copy-frameworks\n/usr/local/bin/carthage copy-frameworks\n/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		456E59F11BB2F98B00A04651 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -986,7 +1009,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45B404691B29E68A00DF2CDB /* GtsiapKitTests.swift in Sources */,
+				451A96801C0DD9A500F11967 /* Api.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1255,12 +1278,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = GtsiapKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.mathlogic.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1273,8 +1298,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = GtsiapKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.mathlogic.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
