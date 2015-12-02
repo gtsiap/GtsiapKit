@@ -35,6 +35,10 @@ extension ApiPresentable {
         return self.viewController?.view
     }
     
+    /**
+        - parameter viewContoller: The viewController in which we will operate
+        - returns: Self, in order to be used as a chainable method
+     */
     public func viewControllerForTask(viewController: UIViewController) -> Self {
         self.viewController = viewController
         
@@ -64,11 +68,19 @@ extension ApiPresentable {
 // MARK: Network Activity
 extension ApiPresentable {
 
+    /**
+        - parameter viewContoller: hides the network activity
+        - returns: Self, in order to be used as a chainable method
+     */
     public func hideNetworkActivity() -> Self {
         self.showNetworkActivity = false
         return self
     }
-   
+    
+    /**
+        Call this method in order to **start** the network activity
+        If **showNetworkActivity** is false this method has no effect
+     */
     public func startNetworkActivity() {
         if self.showNetworkActivity && self.view != nil {
             self.view?.addSubview(self.networkIndicator)
@@ -77,13 +89,19 @@ extension ApiPresentable {
             self.networkIndicator.startAnimating()
         }
     }
-
+    
+    /**
+        Call this method in order to **stop** the network activity
+     */
     public func stopNetworkActivity() {
         self.networkIndicator.stopAnimating()
         self.networkIndicator.removeFromSuperview()
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
     
+    /**
+        The default value is true
+    */
     public var showNetworkActivity: Bool {
         get {
             guard let showNetworkActivity =
@@ -106,6 +124,9 @@ extension ApiPresentable {
         }
     }
     
+    /**
+        The network indicator which will be presented
+     */
     public var networkIndicator: ActivityIndicatorView {
         get {
             if let indicator =
@@ -132,6 +153,11 @@ extension ApiPresentable {
 
 // MARK: Errors
 extension ApiPresentable {
+    /**
+        A UIAlertViewController convenience method
+        - parameter error: the localizedDescrition of the error will be shown
+        - parameter completed: its called when the user dismisses the alert
+     */
     public func showError(error: NSError, completed: (() -> ())? = nil) {
         self.viewController?.showAlert(
             "Server Error",
@@ -140,6 +166,12 @@ extension ApiPresentable {
         )
     }
     
+    /**
+        A UIAlertViewController convenience method
+        - parameter error: the localizedDescrition of the error will be shown
+        - parameter message: the message of the UIAlertViewController
+        - parameter completed: its called when the user dismisses the alert
+     */
     public func showError(
         error: String,
         message: String,
@@ -152,6 +184,9 @@ extension ApiPresentable {
             )
     }
     
+    /**
+        An appropriate UIAlertViewController for "no intenet connection"
+     */
     public func showNoNetworkConnection() {
         let alertController = UIAlertController(
             title: "Network Connection issue",
