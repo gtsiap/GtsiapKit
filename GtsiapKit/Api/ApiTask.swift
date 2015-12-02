@@ -25,10 +25,6 @@ public class ApiTask: Taskable {
 
     public typealias ApiTaskHandler = (data: [String : AnyObject]) -> ()
 
-    public var viewController: UIViewController?
-    public var toastView: ToastView
-    public var showNetworkActivity: Bool
-    public var networkIndicator: ActivityIndicatorView
     public var offlineDelegate: RequestableOfflineDelegate?
     public var taskDidFinish: ((task: ApiTask) -> ())?
     public var urlRequest: URLRequestConvertible?
@@ -47,11 +43,7 @@ public class ApiTask: Taskable {
         retrieveData(completionHandler)
     }
 
-    init() {
-        self.networkIndicator = ActivityIndicatorView()
-        self.showNetworkActivity = true
-        self.toastView = ApiTask.createToast()
-    }
+    init() {}
 
     public func retrieveData(completionHandler: ApiTaskHandler) {
 

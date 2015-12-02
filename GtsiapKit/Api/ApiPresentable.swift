@@ -20,101 +20,55 @@
 
 import UIKit
 
-public protocol ApiPresentable: class {
-
-    var viewController: UIViewController? { get set }
-    var toastView: ToastView { get set }
-    var showNetworkActivity: Bool { get set }
-    var networkIndicator: ActivityIndicatorView { get set }
-
+private struct ApiPresentableKey {
+    static var networkIndicatorKey = "apipresentable_network_indicator"
+    static var showNetworkActivityKey = "apipresentable_show_network_activity_key"
+    static var viewControllerKey = "apipresentable_view_controller_key"
+    static var toastKey = "apipresentable_toast_key"
 }
 
+public protocol ApiPresentable: class {}
 
+// MARK: View Controller
 extension ApiPresentable {
-
     private var view: UIView? {
         return self.viewController?.view
     }
+    
+    public func viewControllerForTask(viewController: UIViewController) -> Self {
+        self.viewController = viewController
+        
+        return self
+    }
+    
+    public var viewController: UIViewController? {
+        get {
+            return objc_getAssociatedObject(
+                self,
+                &ApiPresentableKey.viewControllerKey
+            )as? UIViewController
+        }
+        
+        set(newValue) {
+            objc_setAssociatedObject(
+                self,
+                &ApiPresentableKey.viewControllerKey,
+                newValue,
+                .OBJC_ASSOCIATION_RETAIN_NONATOMIC
+            )
+        }
+    }
+    
+}
 
-    // MARK: chainable
+// MARK: Network Activity
+extension ApiPresentable {
+
     public func hideNetworkActivity() -> Self {
         self.showNetworkActivity = false
         return self
     }
-
-    public func viewControllerForTask(viewController: UIViewController) -> Self {
-        self.viewController = viewController
-
-        return self
-    }
-
-    public func toast(text: String) -> Self {
-        self.toastView.text = text
-        return self
-    }
-
-    // MARK: funcs
-
-    public func showToast() {
-        self.view?.addSubview(self.toastView)
-        self.toastView.showToast()
-    }
-
-    public static func createToast(text: String? = nil) -> ToastView {
-        let toastView = ToastView()
-
-        if let toastText = text {
-            toastView.text = toastText
-        }
-
-        toastView.toastDidHide = {
-            toastView.removeFromSuperview()
-        }
-
-        return toastView
-    }
-
-    public func showError(error: NSError, completed: (() -> ())? = nil) {
-        self.viewController?.showAlert(
-            "Server Error",
-            message: error.localizedDescription,
-            completed: completed
-        )
-    }
-
-    public func showError(
-        error: String,
-        message: String,
-        completed: (() -> ())? = nil
-    ) {
-        self.viewController?.showAlert(
-            error,
-            message: message,
-            completed: completed
-        )
-    }
-
-    public func showNoNetworkConnection() {
-        let alertController = UIAlertController(
-            title: "Network Connection issue",
-            message: "It seems that the device isn't connected to a network",
-            preferredStyle: .Alert
-        )
-
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { action in
-            self.viewController?.dismissViewControllerAnimated(true, completion: nil)
-        }
-
-        alertController.addAction(okAction)
-
-        self.viewController?.presentViewController(
-            alertController,
-            animated: true,
-            completion: nil
-        )
-
-    }
-
+   
     public func startNetworkActivity() {
         if self.showNetworkActivity && self.view != nil {
             self.view?.addSubview(self.networkIndicator)
@@ -128,5 +82,141 @@ extension ApiPresentable {
         self.networkIndicator.stopAnimating()
         self.networkIndicator.removeFromSuperview()
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
+    
+    public var showNetworkActivity: Bool {
+        get {
+            guard let showNetworkActivity =
+                objc_getAssociatedObject(
+                    self,
+                    &ApiPresentableKey.showNetworkActivityKey
+                    )as? Bool
+                else { return true }
+            
+            return showNetworkActivity
+        }
+        
+        set(newValue) {
+            objc_setAssociatedObject(
+                self,
+                &ApiPresentableKey.showNetworkActivityKey,
+                newValue,
+                .OBJC_ASSOCIATION_RETAIN_NONATOMIC
+            )
+        }
+    }
+    
+    public var networkIndicator: ActivityIndicatorView {
+        get {
+            if let indicator =
+                objc_getAssociatedObject(
+                    self,
+                    &ApiPresentableKey.networkIndicatorKey
+                )as? ActivityIndicatorView
+            {
+                return indicator
+            }
+            
+            let indicator = ActivityIndicatorView()
+            objc_setAssociatedObject(
+                self,
+                &ApiPresentableKey.networkIndicatorKey,
+                indicator,
+                .OBJC_ASSOCIATION_RETAIN_NONATOMIC
+            )
+            
+            return indicator
+        }
+    }
+}
+
+// MARK: Errors
+extension ApiPresentable {
+    public func showError(error: NSError, completed: (() -> ())? = nil) {
+        self.viewController?.showAlert(
+            "Server Error",
+            message: error.localizedDescription,
+            completed: completed
+        )
+    }
+    
+    public func showError(
+        error: String,
+        message: String,
+        completed: (() -> ())? = nil
+    ) {
+            self.viewController?.showAlert(
+                error,
+                message: message,
+                completed: completed
+            )
+    }
+    
+    public func showNoNetworkConnection() {
+        let alertController = UIAlertController(
+            title: "Network Connection issue",
+            message: "It seems that the device isn't connected to a network",
+            preferredStyle: .Alert
+        )
+        
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { action in
+            self.viewController?.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        alertController.addAction(okAction)
+        
+        self.viewController?.presentViewController(
+            alertController,
+            animated: true,
+            completion: nil
+        )
+        
+    }
+}
+
+// MARK: Toast
+extension ApiPresentable {
+    
+    public func toast(text: String) -> Self {
+        self.toastView.text = text
+        return self
+    }
+    
+    public func showToast() {
+        self.view?.addSubview(self.toastView)
+        self.toastView.showToast()
+    }
+    
+    private func createToast() -> ToastView {
+        let toastView = ToastView()
+        
+        toastView.toastDidHide = {
+            toastView.removeFromSuperview()
+        }
+        
+        return toastView
+    }
+    
+    public var toastView: ToastView {
+        get {
+            if let toastView =
+                objc_getAssociatedObject(
+                    self,
+                    &ApiPresentableKey.toastKey
+                )as? ToastView
+            {
+                return toastView
+            }
+            
+            let toastView = createToast()
+            objc_setAssociatedObject(
+                self,
+                &ApiPresentableKey.toastKey,
+                toastView,
+                .OBJC_ASSOCIATION_RETAIN_NONATOMIC
+            )
+            
+            return toastView
+        }
     }
 }

@@ -22,16 +22,7 @@ import UIKit
 
 public class ApiGroupTask {
 
-    public var viewController: UIViewController?
-    public var toastView: ToastView
-    public var showNetworkActivity: Bool
-    public var networkIndicator: ActivityIndicatorView
-
-    init() {
-        self.networkIndicator = ActivityIndicatorView()
-        self.showNetworkActivity = true
-        self.toastView = ApiTask.createToast()
-    }
+    init() {}
 
     public var tasks: [ApiTask] = [ApiTask]()
 }
