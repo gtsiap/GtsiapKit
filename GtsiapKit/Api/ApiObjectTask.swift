@@ -26,7 +26,6 @@ public class ApiObjectTask<T>: ApiTask {
     public private(set) var taskResultProvider: ApiTaskResultProvider<T>!
 
     private var startHandler: ObjectTaskHandler?
-    private var fetchMoreProvider: ApiTaskFetchMoreProvider?
     
     override init() {
         super.init()
@@ -38,6 +37,7 @@ public class ApiObjectTask<T>: ApiTask {
     {
         if self.taskResultProvider.hasDataAvailable {
             self.startHandler = completionHandler
+            self.request = nil
             return self
         }
 
