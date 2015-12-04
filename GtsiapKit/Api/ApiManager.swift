@@ -21,6 +21,7 @@
 let networkLogger = Logger.defaultLogger(["network"])
 
 import Alamofire
+import JSONAPIMapper
 
 public class ApiManager {
     public static var sharedManager: ApiManager = ApiManager()
@@ -61,7 +62,15 @@ public class ApiManager {
         return task
 
     }
-
+    
+    func task<T: Mappable>() -> JSONApiTask<T> {
+        let task = JSONApiTask<T> ()
+        
+        self.didCreateNewTask?(newTask: task)
+        
+        return task
+    }
+    
     public func groupTask(tasks: [ApiTask]) -> ApiGroupTask {
         let task = ApiGroupTask()
         task.tasks = tasks

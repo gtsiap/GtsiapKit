@@ -18,36 +18,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import GtsiapKit
+import UIKit
+
 import Alamofire
 import JSONAPIMapper
 
-public extension ApiManager {
+public class JSONApiTask<T: Mappable>: ApiObjectTask<T> {
     
-    // MARK: tasks
-    @available(*, deprecated=1.0, message="Use JSONApiTask")
-    public func fetchResource<T: Mappable> (
-        objectTask: ApiObjectTask<T>,
-        includeRelationships: Bool = true
-    ) -> ApiObjectTask<T> {
-
-        var includeObjects = ""
-        for (index, it) in T.relationships.keys.enumerate() {
-            if index != 0 {
-                includeObjects += ","
-            }
-
-            includeObjects += it
-        }
-
-        objectTask.urlRequest = fetchURLRequest(
-            T.resource,
-            parameters: [
-                "include": includeObjects
-            ]
-        )
-
-        objectTask.taskResultProvider.objectTransformer =
+    override init() {
+        super.init()
+        
+        self.taskResultProvider.objectTransformer =
         { (data: [String : AnyObject]) -> ([T]?) in
             do {
                 return try Mapper<T>().fromJSON(data)
@@ -58,18 +39,41 @@ public extension ApiManager {
             }
         }
 
-        return objectTask
-
     }
     
-    @available(*, deprecated=1.0, message="Use JSONApiTask")
-    public func createResource<T: Mappable> (
+    public func fetchResource(
+        includeRelationships: Bool = true,
+        completionHandler: ObjectTaskHandler
+    ) -> Self {
+            
+        var includeObjects = ""
+        for (index, it) in T.relationships.keys.enumerate() {
+            if index != 0 {
+                includeObjects += ","
+            }
+                
+            includeObjects += it
+        }
+            
+        self.urlRequest = fetchURLRequest(
+            T.resource,
+            parameters: [
+                "include": includeObjects
+            ]
+        )
+        
+        retrieveObject(completionHandler)
+            
+        return self
+    }
+    
+    public func createResource (
         resourceObject: T,
-        objectTask: ApiObjectTask<T>
-    ) -> ApiObjectTask<T> {
-
+        completionHandler: ObjectTaskHandler
+    ) -> Self {
+            
         let body: String
-
+        
         do {
             body = try Mapper<T>().createResourceJSON(resourceObject)
         } catch let error {
@@ -77,80 +81,68 @@ public extension ApiManager {
             print(error)
             fatalError()
         }
-
-        objectTask.urlRequest = createURLRequest(
+            
+        self.urlRequest = createURLRequest(
             T.resource,
             body: body
         )
-
-        objectTask.taskResultProvider.objectTransformer =
-        { (data: [String : AnyObject]) -> ([T]?) in
-            do {
-                return try Mapper<T>().fromJSON(data)
-            } catch let error {
-                print("Parsing Error: ")
-                print(error)
-                return nil
-            }
-        }
-
-        return objectTask
+            
+        return self
     }
-
+    
     // MARK: private funcs
-
+    
     private func fetchURLRequest(
         path: String,
         parameters: [String : String] = [String : String]()
     ) -> NSMutableURLRequest {
-
-        let URL = NSURL(string: self.baseUrl)!
+            
+        let URL = NSURL(string: ApiManager.sharedManager.baseUrl)!
         let urlRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
         urlRequest.HTTPMethod = Alamofire.Method.GET.rawValue
-
+            
         addHeaders(urlRequest)
         addCredentials(urlRequest)
-
+            
         let encoding = Alamofire.ParameterEncoding.URL
         return encoding.encode(urlRequest, parameters: parameters).0
     }
-
+    
     private func createURLRequest(
         path: String,
         body: String
     ) -> NSMutableURLRequest {
-
-        let URL = NSURL(string: self.baseUrl)!
+        let URL = NSURL(string: ApiManager.sharedManager.baseUrl)!
         let urlRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
         urlRequest.HTTPMethod = Alamofire.Method.POST.rawValue
-
+            
         addHeaders(urlRequest)
         addCredentials(urlRequest)
-
+        
         urlRequest.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
-
+            
         return urlRequest
     }
-
+    
     // MARK: common private funcs
-
+    
     private func addHeaders(urlRequest: NSMutableURLRequest) {
         urlRequest.setValue("application/vnd.api+json", forHTTPHeaderField: "Accept")
         urlRequest.setValue("application/vnd.api+json", forHTTPHeaderField: "Content-Type")
     }
-
+    
     private func addCredentials(urlRequest: NSMutableURLRequest) {
-
-        let email = self.userCredentials.email
-        let password = self.userCredentials.password
-
+        
+        let email = ApiManager.sharedManager.userCredentials.email
+        let password = ApiManager.sharedManager.userCredentials.password
+        
         if !email.isEmpty && !password.isEmpty {
             let loginString = NSString(format: "%@:%@", email, password)
             let loginData: NSData = loginString.dataUsingEncoding(NSUTF8StringEncoding)!
             let base64LoginString = loginData.base64EncodedStringWithOptions([])
-
+            
             urlRequest.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
         }
     }
-
 }
+
