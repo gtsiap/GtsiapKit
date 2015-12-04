@@ -24,7 +24,7 @@ struct TableViewDataSource<
     T: AnyObject, Cell: UITableViewCell
     where Cell: TableViewCellType, Cell.ModelType == T> : TableViewDataSourceType {
     
-    private var tableViewController: BaseTableViewController
+    private weak var tableViewController: BaseTableViewController!
     var sections: [TableViewSection<T, Cell>]
     
     init(tableViewController: BaseTableViewController, sections: [TableViewSection<T, Cell>]) {
@@ -45,16 +45,17 @@ struct TableViewDataSource<
     func cellForRowAtIndexPath(tableViewController: UITableViewController, indexPath: NSIndexPath) -> UITableViewCell {
         let sectionIndex = indexPath.section
         let section = self.sections[sectionIndex]
-        
         let rowIndex = indexPath.row
+        
         let item = section.items[rowIndex]
         
         let cellIdentifier = section.cellIdentifierHandler(item: item, indexPath: indexPath)
-        let cell = self.tableViewController.tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell
+        let cell = self.tableViewController.tableView
+            .dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell
         cell.gt_viewController = self.tableViewController
         cell.configure(item)
         
         return cell
     }
-    
+ 
 }
