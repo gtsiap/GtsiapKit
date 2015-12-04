@@ -83,14 +83,62 @@ public class TableViewSection<T: AnyObject, Cell: TableViewCellType
         self.items = items
     }
     
-    /**
-        Adds the item in the section
-        - parameter item: the new item of the section
-     */
-    public func appendItem(item: T) {
-        self.items.append(item)
-    }
-    
     var tableViewController: BaseTableViewController!
 
+    private let fetchingActivityIndicator: UIActivityIndicatorView = {
+        let size = UIScreen.mainScreen().bounds.height * 0.2
+        let indicator = UIActivityIndicatorView(
+            frame: CGRectMake(0, 0, size, size)
+        )
+        
+        indicator.activityIndicatorViewStyle = .WhiteLarge
+        indicator.color = UIColor.blackColor()
+        indicator.startAnimating()
+        return indicator
+    }()
+    
+    /**
+        Adds the items in the section
+        - parameter animation: The tableview cell animation for the operation
+                                the default value is **.Fade**
+     
+        - parameter completionHandler: It must be called when the operation finishes.
+                                        **items**: The new items of the section
+     */
+    public func appendItems(
+        animation: UITableViewRowAnimation = .Fade,
+        completionHandler: (completed: (items: [T]) -> ()) -> ()
+    ) {
+        let tableView = self.tableViewController.tableView
+
+        guard let
+            currentIndexPath = tableView.indexPathsForVisibleRows?.last
+        else { return }
+        
+        let currentRow = currentIndexPath.row
+        let sectionIndex = currentIndexPath.section
+        tableView.tableFooterView = self.fetchingActivityIndicator
+        
+        completionHandler() { items in
+            
+            var newIndexPaths = [NSIndexPath]()
+            
+            for (index, item) in items.enumerate() {
+                // If we had 25 rows and if we are in the first
+                // loop, then we have:
+                // 25 old rows 
+                // 1 new row
+                // and the index is 0
+                // so the position of the new index which is 26 is 26 = (25 + 0 + 1)
+                let newRow = currentRow + index + 1
+                newIndexPaths.append(NSIndexPath(forRow: newRow, inSection: sectionIndex))
+                self.items.append(item)
+            }
+            tableView.beginUpdates()
+            tableView.insertRowsAtIndexPaths(newIndexPaths, withRowAnimation: animation)
+            tableView.endUpdates()
+            tableView.tableFooterView = nil
+        }
+    }
+    
 }

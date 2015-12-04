@@ -26,7 +26,7 @@ import UIKit
  */
 public class BaseTableViewController: UITableViewController {
     var dataSourceable: TableViewDataSourceType!
-
+    
     public var useAutoHeightCells: Bool { return true }
     public var performLoadDataOnLoad: Bool { return true }
     
