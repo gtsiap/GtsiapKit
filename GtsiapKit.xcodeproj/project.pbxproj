@@ -35,6 +35,7 @@
 		455EB2A01BD562F600987F40 /* Hobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455EB29F1BD562F600987F40 /* Hobby.swift */; };
 		4565C2101BD6518C00B324A9 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4565C20F1BD6518C00B324A9 /* UITableView.swift */; };
 		4565C2121BD65A1700B324A9 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4565C2111BD65A1700B324A9 /* Int.swift */; };
+		456CFB4E1C11B6380047B0CE /* FetchMoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456CFB4D1C11B6380047B0CE /* FetchMoreTableViewController.swift */; };
 		456E59F91BB2F98B00A04651 /* JSONAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 456E59F81BB2F98B00A04651 /* JSONAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		456E5A001BB2F98B00A04651 /* JSONAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456E59F61BB2F98B00A04651 /* JSONAPI.framework */; };
 		456E5A051BB2F98B00A04651 /* JSONAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A041BB2F98B00A04651 /* JSONAPITests.swift */; };
@@ -157,6 +158,7 @@
 		455EB29F1BD562F600987F40 /* Hobby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hobby.swift; sourceTree = "<group>"; };
 		4565C20F1BD6518C00B324A9 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		4565C2111BD65A1700B324A9 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		456CFB4D1C11B6380047B0CE /* FetchMoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchMoreTableViewController.swift; sourceTree = "<group>"; };
 		456E59F61BB2F98B00A04651 /* JSONAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		456E59F81BB2F98B00A04651 /* JSONAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONAPI.h; sourceTree = "<group>"; };
 		456E59FA1BB2F98B00A04651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -654,6 +656,7 @@
 				45F2B2A71BEFBF89005AA280 /* TableViewDataSource.swift */,
 				453C84FC1BF3838900AA0797 /* TableViewControllerPullToRefreshType.swift */,
 				45C27D411BF758AD00AC5517 /* DataSourceMaker.swift */,
+				456CFB4D1C11B6380047B0CE /* FetchMoreTableViewController.swift */,
 			);
 			path = TableViewController;
 			sourceTree = "<group>";
@@ -963,6 +966,7 @@
 				45532F0A1BEF530F002E8374 /* TableViewCellType.swift in Sources */,
 				4570D2B41B6CB97B00F6AA37 /* UIColor+Rgb.swift in Sources */,
 				4598C8F51BB97CA500C4216F /* Credentials.swift in Sources */,
+				456CFB4E1C11B6380047B0CE /* FetchMoreTableViewController.swift in Sources */,
 				453C84FD1BF3838900AA0797 /* TableViewControllerPullToRefreshType.swift in Sources */,
 				45FAFA641B8DDE8700C4000E /* OperationQueue.swift in Sources */,
 				45B74DA31BD66BF70008CD7B /* SegmentedControl.swift in Sources */,

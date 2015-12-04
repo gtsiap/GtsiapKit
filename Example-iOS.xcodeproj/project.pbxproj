@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450487E71C0F21A400927B8F /* RedditTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 450487E91C0F21A400927B8F /* RedditTableViewController.storyboard */; };
+		450487EC1C0F21DE00927B8F /* RedditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450487EB1C0F21DE00927B8F /* RedditTableViewController.swift */; };
+		450487EE1C0F223800927B8F /* RedditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450487ED1C0F223800927B8F /* RedditTableViewCell.swift */; };
+		450487F01C0F227C00927B8F /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450487EF1C0F227C00927B8F /* Thread.swift */; };
 		4534163E1BC419420074FD50 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4534162E1BC419190074FD50 /* Locksmith.framework */; };
 		453416411BC419920074FD50 /* TestStaticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453416401BC419920074FD50 /* TestStaticTableViewController.swift */; };
 		4546A14E1B78D21000DCE648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546A14D1B78D21000DCE648 /* AppDelegate.swift */; };
@@ -114,6 +118,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		450487E81C0F21A400927B8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RedditTableViewController.storyboard; sourceTree = "<group>"; };
+		450487EB1C0F21DE00927B8F /* RedditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditTableViewController.swift; sourceTree = "<group>"; };
+		450487ED1C0F223800927B8F /* RedditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditTableViewCell.swift; sourceTree = "<group>"; };
+		450487EF1C0F227C00927B8F /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		4534162E1BC419190074FD50 /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
 		453416401BC419920074FD50 /* TestStaticTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStaticTableViewController.swift; sourceTree = "<group>"; };
 		4546A1481B78D21000DCE648 /* Example-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +183,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		450487EA1C0F21C700927B8F /* RedditTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				450487EB1C0F21DE00927B8F /* RedditTableViewController.swift */,
+				450487ED1C0F223800927B8F /* RedditTableViewCell.swift */,
+				450487EF1C0F227C00927B8F /* Thread.swift */,
+			);
+			path = RedditTableViewController;
+			sourceTree = "<group>";
+		};
 		4534163F1BC419700074FD50 /* StaticTableViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +227,7 @@
 		4546A14A1B78D21000DCE648 /* Example-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				450487EA1C0F21C700927B8F /* RedditTableViewController */,
 				45532F101BEF55BD002E8374 /* AnimalTableViewController */,
 				45532F001BEE371B002E8374 /* MultilineSegmentedControl */,
 				45532EEB1BEE33B0002E8374 /* Storyboards */,
@@ -246,6 +265,7 @@
 				4546A1511B78D21000DCE648 /* Main.storyboard */,
 				45532F071BEE376C002E8374 /* MultilineSegmentedControl.storyboard */,
 				45532F191BEF5744002E8374 /* AnimalTableViewController.storyboard */,
+				450487E91C0F21A400927B8F /* RedditTableViewController.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -462,6 +482,7 @@
 			files = (
 				4546A1531B78D21000DCE648 /* Main.storyboard in Resources */,
 				45532EF81BEE3462002E8374 /* SearchView.storyboard in Resources */,
+				450487E71C0F21A400927B8F /* RedditTableViewController.storyboard in Resources */,
 				45532EEE1BEE33D7002E8374 /* ActivityIndicator.storyboard in Resources */,
 				45532F171BEF5744002E8374 /* AnimalTableViewController.storyboard in Resources */,
 				45532F051BEE376C002E8374 /* MultilineSegmentedControl.storyboard in Resources */,
@@ -506,12 +527,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				450487EE1C0F223800927B8F /* RedditTableViewCell.swift in Sources */,
 				45D4BD001B78D41A006BE819 /* ActivityIndicatorTableViewController.swift in Sources */,
 				45532F121BEF55BD002E8374 /* AnimalTableViewController.swift in Sources */,
 				45D4BD061B78D41A006BE819 /* SearchTableViewController.swift in Sources */,
 				45532F141BEF564E002E8374 /* AnimalTableViewCell.swift in Sources */,
 				45D4BD041B78D41A006BE819 /* TestOperation.swift in Sources */,
 				4546A1501B78D21000DCE648 /* ViewController.swift in Sources */,
+				450487F01C0F227C00927B8F /* Thread.swift in Sources */,
 				45D4BD031B78D41A006BE819 /* OperationViewController.swift in Sources */,
 				45D4BD021B78D41A006BE819 /* NavigationController.swift in Sources */,
 				4546A14E1B78D21000DCE648 /* AppDelegate.swift in Sources */,
@@ -519,6 +542,7 @@
 				45D4BD051B78D41A006BE819 /* RevealToggleViewController.swift in Sources */,
 				453416411BC419920074FD50 /* TestStaticTableViewController.swift in Sources */,
 				45532F021BEE374F002E8374 /* MultilineSegmentedControl.swift in Sources */,
+				450487EC1C0F21DE00927B8F /* RedditTableViewController.swift in Sources */,
 				45D4BD011B78D41A006BE819 /* ActivityIndicatorView.swift in Sources */,
 				45D4BD071B78D41A006BE819 /* ToastTableViewController.swift in Sources */,
 			);
@@ -548,6 +572,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		450487E91C0F21A400927B8F /* RedditTableViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				450487E81C0F21A400927B8F /* Base */,
+			);
+			name = RedditTableViewController.storyboard;
+			sourceTree = "<group>";
+		};
 		4546A1511B78D21000DCE648 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

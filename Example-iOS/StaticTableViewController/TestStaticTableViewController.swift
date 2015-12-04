@@ -76,6 +76,13 @@ class TestStaticTableViewController: FormsTableViewController {
             self.pushViewController(vc)
         }
         
+        
+        section.addRow(StaticForm(text: "Reddit TableViewController")).didSelectRow = {
+            let vc = UIStoryboard(name: "RedditTableViewController", bundle: nil)
+                .instantiateInitialViewController()!
+            self.pushViewController(vc)
+        }
+        
         self.formSections = [section]
     }
     
