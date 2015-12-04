@@ -21,14 +21,31 @@
 import UIKit
 
 public class ApiTaskResultProvider<T> {
-    var data: [String : AnyObject] =  [String : AnyObject]()
+    var data: [String : AnyObject] =  [String : AnyObject]() {
+        didSet {
+            self.object = self.objectTransformer?(data: self.data)
+        }
+    }
+    
+    var fetchMoreData: [[String : AnyObject]] =  [[String : AnyObject]]() {
+        didSet {
+            guard let
+                fetchMoreData = self.fetchMoreData.last,
+                fetchedMoreObjects = self.objectTransformer?(data: fetchMoreData)
+            else {
+                self.fetchMoreObjects = nil
+                return
+            }
+            
+            self.fetchMoreObjects = fetchedMoreObjects
+        }
+    }
 
     public typealias TransformerHandler = ((data: [String : AnyObject]) -> ([T]?))?
 
-    public var object: [T]? {
-        return self.objectTransformer?(data: self.data)
-    }
-
+    public private(set) var object: [T]?
+    public private(set) var fetchMoreObjects: [T]?
+    
     public var hasDataAvailable:  Bool {
         if self.data.isEmpty {
             return false
@@ -51,7 +68,10 @@ public class ApiTaskResultProvider<T> {
 
     public func needsUpdate() {
         self.data = [String : AnyObject]()
+        self.object = nil
+        
+        self.fetchMoreData.removeAll()
+        self.fetchMoreObjects = nil
     }
-
-
+    
 }

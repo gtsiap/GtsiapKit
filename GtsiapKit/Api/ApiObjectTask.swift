@@ -26,7 +26,8 @@ public class ApiObjectTask<T>: ApiTask {
     public private(set) var taskResultProvider: ApiTaskResultProvider<T>!
 
     private var startHandler: ObjectTaskHandler?
-
+    private var fetchMoreProvider: ApiTaskFetchMoreProvider?
+    
     override init() {
         super.init()
         self.taskResultProvider = ApiTaskResultProvider<T>(task: self)
@@ -37,7 +38,6 @@ public class ApiObjectTask<T>: ApiTask {
     {
         if self.taskResultProvider.hasDataAvailable {
             self.startHandler = completionHandler
-            self.request = nil
             return self
         }
 
@@ -52,6 +52,15 @@ public class ApiObjectTask<T>: ApiTask {
         return self
     }
 
+    public func fetchMore(urlRequest: NSURLRequest, completionHandler: ObjectTaskHandler) -> ApiObjectTask<T> {
+        self.request = doRequest(urlRequest) { data in
+            self.taskResultProvider.fetchMoreData.append(data)
+            completionHandler(result: self.taskResultProvider)
+        }
+        
+        return self
+    }
+    
     public override func start() -> ApiObjectTask<T> {
 
         if let startHandler = self.startHandler {
