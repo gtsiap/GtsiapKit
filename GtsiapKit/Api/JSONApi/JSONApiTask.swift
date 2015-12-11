@@ -86,7 +86,9 @@ public class JSONApiTask<T: Mappable>: ApiObjectTask<T> {
             T.resource,
             body: body
         )
-            
+        
+        retrieveObject(completionHandler)
+        
         return self
     }
     

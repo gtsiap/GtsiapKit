@@ -63,7 +63,7 @@ public class ApiManager {
 
     }
     
-    func task<T: Mappable>() -> JSONApiTask<T> {
+    public func task<T: Mappable>() -> JSONApiTask<T> {
         let task = JSONApiTask<T> ()
         
         self.didCreateNewTask?(newTask: task)
