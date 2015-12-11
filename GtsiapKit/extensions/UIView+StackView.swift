@@ -23,7 +23,9 @@ extension UIView {
                                 the default value is (0, 0, 0, 0)
      */
     public func pinToSuperview(edgeInsets: UIEdgeInsets? = nil) {
-        guard let superview = superview else { return }
+        guard let superview = superview else {
+            fatalError("Did your forget to call addSubview")
+        }
         
         snp_makeConstraints() { make in
             let edges = make.edges.equalTo(superview)
