@@ -8,6 +8,7 @@
 
 import UIKit
 import TZStackView
+import SnapKit
 
 public enum ViewOffset {
     case LeftAndRight
