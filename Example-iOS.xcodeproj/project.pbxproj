@@ -25,13 +25,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		459A28EE1BF5E48300004C76 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4546A1401B78D21000DCE648 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4546A1471B78D21000DCE648;
-			remoteInfo = "Example-iOS";
-		};
 		45D4BD101B78D433006BE819 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 45D4BD091B78D433006BE819 /* GtsiapKit.xcodeproj */;
@@ -81,7 +74,6 @@
 		45532EE21BEE2CDF002E8374 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		45532EE91BEE2D9C002E8374 /* TZStackView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TZStackView.framework; path = Carthage/Build/iOS/TZStackView.framework; sourceTree = "<group>"; };
 		45532EF91BEE3462002E8374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SearchView.storyboard; sourceTree = "<group>"; };
-		459A28E91BF5E48300004C76 /* Example-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Example-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B74D9D1BD66AE20008CD7B /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = ../Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		45D4BCF61B78D41A006BE819 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		45D4BCFA1B78D41A006BE819 /* RevealToggleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealToggleViewController.swift; sourceTree = "<group>"; };
@@ -101,13 +93,6 @@
 				45532EE31BEE2CDF002E8374 /* Alamofire.framework in Frameworks */,
 				45B74D9E1BD66AE20008CD7B /* SnapKit.framework in Frameworks */,
 				45532EEA1BEE2D9C002E8374 /* TZStackView.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		459A28E61BF5E48300004C76 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				4546A1481B78D21000DCE648 /* Example-iOS.app */,
-				459A28E91BF5E48300004C76 /* Example-iOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,24 +193,6 @@
 			productReference = 4546A1481B78D21000DCE648 /* Example-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		459A28E81BF5E48300004C76 /* Example-iOSUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 459A28F71BF5E48300004C76 /* Build configuration list for PBXNativeTarget "Example-iOSUITests" */;
-			buildPhases = (
-				459A28E51BF5E48300004C76 /* Sources */,
-				459A28E61BF5E48300004C76 /* Frameworks */,
-				459A28E71BF5E48300004C76 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				459A28EF1BF5E48300004C76 /* PBXTargetDependency */,
-			);
-			name = "Example-iOSUITests";
-			productName = "Example-iOSUITests";
-			productReference = 459A28E91BF5E48300004C76 /* Example-iOSUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -240,10 +206,6 @@
 				TargetAttributes = {
 					4546A1471B78D21000DCE648 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					459A28E81BF5E48300004C76 = {
-						CreatedOnToolsVersion = 7.1;
-						TestTargetID = 4546A1471B78D21000DCE648;
 					};
 				};
 			};
@@ -267,7 +229,6 @@
 			projectRoot = "";
 			targets = (
 				4546A1471B78D21000DCE648 /* Example-iOS */,
-				459A28E81BF5E48300004C76 /* Example-iOSUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -298,13 +259,6 @@
 				45532EF81BEE3462002E8374 /* SearchView.storyboard in Resources */,
 				4546A1581B78D21000DCE648 /* LaunchScreen.xib in Resources */,
 				4546A1551B78D21000DCE648 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		459A28E71BF5E48300004C76 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,21 +297,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		459A28E51BF5E48300004C76 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		459A28EF1BF5E48300004C76 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4546A1471B78D21000DCE648 /* Example-iOS */;
-			targetProxy = 459A28EE1BF5E48300004C76 /* PBXContainerItemProxy */;
-		};
 		45D4BD1C1B78D445006BE819 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GtsiapKit;
@@ -509,33 +451,6 @@
 			};
 			name = Release;
 		};
-		459A28F01BF5E48300004C76 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				INFOPLIST_FILE = "Example-iOSUITests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "eu.mathlogic.Example-iOSUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "Example-iOS";
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		459A28F11BF5E48300004C76 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "Example-iOSUITests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "eu.mathlogic.Example-iOSUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "Example-iOS";
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -553,15 +468,6 @@
 			buildConfigurations = (
 				4546A1681B78D21000DCE648 /* Debug */,
 				4546A1691B78D21000DCE648 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		459A28F71BF5E48300004C76 /* Build configuration list for PBXNativeTarget "Example-iOSUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				459A28F01BF5E48300004C76 /* Debug */,
-				459A28F11BF5E48300004C76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
