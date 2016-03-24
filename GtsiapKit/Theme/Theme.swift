@@ -56,7 +56,6 @@ extension Themeable {
         segmentedAppearance()
         switchAppearance()
         navigationBarAppearance()
-        activityIndicatorViewAppearance()
 
         self.appearanceForTabBar?()
     }
@@ -107,14 +106,6 @@ extension Themeable {
             NSForegroundColorAttributeName: textColor,
             NSFontAttributeName: smallBoldFont()
         ], forState: .Selected)
-    }
-
-    public func activityIndicatorViewAppearance() {
-        if let color = self.primaryColor {
-            ActivityIndicatorView
-                .activityIndicatorViewStyle
-                .backgroundColor = color
-        }
     }
 
     // MARK: funcs
