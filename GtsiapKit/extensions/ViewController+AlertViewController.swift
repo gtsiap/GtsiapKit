@@ -24,7 +24,7 @@ extension UIViewController {
 
     public func showAlert(
         title: String,
-        message: String,
+        message: String? = nil,
         completed: (() -> ())? = nil
     ){
         let alertVC = UIAlertController(
