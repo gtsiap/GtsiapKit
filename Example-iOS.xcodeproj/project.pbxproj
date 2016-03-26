@@ -7,16 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4534163E1BC419420074FD50 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4534162E1BC419190074FD50 /* Locksmith.framework */; };
 		4546A14E1B78D21000DCE648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546A14D1B78D21000DCE648 /* AppDelegate.swift */; };
 		4546A1501B78D21000DCE648 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546A14F1B78D21000DCE648 /* ViewController.swift */; };
 		4546A1531B78D21000DCE648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4546A1511B78D21000DCE648 /* Main.storyboard */; };
 		4546A1551B78D21000DCE648 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4546A1541B78D21000DCE648 /* Images.xcassets */; };
 		4546A1581B78D21000DCE648 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4546A1561B78D21000DCE648 /* LaunchScreen.xib */; };
-		45532EE31BEE2CDF002E8374 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45532EE21BEE2CDF002E8374 /* Alamofire.framework */; };
-		45532EEA1BEE2D9C002E8374 /* TZStackView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45532EE91BEE2D9C002E8374 /* TZStackView.framework */; };
 		45532EF81BEE3462002E8374 /* SearchView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45532EFA1BEE3462002E8374 /* SearchView.storyboard */; };
-		45B74D9E1BD66AE20008CD7B /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B74D9D1BD66AE20008CD7B /* SnapKit.framework */; };
 		45D4BD021B78D41A006BE819 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4BCF61B78D41A006BE819 /* NavigationController.swift */; };
 		45D4BD051B78D41A006BE819 /* RevealToggleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4BCFA1B78D41A006BE819 /* RevealToggleViewController.swift */; };
 		45D4BD061B78D41A006BE819 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4BCFC1B78D41A006BE819 /* SearchTableViewController.swift */; };
@@ -31,13 +27,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 45B404561B29E68A00DF2CDB;
 			remoteInfo = GtsiapKit;
-		};
-		45D4BD121B78D433006BE819 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45D4BD091B78D433006BE819 /* GtsiapKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 45B404611B29E68A00DF2CDB;
-			remoteInfo = GtsiapKitTests;
 		};
 		45D4BD1B1B78D445006BE819 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -63,7 +52,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4534162E1BC419190074FD50 /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
 		4546A1481B78D21000DCE648 /* Example-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4546A14C1B78D21000DCE648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4546A14D1B78D21000DCE648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,10 +59,7 @@
 		4546A1521B78D21000DCE648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4546A1541B78D21000DCE648 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4546A1571B78D21000DCE648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		45532EE21BEE2CDF002E8374 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		45532EE91BEE2D9C002E8374 /* TZStackView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TZStackView.framework; path = Carthage/Build/iOS/TZStackView.framework; sourceTree = "<group>"; };
 		45532EF91BEE3462002E8374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SearchView.storyboard; sourceTree = "<group>"; };
-		45B74D9D1BD66AE20008CD7B /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = ../Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		45D4BCF61B78D41A006BE819 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		45D4BCFA1B78D41A006BE819 /* RevealToggleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealToggleViewController.swift; sourceTree = "<group>"; };
 		45D4BCFC1B78D41A006BE819 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
@@ -89,10 +74,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				45D4BD181B78D441006BE819 /* GtsiapKit.framework in Frameworks */,
-				4534163E1BC419420074FD50 /* Locksmith.framework in Frameworks */,
-				45532EE31BEE2CDF002E8374 /* Alamofire.framework in Frameworks */,
-				45B74D9E1BD66AE20008CD7B /* SnapKit.framework in Frameworks */,
-				45532EEA1BEE2D9C002E8374 /* TZStackView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,10 +83,6 @@
 		4546A13F1B78D21000DCE648 = {
 			isa = PBXGroup;
 			children = (
-				45532EE91BEE2D9C002E8374 /* TZStackView.framework */,
-				45532EE21BEE2CDF002E8374 /* Alamofire.framework */,
-				45B74D9D1BD66AE20008CD7B /* SnapKit.framework */,
-				4534162E1BC419190074FD50 /* Locksmith.framework */,
 				45D4BD091B78D433006BE819 /* GtsiapKit.xcodeproj */,
 				4546A14A1B78D21000DCE648 /* Example-iOS */,
 				4546A1491B78D21000DCE648 /* Products */,
@@ -165,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				45D4BD111B78D433006BE819 /* GtsiapKit.framework */,
-				45D4BD131B78D433006BE819 /* GtsiapKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,13 +217,6 @@
 			remoteRef = 45D4BD101B78D433006BE819 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		45D4BD131B78D433006BE819 /* GtsiapKitTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GtsiapKitTests.xctest;
-			remoteRef = 45D4BD121B78D433006BE819 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -272,8 +241,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Locksmith.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TZStackView.framework",
 			);
 			outputPaths = (

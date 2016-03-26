@@ -1,0 +1,3 @@
+github "SnapKit/SnapKit" >= 0.14.0
+github "tomvanzummeren/TZStackView" >= 1.1.1
+

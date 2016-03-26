@@ -7,12 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		450D40031BE14F7E00A1293B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456E5A581BB3039C00A04651 /* Alamofire.framework */; };
-		450D40041BE14F8200A1293B /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4598C8F81BB981E900C4216F /* Locksmith.framework */; };
 		450D40061BE14F8700A1293B /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450D40051BE14F8700A1293B /* SnapKit.framework */; };
 		450D40081BE14FA200A1293B /* TZStackView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450D40071BE14FA200A1293B /* TZStackView.framework */; };
-		451A967D1C0DD5B200F11967 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456E5A581BB3039C00A04651 /* Alamofire.framework */; };
-		451A96801C0DD9A500F11967 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451A967F1C0DD9A500F11967 /* Api.swift */; };
 		453F68351B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */; };
 		455DA14C1BC3F96F005A61D7 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DA14B1BC3F96F005A61D7 /* UIColor+hex.swift */; };
 		4565C2101BD6518C00B324A9 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4565C20F1BD6518C00B324A9 /* UITableView.swift */; };
@@ -30,7 +26,6 @@
 		45B2AE4E1B4257B000DE467B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B2AE4D1B4257B000DE467B /* Theme.swift */; };
 		45B2AE531B42597900DE467B /* UIView+shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B2AE521B42597900DE467B /* UIView+shadow.swift */; };
 		45B4045C1B29E68A00DF2CDB /* GtsiapKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 45B4045B1B29E68A00DF2CDB /* GtsiapKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		45B404621B29E68A00DF2CDB /* GtsiapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B404561B29E68A00DF2CDB /* GtsiapKit.framework */; };
 		45B404741B29E79F00DF2CDB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B404731B29E79F00DF2CDB /* Logger.swift */; };
 		45CBA0551C04C8AE0031C3BE /* UIView+StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CBA0541C04C8AE0031C3BE /* UIView+StackView.swift */; };
 		45CE5E3C1BB8767200AE682E /* ViewController+AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE5E3B1BB8767200AE682E /* ViewController+AlertViewController.swift */; };
@@ -41,25 +36,13 @@
 		45FCCB151B52E4B90057AAFD /* UIView+AutolayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FCCB141B52E4B90057AAFD /* UIView+AutolayoutUtils.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		45B404631B29E68A00DF2CDB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45B4044D1B29E68A00DF2CDB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45B404551B29E68A00DF2CDB;
-			remoteInfo = GtsiapKit;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		450D40051BE14F8700A1293B /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		450D40071BE14FA200A1293B /* TZStackView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TZStackView.framework; path = Carthage/Build/iOS/TZStackView.framework; sourceTree = "<group>"; };
-		451A967F1C0DD9A500F11967 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		453F68341B78E4EA00584BDC /* UIApplication+isConnectedToNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+isConnectedToNetwork.swift"; sourceTree = "<group>"; };
 		455DA14B1BC3F96F005A61D7 /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		4565C20F1BD6518C00B324A9 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		4565C2111BD65A1700B324A9 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
-		456E5A581BB3039C00A04651 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		4570D2B31B6CB97B00F6AA37 /* UIColor+Rgb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Rgb.swift"; sourceTree = "<group>"; };
 		457AB5941B2B6365003034F1 /* RevealNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealNavigationController.swift; sourceTree = "<group>"; };
 		457AB5991B2B658D003034F1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -68,7 +51,6 @@
 		459809FB1B7639E300FE0C4C /* FeedbackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
 		459809FE1B763D8200FE0C4C /* RevealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealTableViewController.swift; sourceTree = "<group>"; };
 		45980A511B7653BF00FE0C4C /* NSDate+toString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+toString.swift"; sourceTree = "<group>"; };
-		4598C8F81BB981E900C4216F /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
 		459B0CFC1B3F1BCA00E1A4D3 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		45ADA2881BD0FE1F0002F1DF /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		45B2AE4D1B4257B000DE467B /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -76,8 +58,6 @@
 		45B404561B29E68A00DF2CDB /* GtsiapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GtsiapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B4045A1B29E68A00DF2CDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45B4045B1B29E68A00DF2CDB /* GtsiapKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GtsiapKit.h; sourceTree = "<group>"; };
-		45B404611B29E68A00DF2CDB /* GtsiapKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GtsiapKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		45B404671B29E68A00DF2CDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45B404731B29E79F00DF2CDB /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		45CBA0541C04C8AE0031C3BE /* UIView+StackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+StackView.swift"; sourceTree = "<group>"; };
 		45CE5E3B1BB8767200AE682E /* ViewController+AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+AlertViewController.swift"; sourceTree = "<group>"; };
@@ -93,19 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				450D40031BE14F7E00A1293B /* Alamofire.framework in Frameworks */,
-				450D40041BE14F8200A1293B /* Locksmith.framework in Frameworks */,
 				450D40061BE14F8700A1293B /* SnapKit.framework in Frameworks */,
 				450D40081BE14FA200A1293B /* TZStackView.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		45B4045E1B29E68A00DF2CDB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				45B404621B29E68A00DF2CDB /* GtsiapKit.framework in Frameworks */,
-				451A967D1C0DD5B200F11967 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,10 +142,7 @@
 			children = (
 				450D40071BE14FA200A1293B /* TZStackView.framework */,
 				450D40051BE14F8700A1293B /* SnapKit.framework */,
-				4598C8F81BB981E900C4216F /* Locksmith.framework */,
-				456E5A581BB3039C00A04651 /* Alamofire.framework */,
 				45B404581B29E68A00DF2CDB /* GtsiapKit */,
-				45B404651B29E68A00DF2CDB /* GtsiapKitTests */,
 				45B404571B29E68A00DF2CDB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -185,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				45B404561B29E68A00DF2CDB /* GtsiapKit.framework */,
-				45B404611B29E68A00DF2CDB /* GtsiapKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,23 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				45B4045A1B29E68A00DF2CDB /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		45B404651B29E68A00DF2CDB /* GtsiapKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				451A967F1C0DD9A500F11967 /* Api.swift */,
-				45B404661B29E68A00DF2CDB /* Supporting Files */,
-			);
-			path = GtsiapKitTests;
-			sourceTree = "<group>";
-		};
-		45B404661B29E68A00DF2CDB /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				45B404671B29E68A00DF2CDB /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -280,25 +228,6 @@
 			productReference = 45B404561B29E68A00DF2CDB /* GtsiapKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		45B404601B29E68A00DF2CDB /* GtsiapKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 45B4046F1B29E68A00DF2CDB /* Build configuration list for PBXNativeTarget "GtsiapKitTests" */;
-			buildPhases = (
-				45B4045D1B29E68A00DF2CDB /* Sources */,
-				45B4045E1B29E68A00DF2CDB /* Frameworks */,
-				45B4045F1B29E68A00DF2CDB /* Resources */,
-				451A967E1C0DD79F00F11967 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				45B404641B29E68A00DF2CDB /* PBXTargetDependency */,
-			);
-			name = GtsiapKitTests;
-			productName = GtsiapKitTests;
-			productReference = 45B404611B29E68A00DF2CDB /* GtsiapKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -311,9 +240,6 @@
 				ORGANIZATIONNAME = "Giorgos Tsiapaliokas";
 				TargetAttributes = {
 					45B404551B29E68A00DF2CDB = {
-						CreatedOnToolsVersion = 6.3.2;
-					};
-					45B404601B29E68A00DF2CDB = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
 				};
@@ -332,7 +258,6 @@
 			projectRoot = "";
 			targets = (
 				45B404551B29E68A00DF2CDB /* GtsiapKit */,
-				45B404601B29E68A00DF2CDB /* GtsiapKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -346,34 +271,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		45B4045F1B29E68A00DF2CDB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		451A967E1C0DD79F00F11967 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Locksmith.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/TZStackView.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = "/bin/sh\n/usr/local/bin/carthage copy-frameworks\n/usr/local/bin/carthage copy-frameworks\n/usr/local/bin/carthage copy-frameworks\n/usr/local/bin/carthage copy-frameworks\n";
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		45B404511B29E68A00DF2CDB /* Sources */ = {
@@ -406,23 +304,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		45B4045D1B29E68A00DF2CDB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				451A96801C0DD9A500F11967 /* Api.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		45B404641B29E68A00DF2CDB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45B404551B29E68A00DF2CDB /* GtsiapKit */;
-			targetProxy = 45B404631B29E68A00DF2CDB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		45B4046A1B29E68A00DF2CDB /* Debug */ = {
@@ -559,42 +441,6 @@
 			};
 			name = Release;
 		};
-		45B404701B29E68A00DF2CDB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GtsiapKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "eu.mathlogic.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		45B404711B29E68A00DF2CDB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = GtsiapKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "eu.mathlogic.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -612,15 +458,6 @@
 			buildConfigurations = (
 				45B4046D1B29E68A00DF2CDB /* Debug */,
 				45B4046E1B29E68A00DF2CDB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		45B4046F1B29E68A00DF2CDB /* Build configuration list for PBXNativeTarget "GtsiapKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				45B404701B29E68A00DF2CDB /* Debug */,
-				45B404711B29E68A00DF2CDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
