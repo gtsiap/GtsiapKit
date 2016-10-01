@@ -23,24 +23,24 @@ import UIKit
 extension UIViewController {
 
     public func showAlert(
-        title: String,
+        _ title: String,
         message: String? = nil,
         completed: (() -> ())? = nil
     ){
         let alertVC = UIAlertController(
             title: title,
             message: message,
-            preferredStyle: .Alert
+            preferredStyle: .alert
         )
 
-        let okAction = UIAlertAction(title: "Ok", style: .Default)
+        let okAction = UIAlertAction(title: "Ok", style: .default)
         { alertAction in
-            alertVC.dismissViewControllerAnimated(true, completion: nil)
+            alertVC.dismiss(animated: true, completion: nil)
             completed?()
         }
 
         alertVC.addAction(okAction)
-        presentViewController(alertVC, animated: true, completion: nil)
+        present(alertVC, animated: true, completion: nil)
     }
 
 }

@@ -20,7 +20,7 @@
 
 extension UIView {
 
-    public func addShadow(viewShadow: ViewShadow = ThemeManager.defaultTheme.defaultViewShadow()) {
+    public func addShadow(_ viewShadow: ViewShadow = ThemeManager.defaultTheme.defaultViewShadow()) {
         self.layer.shadowOpacity = viewShadow.shadowOpacity
         self.layer.shadowRadius = viewShadow.shadowRadius
         self.layer.shadowColor = viewShadow.shadowColor

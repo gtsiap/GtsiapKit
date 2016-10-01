@@ -21,8 +21,8 @@
 extension Int {
 
     public func toLocalTime() -> String {
-        let date = NSDate(
-            timeIntervalSince1970: NSTimeInterval(self)
+        let date = Date(
+            timeIntervalSince1970: TimeInterval(self)
         )
 
         return date.toString

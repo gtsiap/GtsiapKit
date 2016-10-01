@@ -23,20 +23,20 @@ import UIKit
 extension UIButton {
 
     public convenience init(_ text: String, target: AnyObject, action: Selector) {
-        self.init(type: .System)
-        setTitle(text, forState: .Normal)
-        addTarget(target, action: action, forControlEvents: .TouchUpInside)
+        self.init(type: .system)
+        setTitle(text, for: UIControlState())
+        addTarget(target, action: action, for: .touchUpInside)
 
         translatesAutoresizingMaskIntoConstraints = false
     }
     
     public convenience init(imageName: String, target: AnyObject, action: Selector) {
-        self.init(type: .System)
+        self.init(type: .system)
         let image = UIImage(named: imageName)
-        setImage(image, forState: .Normal)
-        setImage(image, forState: .Selected)
+        setImage(image, for: UIControlState())
+        setImage(image, for: .selected)
 
-        addTarget(target, action: action, forControlEvents: .TouchUpInside)
+        addTarget(target, action: action, for: .touchUpInside)
         
         translatesAutoresizingMaskIntoConstraints = false
     }

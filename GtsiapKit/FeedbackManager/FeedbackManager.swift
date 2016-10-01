@@ -31,18 +31,18 @@ public class FeedbackManager: NSObject {
     public private(set) var mailViewController: MFMailComposeViewController!
 
     private var mailBody: String {
-        let bundle = NSBundle.mainBundle()
+        let bundle = Bundle.main
 
-        let name = bundle.objectForInfoDictionaryKey("CFBundleName") as? String ?? ""
+        let name = bundle.object(forInfoDictionaryKey: "CFBundleName") as? String ?? ""
         let appName = "Application name: \(name)"
 
-        let version  =  bundle.objectForInfoDictionaryKey("CFBundleVersion") as? String ?? ""
+        let version  =  bundle.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
         let appVersion = "Application version: \(version)"
 
-        let desc = hardwareDescription() ?? ""
+        let desc = DeviceGuru.hardwareDescription() ?? ""
 
-        let device = "Device: \(desc) (\(hardwareString()))"
-        let software = "iOS version: \(UIDevice.currentDevice().systemVersion)"
+        let device = "Device: \(desc) (\(DeviceGuru.hardwareString()))"
+        let software = "iOS version: \(UIDevice.current.systemVersion)"
 
 
         var body = appName
@@ -69,7 +69,7 @@ public class FeedbackManager: NSObject {
     public func showMailComposer() {
         if MFMailComposeViewController.canSendMail() {
             self.mailViewController = initMailComposer()
-            viewController.presentViewController(self.mailViewController, animated: true, completion: nil)
+            viewController.present(self.mailViewController, animated: true, completion: nil)
             return
         }
 
@@ -79,16 +79,16 @@ public class FeedbackManager: NSObject {
         let alert = UIAlertController(
             title: "Mail Error",
             message: message,
-            preferredStyle: .Alert
+            preferredStyle: .alert
         )
 
-        let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { action in
-           alert.dismissViewControllerAnimated(true, completion: nil)
+        let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { action in
+           alert.dismiss(animated: true, completion: nil)
         }
 
         alert.addAction(action)
 
-        viewController.presentViewController(alert, animated: true, completion: nil)
+        viewController.present(alert, animated: true, completion: nil)
     }
 
     private func initMailComposer() -> MFMailComposeViewController {
@@ -108,7 +108,7 @@ public class FeedbackManager: NSObject {
 extension FeedbackManager: MFMailComposeViewControllerDelegate {
 
 
-    public func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+    public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
 
 
         if let _ = error {
@@ -116,19 +116,19 @@ extension FeedbackManager: MFMailComposeViewControllerDelegate {
             let alert = UIAlertController(
                 title: "Mail Error",
                 message: error!.localizedDescription,
-                preferredStyle: .Alert
+                preferredStyle: .alert
             )
 
-            let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { action in
-                self.viewController.dismissViewControllerAnimated(true, completion: nil)
+            let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { action in
+                self.viewController.dismiss(animated: true, completion: nil)
             }
 
             alert.addAction(action)
 
-            self.viewController.presentViewController(alert, animated: true, completion: nil)
+            self.viewController.present(alert, animated: true, completion: nil)
         }
 
-        self.viewController.dismissViewControllerAnimated(true, completion: nil)
+        self.viewController.dismiss(animated: true, completion: nil)
     }
 
 }

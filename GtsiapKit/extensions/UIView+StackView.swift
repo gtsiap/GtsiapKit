@@ -19,13 +19,12 @@
 // THE SOFTWARE.
 
 import UIKit
-import TZStackView
 import SnapKit
 
 public enum ViewOffset {
-    case LeftAndRight
-    case ExcludeBottom
-    case ExcludeTop
+    case leftAndRight
+    case excludeBottom
+    case excludeTop
 }
 
 extension UIView {
@@ -35,16 +34,16 @@ extension UIView {
         - parameter edgeInsets: the edge insets, 
                                 the default value is (0, 0, 0, 0)
      */
-    public func pinToSuperview(edgeInsets: UIEdgeInsets? = nil) {
+    public func pinToSuperview(_ edgeInsets: UIEdgeInsets? = nil) {
         guard let superview = superview else {
             fatalError("Did your forget to call addSubview")
         }
         
-        snp_makeConstraints() { make in
+        snp.makeConstraints() { make in
             let edges = make.edges.equalTo(superview)
             
             guard let edgeInsets = edgeInsets else { return }
-            edges.offset(edgeInsets)
+            edges.inset(edgeInsets)
         }
         
     }
@@ -63,12 +62,12 @@ extension Array where Element: UIView {
                                is **.Fill**
      */
     public func toStackView(
-        axis: UILayoutConstraintAxis = .Horizontal,
+        _ axis: UILayoutConstraintAxis = .horizontal,
         _ spacing: CGFloat = 0.0,
-        distribution: TZStackViewDistribution = .Fill,
-        alignment: TZStackViewAlignment = .Fill
-    ) -> TZStackView {
-        let stackView = TZStackView(arrangedSubviews: self)
+        distribution: UIStackViewDistribution = .fill,
+        alignment: UIStackViewAlignment = .fill
+    ) -> UIStackView {
+        let stackView = UIStackView(arrangedSubviews: self)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = axis
         stackView.spacing = spacing

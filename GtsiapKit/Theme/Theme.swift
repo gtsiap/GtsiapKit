@@ -23,7 +23,7 @@ import UIKit
 public struct ViewShadow {
     public var shadowOpacity: Float = 0.5
     public var shadowRadius: CGFloat = 5.0
-    public var shadowColor: CGColor = UIColor.blackColor().CGColor
+    public var shadowColor: CGColor = UIColor.black.cgColor
     public var shadowOffset: CGSize = CGSize(width: -10, height: 10)
 }
 
@@ -55,7 +55,7 @@ extension Themeable {
     // MARK: appearance
     public func labelAppearance() {
         UILabel.appearance().font = font()
-        UILabel.appearance().lineBreakMode = NSLineBreakMode.ByWordWrapping
+        UILabel.appearance().lineBreakMode = NSLineBreakMode.byWordWrapping
         UILabel.appearance().numberOfLines = 0
     }
 
@@ -92,38 +92,38 @@ extension Themeable {
 
         UISegmentedControl.appearance().setTitleTextAttributes([
             NSFontAttributeName: smallBoldFont()
-        ], forState: .Normal)
+        ], for: UIControlState())
 
         UISegmentedControl.appearance().setTitleTextAttributes([
             NSForegroundColorAttributeName: textColor,
             NSFontAttributeName: smallBoldFont()
-        ], forState: .Selected)
+        ], for: .selected)
     }
 
     // MARK: funcs
 
     public func font() -> UIFont {
-        return UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        return UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
     }
 
     public func normalBoldFont() -> UIFont {
-        return  UIFont.boldSystemFontOfSize(UIFont.systemFontSize())
+        return  UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)
     }
 
     public func smallBoldFont() -> UIFont {
-        return  UIFont.boldSystemFontOfSize(UIFont.smallSystemFontSize())
+        return  UIFont.boldSystemFont(ofSize: UIFont.smallSystemFontSize)
     }
 
     public func headlineFont() -> UIFont {
-        return UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        return UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
     }
 
     public func subheadlineFont() -> UIFont {
-        return UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        return UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
     }
 
     public func footnoteFont() -> UIFont {
-        return UIFont.preferredFontForTextStyle(UIFontTextStyleFootnote)
+        return UIFont.preferredFont(forTextStyle: UIFontTextStyle.footnote)
     }
 
     public func defaultViewShadow() -> ViewShadow {
@@ -134,24 +134,24 @@ extension Themeable {
         return ViewShadow(
             shadowOpacity: 0.0,
             shadowRadius: 0,
-            shadowColor: UIColor.blackColor().CGColor, // it doesn't matter
+            shadowColor: UIColor.black.cgColor, // it doesn't matter
             shadowOffset: CGSize(width: 0, height: 0)
         )
     }
 }
 
-public class Theme: Themeable {
+open class Theme: Themeable {
 
-    public var primaryColor: UIColor?
-    public var tintColor: UIColor?
-    public var appearanceForTabBar: (() -> ())?
-    public var tintColorForControls: UIColor?
-    public var selectedTitleTextColor: UIColor?
+    open var primaryColor: UIColor?
+    open var tintColor: UIColor?
+    open var appearanceForTabBar: (() -> ())?
+    open var tintColorForControls: UIColor?
+    open var selectedTitleTextColor: UIColor?
 
 }
 
-public class ThemeManager {
-    public  static var defaultTheme: Themeable = {
+open class ThemeManager {
+    open  static var defaultTheme: Themeable = {
         return Theme()
     }()
 }

@@ -25,17 +25,17 @@ extension UITextField {
     public convenience init(target: AnyObject, action: Selector) {
         self.init()
 
-        borderStyle = .RoundedRect
+        borderStyle = .roundedRect
         font = ThemeManager.defaultTheme.normalBoldFont()
-        autocorrectionType = .No
-        keyboardType = .Default
-        returnKeyType = .Done
-        clearButtonMode = .WhileEditing
+        autocorrectionType = .no
+        keyboardType = .default
+        returnKeyType = .done
+        clearButtonMode = .whileEditing
 
         addTarget(
             target,
             action: action,
-            forControlEvents: .EditingChanged
+            for: .editingChanged
         )
 
         translatesAutoresizingMaskIntoConstraints = false

@@ -18,12 +18,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-extension NSDate {
+extension Date {
 
     public var toString: String {
-        let formatter = NSDateFormatter()
-        formatter.timeZone = NSTimeZone.localTimeZone()
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.autoupdatingCurrent
         formatter.dateFormat = "HH:mm dd/MM/yy"
-        return formatter.stringFromDate(self)
+        return formatter.string(from: self)
     }
 }

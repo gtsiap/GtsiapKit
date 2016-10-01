@@ -22,9 +22,9 @@ import UIKit
 
 public extension UIView {
 
-    func constraint(view1: UIView, attribute1: NSLayoutAttribute,
+    func constraint(_ view1: UIView, attribute1: NSLayoutAttribute,
         view2: UIView, attribute2: NSLayoutAttribute? = nil,
-        relatedBy: NSLayoutRelation = NSLayoutRelation.Equal,
+        relatedBy: NSLayoutRelation = NSLayoutRelation.equal,
         multiplier: CGFloat = 1.0, constant: CGFloat = 0) -> NSLayoutConstraint {
 
             let attr = attribute2 == nil ? attribute1 : attribute2!
@@ -41,25 +41,25 @@ public extension UIView {
             return constraint
     }
 
-    func constraint(view1: UIView, attribute1: NSLayoutAttribute) -> NSLayoutConstraint {
+    func constraint(_ view1: UIView, attribute1: NSLayoutAttribute) -> NSLayoutConstraint {
         return constraint(view1, attribute1: attribute1, view2: self)
     }
 
-    func constraint(view1: UIView, attribute1: NSLayoutAttribute, constant: CGFloat) -> NSLayoutConstraint {
+    func constraint(_ view1: UIView, attribute1: NSLayoutAttribute, constant: CGFloat) -> NSLayoutConstraint {
         return constraint(view1, attribute1: attribute1, view2: self, constant: constant)
     }
 
-    func constraint(view1: UIView, attribute1: NSLayoutAttribute, multiplier: CGFloat) -> NSLayoutConstraint {
+    func constraint(_ view1: UIView, attribute1: NSLayoutAttribute, multiplier: CGFloat) -> NSLayoutConstraint {
         return constraint(view1, attribute1: attribute1, view2: self, multiplier: multiplier)
     }
 
-    func fixedConstraint(attribute: NSLayoutAttribute, constant: CGFloat) -> NSLayoutConstraint {
+    func fixedConstraint(_ attribute: NSLayoutAttribute, constant: CGFloat) -> NSLayoutConstraint {
         return NSLayoutConstraint(
             item: self,
             attribute: attribute,
-            relatedBy: .Equal,
+            relatedBy: .equal,
             toItem: nil,
-            attribute: .NotAnAttribute,
+            attribute: .notAnAttribute,
             multiplier: 1,
             constant: constant
         )
