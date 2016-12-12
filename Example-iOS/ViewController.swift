@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 import UIKit
+import GtsiapKit
 
 class ViewController: UIViewController {
 

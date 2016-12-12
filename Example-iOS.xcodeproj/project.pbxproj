@@ -220,6 +220,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Device.framework",
 			);
 			outputPaths = (
 			);

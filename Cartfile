@@ -1,2 +1,2 @@
 github "SnapKit/SnapKit" ~> 3.0
-
+github "Ekhoo/Device" ~> 2.0.0

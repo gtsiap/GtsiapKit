@@ -20,6 +20,7 @@
 
 import UIKit
 import MessageUI
+import Device
 
 public class FeedbackManager: NSObject {
 
@@ -39,9 +40,7 @@ public class FeedbackManager: NSObject {
         let version  =  bundle.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
         let appVersion = "Application version: \(version)"
 
-        let desc = DeviceGuru.hardwareDescription() ?? ""
-
-        let device = "Device: \(desc) (\(DeviceGuru.hardwareString()))"
+        let device = "Device: \(Device.type().rawValue) (\(Device.version().rawValue))"
         let software = "iOS version: \(UIDevice.current.systemVersion)"
 
 
@@ -62,7 +61,6 @@ public class FeedbackManager: NSObject {
 
     public init(viewController: UIViewController) {
         super.init()
-
         self.viewController = viewController
     }
 
